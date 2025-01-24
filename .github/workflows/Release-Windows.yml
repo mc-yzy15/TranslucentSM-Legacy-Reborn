@@ -14,8 +14,8 @@ jobs:
 
     - name: Set up environment
       run: |
-        choco install cmake
-        choco install visualstudio2019-workload-vctools
+        choco install cmake --yes
+        choco install visualstudio2019-workload-vctools --yes
 
     - name: Install dependencies
       run: |
@@ -37,9 +37,10 @@ jobs:
         path: build/Release/TranslucentSM.exe
 
     - name: Upload to release
-      uses: actions/upload-release@v1
+      id: upload-release
+      uses: softprops/action-gh-release@v1
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: build/Release/TranslucentSM.exe
+        files: build/Release/TranslucentSM.exe
+        token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
         overwrite: true
