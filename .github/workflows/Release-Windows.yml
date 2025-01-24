@@ -1,0 +1,45 @@
+name: Build and Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up environment
+      run: |
+        choco install cmake
+        choco install visualstudio2019-workload-vctools
+
+    - name: Install dependencies
+      run: |
+        # 安装项目所需的依赖项
+        # 这里假设没有额外的依赖项，如果有，请添加相应的安装命令
+
+    - name: Configure CMake
+      run: |
+        cmake -B build -S .
+
+    - name: Build project
+      run: |
+        cmake --build build --config Release
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-artifact-windows
+        path: build/Release/TranslucentSM.exe
+
+    - name: Upload to release
+      uses: actions/upload-release@v1
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: build/Release/TranslucentSM.exe
+        tag: ${{ github.ref }}
+        overwrite: true
