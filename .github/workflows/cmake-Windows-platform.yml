@@ -31,13 +31,13 @@ jobs:
         cmake --build build --config Release
 
     - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: release-artifact-windows
         path: build/Release/TranslucentSM.exe
 
     - name: Upload to release
-      uses: svenstaro/upload-release-action@v2
+      uses: actions/upload-release@v1
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build/Release/TranslucentSM.exe
