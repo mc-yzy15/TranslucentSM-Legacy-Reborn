@@ -65,6 +65,8 @@ This project is licensed under the GNU General Public License v3.0 (GPL V3 Licen
 
 # CN
 
+**[Switch to EN_US](#translucentsm-legacy-reborn)**
+
 # 安装指南
 1. **下载和安装：**
    - 从 [发布页面](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) 下载最新版本。
