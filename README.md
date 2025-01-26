@@ -61,9 +61,11 @@ We welcome contributions from the community! Here are some ways to get involved:
 ---
 
 # License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL V3 License) - see the [LICENSE](LICENSE) file for details.
 
 # CN
+
+**[Switch to EN_US](#translucentsm-legacy-reborn)**
 
 # 安装指南
 1. **下载和安装：**
@@ -123,4 +125,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 # 许可证
-本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。
+本项目采用 GNU General Public License v3.0 (GPL V3 许可证) - 详情请参阅 [LICENSE](LICENSE) 文件。
