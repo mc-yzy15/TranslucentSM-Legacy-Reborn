@@ -35,13 +35,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: release-artifact-windows
-        path: ${{ github.workspace }}/build/Release/TranslucentSM.exe
+        path: ${{ github.workspace }}/build/Release/TranslucentSM-Legacy-Reborn.exe
 
     - name: Upload to release
       id: upload-release
       uses: softprops/action-gh-release@v1.10.0
       with:
-        files: ${{ github.workspace }}/build/Release/TranslucentSM.exe
+        files: ${{ github.workspace }}/build/Release/TranslucentSM-Legacy-Reborn.exe
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
         overwrite: true
