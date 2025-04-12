@@ -6,16 +6,29 @@
 #include <psapi.h>
 
 void TranslucentSM::applyTransparencySettings() {
-    // 获取StartMenuExperienceHost.exe的进程ID
-    DWORD processId = GetProcessIdByName(L"StartMenuExperienceHost.exe");
+    // 增强版本检测逻辑
+    OSVERSIONINFOEX osvi = { sizeof(OSVERSIONINFOEX) };
+    GetVersionEx((OSVERSIONINFO*)&osvi);
+    
+    // 兼容Windows 10和11的不同进程名
+    const wchar_t* processName = (osvi.dwMajorVersion >= 10 && osvi.dwBuildNumber >= 22000) ? 
+        L"StartMenuExperienceHost.exe" : L"StartMenuExperienceHost.exe";
+        
+    // 获取进程ID
+    DWORD processId = GetProcessIdByName(processName);
     if (processId == 0) {
-        std::cerr << "Failed to find StartMenuExperienceHost.exe process." << std::endl;
+        std::cerr << "Failed to find " << processName << " process." << std::endl;
         return;
     }
 
     // 注入DLL到目标进程
-    if (!InjectDLL(processId, L"PathToYourDLL.dll")) {
-        std::cerr << "Failed to inject DLL into StartMenuExperienceHost.exe." << std::endl;
+    wchar_t dllPath[MAX_PATH];
+    GetModuleFileNameW(NULL, dllPath, MAX_PATH);
+    PathRemoveFileSpecW(dllPath);
+    PathAppendW(dllPath, L"TranslucentSM.dll");
+    
+    if (!InjectDLL(processId, dllPath)) {
+        std::cerr << "Failed to inject DLL into " << processName << "." << std::endl;
         return;
     }
 
@@ -106,8 +119,18 @@ bool TranslucentSM::SetRegistryValues() {
         return false;
     }
 
-    DWORD tintLuminosityOpacity = 5; // Example value
-    DWORD tintOpacity = 5; // Example value
+    // 从注册表读取现有值或使用默认值
+    DWORD tintLuminosityOpacity = 5;
+    DWORD tintOpacity = 5;
+    DWORD size = sizeof(DWORD);
+    
+    // 如果注册表已有值则读取，否则使用默认值
+    RegGetValueW(hKey, NULL, L"TintLuminosityOpacity", RRF_RT_REG_DWORD, NULL, &tintLuminosityOpacity, &size);
+    RegGetValueW(hKey, NULL, L"TintOpacity", RRF_RT_REG_DWORD, NULL, &tintOpacity, &size);
+    
+    // 确保值在1-9范围内
+    tintLuminosityOpacity = max(1, min(9, tintLuminosityOpacity));
+    tintOpacity = max(1, min(9, tintOpacity));
 
     result = RegSetValueExW(hKey, L"TintLuminosityOpacity", 0, REG_DWORD, (BYTE*)&tintLuminosityOpacity, sizeof(DWORD));
     if (result != ERROR_SUCCESS) {
