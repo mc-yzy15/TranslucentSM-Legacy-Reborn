@@ -23,6 +23,10 @@ jobs:
     - name: Build
       run: cmake --build build --config Release
       
+    - name: Get current date
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+      
     - name: Create Artifact
       uses: actions/upload-artifact@v4
       with:
@@ -50,7 +54,3 @@ jobs:
         asset_path: build/Release/*.exe
         asset_name: TranslucentSM-Nightly.exe
         asset_content_type: application/octet-stream
-        
-    - name: Get current date
-      id: date
-      run: echo "date=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
