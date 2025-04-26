@@ -14,12 +14,27 @@ jobs:
         uses: microsoft/setup-msbuild@v1
 
       - name: Build Solution
-        run: msbuild start.sln /p:Configuration=Release /p:Platform=x64
+        run: |
+          msbuild start.sln /p:Configuration=Release /p:Platform=x64
+          if (-not $?) {
+            Write-Error "Build failed"
+            exit 1
+          }
 
       - name: Get Current Date
         id: date
+        shell: pwsh
         run: |
-          echo "formattedDate=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+          $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+          echo "formattedDate=$date" >> $env:GITHUB_OUTPUT
+
+      - name: Check Release File
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "./src/Release/TranslucentSM.exe")) {
+            Write-Error "Release file not found"
+            exit 1
+          }
 
       - name: Create Release
         id: create_release
@@ -40,3 +55,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./src/Release/TranslucentSM.exe
           asset_name: TranslucentSM.exe
+          asset_content_type: application/octet-stream
