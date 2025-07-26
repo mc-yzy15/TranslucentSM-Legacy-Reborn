@@ -20,8 +20,8 @@ This application utilizes XAML diagnostics to inject a dll into the process and 
 
 ## Settings
 
-It currently uses the registry to store values. You can find them at ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM```.
-There are currently two features. All values must be between 1 and 9.
+You can adjust transparency settings through the application's graphical interface without manually modifying the registry. All values must be between 1 and 9.
+It currently uses the registry to store values (as a fallback option). You can find them at ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM```.
 **After changing the settings, you must terminate StartMenuExperienceHost.exe and restart the application.**
 
 ### `TintLuminosityOpacity` 
@@ -69,6 +69,10 @@ We welcome contributions from the community! Here are some ways to get involved:
 ## Developer Information
 
 - **Main Developer:** [mc-yzy15](https://github.com/mc-yzy15)
+  - Email: [yingmoliuguang@yeah.net](mailto:yingmoliuguang@yeah.net)
+  - Bilibili: [https://space.bilibili.com/1338637552](https://space.bilibili.com/1338637552)
+  - CSDN: [https://blog.csdn.net/m0_68339835](https://blog.csdn.net/m0_68339835)
+  - 个人博客: [https://home159263.wordpress.com/](https://home159263.wordpress.com/)
   - Email: pubic@yzit7.wecom.work
 
 ---
@@ -96,8 +100,8 @@ This project is licensed under the GNU General Public License v3.0 (GPL V3 Licen
 
 ## 设置
 
-当前使用注册表存储值。您可以在 ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM``` 找到它们。
-目前有两个功能。所有值必须在1到9之间。
+您可以通过应用程序的图形界面调整透明度设置，无需手动修改注册表。所有值必须在1到9之间。
+当前使用注册表存储值（作为备用选项），您可以在 ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM``` 找到它们。
 **更改设置后，您必须终止 StartMenuExperienceHost.exe 并重新启动应用程序。**
 
 ### `TintLuminosityOpacity` 
@@ -145,7 +149,10 @@ This project is licensed under the GNU General Public License v3.0 (GPL V3 Licen
 ## 开发者信息
 
 - **主要开发者：** [mc-yzy15](https://github.com/mc-yzy15)
-  - 电子邮件: [pubic@yzit7.wecom.work](mailto:pubic@yzit7.wecom.work)
+  - 电子邮件: [yingmoliuguang@yeah.net](mailto:yingmoliuguang@yeah.net)
+  - Bilibili: [https://space.bilibili.com/1338637552](https://space.bilibili.com/1338637552)
+  - CSDN: [https://blog.csdn.net/m0_68339835](https://blog.csdn.net/m0_68339835)
+  - 个人博客: [https://home159263.wordpress.com/](https://home159263.wordpress.com/)
 
 ---
 
