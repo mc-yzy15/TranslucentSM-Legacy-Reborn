@@ -397,3 +397,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .github/workflow.error
+.vscode/settings.json
+.vscode/settings.json
+.vscode/settings.json
