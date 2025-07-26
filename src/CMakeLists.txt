@@ -27,7 +27,7 @@ if(WIN32)
     add_definitions(-DUNICODE -D_UNICODE)
 
     # 链接必要的系统库
-    set(EXTRA_LIBS psapi kernel32 user32 gdi32 advapi32 shell32)
+    set(EXTRA_LIBS psapi kernel32 user32 gdi32 advapi32 shell32 dwmapi)
 endif()
 
 # 添加源文件
