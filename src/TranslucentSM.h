@@ -1,6 +1,7 @@
 class TranslucentSM {
 public:
     void applyTransparencySettings();
+    DWORD GetBuildNumber();
 
 private:
     DWORD GetProcessIdByName(const wchar_t* processName);

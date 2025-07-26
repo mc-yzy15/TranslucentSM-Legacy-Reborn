@@ -1,0 +1,63 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ dev ]
+  schedule:
+    - cron: '0 0 * * 0'  # 每周日午夜运行
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        qt-version: '5.15.2'
+        arch: 'win64_msvc2019_64'
+
+    - name: Configure CMake
+      run: cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      run: cmake --build build --config Release
+
+    - name: Package
+      run: |
+        mkdir -p TranslucentSM
+        cp build/Release/TranslucentSM.exe TranslucentSM/
+        cp build/Release/TranslucentSM.dll TranslucentSM/
+        7z a TranslucentSM.zip TranslucentSM
+
+    - name: Get version
+      id: get_version
+      run: echo "VERSION=1.0.$(git rev-list --count HEAD)" >> $GITHUB_ENV
+
+    - name: Create Pre-Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Pre-Release ${{ env.VERSION }}
+        tag_name: pre-${{ env.VERSION }}
+        draft: false
+        prerelease: true
+        files: TranslucentSM.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create Weekly Release
+      if: github.event_name == 'schedule'
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Weekly Build ${{ env.VERSION }}
+        tag_name: weekly-${{ env.VERSION }}
+        draft: false
+        prerelease: true
+        files: TranslucentSM.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

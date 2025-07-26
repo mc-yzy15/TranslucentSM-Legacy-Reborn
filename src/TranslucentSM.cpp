@@ -4,14 +4,30 @@
 #include <tlhelp32.h>
 #include <iostream>
 #include <psapi.h>
+#include <sddl.h>
+#include <versionhelpers.h>
 
 void TranslucentSM::applyTransparencySettings() {
     // 增强版本检测逻辑
-    OSVERSIONINFOEX osvi = { sizeof(OSVERSIONINFOEX) };
-    GetVersionEx((OSVERSIONINFO*)&osvi);
-    
-    // 兼容Windows 10和11的不同进程名
-    const wchar_t* processName = (osvi.dwMajorVersion >= 10 && osvi.dwBuildNumber >= 22000) ? 
+    // 使用Windows 11 24H2兼容的版本检测
+    BOOL isWindows11OrGreater = FALSE;
+    if (IsWindows11OrGreater()) {
+        isWindows11OrGreater = TRUE;
+    } else {
+        // 回退到版本信息检查
+        OSVERSIONINFOEX osvi = { sizeof(OSVERSIONINFOEX) };
+        osvi.dwMajorVersion = 10;
+        osvi.dwMinorVersion = 0;
+        osvi.dwBuildNumber = 22000;
+        DWORDLONG conditionMask = VerSetConditionMask(0, VER_MAJORVERSION, VER_GREATER_EQUAL);
+        conditionMask = VerSetConditionMask(conditionMask, VER_MINORVERSION, VER_GREATER_EQUAL);
+        conditionMask = VerSetConditionMask(conditionMask, VER_BUILDNUMBER, VER_GREATER_EQUAL);
+        isWindows11OrGreater = VerifyVersionInfo(&osvi, VER_MAJORVERSION | VER_MINORVERSION | VER_BUILDNUMBER, conditionMask);
+    }
+
+    // Windows 11 24H2 (Build 26100+) 使用新的进程名
+    DWORD dwBuildNumber = GetBuildNumber();
+    const wchar_t* processName = (dwBuildNumber >= 26100) ? 
         L"StartMenuExperienceHost.exe" : L"StartMenuExperienceHost.exe";
         
     // 获取进程ID
@@ -110,6 +126,19 @@ bool TranslucentSM::InjectDLL(DWORD processId, const wchar_t* dllPath) {
     VirtualFreeEx(hProcess, pRemoteMem, 0, MEM_RELEASE);
     CloseHandle(hProcess);
     return true;
+}
+
+DWORD TranslucentSM::GetBuildNumber() {
+    // 获取系统构建版本号
+    HKEY hKey;
+    DWORD dwBuildNumber = 0;
+    DWORD dataSize = sizeof(DWORD);
+    
+    if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
+        RegQueryValueExW(hKey, L"CurrentBuildNumber", NULL, NULL, (LPBYTE)&dwBuildNumber, &dataSize);
+        RegCloseKey(hKey);
+    }
+    return dwBuildNumber;
 }
 
 bool TranslucentSM::SetRegistryValues() {
