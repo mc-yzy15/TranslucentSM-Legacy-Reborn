@@ -18,7 +18,7 @@ jobs:
     - name: Set up Qt
       uses: jurplel/install-qt-action@v3
       with:
-        qt-version: '5.15.2'
+        version: '5.15.2'
         arch: 'win64_msvc2019_64'
 
     - name: Configure CMake
