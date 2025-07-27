@@ -8718,3 +8718,256 @@ events:
     message: |
       Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Qt/6.9.1/mingw_64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/4.1.0-rc3/CompilerIdC/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Qt/6.9.1/mingw_64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/4.1.0-rc3/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d1cebc"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d1cebc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d1cebc'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:\\Qt\\6.9.1\\mingw_64\\bin\\mingw32-make.exe -f Makefile cmTC_6e5ed/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6e5ed.dir\\build.make CMakeFiles/cmTC_6e5ed.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d1cebc'
+        Building C object CMakeFiles/cmTC_6e5ed.dir/CMakeCCompilerABI.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_6e5ed.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_6e5ed.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cc7QgTHb.s
+        GNU C17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) version 14.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "C:/Qt/6.9.1/mingw_64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/14.2.0/include"
+        ignoring nonexistent directory "R:/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc/include"
+        ignoring nonexistent directory "/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc/include"
+        ignoring duplicate directory "C:/Qt/6.9.1/mingw_64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed"
+        ignoring duplicate directory "C:/Qt/6.9.1/mingw_64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../include
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: 94245774513fa7f0f98ee8b5b949a4b7
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_6e5ed.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\cc7QgTHb.s
+        GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
+        COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_6e5ed.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_6e5ed.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6e5ed.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_6e5ed.dir/objects.a
+        "C:\\Program Files\\mingw64\\bin\\ar.exe" qc CMakeFiles\\cmTC_6e5ed.dir/objects.a @CMakeFiles\\cmTC_6e5ed.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make[1]: *** [CMakeFiles\\cmTC_6e5ed.dir\\build.make:102: cmTC_6e5ed.exe] Error 2
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d1cebc'
+        mingw32-make: *** [Makefile:133: cmTC_6e5ed/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Qt/6.9.1/mingw_64/bin/gcc.exe"
+    directories:
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-l1r4d4"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-l1r4d4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-l1r4d4'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:\\Qt\\6.9.1\\mingw_64\\bin\\mingw32-make.exe -f Makefile cmTC_09372/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_09372.dir\\build.make CMakeFiles/cmTC_09372.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-l1r4d4'
+        Building C object CMakeFiles/cmTC_09372.dir/testCCompiler.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe    -o CMakeFiles\\cmTC_09372.dir\\testCCompiler.c.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l1r4d4\\testCCompiler.c
+        Linking C executable cmTC_09372.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_09372.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_09372.dir/objects.a
+        "C:\\Program Files\\mingw64\\bin\\ar.exe" qc CMakeFiles\\cmTC_09372.dir/objects.a @CMakeFiles\\cmTC_09372.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make[1]: *** [CMakeFiles\\cmTC_09372.dir\\build.make:103: cmTC_09372.exe] Error 2
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-l1r4d4'
+        mingw32-make: *** [Makefile:133: cmTC_09372/fast] Error 2
+        
+      exitCode: 2
+...
