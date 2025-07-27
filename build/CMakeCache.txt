@@ -28,7 +28,7 @@ CMAKE_BUILD_TYPE:STRING=Release
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:UNINITIALIZED=g++
+CMAKE_CXX_COMPILER:UNINITIALIZED=C:/Program Files/mingw64/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -57,7 +57,7 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //No help, variable specified on the command line.
-CMAKE_C_COMPILER:UNINITIALIZED=gcc
+CMAKE_C_COMPILER:UNINITIALIZED=C:/Program Files/mingw64/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -115,8 +115,8 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/TranslucentSM
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files/mingw64/bin/ld.exe
 
-//No help, variable specified on the command line.
-CMAKE_MAKE_PROGRAM:UNINITIALIZED=mingw32-make
+//make program
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/mingw64/bin/mingw32-make.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -257,8 +257,11 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
-//The directory containing a CMake configuration file for Qt5.
-Qt5_DIR:PATH=Qt5_DIR-NOTFOUND
+//No help, variable specified on the command line.
+Qt5_DIR:UNINITIALIZED=C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6
+
+//No help, variable specified on the command line.
+Qt6_DIR:UNINITIALIZED=C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6
 
 //Value Computed by CMake
 TranslucentSM_BINARY_DIR:STATIC=O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build
