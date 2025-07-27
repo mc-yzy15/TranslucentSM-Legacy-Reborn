@@ -16,7 +16,7 @@ HWND FindStartMenuWindow();
 // DLL入口点
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
-        case DLL_PROCESS_ATTACH:
+        case DLL_PROCESS_ATTACH: {
             hModule = hModule;
             // 安装事件钩子监控窗口创建
             hEventHook = SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_CREATE,
@@ -33,6 +33,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
                 ApplyTransparency(hStartMenuWnd);
             }
             break;
+        }
         case DLL_PROCESS_DETACH:
             // 卸载钩子
             if (hEventHook) {
@@ -75,6 +76,9 @@ void ApplyTransparency(HWND hWnd) {
     SetLayeredWindowAttributes(hWnd, crKey, alpha, LWA_ALPHA | LWA_COLORKEY);
     
     // Windows 11 24H2 特有的毛玻璃效果
+    #ifndef DWMWA_MICA_EFFECT
+    #define DWMWA_MICA_EFFECT 1029
+    #endif
     DWORD attribute = DWMWA_MICA_EFFECT;
     DWORD value = DWMSBT_MAINWINDOW;
     DwmSetWindowAttribute(hWnd, DWMWA_MICA_EFFECT, &value, sizeof(value));
