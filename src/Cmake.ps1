@@ -39,4 +39,4 @@ if ($LASTEXITCODE -ne 0) {
   exit $LASTEXITCODE
 }
 
-echo "构建成功完成！"
+
