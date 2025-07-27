@@ -11,7 +11,7 @@ cmake -G "MinGW Makefiles" `
   -DCMAKE_CXX_COMPILER=g++ `
   -DCMAKE_VERBOSE_MAKEFILE=ON `
   -DCMAKE_MAKE_PROGRAM=mingw32-make `
-  -DQt5_DIR="C:/Program Files/mingw64/Qt5/lib/cmake/Qt5" `
+  -DQt5_DIR="C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6" `
   ../src
 
 # 执行构建
