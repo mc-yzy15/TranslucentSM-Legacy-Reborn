@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
+cmake_policy(SET CMP0091 NEW)
 project(TranslucentSM)
+set(CMAKE_DISABLE_FIND_PACKAGE_Vulkan ON)
 
 # 添加Qt5依赖
 find_package(Qt6 COMPONENTS Widgets Core Gui REQUIRED)
@@ -53,7 +55,7 @@ set_target_properties(TranslucentSM PROPERTIES
     PREFIX ""
 )
 
-target_link_libraries(TranslucentSM dwmapi user32 gdi32 shell32)
+target_link_libraries(TranslucentSM PRIVATE dwmapi user32 gdi32 shell32)
 
 # 创建可执行文件
 add_executable(TranslucentSMApp ${SOURCES} ${HEADERS})
@@ -64,7 +66,10 @@ set_target_properties(TranslucentSMApp PROPERTIES
 # 链接库
 if(WIN32)
     # 链接Qt5库和其他必要库
-    target_link_libraries(TranslucentSMApp ${QT_MODULES} ${EXTRA_LIBS})
+    target_link_libraries(TranslucentSMApp PRIVATE ${QT_MODULES} ${EXTRA_LIBS})
+    if(MINGW)
+        target_link_libraries(TranslucentSMApp PRIVATE -static-libgcc -static-libstdc++ -Wl,--subsystem,windows)
+    endif()
 endif()
 
 # 添加依赖关系

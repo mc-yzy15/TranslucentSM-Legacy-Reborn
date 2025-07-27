@@ -339,9 +339,6 @@
 		"C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
 		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
-		"C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake",
-		"C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake",
-		"C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake",
 		"C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake",
 		"C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake",
 		"C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake",
@@ -450,6 +447,12 @@
 	"HEADERS" : 
 	[
 		[
+			"O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_MainWindow.cpp",
+			null
+		],
+		[
 			"O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/TranslucentSM.h",
 			"MU",
 			"EWIEGA46WW/moc_TranslucentSM.cpp",
@@ -465,7 +468,22 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/TranslucentSMApp_autogen/include",
 	"MOC_COMPILATION_FILE" : "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/TranslucentSMApp_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "UNICODE", "WINVER=0x0A00", "_UNICODE", "_WIN32_WINNT=0x0A00" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"WINVER=0x0A00",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN32_WINNT=0x0A00",
+		"_WIN64"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -475,11 +493,15 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Qt/6.9.1/mingw_64/include/QtWidgets",
+		"C:/Qt/6.9.1/mingw_64/include/QtCore",
+		"C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
+		"C:/Qt/6.9.1/mingw_64/include/QtGui",
+		"C:/Qt/6.9.1/mingw_64/include",
 		"C:/Qt/6.9.1/mingw_64/include/c++/14.2.0",
 		"C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/x86_64-w64-mingw32",
 		"C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/backward",
 		"C:/Qt/6.9.1/mingw_64/lib/gcc/x86_64-w64-mingw32/14.2.0/include",
-		"C:/Qt/6.9.1/mingw_64/include",
 		"C:/Qt/6.9.1/mingw_64/lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed",
 		"C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include"
 	],
@@ -519,6 +541,11 @@
 	"SETTINGS_FILE" : "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/TranslucentSMApp_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.cpp",
+			"MU",
+			null
+		],
 		[
 			"O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/TranslucentSM.cpp",
 			"MU",

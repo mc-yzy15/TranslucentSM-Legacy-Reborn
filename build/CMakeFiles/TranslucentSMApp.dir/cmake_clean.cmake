@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj"
+  "CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj.d"
   "CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj"
   "CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj.d"
   "CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj"
