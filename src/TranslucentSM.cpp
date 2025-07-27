@@ -158,8 +158,8 @@ bool TranslucentSM::SetRegistryValues() {
     RegGetValueW(hKey, NULL, L"TintOpacity", RRF_RT_REG_DWORD, NULL, &tintOpacity, &size);
     
     // 确保值在1-9范围内
-    tintLuminosityOpacity = max(1, min(9, tintLuminosityOpacity));
-    tintOpacity = max(1, min(9, tintOpacity));
+    tintLuminosityOpacity = std::max(1, std::min(9, tintLuminosityOpacity));
+    tintOpacity = std::max(1, std::min(9, tintOpacity));
 
     result = RegSetValueExW(hKey, L"TintLuminosityOpacity", 0, REG_DWORD, (BYTE*)&tintLuminosityOpacity, sizeof(DWORD));
     if (result != ERROR_SUCCESS) {

@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.15)
 project(TranslucentSM)
 
 # 添加Qt5依赖
-find_package(Qt5 COMPONENTS Widgets Core Gui REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Core Gui REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 # 设置Qt5模块
-set(QT_MODULES Qt5::Widgets Qt5::Core Qt5::Gui)
+set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui)
 
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
@@ -79,9 +79,7 @@ install(TARGETS TranslucentSM TranslucentSMApp
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION bin
 )
-install(FILES $<TARGET_PDB_FILE:TranslucentSM> DESTINATION bin OPTIONAL)
-install(FILES $<TARGET_PDB_FILE:TranslucentSMApp> DESTINATION bin OPTIONAL)
-
-# 安装规则
-
-install(FILES $<TARGET_PDB_FILE:TranslucentSM> DESTINATION bin OPTIONAL)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    install(FILES $<TARGET_PDB_FILE:TranslucentSM> DESTINATION bin OPTIONAL)
+    install(FILES $<TARGET_PDB_FILE:TranslucentSMApp> DESTINATION bin OPTIONAL)
+endif()
