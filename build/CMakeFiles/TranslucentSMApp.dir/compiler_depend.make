@@ -104,6 +104,7 @@ TranslucentSMApp_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake \
+  C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake \
   C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake \
@@ -298,6 +299,7 @@ TranslucentSMApp_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qpalette.h \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
@@ -305,7 +307,10 @@ TranslucentSMApp_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h \
+  C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiglobal.h \
@@ -339,6 +344,7 @@ TranslucentSMApp_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QFrame \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QProgressBar \
@@ -361,6 +367,7 @@ TranslucentSMApp_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlineedit.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qprogressbar.h \
@@ -1222,6 +1229,8 @@ C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/Watcom-DetermineCompile
 
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/XL-C-DetermineCompiler.cmake:
 
+C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlineedit.h:
+
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
 
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/XLClang-C-DetermineCompiler.cmake:
@@ -1233,6 +1242,10 @@ C:/Program\ Files/CMake/share/cmake-4.1/Modules/Compiler/zOS-CXX-DetermineCompil
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake:
 
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:
+
+C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake:
+
+C:/Program\ Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:
 
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake:
 
@@ -1264,6 +1277,8 @@ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QComboBox:
 
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeInspectCLinker.cmake:
 
+C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/new:
+
 C:/Program\ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeInspectCXXLinker.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/QtCore/qtcoreexports.h:
@@ -1271,8 +1286,6 @@ C:/Qt/6.9.1/mingw_64/include/QtCore/qtcoreexports.h:
 C:/Qt/6.9.1/mingw_64/include/QtCore/qtmetamacros.h:
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/unordered_map.h:
-
-C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/new:
 
 C:/Qt/6.9.1/mingw_64/include/QtCore/qlocale.h:
 
@@ -1658,11 +1671,11 @@ C:/Qt/6.9.1/mingw_64/include/QtCore/qstringconverter_base.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkReply:
 
-C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/optional:
-
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/QtCore/qstringliteral.h:
+
+C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLineEdit:
 
 C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
@@ -1756,6 +1769,10 @@ C:/Qt/6.9.1/mingw_64/include/QtGui/qkeysequence.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtGui/qpaintdevice.h:
 
+C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h:
+
+C:/Qt/6.9.1/mingw_64/include/QtWidgets/QSlider:
+
 C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h:
@@ -1766,9 +1783,19 @@ C:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h:
 
+C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
+
+C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake:
+
+C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h:
+
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h:
+
+C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h:
+
+C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslsocket.h:
 
@@ -1798,8 +1825,6 @@ C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/stl_construct.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkRequest:
 
-C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/numeric:
-
 C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator:
 
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h:
@@ -1828,8 +1853,6 @@ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow:
 
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/QProgressBar:
 
-C:/Qt/6.9.1/mingw_64/include/QtWidgets/QSlider:
-
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget:
@@ -1855,8 +1878,6 @@ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h:
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/qgridlayout.h:
 
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h:
-
-C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/ratio:
 
 C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h:
 
@@ -1958,8 +1979,6 @@ C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/ptr_traits.h:
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/shared_ptr.h:
 
-C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/pstl/execution_defs.h:
-
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/shared_ptr_atomic.h:
@@ -2048,9 +2067,17 @@ C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-re
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/memory:
 
+C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/numeric:
+
+C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/optional:
+
+C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/pstl/execution_defs.h:
+
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake:
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/pstl/glue_numeric_defs.h:
+
+C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/ratio:
 
 C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/set:
 
@@ -2274,8 +2301,6 @@ C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cm
 
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake:
 
-C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake:
-
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake:
 
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake:
@@ -2289,10 +2314,6 @@ C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTarg
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake:
 
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake:
-
-C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
-
-C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake:
 
 C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake:
 

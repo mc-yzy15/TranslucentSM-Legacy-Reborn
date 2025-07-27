@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "TranslucentSM.h"
 #include "installer.h"
 #include "MainWindow.h"
 #include <QMouseEvent>
@@ -439,8 +440,8 @@ void MainWindow::onApplySettingsClicked() {
     settings.setValue("theme", themeComboBox->currentIndex());
 
     // 应用透明度设置到开始菜单进程
-    TranslucentSM translucentSM;
-    translucentSM.applyTransparencyToProcess("StartMenuExperienceHost.exe", transparencyValue);
+    TranslucentSM installTranslucentSM;
+    installTranslucentSM.applyTransparencySettings("StartMenuExperienceHost.exe", transparencyValue);
 
     statusLabel->setText("设置已应用");
     QMessageBox::information(this, "成功", "透明度设置已应用！");
@@ -565,9 +566,14 @@ void MainWindow::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal) {
     }
 }
 
-void MainWindow::onDownloadFinished(QNetworkReply *reply) {
+void MainWindow::onDownloadFinished() {
     updateProgressBar->setVisible(false);
-    
+
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+    if (!reply) {
+        return;
+    }
+
     if (reply->error() == QNetworkReply::NoError) {
         QString tempPath = QDir::tempPath() + "/TranslucentSM_Update.zip";
         QFile file(tempPath);

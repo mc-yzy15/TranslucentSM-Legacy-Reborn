@@ -364,6 +364,18 @@ TranslucentSM_IS_TOP_LEVEL:STATIC=ON
 TranslucentSM_SOURCE_DIR:STATIC=O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src
 
 //Path to a program.
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-NOTFOUND
+
+//Path to a program.
+Vulkan_GLSLC_EXECUTABLE:FILEPATH=Vulkan_GLSLC_EXECUTABLE-NOTFOUND
+
+//Path to a file.
+Vulkan_INCLUDE_DIR:PATH=Vulkan_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
+
+//Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.9.1/mingw_64/bin/windeployqt.exe
 
 
@@ -1407,6 +1419,14 @@ QT_FEATURE_xmlstreamwriter:INTERNAL=ON
 QT_FEATURE_xrender:INTERNAL=OFF
 //Qt feature: zstd (from target Qt6::Core)
 QT_FEATURE_zstd:INTERNAL=OFF
+//ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
+Vulkan_GLSLC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_INCLUDE_DIR
+Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_LIBRARY
+Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/TranslucentSM
 

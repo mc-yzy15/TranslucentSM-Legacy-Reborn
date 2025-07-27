@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QProgressBar>
+#include <QLineEdit>
 #include <QNetworkReply>
 #include <QWidget>
 #include <QVBoxLayout>
@@ -45,12 +47,21 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private:
+    void updateUIState();
+    bool checkInstallationStatus();
+    void createSettingsTab();
+    void createAboutTab();
+    QProgressBar* updateProgressBar;
+    QNetworkAccessManager* networkManager;
+    QString currentVersion;
+    QString getInstallPath();
 private slots:
     void onInstallClicked();
     void onUninstallClicked();
     void onApplySettingsClicked();
     void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void onDownloadFinished(QNetworkReply* reply);
+    void onDownloadFinished();
     void onUpdateCheckFinished(QNetworkReply* reply);
     void checkUpdateClicked();
 private:

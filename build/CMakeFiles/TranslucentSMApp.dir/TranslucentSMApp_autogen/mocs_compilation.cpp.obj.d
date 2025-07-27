@@ -386,6 +386,17 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QProgressBar \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qprogressbar.h \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLineEdit \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlineedit.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkReply \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkreply.h \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
@@ -446,10 +457,7 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
- C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QSlider \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qslider.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractslider.h \
@@ -465,8 +473,6 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabbar.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qrubberband.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qabstractitemmodel.h \
- C:/Qt/6.9.1/mingw_64/include/QtWidgets/QProgressBar \
- C:/Qt/6.9.1/mingw_64/include/QtWidgets/qprogressbar.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QFrame \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/QSettings \
@@ -519,10 +525,6 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstylefactory.h \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslError \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslerror.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qtmochelpers.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qtmocconstants.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/q20algorithm.h \

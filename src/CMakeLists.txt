@@ -1,7 +1,18 @@
 cmake_minimum_required(VERSION 3.15)
 cmake_policy(SET CMP0091 NEW)
+cmake_policy(SET CMP0126 NEW)
+cmake_policy(SET CMP0112 NEW)
+cmake_policy(SET CMP0156 NEW)
+cmake_policy(SET CMP0181 NEW)
 project(TranslucentSM)
-set(CMAKE_DISABLE_FIND_PACKAGE_Vulkan ON)
+
+# Find Vulkan headers
+find_package(Vulkan QUIET)
+if(Vulkan_FOUND)
+    include_directories(${Vulkan_INCLUDE_DIRS})
+else()
+    message(WARNING "Vulkan headers not found - some features may be disabled")
+endif()
 
 # 添加Qt5依赖
 find_package(Qt6 COMPONENTS Widgets Core Gui Network REQUIRED)

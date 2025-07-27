@@ -169,6 +169,7 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h
@@ -176,7 +177,10 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qtguiglobal.h
@@ -210,6 +214,7 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QFrame
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QProgressBar
@@ -232,6 +237,7 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlayoutitem.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/qprogressbar.h
