@@ -6950,3 +6950,1771 @@ events:
     message: |
       Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -Aa 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -Aa 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --c++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --ec++ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      no such file or directory
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:86 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+...
