@@ -487,4 +487,7 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h

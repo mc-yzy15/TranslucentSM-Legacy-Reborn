@@ -53,16 +53,7 @@ int main(int argc, char *argv[]) {
     QSettings runSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
     runSettings.remove("TranslucentSM");
 
-    // 删除快捷方式
-    QFile::remove(QDir::homePath() + "/Desktop/TranslucentSM.lnk");
 
-    // 删除安装目录
-    QDir(installPath).rmdir(installPath);
-
-    // 输出卸载进度
-    qDebug() << "Progress: 100";
-    return 0;
-}
 
 // 创建快捷方式
 bool createShortcut(const QString &targetPath, const QString &shortcutPath) {

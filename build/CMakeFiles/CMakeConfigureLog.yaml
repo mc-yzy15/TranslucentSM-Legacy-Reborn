@@ -2440,8 +2440,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2450,13 +2450,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_430eb/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_430eb.dir\\build.make CMakeFiles/cmTC_430eb.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw'
-        Building C object CMakeFiles/cmTC_430eb.dir/CMakeCCompilerABI.c.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_c2234/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c2234.dir\\build.make CMakeFiles/cmTC_c2234.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s'
+        Building C object CMakeFiles/cmTC_c2234.dir/CMakeCCompilerABI.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -2465,8 +2465,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_430eb.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccws49A0.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_c2234.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cc50nXOh.s
         GNU C17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) version 14.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2485,14 +2485,14 @@ events:
          C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 94245774513fa7f0f98ee8b5b949a4b7
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\ccws49A0.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\cc50nXOh.s
         GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_430eb.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_430eb.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_c2234.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c2234.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe
         COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe
@@ -2504,16 +2504,16 @@ events:
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_430eb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_430eb.'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccerJ05g.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_430eb.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_430eb.dir/objects.a --no-whole-archive --out-implib libcmTC_430eb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c2234.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c2234.'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccih9b1m.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c2234.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c2234.dir/objects.a --no-whole-archive --out-implib libcmTC_c2234.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         collect2 version 14.2.0
-        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccerJ05g.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_430eb.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_430eb.dir/objects.a --no-whole-archive --out-implib libcmTC_430eb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccih9b1m.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c2234.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c2234.dir/objects.a --no-whole-archive --out-implib libcmTC_c2234.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_430eb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_430eb.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_430eb.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_430eb.dir/objects.a @CMakeFiles\\cmTC_430eb.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_430eb.dir/objects.a -Wl,--no-whole-archive -o cmTC_430eb.exe -Wl,--out-implib,libcmTC_430eb.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c2234.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c2234.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c2234.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_c2234.dir/objects.a @CMakeFiles\\cmTC_c2234.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_c2234.dir/objects.a -Wl,--no-whole-archive -o cmTC_c2234.exe -Wl,--out-implib,libcmTC_c2234.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s'
         
       exitCode: 0
   -
@@ -2548,13 +2548,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw']
+        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_430eb/fast]
-        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_430eb.dir\\build.make CMakeFiles/cmTC_430eb.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-w7z0sw']
-        ignore line: [Building C object CMakeFiles/cmTC_430eb.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_c2234/fast]
+        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c2234.dir\\build.make CMakeFiles/cmTC_c2234.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e96v0s']
+        ignore line: [Building C object CMakeFiles/cmTC_c2234.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -2563,8 +2563,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_430eb.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccws49A0.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_c2234.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cc50nXOh.s]
         ignore line: [GNU C17 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) version 14.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2583,8 +2583,8 @@ events:
         ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 94245774513fa7f0f98ee8b5b949a4b7]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\ccws49A0.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\cc50nXOh.s]
         ignore line: [GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r3) 2.44]
         ignore line: [COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/]
@@ -2595,9 +2595,9 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_430eb.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_430eb.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_430eb.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c2234.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_c2234.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c2234.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe]
@@ -2616,13 +2616,13 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_430eb.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_430eb.']
-        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccerJ05g.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_430eb.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_430eb.dir/objects.a --no-whole-archive --out-implib libcmTC_430eb.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c2234.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c2234.']
+        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccih9b1m.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_c2234.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c2234.dir/objects.a --no-whole-archive --out-implib libcmTC_c2234.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccerJ05g.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccih9b1m.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -2644,7 +2644,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_430eb.exe] ==> ignore
+          arg [cmTC_c2234.exe] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o]
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0]
@@ -2655,10 +2655,10 @@ events:
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_430eb.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_c2234.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_430eb.dll.a] ==> ignore
+          arg [libcmTC_c2234.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -2740,8 +2740,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2751,13 +2751,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_3f2d1/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3f2d1.dir\\build.make CMakeFiles/cmTC_3f2d1.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd'
-        Building CXX object CMakeFiles/cmTC_3f2d1.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_82b9a/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_82b9a.dir\\build.make CMakeFiles/cmTC_82b9a.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f'
+        Building CXX object CMakeFiles/cmTC_82b9a.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -2766,8 +2766,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_3f2d1.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccJ4caKA.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_82b9a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccyFuCHR.s
         GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) version 14.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2792,14 +2792,14 @@ events:
          C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 3da29e1884ee8eb45ff9171cc0f881c4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\ccJ4caKA.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\ccyFuCHR.s
         GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_3f2d1.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3f2d1.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_82b9a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_82b9a.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe
         COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe
@@ -2811,16 +2811,16 @@ events:
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3f2d1.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3f2d1.'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cczX2QbS.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_3f2d1.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_3f2d1.dir/objects.a --no-whole-archive --out-implib libcmTC_3f2d1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_82b9a.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_82b9a.'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccunGGP4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_82b9a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_82b9a.dir/objects.a --no-whole-archive --out-implib libcmTC_82b9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         collect2 version 14.2.0
-        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cczX2QbS.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_3f2d1.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_3f2d1.dir/objects.a --no-whole-archive --out-implib libcmTC_3f2d1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccunGGP4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_82b9a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_82b9a.dir/objects.a --no-whole-archive --out-implib libcmTC_82b9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3f2d1.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3f2d1.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3f2d1.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_3f2d1.dir/objects.a @CMakeFiles\\cmTC_3f2d1.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_3f2d1.dir/objects.a -Wl,--no-whole-archive -o cmTC_3f2d1.exe -Wl,--out-implib,libcmTC_3f2d1.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_82b9a.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_82b9a.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_82b9a.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_82b9a.dir/objects.a @CMakeFiles\\cmTC_82b9a.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_82b9a.dir/objects.a -Wl,--no-whole-archive -o cmTC_82b9a.exe -Wl,--out-implib,libcmTC_82b9a.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f'
         
       exitCode: 0
   -
@@ -2861,13 +2861,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd']
+        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_3f2d1/fast]
-        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3f2d1.dir\\build.make CMakeFiles/cmTC_3f2d1.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-0yvnnd']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3f2d1.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_82b9a/fast]
+        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_82b9a.dir\\build.make CMakeFiles/cmTC_82b9a.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-j2574f']
+        ignore line: [Building CXX object CMakeFiles/cmTC_82b9a.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -2876,8 +2876,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_3f2d1.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccJ4caKA.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_82b9a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccyFuCHR.s]
         ignore line: [GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) version 14.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2902,8 +2902,8 @@ events:
         ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 3da29e1884ee8eb45ff9171cc0f881c4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\ccJ4caKA.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\ccyFuCHR.s]
         ignore line: [GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r3) 2.44]
         ignore line: [COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/]
@@ -2914,9 +2914,9 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_3f2d1.dir\\CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_3f2d1.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3f2d1.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_82b9a.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_82b9a.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_82b9a.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe]
@@ -2935,13 +2935,13 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3f2d1.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3f2d1.']
-        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cczX2QbS.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_3f2d1.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_3f2d1.dir/objects.a --no-whole-archive --out-implib libcmTC_3f2d1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_82b9a.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_82b9a.']
+        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccunGGP4.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_82b9a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_82b9a.dir/objects.a --no-whole-archive --out-implib libcmTC_82b9a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\cczX2QbS.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccunGGP4.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -2963,7 +2963,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_3f2d1.exe] ==> ignore
+          arg [cmTC_82b9a.exe] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o]
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0]
@@ -2974,10 +2974,10 @@ events:
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_3f2d1.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_82b9a.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_3f2d1.dll.a] ==> ignore
+          arg [libcmTC_82b9a.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3064,8 +3064,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-m3hhax"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-m3hhax"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-x51o68"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-x51o68"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3075,19 +3075,19 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-m3hhax'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-x51o68'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_814ae/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_814ae.dir\\build.make CMakeFiles/cmTC_814ae.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-m3hhax'
-        Building C object CMakeFiles/cmTC_814ae.dir/src.c.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\\cmTC_814ae.dir\\src.c.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m3hhax\\src.c
-        Linking C executable cmTC_814ae.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_814ae.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_814ae.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_814ae.dir/objects.a @CMakeFiles\\cmTC_814ae.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_814ae.dir/objects.a -Wl,--no-whole-archive -o cmTC_814ae.exe -Wl,--out-implib,libcmTC_814ae.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_814ae.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-m3hhax'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_fe64e/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_fe64e.dir\\build.make CMakeFiles/cmTC_fe64e.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-x51o68'
+        Building C object CMakeFiles/cmTC_fe64e.dir/src.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\\cmTC_fe64e.dir\\src.c.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x51o68\\src.c
+        Linking C executable cmTC_fe64e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_fe64e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_fe64e.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_fe64e.dir/objects.a @CMakeFiles\\cmTC_fe64e.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_fe64e.dir/objects.a -Wl,--no-whole-archive -o cmTC_fe64e.exe -Wl,--out-implib,libcmTC_fe64e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_fe64e.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-x51o68'
         
       exitCode: 0
   -
@@ -3943,8 +3943,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e17onl"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e17onl"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-uzd7du"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-uzd7du"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -3954,19 +3954,19 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e17onl'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-uzd7du'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_2be0a/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_2be0a.dir\\build.make CMakeFiles/cmTC_2be0a.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e17onl'
-        Building CXX object CMakeFiles/cmTC_2be0a.dir/src.cxx.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -DHAVE_STDATOMIC   -o CMakeFiles\\cmTC_2be0a.dir\\src.cxx.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17onl\\src.cxx
-        Linking CXX executable cmTC_2be0a.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_2be0a.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_2be0a.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_2be0a.dir/objects.a @CMakeFiles\\cmTC_2be0a.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_2be0a.dir/objects.a -Wl,--no-whole-archive -o cmTC_2be0a.exe -Wl,--out-implib,libcmTC_2be0a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_2be0a.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-e17onl'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_28f7f/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_28f7f.dir\\build.make CMakeFiles/cmTC_28f7f.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-uzd7du'
+        Building CXX object CMakeFiles/cmTC_28f7f.dir/src.cxx.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -DHAVE_STDATOMIC   -o CMakeFiles\\cmTC_28f7f.dir\\src.cxx.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uzd7du\\src.cxx
+        Linking CXX executable cmTC_28f7f.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_28f7f.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_28f7f.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_28f7f.dir/objects.a @CMakeFiles\\cmTC_28f7f.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_28f7f.dir/objects.a -Wl,--no-whole-archive -o cmTC_28f7f.exe -Wl,--out-implib,libcmTC_28f7f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_28f7f.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-uzd7du'
         
       exitCode: 0
   -
