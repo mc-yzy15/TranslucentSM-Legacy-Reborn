@@ -27,7 +27,7 @@ if(WIN32)
     add_definitions(-DUNICODE -D_UNICODE)
 
     # 链接必要的系统库
-    set(EXTRA_LIBS psapi kernel32 user32 gdi32 advapi32 shell32)
+    set(EXTRA_LIBS psapi kernel32 user32 gdi32 advapi32 shell32 dwmapi)
 endif()
 
 # 添加源文件
@@ -35,11 +35,14 @@ set(SOURCES
     TranslucentSM.cpp
     main.cpp
     installer.cpp
+    MainWindow.cpp
 )
 
 # 添加头文件
 set(HEADERS
     TranslucentSM.h
+    MainWindow.h
+    installer.h
 )
 
 # 创建DLL项目
@@ -60,7 +63,8 @@ set_target_properties(TranslucentSMApp PROPERTIES
 
 # 链接库
 if(WIN32)
-    target_link_libraries(TranslucentSMApp ${EXTRA_LIBS})
+    # 链接Qt5库和其他必要库
+    target_link_libraries(TranslucentSMApp ${QT_MODULES} ${EXTRA_LIBS})
 endif()
 
 # 添加依赖关系
