@@ -39,4 +39,6 @@ if ($LASTEXITCODE -ne 0) {
   exit $LASTEXITCODE
 }
 
+echo "Build completed successfully!"
+
 
