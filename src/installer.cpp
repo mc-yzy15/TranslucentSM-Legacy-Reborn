@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QSettings>
 #include <QDebug>
+#include <QCoreApplication>
 #include <windows.h>
 #include <shlobj.h>
 #include <objbase.h>

@@ -394,6 +394,17 @@ CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qsettings.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/QDebug \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QCoreApplication \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/windows.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/sdkddkver.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/excpt.h \
