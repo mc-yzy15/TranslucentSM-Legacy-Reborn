@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.15)
 project(TranslucentSM)
 
 # 添加Qt5依赖
-find_package(Qt5 COMPONENTS Widgets Core Gui REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Core Gui REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 # 设置Qt5模块
-set(QT_MODULES Qt5::Widgets Qt5::Core Qt5::Gui)
+set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui)
 
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
