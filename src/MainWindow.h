@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QNetworkReply>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -48,9 +49,18 @@ private slots:
     void onInstallClicked();
     void onUninstallClicked();
     void onApplySettingsClicked();
+    void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void onDownloadFinished(QNetworkReply* reply);
+    void onUpdateCheckFinished(QNetworkReply* reply);
+    void checkUpdateClicked();
+private:
+    int versionCompare(const QString& version1, const QString& version2);
     void onBrowseClicked();
     void updateProgress(int value);
     void onInstallationFinished(int exitCode, QProcess::ExitStatus exitStatus);
+};
+
+
 
 private:
     void setupUI();

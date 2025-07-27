@@ -33,32 +33,3 @@ int main(int argc, char *argv[]) {
 
     return app.exec();
 }
-
-
-    QString installPath = settings.value("InstallPath").toString();
-
-    if (installPath.isEmpty() || !QDir(installPath).exists()) {
-        qCritical() << "未找到安装路径";
-        return 1;
-    }
-
-    // 删除文件
-    QString exePath = installPath + "/TranslucentSM.exe";
-    QString dllPath = installPath + "/TranslucentSM.dll";
-
-    QFile::remove(exePath);
-    QFile::remove(dllPath);
-
-    // 删除注册表项
-    QSettings runSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
-    runSettings.remove("TranslucentSM");
-
-
-
-// 创建快捷方式
-bool createShortcut(const QString &targetPath, const QString &shortcutPath) {
-    // 实际应用中应实现创建快捷方式的逻辑
-    Q_UNUSED(targetPath);
-    Q_UNUSED(shortcutPath);
-    return true;
-}

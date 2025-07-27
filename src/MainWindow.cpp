@@ -1,14 +1,16 @@
 #include "MainWindow.h"
 #include "installer.h"
+#include "MainWindow.h"
 #include <QMouseEvent>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QScreen>
 #include <QGuiApplication>
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
 #include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QUrl>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QJsonDocument>
@@ -494,15 +496,6 @@ QString MainWindow::getInstallPath() {
     return installPathEdit->text();
 }
 
-private:
-    Ui::MainWindow *ui;
-    QProcess *installProcess;
-    QProcess *uninstallProcess;
-    QNetworkAccessManager *networkManager;
-    QProgressBar *updateProgressBar;
-    QString currentVersion = "1.0.0";
-}
-
 void MainWindow::checkUpdateClicked() {
     statusLabel->setText("正在检查更新...");
     
@@ -546,13 +539,13 @@ void MainWindow::onUpdateCheckFinished(QNetworkReply *reply) {
                 updateProgressBar->setVisible(true);
                 updateProgressBar->setValue(0);
                 
-                connect(networkManager, &QNetworkAccessManager::downloadProgress, 
-                        this, &MainWindow::onDownloadProgress);
-                connect(networkManager, &QNetworkAccessManager::finished, 
-                        this, &MainWindow::onDownloadFinished);
-                
-                QNetworkRequest downloadRequest(QUrl(downloadUrl));
-                networkManager->get(downloadRequest);
+                QUrl downloadQUrl(downloadUrl);
+            QNetworkRequest downloadRequest(downloadQUrl);
+            QNetworkReply* reply = networkManager->get(downloadRequest);
+            connect(reply, &QNetworkReply::downloadProgress, 
+                    this, &MainWindow::onDownloadProgress);
+            connect(reply, &QNetworkReply::finished, 
+                    this, &MainWindow::onDownloadFinished);
             }
         } else {
             statusLabel->setText("当前已是最新版本");

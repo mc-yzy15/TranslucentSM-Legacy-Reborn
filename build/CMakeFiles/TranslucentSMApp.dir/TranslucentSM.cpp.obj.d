@@ -279,6 +279,8 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/winsvc.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/mcx.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/imm.h \
+ C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/shlwapi.h \
+ C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/shtypes.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/winternl.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/tlhelp32.h \
  C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/iostream \

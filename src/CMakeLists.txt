@@ -4,13 +4,13 @@ project(TranslucentSM)
 set(CMAKE_DISABLE_FIND_PACKAGE_Vulkan ON)
 
 # 添加Qt5依赖
-find_package(Qt6 COMPONENTS Widgets Core Gui REQUIRED)
+find_package(Qt6 COMPONENTS Widgets Core Gui Network REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 # 设置Qt5模块
-set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui)
+set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui Qt6::Network)
 
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
@@ -55,7 +55,7 @@ set_target_properties(TranslucentSM PROPERTIES
     PREFIX ""
 )
 
-target_link_libraries(TranslucentSM PRIVATE dwmapi user32 gdi32 shell32)
+target_link_libraries(TranslucentSM PRIVATE dwmapi user32 gdi32 shell32 shlwapi)
 
 # 创建可执行文件
 add_executable(TranslucentSMApp ${SOURCES} ${HEADERS})

@@ -1,7 +1,6 @@
-CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj: \
- O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\TranslucentSMApp_autogen\mocs_compilation.cpp \
- O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\TranslucentSMApp_autogen\EWIEGA46WW/moc_MainWindow.cpp \
- O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h \
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.cpp \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -517,13 +516,60 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtCore/qprocess.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QStyleFactory \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstylefactory.h \
- C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslError \
- C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslerror.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
- C:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qtmochelpers.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qtmocconstants.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/q20algorithm.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/q23type_traits.h
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qinputdevice.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QRect \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QSize \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QSizeF \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qscreen_platform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/QScreen \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/QGuiApplication \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QDir \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qdir.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QFile \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QTextStream \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qtextstream.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkRequest \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QUrl \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QJsonDocument \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsonparseerror.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QJsonObject \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsonobject.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsonvalue.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcborvalue.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcborcommon.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/quuid.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QJsonArray \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qjsonarray.h

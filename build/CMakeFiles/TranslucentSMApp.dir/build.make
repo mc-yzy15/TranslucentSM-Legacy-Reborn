@@ -175,6 +175,7 @@ bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/build.make
 bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a
 bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a
+bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Network.a
 bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Core.a
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/linkLibs.rsp
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/objects1.rsp

@@ -2,8 +2,17 @@
 O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/installer.cpp
 O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QFlags
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QIODevice
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QList
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QMetaType
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QProcess
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QSettings
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QSharedDataPointer
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QUrl
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/QVariant
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h
@@ -11,6 +20,7 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/q26numeric.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h
@@ -38,6 +48,7 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qcontainerinfo.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qcontainertools_impl.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qcontiguouscache.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qcryptographichash.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qdatastream.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h
@@ -173,6 +184,27 @@ O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qvalidator.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkAccessManager
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkReply
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkRequest
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslConfiguration
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qabstractsocket.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qhostaddress.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qhttpheaders.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkreply.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkrequest.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qssl.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslcertificate.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslconfiguration.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslerror.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslsocket.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtcpsocket.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetwork-config.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetworkexports.h
+ mdp:C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetworkglobal.h
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QComboBox
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QFileDialog
  mdp:C:/Qt/6.9.1/mingw_64/include/QtWidgets/QFrame

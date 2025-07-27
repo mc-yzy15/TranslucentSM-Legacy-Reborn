@@ -385,6 +385,52 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkReply \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkreply.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QIODevice \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QVariant \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkRequest \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qhttpheaders.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QSharedDataPointer \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qshareddata.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QUrl \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/q26numeric.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qlist.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qobject.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslConfiguration \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslsocket.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qtcpsocket.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslerror.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslcertificate.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcryptographichash.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qssl.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QFlags \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qflags.h \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+ C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QMetaType \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qmetatype.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QVBoxLayout \
@@ -401,7 +447,6 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QSlider \
@@ -411,7 +456,6 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qcombobox.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstyleoption.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qvalidator.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h \
@@ -435,8 +479,6 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qdir.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qdirlisting.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qfiledevice.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qfile.h \
  C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/filesystem \
  C:/Qt/6.9.1/mingw_64/include/c++/14.2.0/bits/fs_fwd.h \
@@ -489,5 +531,4 @@ CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
  O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/QString \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QString

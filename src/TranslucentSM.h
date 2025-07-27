@@ -1,5 +1,7 @@
+#include <windows.h>
+
 class TranslucentSM {
-public:
+  public:
     void applyTransparencySettings();
     DWORD GetBuildNumber();
 
