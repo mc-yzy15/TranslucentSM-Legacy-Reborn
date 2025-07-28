@@ -1,6 +1,9 @@
+#include <windows.h>
+#include <QString>
+
 class TranslucentSM {
-public:
-    void applyTransparencySettings();
+  public:
+    void applyTransparencySettings(const QString& processName, int transparencyValue);
     DWORD GetBuildNumber();
 
 private:

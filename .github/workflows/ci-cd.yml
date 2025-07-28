@@ -22,17 +22,17 @@ jobs:
         arch: 'win64_msvc2019_64'
 
     - name: Configure CMake
-      run: cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+      run: cmake -S src -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=Release
 
     - name: Build
       run: cmake --build build --config Release
 
     - name: Package
       run: |
-        mkdir -p TranslucentSM
-        cp build/Release/TranslucentSM.exe TranslucentSM/
-        cp build/Release/TranslucentSM.dll TranslucentSM/
-        7z a TranslucentSM.zip TranslucentSM
+        New-Item -ItemType Directory -Force -Path TranslucentSM
+        Copy-Item -Path build/Release/TranslucentSM.exe -Destination TranslucentSM/
+        Copy-Item -Path build/Release/TranslucentSM.dll -Destination TranslucentSM/
+        Compress-Archive -Path TranslucentSM/* -DestinationPath TranslucentSM.zip -Force
 
     - name: Get version
       id: get_version

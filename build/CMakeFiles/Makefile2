@@ -124,17 +124,17 @@ CMakeFiles/TranslucentSM.dir/clean:
 # Target rules for target CMakeFiles/TranslucentSMApp.dir
 
 # All Build rule for target.
+CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSM.dir/all
 CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSMApp_autogen.dir/all
-CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSM.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10 "Built target TranslucentSMApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target TranslucentSMApp"
 .PHONY : CMakeFiles/TranslucentSMApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TranslucentSMApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TranslucentSMApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles 0
 .PHONY : CMakeFiles/TranslucentSMApp.dir/rule
@@ -144,10 +144,10 @@ TranslucentSMApp: CMakeFiles/TranslucentSMApp.dir/rule
 .PHONY : TranslucentSMApp
 
 # codegen rule for target.
-CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSM.dir/all
+CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10 "Finished codegen for target TranslucentSMApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10,11 "Finished codegen for target TranslucentSMApp"
 .PHONY : CMakeFiles/TranslucentSMApp.dir/codegen
 
 # clean rule for target.
@@ -194,7 +194,7 @@ CMakeFiles/TranslucentSM_autogen_timestamp_deps.dir/clean:
 CMakeFiles/TranslucentSM_autogen.dir/all: CMakeFiles/TranslucentSM_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSM_autogen.dir\build.make CMakeFiles/TranslucentSM_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSM_autogen.dir\build.make CMakeFiles/TranslucentSM_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=12 "Built target TranslucentSM_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=13 "Built target TranslucentSM_autogen"
 .PHONY : CMakeFiles/TranslucentSM_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -211,7 +211,7 @@ TranslucentSM_autogen: CMakeFiles/TranslucentSM_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/TranslucentSM_autogen.dir/codegen: CMakeFiles/TranslucentSM_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSM_autogen.dir\build.make CMakeFiles/TranslucentSM_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=12 "Finished codegen for target TranslucentSM_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=13 "Finished codegen for target TranslucentSM_autogen"
 .PHONY : CMakeFiles/TranslucentSM_autogen.dir/codegen
 
 # clean rule for target.
@@ -258,7 +258,7 @@ CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/clean:
 CMakeFiles/TranslucentSMApp_autogen.dir/all: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp_autogen.dir\build.make CMakeFiles/TranslucentSMApp_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp_autogen.dir\build.make CMakeFiles/TranslucentSMApp_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=11 "Built target TranslucentSMApp_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=12 "Built target TranslucentSMApp_autogen"
 .PHONY : CMakeFiles/TranslucentSMApp_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -275,7 +275,7 @@ TranslucentSMApp_autogen: CMakeFiles/TranslucentSMApp_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/TranslucentSMApp_autogen.dir/codegen: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp_autogen.dir\build.make CMakeFiles/TranslucentSMApp_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=11 "Finished codegen for target TranslucentSMApp_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=12 "Finished codegen for target TranslucentSMApp_autogen"
 .PHONY : CMakeFiles/TranslucentSMApp_autogen.dir/codegen
 
 # clean rule for target.

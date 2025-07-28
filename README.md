@@ -73,7 +73,6 @@ We welcome contributions from the community! Here are some ways to get involved:
   - Bilibili: [https://space.bilibili.com/1338637552](https://space.bilibili.com/1338637552)
   - CSDN: [https://blog.csdn.net/m0_68339835](https://blog.csdn.net/m0_68339835)
   - 个人博客: [https://home159263.wordpress.com/](https://home159263.wordpress.com/)
-  - Email: pubic@yzit7.wecom.work
 
 ---
 

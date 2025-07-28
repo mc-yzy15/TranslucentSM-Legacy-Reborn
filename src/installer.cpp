@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QSettings>
 #include <QDebug>
+#include <QCoreApplication>
 #include <windows.h>
 #include <shlobj.h>
 #include <objbase.h>
@@ -24,13 +25,15 @@ int installTranslucentSM(const QString &installPath) {
     QString dllDest = installPath + "/TranslucentSM.dll";
 
     // 复制文件
-    if (!QFile::copy(exeSource, exeDest)) {
-        qCritical() << "无法复制主程序文件: " << QFile::errorString();
+    QFile exeFile(exeSource);
+    if (!exeFile.copy(exeDest)) {
+        qCritical() << "无法复制主程序文件: " << exeFile.errorString();
         return 1;
     }
 
-    if (!QFile::copy(dllSource, dllDest)) {
-        qCritical() << "无法复制DLL文件: " << QFile::errorString();
+    QFile dllFile(dllSource);
+    if (!dllFile.copy(dllDest)) {
+        qCritical() << "无法复制DLL文件: " << dllFile.errorString();
         QFile::remove(exeDest); // 回滚
         return 1;
     }

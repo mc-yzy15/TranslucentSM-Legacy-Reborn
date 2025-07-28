@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "TranslucentSMApp_autogen/timestamp" "custom" "TranslucentSMApp_autogen/deps"
+  "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.cpp" "CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj" "gcc" "CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj.d"
   "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/TranslucentSM.cpp" "CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj" "gcc" "CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj.d"
   "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/TranslucentSMApp_autogen/mocs_compilation.cpp" "CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj.d"
   "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/installer.cpp" "CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj" "gcc" "CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj.d"

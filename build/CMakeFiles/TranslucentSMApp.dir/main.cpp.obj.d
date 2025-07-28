@@ -1,7 +1,6 @@
-CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj: \
- O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\TranslucentSMApp_autogen\mocs_compilation.cpp \
- O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\TranslucentSMApp_autogen\EWIEGA46WW/moc_MainWindow.cpp \
- O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.h \
+CMakeFiles/TranslucentSMApp.dir/main.cpp.obj: \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\main.cpp \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -523,9 +522,19 @@ CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.ob
  C:/Qt/6.9.1/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QStyleFactory \
  C:/Qt/6.9.1/mingw_64/include/QtWidgets/qstylefactory.h \
- C:/Qt/6.9.1/mingw_64/include/QtNetwork/QSslError \
- C:/Qt/6.9.1/mingw_64/include/QtNetwork/qsslerror.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qtmochelpers.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/qtmocconstants.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/q20algorithm.h \
- C:/Qt/6.9.1/mingw_64/include/QtCore/q23type_traits.h
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.9.1/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QString

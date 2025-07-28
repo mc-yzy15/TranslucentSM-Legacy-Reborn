@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QProgressBar>
+#include <QProcess>
+#include <QLineEdit>
+#include <QNetworkReply>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -29,12 +33,11 @@ signals:
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
-
-private:
-    QPoint m_startPos;
-    bool m_moving;
-};
+  void mouseMoveEvent(QMouseEvent *event) override;
+    private:
+        QPoint m_startPos;
+        bool m_moving;
+    };
 
 // 主窗口类
 class MainWindow : public QMainWindow {
@@ -44,24 +47,36 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private:
+    void updateUIState();
+    void setupUI();
+    void applyModernStyle();
+    void createInstallationTab();
+    bool checkInstallationStatus();
+    void createSettingsTab();
+    void createAboutTab();
+    QProgressBar* updateProgressBar;
+    QProcess* installProcess;
+    QNetworkAccessManager* networkManager;
+    QString currentVersion;
+
 private slots:
     void onInstallClicked();
     void onUninstallClicked();
     void onApplySettingsClicked();
+    void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void onDownloadFinished();
+    void onUpdateCheckFinished(QNetworkReply* reply);
+    void checkUpdateClicked();
+private:
+    int versionCompare(const QString& version1, const QString& version2);
     void onBrowseClicked();
     void updateProgress(int value);
     void onInstallationFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
-private:
-    void setupUI();
-    void applyModernStyle();
-    void createInstallationTab();
-    void createSettingsTab();
-    void createAboutTab();
-    bool checkInstallationStatus();
-    void updateUIState();
-    QString getInstallPath();
 
+
+    QString getInstallPath();
     // UI组件
     QWidget *centralWidget;
     QTabWidget *mainTabWidget;
@@ -73,7 +88,7 @@ private:
     QLineEdit *installPathEdit;
     QSlider *transparencySlider;
     QComboBox *themeComboBox;
-    QProcess *installProcess;
+
 };
 
 #endif // MAINWINDOW_H

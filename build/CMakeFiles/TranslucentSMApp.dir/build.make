@@ -141,12 +141,28 @@ CMakeFiles/TranslucentSMApp.dir/installer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TranslucentSMApp.dir/installer.cpp.s"
 	C:\Qt\6.9.1\mingw_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.cpp -o CMakeFiles\TranslucentSMApp.dir\installer.cpp.s
 
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: CMakeFiles/TranslucentSMApp.dir/flags.make
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: CMakeFiles/TranslucentSMApp.dir/includes_CXX.rsp
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/MainWindow.cpp
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: CMakeFiles/TranslucentSMApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj"
+	C:\Qt\6.9.1\mingw_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj -MF CMakeFiles\TranslucentSMApp.dir\MainWindow.cpp.obj.d -o CMakeFiles\TranslucentSMApp.dir\MainWindow.cpp.obj -c O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.cpp
+
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.i"
+	C:\Qt\6.9.1\mingw_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.cpp > CMakeFiles\TranslucentSMApp.dir\MainWindow.cpp.i
+
+CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.s"
+	C:\Qt\6.9.1\mingw_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\MainWindow.cpp -o CMakeFiles\TranslucentSMApp.dir\MainWindow.cpp.s
+
 # Object files for target TranslucentSMApp
 TranslucentSMApp_OBJECTS = \
 "CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj" \
 "CMakeFiles/TranslucentSMApp.dir/main.cpp.obj" \
-"CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj"
+"CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj" \
+"CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj"
 
 # External object files for target TranslucentSMApp
 TranslucentSMApp_EXTERNAL_OBJECTS =
@@ -155,11 +171,16 @@ bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/TranslucentSMApp_autogen/
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/TranslucentSM.cpp.obj
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/main.cpp.obj
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/installer.cpp.obj
+bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/build.make
+bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a
+bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a
+bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Network.a
+bin/TranslucentSM.exe: C:/Qt/6.9.1/mingw_64/lib/libQt6Core.a
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/linkLibs.rsp
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/objects1.rsp
 bin/TranslucentSM.exe: CMakeFiles/TranslucentSMApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin\TranslucentSM.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bin\TranslucentSM.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TranslucentSMApp.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\CMake\bin\cmake.exe" -E copy O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/bin/TranslucentSM.dll O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/bin
 

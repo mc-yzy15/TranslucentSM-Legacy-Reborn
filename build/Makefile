@@ -241,6 +241,30 @@ TranslucentSMApp_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp_autogen.dir\build.make CMakeFiles/TranslucentSMApp_autogen.dir/build
 .PHONY : TranslucentSMApp_autogen/fast
 
+MainWindow.obj: MainWindow.cpp.obj
+.PHONY : MainWindow.obj
+
+# target to build an object file
+MainWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj
+.PHONY : MainWindow.cpp.obj
+
+MainWindow.i: MainWindow.cpp.i
+.PHONY : MainWindow.i
+
+# target to preprocess a source file
+MainWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.i
+.PHONY : MainWindow.cpp.i
+
+MainWindow.s: MainWindow.cpp.s
+.PHONY : MainWindow.s
+
+# target to generate assembly for a file
+MainWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.s
+.PHONY : MainWindow.cpp.s
+
 TranslucentSM.obj: TranslucentSM.cpp.obj
 .PHONY : TranslucentSM.obj
 
@@ -403,6 +427,9 @@ help:
 	@echo ... TranslucentSM_autogen_timestamp_deps
 	@echo ... TranslucentSM
 	@echo ... TranslucentSMApp
+	@echo ... MainWindow.obj
+	@echo ... MainWindow.i
+	@echo ... MainWindow.s
 	@echo ... TranslucentSM.obj
 	@echo ... TranslucentSM.i
 	@echo ... TranslucentSM.s

@@ -1,4 +1,5 @@
 #include "TranslucentSM.h"
+#include <shlwapi.h>
 #include <windows.h>
 #include <winternl.h>
 #include <tlhelp32.h>
@@ -7,11 +8,11 @@
 #include <sddl.h>
 #include <versionhelpers.h>
 
-void TranslucentSM::applyTransparencySettings() {
+void TranslucentSM::applyTransparencySettings(const QString& processName, int transparencyValue) {
     // 增强版本检测逻辑
     // 使用Windows 11 24H2兼容的版本检测
     BOOL isWindows11OrGreater = FALSE;
-    if (IsWindows11OrGreater()) {
+    if (GetBuildNumber() >= 22000) {
         isWindows11OrGreater = TRUE;
     } else {
         // 回退到版本信息检查
@@ -25,15 +26,12 @@ void TranslucentSM::applyTransparencySettings() {
         isWindows11OrGreater = VerifyVersionInfo(&osvi, VER_MAJORVERSION | VER_MINORVERSION | VER_BUILDNUMBER, conditionMask);
     }
 
-    // Windows 11 24H2 (Build 26100+) 使用新的进程名
-    DWORD dwBuildNumber = GetBuildNumber();
-    const wchar_t* processName = (dwBuildNumber >= 26100) ? 
-        L"StartMenuExperienceHost.exe" : L"StartMenuExperienceHost.exe";
+    const wchar_t* targetProcessName = processName.toStdWString().c_str();
         
     // 获取进程ID
-    DWORD processId = GetProcessIdByName(processName);
+    DWORD processId = GetProcessIdByName(targetProcessName);
     if (processId == 0) {
-        std::cerr << "Failed to find " << processName << " process." << std::endl;
+        std::cerr << "Failed to find " << processName.toStdString() << " process." << std::endl;
         return;
     }
 
@@ -44,7 +42,7 @@ void TranslucentSM::applyTransparencySettings() {
     PathAppendW(dllPath, L"TranslucentSM.dll");
     
     if (!InjectDLL(processId, dllPath)) {
-        std::cerr << "Failed to inject DLL into " << processName << "." << std::endl;
+        std::cerr << "Failed to inject DLL into " << processName.toStdString() << "." << std::endl;
         return;
     }
 
@@ -158,8 +156,8 @@ bool TranslucentSM::SetRegistryValues() {
     RegGetValueW(hKey, NULL, L"TintOpacity", RRF_RT_REG_DWORD, NULL, &tintOpacity, &size);
     
     // 确保值在1-9范围内
-    tintLuminosityOpacity = std::max(1, std::min(9, tintLuminosityOpacity));
-    tintOpacity = std::max(1, std::min(9, tintOpacity));
+    tintLuminosityOpacity = std::max(static_cast<DWORD>(1), std::min(static_cast<DWORD>(9), tintLuminosityOpacity));
+    tintOpacity = std::max(static_cast<DWORD>(1), std::min(static_cast<DWORD>(9), tintOpacity));
 
     result = RegSetValueExW(hKey, L"TintLuminosityOpacity", 0, REG_DWORD, (BYTE*)&tintLuminosityOpacity, sizeof(DWORD));
     if (result != ERROR_SUCCESS) {

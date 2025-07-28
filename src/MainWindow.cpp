@@ -1,14 +1,17 @@
 #include "MainWindow.h"
+#include "TranslucentSM.h"
 #include "installer.h"
+#include "MainWindow.h"
 #include <QMouseEvent>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QScreen>
 #include <QGuiApplication>
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
 #include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QUrl>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QJsonDocument>
@@ -55,7 +58,7 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent), m_moving(false) {
 
 void TitleBar::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
-        m_startPos = event->globalPos();
+        m_startPos = event->globalPosition().toPoint();
         m_moving = true;
     }
     QWidget::mousePressEvent(event);
@@ -65,9 +68,9 @@ void TitleBar::mouseMoveEvent(QMouseEvent *event) {
     if (m_moving && (event->buttons() & Qt::LeftButton)) {
         QWidget *parent = parentWidget();
         if (parent) {
-            QPoint delta = event->globalPos() - m_startPos;
+            QPoint delta = event->globalPosition().toPoint() - m_startPos;
             parent->move(parent->pos() + delta);
-            m_startPos = event->globalPos();
+            m_startPos = event->globalPosition().toPoint();
         }
     }
     QWidget::mouseMoveEvent(event);
@@ -84,20 +87,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(ne
     applyModernStyle();
 
     // 创建中心部件
-    centralWidget = new QWidget(this);
-    centralWidget->setStyleSheet("background-color: #1e1e1e; border-radius: 8px;");
-    setCentralWidget(centralWidget);
+    QWidget *mainCentralWidget = new QWidget(this);
+    mainCentralWidget->setStyleSheet("background-color: #1e1e1e; border-radius: 8px;");
+    setCentralWidget(mainCentralWidget);
 
     // 主布局
-    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
-    mainLayout->setSpacing(0);
+    QVBoxLayout *layout = new QVBoxLayout(mainCentralWidget);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
 
     // 添加自定义标题栏
     TitleBar *titleBar = new TitleBar(this);
     connect(titleBar, &TitleBar::minimizeWindow, this, &QWidget::showMinimized);
     connect(titleBar, &TitleBar::closeWindow, this, &QWidget::close);
-    mainLayout->addWidget(titleBar);
+    layout->addWidget(titleBar);
 
     // 创建标签页部件
     mainTabWidget = new QTabWidget();
@@ -107,7 +110,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(ne
         "QTabBar::tab:selected { background-color: #3d3d3d; color: white; border-top-left-radius: 4px; border-top-right-radius: 4px; }"
         "QTabBar::tab:hover:!selected { background-color: #353535; }"
     );
-    mainLayout->addWidget(mainTabWidget);
+    layout->addWidget(mainTabWidget);
 
     // 创建各个标签页
     createInstallationTab();
@@ -135,7 +138,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(ne
     progressBar->setVisible(false);
     statusLayout->addWidget(progressBar, 2);
 
-    mainLayout->addWidget(statusBar);
+    layout->addWidget(statusBar);
 
     // 检查安装状态并更新UI
     updateUIState();
@@ -218,7 +221,8 @@ void MainWindow::createInstallationTab() {
 
     // 安装说明
     QLabel *infoLabel = new QLabel(
-        "TranslucentSM 将为您的 Windows 11 开始菜单添加透明效果。\n"\n        "安装过程将复制必要的文件并设置自动启动项。");
+        "TranslucentSM 为 Windows 11 开始菜单提供透明度效果。注意：该应用必须在\n"
+        "Windows 11 22000 版本以上使用。");
     infoLabel->setWordWrap(true);
     infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px;");
     layout->addWidget(infoLabel);
@@ -437,8 +441,8 @@ void MainWindow::onApplySettingsClicked() {
     settings.setValue("theme", themeComboBox->currentIndex());
 
     // 应用透明度设置到开始菜单进程
-    TranslucentSM translucentSM;
-    translucentSM.applyTransparencyToProcess("StartMenuExperienceHost.exe", transparencyValue);
+    TranslucentSM installTranslucentSM;
+    installTranslucentSM.applyTransparencySettings("StartMenuExperienceHost.exe", transparencyValue);
 
     statusLabel->setText("设置已应用");
     QMessageBox::information(this, "成功", "透明度设置已应用！");
@@ -494,15 +498,6 @@ QString MainWindow::getInstallPath() {
     return installPathEdit->text();
 }
 
-private:
-    Ui::MainWindow *ui;
-    QProcess *installProcess;
-    QProcess *uninstallProcess;
-    QNetworkAccessManager *networkManager;
-    QProgressBar *updateProgressBar;
-    QString currentVersion = "1.0.0";
-}
-
 void MainWindow::checkUpdateClicked() {
     statusLabel->setText("正在检查更新...");
     
@@ -546,13 +541,13 @@ void MainWindow::onUpdateCheckFinished(QNetworkReply *reply) {
                 updateProgressBar->setVisible(true);
                 updateProgressBar->setValue(0);
                 
-                connect(networkManager, &QNetworkAccessManager::downloadProgress, 
-                        this, &MainWindow::onDownloadProgress);
-                connect(networkManager, &QNetworkAccessManager::finished, 
-                        this, &MainWindow::onDownloadFinished);
-                
-                QNetworkRequest downloadRequest(QUrl(downloadUrl));
-                networkManager->get(downloadRequest);
+                QUrl downloadQUrl(downloadUrl);
+            QNetworkRequest downloadRequest(downloadQUrl);
+            QNetworkReply* reply = networkManager->get(downloadRequest);
+            connect(reply, &QNetworkReply::downloadProgress, 
+                    this, &MainWindow::onDownloadProgress);
+            connect(reply, &QNetworkReply::finished, 
+                    this, &MainWindow::onDownloadFinished);
             }
         } else {
             statusLabel->setText("当前已是最新版本");
@@ -572,9 +567,14 @@ void MainWindow::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal) {
     }
 }
 
-void MainWindow::onDownloadFinished(QNetworkReply *reply) {
+void MainWindow::onDownloadFinished() {
     updateProgressBar->setVisible(false);
-    
+
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+    if (!reply) {
+        return;
+    }
+
     if (reply->error() == QNetworkReply::NoError) {
         QString tempPath = QDir::tempPath() + "/TranslucentSM_Update.zip";
         QFile file(tempPath);

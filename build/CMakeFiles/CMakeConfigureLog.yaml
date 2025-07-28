@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       The system is: Windows - 10.0.19045 - AMD64
   -
@@ -16,7 +16,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -69,7 +69,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: C:/Qt/6.9.1/mingw_64/bin/gcc.exe 
@@ -90,7 +90,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -167,7 +167,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -244,7 +244,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -321,7 +321,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -398,7 +398,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -475,7 +475,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -552,7 +552,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -629,7 +629,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -706,7 +706,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -783,7 +783,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -860,7 +860,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -1008,7 +1008,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -1304,7 +1304,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -1603,7 +1603,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -1656,7 +1656,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/Qt/6.9.1/mingw_64/bin/g++.exe 
@@ -1677,7 +1677,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -1973,7 +1973,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -2271,7 +2271,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake:167 (enable_language)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake:2 (__windows_compiler_gnu)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake:48 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_RC_COMPILER"
     description: "RC compiler"
@@ -2436,12 +2436,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2450,13 +2450,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_a2f4f/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2f4f.dir\\build.make CMakeFiles/cmTC_a2f4f.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or'
-        Building C object CMakeFiles/cmTC_a2f4f.dir/CMakeCCompilerABI.c.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_8f91a/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8f91a.dir\\build.make CMakeFiles/cmTC_8f91a.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv'
+        Building C object CMakeFiles/cmTC_8f91a.dir/CMakeCCompilerABI.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -2465,8 +2465,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_a2f4f.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccsqQlaX.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_8f91a.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cctQcm66.s
         GNU C17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) version 14.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2485,14 +2485,14 @@ events:
          C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 94245774513fa7f0f98ee8b5b949a4b7
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\ccsqQlaX.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\cctQcm66.s
         GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_a2f4f.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a2f4f.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_8f91a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8f91a.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe
         COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe
@@ -2504,16 +2504,16 @@ events:
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2f4f.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a2f4f.'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccc4x0od.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2f4f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2f4f.dir/objects.a --no-whole-archive --out-implib libcmTC_a2f4f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f91a.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f91a.'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cceIeVCl.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f91a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_8f91a.dir/objects.a --no-whole-archive --out-implib libcmTC_8f91a.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         collect2 version 14.2.0
-        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccc4x0od.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2f4f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2f4f.dir/objects.a --no-whole-archive --out-implib libcmTC_a2f4f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cceIeVCl.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f91a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_8f91a.dir/objects.a --no-whole-archive --out-implib libcmTC_8f91a.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2f4f.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a2f4f.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a2f4f.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_a2f4f.dir/objects.a @CMakeFiles\\cmTC_a2f4f.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_a2f4f.dir/objects.a -Wl,--no-whole-archive -o cmTC_a2f4f.exe -Wl,--out-implib,libcmTC_a2f4f.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f91a.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f91a.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_8f91a.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_8f91a.dir/objects.a @CMakeFiles\\cmTC_8f91a.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_8f91a.dir/objects.a -Wl,--no-whole-archive -o cmTC_8f91a.exe -Wl,--out-implib,libcmTC_8f91a.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv'
         
       exitCode: 0
   -
@@ -2521,7 +2521,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -2543,18 +2543,18 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or']
+        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_a2f4f/fast]
-        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2f4f.dir\\build.make CMakeFiles/cmTC_a2f4f.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-ktr8or']
-        ignore line: [Building C object CMakeFiles/cmTC_a2f4f.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_8f91a/fast]
+        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8f91a.dir\\build.make CMakeFiles/cmTC_8f91a.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-f5lstv']
+        ignore line: [Building C object CMakeFiles/cmTC_8f91a.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -2563,8 +2563,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_a2f4f.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\ccsqQlaX.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_8f91a.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cctQcm66.s]
         ignore line: [GNU C17 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) version 14.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2583,8 +2583,8 @@ events:
         ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 94245774513fa7f0f98ee8b5b949a4b7]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\ccsqQlaX.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj C:\\Windows\\TEMP\\cctQcm66.s]
         ignore line: [GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r3) 2.44]
         ignore line: [COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/]
@@ -2595,9 +2595,9 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_a2f4f.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_a2f4f.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a2f4f.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_8f91a.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_8f91a.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8f91a.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe]
@@ -2616,13 +2616,13 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2f4f.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a2f4f.']
-        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccc4x0od.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2f4f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2f4f.dir/objects.a --no-whole-archive --out-implib libcmTC_a2f4f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f91a.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8f91a.']
+        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\cceIeVCl.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_8f91a.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_8f91a.dir/objects.a --no-whole-archive --out-implib libcmTC_8f91a.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccc4x0od.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\cceIeVCl.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -2644,7 +2644,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_a2f4f.exe] ==> ignore
+          arg [cmTC_8f91a.exe] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o]
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0]
@@ -2655,10 +2655,10 @@ events:
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_a2f4f.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_8f91a.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_a2f4f.dll.a] ==> ignore
+          arg [libcmTC_8f91a.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -2707,7 +2707,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the C compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "-v"
       
@@ -2717,7 +2717,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the C compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "-V"
       
@@ -2727,7 +2727,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the C compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "--version"
       
@@ -2736,12 +2736,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2751,13 +2751,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_2778f/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_2778f.dir\\build.make CMakeFiles/cmTC_2778f.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3'
-        Building CXX object CMakeFiles/cmTC_2778f.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_25ad3/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_25ad3.dir\\build.make CMakeFiles/cmTC_25ad3.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a'
+        Building CXX object CMakeFiles/cmTC_25ad3.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -2766,8 +2766,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_2778f.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cc1XQpju.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_25ad3.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cctlqa0b.s
         GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) version 14.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2792,14 +2792,14 @@ events:
          C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 3da29e1884ee8eb45ff9171cc0f881c4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\'
-         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\cc1XQpju.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\'
+         C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\cctlqa0b.s
         GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_2778f.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_2778f.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_25ad3.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_25ad3.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe
         COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe
@@ -2811,16 +2811,16 @@ events:
         gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 
         COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2778f.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2778f.'
-         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccXtuBhH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_2778f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_2778f.dir/objects.a --no-whole-archive --out-implib libcmTC_2778f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_25ad3.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_25ad3.'
+         C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccC5sxlq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_25ad3.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_25ad3.dir/objects.a --no-whole-archive --out-implib libcmTC_25ad3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         collect2 version 14.2.0
-        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccXtuBhH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_2778f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_2778f.dir/objects.a --no-whole-archive --out-implib libcmTC_2778f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
+        C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccC5sxlq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_25ad3.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_25ad3.dir/objects.a --no-whole-archive --out-implib libcmTC_25ad3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2778f.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2778f.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_2778f.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_2778f.dir/objects.a @CMakeFiles\\cmTC_2778f.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_2778f.dir/objects.a -Wl,--no-whole-archive -o cmTC_2778f.exe -Wl,--out-implib,libcmTC_2778f.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_25ad3.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_25ad3.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_25ad3.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_25ad3.dir/objects.a @CMakeFiles\\cmTC_25ad3.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_25ad3.dir/objects.a -Wl,--no-whole-archive -o cmTC_25ad3.exe -Wl,--out-implib,libcmTC_25ad3.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a'
         
       exitCode: 0
   -
@@ -2828,7 +2828,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -2856,18 +2856,18 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3']
+        ignore line: [Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_2778f/fast]
-        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_2778f.dir\\build.make CMakeFiles/cmTC_2778f.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-tmsyx3']
-        ignore line: [Building CXX object CMakeFiles/cmTC_2778f.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_25ad3/fast]
+        ignore line: [C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_25ad3.dir\\build.make CMakeFiles/cmTC_25ad3.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-1cuw5a']
+        ignore line: [Building CXX object CMakeFiles/cmTC_25ad3.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -2876,8 +2876,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_2778f.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cc1XQpju.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/cc1plus.exe -quiet -v -iprefix C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_25ad3.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Windows\\TEMP\\cctlqa0b.s]
         ignore line: [GNU C++17 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r3) version 14.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2902,8 +2902,8 @@ events:
         ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 3da29e1884ee8eb45ff9171cc0f881c4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\']
-        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\cc1XQpju.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\']
+        ignore line: [ C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Windows\\TEMP\\cctlqa0b.s]
         ignore line: [GNU assembler version 2.44 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r3) 2.44]
         ignore line: [COMPILER_PATH=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/]
@@ -2914,9 +2914,9 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_2778f.dir\\CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_2778f.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_2778f.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_25ad3.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_25ad3.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_25ad3.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe]
@@ -2935,13 +2935,13 @@ events:
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2778f.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2778f.']
-        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccXtuBhH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_2778f.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_2778f.dir/objects.a --no-whole-archive --out-implib libcmTC_2778f.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_25ad3.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_25ad3.']
+        link line: [ C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe -plugin C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll -plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccC5sxlq.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_25ad3.exe C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0 -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_25ad3.dir/objects.a --no-whole-archive --out-implib libcmTC_25ad3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtend.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Qt/6.9.1/mingw_64/bin/../libexec/gcc/x86_64-w64-mingw32/14.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccXtuBhH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Windows\\TEMP\\ccC5sxlq.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -2963,7 +2963,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_2778f.exe] ==> ignore
+          arg [cmTC_25ad3.exe] ==> ignore
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o] ==> obj [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/crtbegin.o]
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0]
@@ -2974,10 +2974,10 @@ events:
           arg [-LC:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..] ==> dir [C:/Qt/6.9.1/mingw_64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_2778f.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_25ad3.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_2778f.dll.a] ==> ignore
+          arg [libcmTC_25ad3.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3025,7 +3025,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the CXX compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "-v"
       
@@ -3035,7 +3035,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the CXX compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "-V"
       
@@ -3045,10 +3045,674 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the CXX compiler's linker: "Configured with: ../configure --prefix=/R/winlibs_staging_ucrt64/inst_gcc-14.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/R/winlibs_staging_ucrt64/gcc-14.2.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "--version"
       
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:387 (find_path)"
+      - "CMakeLists.txt:10 (find_package)"
+    mode: "path"
+    variable: "Vulkan_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan/vulkan.h"
+    candidate_directories:
+      - "/include/"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "D:/Program Files/VMware/VMware Workstation/bin/"
+      - "C:/Program Files/Zulu/zulu-8/bin/"
+      - "C:/Program Files/Zulu/zulu-21/bin/"
+      - "C:/Program Files/Zulu/zulu-11/bin/"
+      - "C:/Program Files/Zulu/zulu-17/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Bandizip/"
+      - "C:/Program Files/gsudo/Current/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/mingw64/bin/"
+      - "D:/Aria2/"
+      - "C:/Qt/6.9.1/mingw_64/bin/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/TranslucentSM/include/"
+      - "C:/Program Files (x86)/TranslucentSM/"
+    searched_directories:
+      - "/include/vulkan/vulkan.h"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/vulkan/vulkan.h"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/vulkan/vulkan.h"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/vulkan/vulkan.h"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/vulkan/vulkan.h"
+      - "D:/Program Files/VMware/VMware Workstation/bin/vulkan/vulkan.h"
+      - "C:/Program Files/Zulu/zulu-8/bin/vulkan/vulkan.h"
+      - "C:/Program Files/Zulu/zulu-21/bin/vulkan/vulkan.h"
+      - "C:/Program Files/Zulu/zulu-11/bin/vulkan/vulkan.h"
+      - "C:/Program Files/Zulu/zulu-17/bin/vulkan/vulkan.h"
+      - "C:/Windows/System32/vulkan/vulkan.h"
+      - "C:/Windows/vulkan/vulkan.h"
+      - "C:/Windows/System32/wbem/vulkan/vulkan.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/vulkan/vulkan.h"
+      - "C:/Windows/System32/OpenSSH/vulkan/vulkan.h"
+      - "C:/Program Files/dotnet/vulkan/vulkan.h"
+      - "C:/Program Files/Git/cmd/vulkan/vulkan.h"
+      - "C:/Program Files/Bandizip/vulkan/vulkan.h"
+      - "C:/Program Files/gsudo/Current/vulkan/vulkan.h"
+      - "C:/Program Files/Tailscale/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/bin/vulkan/vulkan.h"
+      - "C:/Program Files/mingw64/bin/vulkan/vulkan.h"
+      - "D:/Aria2/vulkan/vulkan.h"
+      - "C:/Qt/6.9.1/mingw_64/bin/vulkan/vulkan.h"
+      - "C:/Program Files/include/vulkan/vulkan.h"
+      - "C:/Program Files/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/include/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/include/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/TranslucentSM/include/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/TranslucentSM/vulkan/vulkan.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:394 (find_library)"
+      - "CMakeLists.txt:10 (find_package)"
+    mode: "library"
+    variable: "Vulkan_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan-1"
+    candidate_directories:
+      - "/lib/"
+      - "/bin/"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "D:/Program Files/VMware/VMware Workstation/bin/"
+      - "C:/Program Files/Zulu/zulu-8/bin/"
+      - "C:/Program Files/Zulu/zulu-21/bin/"
+      - "C:/Program Files/Zulu/zulu-11/bin/"
+      - "C:/Program Files/Zulu/zulu-17/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Bandizip/"
+      - "C:/Program Files/gsudo/Current/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/mingw64/bin/"
+      - "D:/Aria2/"
+      - "C:/Qt/6.9.1/mingw_64/bin/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/TranslucentSM/lib/"
+      - "C:/Program Files (x86)/TranslucentSM/"
+      - "C:/Program Files (x86)/TranslucentSM/bin/"
+    searched_directories:
+      - "/lib/"
+      - "/bin/"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "D:/Program Files/VMware/VMware Workstation/bin/"
+      - "C:/Program Files/Zulu/zulu-8/bin/"
+      - "C:/Program Files/Zulu/zulu-21/bin/"
+      - "C:/Program Files/Zulu/zulu-11/bin/"
+      - "C:/Program Files/Zulu/zulu-17/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Bandizip/"
+      - "C:/Program Files/gsudo/Current/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/mingw64/bin/"
+      - "D:/Aria2/"
+      - "C:/Qt/6.9.1/mingw_64/bin/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/TranslucentSM/lib/"
+      - "C:/Program Files (x86)/TranslucentSM/"
+      - "C:/Program Files (x86)/TranslucentSM/bin/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files (x86)/TranslucentSM/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:402 (find_program)"
+      - "CMakeLists.txt:10 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLC_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslc"
+    candidate_directories:
+      - "/bin/"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "D:/Program Files/VMware/VMware Workstation/bin/"
+      - "C:/Program Files/Zulu/zulu-8/bin/"
+      - "C:/Program Files/Zulu/zulu-21/bin/"
+      - "C:/Program Files/Zulu/zulu-11/bin/"
+      - "C:/Program Files/Zulu/zulu-17/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Bandizip/"
+      - "C:/Program Files/gsudo/Current/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/mingw64/bin/"
+      - "D:/Aria2/"
+      - "C:/Qt/6.9.1/mingw_64/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/TranslucentSM/bin/"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/"
+      - "C:/Program Files (x86)/TranslucentSM/"
+    searched_directories:
+      - "/bin/glslc.com"
+      - "/bin/glslc.exe"
+      - "/bin/glslc"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc.com"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc.exe"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc.com"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc.exe"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc.com"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc.exe"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc.com"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc.exe"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc.com"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc.exe"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslc.com"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslc.exe"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslc"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslc.com"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslc.exe"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslc"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslc.com"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslc.exe"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslc"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslc.com"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslc.exe"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslc"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslc.com"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslc.exe"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslc"
+      - "C:/Windows/System32/glslc.com"
+      - "C:/Windows/System32/glslc.exe"
+      - "C:/Windows/System32/glslc"
+      - "C:/Windows/glslc.com"
+      - "C:/Windows/glslc.exe"
+      - "C:/Windows/glslc"
+      - "C:/Windows/System32/wbem/glslc.com"
+      - "C:/Windows/System32/wbem/glslc.exe"
+      - "C:/Windows/System32/wbem/glslc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc"
+      - "C:/Windows/System32/OpenSSH/glslc.com"
+      - "C:/Windows/System32/OpenSSH/glslc.exe"
+      - "C:/Windows/System32/OpenSSH/glslc"
+      - "C:/Program Files/dotnet/glslc.com"
+      - "C:/Program Files/dotnet/glslc.exe"
+      - "C:/Program Files/dotnet/glslc"
+      - "C:/Program Files/Git/cmd/glslc.com"
+      - "C:/Program Files/Git/cmd/glslc.exe"
+      - "C:/Program Files/Git/cmd/glslc"
+      - "C:/Program Files/Bandizip/glslc.com"
+      - "C:/Program Files/Bandizip/glslc.exe"
+      - "C:/Program Files/Bandizip/glslc"
+      - "C:/Program Files/gsudo/Current/glslc.com"
+      - "C:/Program Files/gsudo/Current/glslc.exe"
+      - "C:/Program Files/gsudo/Current/glslc"
+      - "C:/Program Files/Tailscale/glslc.com"
+      - "C:/Program Files/Tailscale/glslc.exe"
+      - "C:/Program Files/Tailscale/glslc"
+      - "C:/Program Files/CMake/bin/glslc.com"
+      - "C:/Program Files/CMake/bin/glslc.exe"
+      - "C:/Program Files/CMake/bin/glslc"
+      - "C:/Program Files/mingw64/bin/glslc.com"
+      - "C:/Program Files/mingw64/bin/glslc.exe"
+      - "C:/Program Files/mingw64/bin/glslc"
+      - "D:/Aria2/glslc.com"
+      - "D:/Aria2/glslc.exe"
+      - "D:/Aria2/glslc"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslc.com"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslc.exe"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslc"
+      - "C:/Program Files/bin/glslc.com"
+      - "C:/Program Files/bin/glslc.exe"
+      - "C:/Program Files/bin/glslc"
+      - "C:/Program Files/sbin/glslc.com"
+      - "C:/Program Files/sbin/glslc.exe"
+      - "C:/Program Files/sbin/glslc"
+      - "C:/Program Files/glslc.com"
+      - "C:/Program Files/glslc.exe"
+      - "C:/Program Files/glslc"
+      - "C:/Program Files (x86)/bin/glslc.com"
+      - "C:/Program Files (x86)/bin/glslc.exe"
+      - "C:/Program Files (x86)/bin/glslc"
+      - "C:/Program Files (x86)/sbin/glslc.com"
+      - "C:/Program Files (x86)/sbin/glslc.exe"
+      - "C:/Program Files (x86)/sbin/glslc"
+      - "C:/Program Files (x86)/glslc.com"
+      - "C:/Program Files (x86)/glslc.exe"
+      - "C:/Program Files (x86)/glslc"
+      - "C:/Program Files/CMake/bin/glslc.com"
+      - "C:/Program Files/CMake/bin/glslc.exe"
+      - "C:/Program Files/CMake/bin/glslc"
+      - "C:/Program Files/CMake/sbin/glslc.com"
+      - "C:/Program Files/CMake/sbin/glslc.exe"
+      - "C:/Program Files/CMake/sbin/glslc"
+      - "C:/Program Files/CMake/glslc.com"
+      - "C:/Program Files/CMake/glslc.exe"
+      - "C:/Program Files/CMake/glslc"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslc.com"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslc.exe"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslc"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc.com"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc.exe"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc"
+      - "C:/Program Files (x86)/TranslucentSM/glslc.com"
+      - "C:/Program Files (x86)/TranslucentSM/glslc.exe"
+      - "C:/Program Files (x86)/TranslucentSM/glslc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:410 (find_program)"
+      - "CMakeLists.txt:10 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslangValidator"
+    candidate_directories:
+      - "/bin/"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
+      - "D:/Program Files/VMware/VMware Workstation/bin/"
+      - "C:/Program Files/Zulu/zulu-8/bin/"
+      - "C:/Program Files/Zulu/zulu-21/bin/"
+      - "C:/Program Files/Zulu/zulu-11/bin/"
+      - "C:/Program Files/Zulu/zulu-17/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Bandizip/"
+      - "C:/Program Files/gsudo/Current/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/mingw64/bin/"
+      - "D:/Aria2/"
+      - "C:/Qt/6.9.1/mingw_64/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/TranslucentSM/bin/"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/"
+      - "C:/Program Files (x86)/TranslucentSM/"
+    searched_directories:
+      - "/bin/glslangValidator.com"
+      - "/bin/glslangValidator.exe"
+      - "/bin/glslangValidator"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator.com"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator.exe"
+      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator.com"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator.exe"
+      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator.com"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator.exe"
+      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator.com"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator.exe"
+      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator.com"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator.exe"
+      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator.com"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator.exe"
+      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator.com"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator.exe"
+      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator.com"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator.exe"
+      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator.com"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator.exe"
+      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator.com"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator.exe"
+      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator"
+      - "C:/Windows/System32/glslangValidator.com"
+      - "C:/Windows/System32/glslangValidator.exe"
+      - "C:/Windows/System32/glslangValidator"
+      - "C:/Windows/glslangValidator.com"
+      - "C:/Windows/glslangValidator.exe"
+      - "C:/Windows/glslangValidator"
+      - "C:/Windows/System32/wbem/glslangValidator.com"
+      - "C:/Windows/System32/wbem/glslangValidator.exe"
+      - "C:/Windows/System32/wbem/glslangValidator"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.com"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.exe"
+      - "C:/Windows/System32/OpenSSH/glslangValidator"
+      - "C:/Program Files/dotnet/glslangValidator.com"
+      - "C:/Program Files/dotnet/glslangValidator.exe"
+      - "C:/Program Files/dotnet/glslangValidator"
+      - "C:/Program Files/Git/cmd/glslangValidator.com"
+      - "C:/Program Files/Git/cmd/glslangValidator.exe"
+      - "C:/Program Files/Git/cmd/glslangValidator"
+      - "C:/Program Files/Bandizip/glslangValidator.com"
+      - "C:/Program Files/Bandizip/glslangValidator.exe"
+      - "C:/Program Files/Bandizip/glslangValidator"
+      - "C:/Program Files/gsudo/Current/glslangValidator.com"
+      - "C:/Program Files/gsudo/Current/glslangValidator.exe"
+      - "C:/Program Files/gsudo/Current/glslangValidator"
+      - "C:/Program Files/Tailscale/glslangValidator.com"
+      - "C:/Program Files/Tailscale/glslangValidator.exe"
+      - "C:/Program Files/Tailscale/glslangValidator"
+      - "C:/Program Files/CMake/bin/glslangValidator.com"
+      - "C:/Program Files/CMake/bin/glslangValidator.exe"
+      - "C:/Program Files/CMake/bin/glslangValidator"
+      - "C:/Program Files/mingw64/bin/glslangValidator.com"
+      - "C:/Program Files/mingw64/bin/glslangValidator.exe"
+      - "C:/Program Files/mingw64/bin/glslangValidator"
+      - "D:/Aria2/glslangValidator.com"
+      - "D:/Aria2/glslangValidator.exe"
+      - "D:/Aria2/glslangValidator"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator.com"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator.exe"
+      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator"
+      - "C:/Program Files/bin/glslangValidator.com"
+      - "C:/Program Files/bin/glslangValidator.exe"
+      - "C:/Program Files/bin/glslangValidator"
+      - "C:/Program Files/sbin/glslangValidator.com"
+      - "C:/Program Files/sbin/glslangValidator.exe"
+      - "C:/Program Files/sbin/glslangValidator"
+      - "C:/Program Files/glslangValidator.com"
+      - "C:/Program Files/glslangValidator.exe"
+      - "C:/Program Files/glslangValidator"
+      - "C:/Program Files (x86)/bin/glslangValidator.com"
+      - "C:/Program Files (x86)/bin/glslangValidator.exe"
+      - "C:/Program Files (x86)/bin/glslangValidator"
+      - "C:/Program Files (x86)/sbin/glslangValidator.com"
+      - "C:/Program Files (x86)/sbin/glslangValidator.exe"
+      - "C:/Program Files (x86)/sbin/glslangValidator"
+      - "C:/Program Files (x86)/glslangValidator.com"
+      - "C:/Program Files (x86)/glslangValidator.exe"
+      - "C:/Program Files (x86)/glslangValidator"
+      - "C:/Program Files/CMake/bin/glslangValidator.com"
+      - "C:/Program Files/CMake/bin/glslangValidator.exe"
+      - "C:/Program Files/CMake/bin/glslangValidator"
+      - "C:/Program Files/CMake/sbin/glslangValidator.com"
+      - "C:/Program Files/CMake/sbin/glslangValidator.exe"
+      - "C:/Program Files/CMake/sbin/glslangValidator"
+      - "C:/Program Files/CMake/glslangValidator.com"
+      - "C:/Program Files/CMake/glslangValidator.exe"
+      - "C:/Program Files/CMake/glslangValidator"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator.com"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator.exe"
+      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator.com"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator.exe"
+      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator"
+      - "C:/Program Files (x86)/TranslucentSM/glslangValidator.com"
+      - "C:/Program Files (x86)/TranslucentSM/glslangValidator.exe"
+      - "C:/Program Files (x86)/TranslucentSM/glslangValidator"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -3060,12 +3724,12 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:168 (include)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-3qf5nd"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-3qf5nd"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d6xhzc"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d6xhzc"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -3075,19 +3739,19 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-3qf5nd'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d6xhzc'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_5d4b3/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5d4b3.dir\\build.make CMakeFiles/cmTC_5d4b3.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-3qf5nd'
-        Building C object CMakeFiles/cmTC_5d4b3.dir/src.c.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\\cmTC_5d4b3.dir\\src.c.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3qf5nd\\src.c
-        Linking C executable cmTC_5d4b3.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5d4b3.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5d4b3.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_5d4b3.dir/objects.a @CMakeFiles\\cmTC_5d4b3.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_5d4b3.dir/objects.a -Wl,--no-whole-archive -o cmTC_5d4b3.exe -Wl,--out-implib,libcmTC_5d4b3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_5d4b3.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-3qf5nd'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_a50c4/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a50c4.dir\\build.make CMakeFiles/cmTC_a50c4.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d6xhzc'
+        Building C object CMakeFiles/cmTC_a50c4.dir/src.c.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\\cmTC_a50c4.dir\\src.c.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-d6xhzc\\src.c
+        Linking C executable cmTC_a50c4.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a50c4.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a50c4.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_a50c4.dir/objects.a @CMakeFiles\\cmTC_a50c4.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_a50c4.dir/objects.a -Wl,--no-whole-archive -o cmTC_a50c4.exe -Wl,--out-implib,libcmTC_a50c4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a50c4.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-d6xhzc'
         
       exitCode: 0
   -
@@ -3100,7 +3764,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:39 (_qt_internal_find_tool_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -3379,7 +4043,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:39 (_qt_internal_find_tool_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -3655,7 +4319,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:39 (_qt_internal_find_tool_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -3939,12 +4603,12 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-gy2u8c"
-      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-gy2u8c"
+      source: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-wiepdr"
+      binary: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-wiepdr"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -3954,19 +4618,19 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-gy2u8c'
+        Change Dir: 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-wiepdr'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_c4f40/fast
-        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c4f40.dir\\build.make CMakeFiles/cmTC_c4f40.dir/build
-        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-gy2u8c'
-        Building CXX object CMakeFiles/cmTC_c4f40.dir/src.cxx.obj
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -DHAVE_STDATOMIC   -o CMakeFiles\\cmTC_c4f40.dir\\src.cxx.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gy2u8c\\src.cxx
-        Linking CXX executable cmTC_c4f40.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c4f40.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c4f40.dir/objects.a
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_c4f40.dir/objects.a @CMakeFiles\\cmTC_c4f40.dir\\objects1.rsp
-        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_c4f40.dir/objects.a -Wl,--no-whole-archive -o cmTC_c4f40.exe -Wl,--out-implib,libcmTC_c4f40.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_c4f40.dir\\linkLibs.rsp
-        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-gy2u8c'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe -f Makefile cmTC_4b27b/fast
+        C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4b27b.dir\\build.make CMakeFiles/cmTC_4b27b.dir/build
+        mingw32-make[1]: Entering directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-wiepdr'
+        Building CXX object CMakeFiles/cmTC_4b27b.dir/src.cxx.obj
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -DHAVE_STDATOMIC   -o CMakeFiles\\cmTC_4b27b.dir\\src.cxx.obj -c O:\\Users\\Yzy15\\Documents\\GitHub\\TranslucentSM-Legacy-Reborn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wiepdr\\src.cxx
+        Linking CXX executable cmTC_4b27b.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4b27b.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4b27b.dir/objects.a
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\ar.exe qc CMakeFiles\\cmTC_4b27b.dir/objects.a @CMakeFiles\\cmTC_4b27b.dir\\objects1.rsp
+        C:\\Qt\\6.9.1\\mingw_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_4b27b.dir/objects.a -Wl,--no-whole-archive -o cmTC_4b27b.exe -Wl,--out-implib,libcmTC_4b27b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_4b27b.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/CMakeScratch/TryCompile-wiepdr'
         
       exitCode: 0
   -
@@ -3981,7 +4645,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6ZlibPrivate"
     configs:
       -
@@ -4086,7 +4750,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6EntryPointPrivate"
     configs:
       -
@@ -4188,7 +4852,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6CorePrivate"
     configs:
       -
@@ -4292,7 +4956,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     mode: "program"
     variable: "WINDEPLOYQT_EXECUTABLE"
     description: "Path to a program."
@@ -4390,7 +5054,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6Core"
     configs:
       -
@@ -4484,706 +5148,6 @@ events:
         - "C:/Program Files/CMake"
         - "C:/Program Files (x86)/TranslucentSM"
   -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:387 (find_path)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:43 (include)"
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
-    mode: "path"
-    variable: "Vulkan_INCLUDE_DIR"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "vulkan/vulkan.h"
-    candidate_directories:
-      - "/include/"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
-      - "D:/Program Files/VMware/VMware Workstation/bin/"
-      - "C:/Program Files/Zulu/zulu-8/bin/"
-      - "C:/Program Files/Zulu/zulu-21/bin/"
-      - "C:/Program Files/Zulu/zulu-11/bin/"
-      - "C:/Program Files/Zulu/zulu-17/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/Bandizip/"
-      - "C:/Program Files/gsudo/Current/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/mingw64/bin/"
-      - "D:/Aria2/"
-      - "C:/Qt/6.9.1/mingw_64/bin/"
-      - "C:/Program Files/include/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/include/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/include/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/TranslucentSM/include/"
-      - "C:/Program Files (x86)/TranslucentSM/"
-    searched_directories:
-      - "/include/vulkan/vulkan.h"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/vulkan/vulkan.h"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/vulkan/vulkan.h"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/vulkan/vulkan.h"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/vulkan/vulkan.h"
-      - "D:/Program Files/VMware/VMware Workstation/bin/vulkan/vulkan.h"
-      - "C:/Program Files/Zulu/zulu-8/bin/vulkan/vulkan.h"
-      - "C:/Program Files/Zulu/zulu-21/bin/vulkan/vulkan.h"
-      - "C:/Program Files/Zulu/zulu-11/bin/vulkan/vulkan.h"
-      - "C:/Program Files/Zulu/zulu-17/bin/vulkan/vulkan.h"
-      - "C:/Windows/System32/vulkan/vulkan.h"
-      - "C:/Windows/vulkan/vulkan.h"
-      - "C:/Windows/System32/wbem/vulkan/vulkan.h"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/vulkan/vulkan.h"
-      - "C:/Windows/System32/OpenSSH/vulkan/vulkan.h"
-      - "C:/Program Files/dotnet/vulkan/vulkan.h"
-      - "C:/Program Files/Git/cmd/vulkan/vulkan.h"
-      - "C:/Program Files/Bandizip/vulkan/vulkan.h"
-      - "C:/Program Files/gsudo/Current/vulkan/vulkan.h"
-      - "C:/Program Files/Tailscale/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/bin/vulkan/vulkan.h"
-      - "C:/Program Files/mingw64/bin/vulkan/vulkan.h"
-      - "D:/Aria2/vulkan/vulkan.h"
-      - "C:/Qt/6.9.1/mingw_64/bin/vulkan/vulkan.h"
-      - "C:/Program Files/include/vulkan/vulkan.h"
-      - "C:/Program Files/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/include/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/include/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/TranslucentSM/include/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/TranslucentSM/vulkan/vulkan.h"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
-        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
-        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\Bandizip\\"
-        - "C:\\Program Files\\Bandizip"
-        - "C:\\Program Files\\gsudo\\Current"
-        - "C:\\Program Files\\Tailscale\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\mingw64\\bin"
-        - "D:\\Aria2"
-        - "C:/Qt/6.9.1/mingw_64/bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/TranslucentSM"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:394 (find_library)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:43 (include)"
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
-    mode: "library"
-    variable: "Vulkan_LIBRARY"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "vulkan-1"
-    candidate_directories:
-      - "/lib/"
-      - "/bin/"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
-      - "D:/Program Files/VMware/VMware Workstation/bin/"
-      - "C:/Program Files/Zulu/zulu-8/bin/"
-      - "C:/Program Files/Zulu/zulu-21/bin/"
-      - "C:/Program Files/Zulu/zulu-11/bin/"
-      - "C:/Program Files/Zulu/zulu-17/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/Bandizip/"
-      - "C:/Program Files/gsudo/Current/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/mingw64/bin/"
-      - "D:/Aria2/"
-      - "C:/Qt/6.9.1/mingw_64/bin/"
-      - "C:/Program Files/lib/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/lib/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/lib/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/TranslucentSM/lib/"
-      - "C:/Program Files (x86)/TranslucentSM/"
-      - "C:/Program Files (x86)/TranslucentSM/bin/"
-    searched_directories:
-      - "/lib/"
-      - "/bin/"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
-      - "D:/Program Files/VMware/VMware Workstation/bin/"
-      - "C:/Program Files/Zulu/zulu-8/bin/"
-      - "C:/Program Files/Zulu/zulu-21/bin/"
-      - "C:/Program Files/Zulu/zulu-11/bin/"
-      - "C:/Program Files/Zulu/zulu-17/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/Bandizip/"
-      - "C:/Program Files/gsudo/Current/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/mingw64/bin/"
-      - "D:/Aria2/"
-      - "C:/Qt/6.9.1/mingw_64/bin/"
-      - "C:/Program Files/lib/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/lib/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/lib/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/TranslucentSM/lib/"
-      - "C:/Program Files (x86)/TranslucentSM/"
-      - "C:/Program Files (x86)/TranslucentSM/bin/"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
-        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
-        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\Bandizip\\"
-        - "C:\\Program Files\\Bandizip"
-        - "C:\\Program Files\\gsudo\\Current"
-        - "C:\\Program Files\\Tailscale\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\mingw64\\bin"
-        - "D:\\Aria2"
-        - "C:/Qt/6.9.1/mingw_64/bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/TranslucentSM"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "C:/Program Files (x86)/TranslucentSM/bin"
-        - "C:/Program Files/CMake/bin"
-        - "/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:402 (find_program)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:43 (include)"
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
-    mode: "program"
-    variable: "Vulkan_GLSLC_EXECUTABLE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "glslc"
-    candidate_directories:
-      - "/bin/"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
-      - "D:/Program Files/VMware/VMware Workstation/bin/"
-      - "C:/Program Files/Zulu/zulu-8/bin/"
-      - "C:/Program Files/Zulu/zulu-21/bin/"
-      - "C:/Program Files/Zulu/zulu-11/bin/"
-      - "C:/Program Files/Zulu/zulu-17/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/Bandizip/"
-      - "C:/Program Files/gsudo/Current/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/mingw64/bin/"
-      - "D:/Aria2/"
-      - "C:/Qt/6.9.1/mingw_64/bin/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/CMake/sbin/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/TranslucentSM/bin/"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/"
-      - "C:/Program Files (x86)/TranslucentSM/"
-    searched_directories:
-      - "/bin/glslc.com"
-      - "/bin/glslc.exe"
-      - "/bin/glslc"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc.com"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc.exe"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslc"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc.com"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc.exe"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslc"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc.com"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc.exe"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslc"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc.com"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc.exe"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslc"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslc"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslc.com"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslc.exe"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslc"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslc.com"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslc.exe"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslc"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslc.com"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslc.exe"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslc"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslc.com"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslc.exe"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslc"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslc.com"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslc.exe"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslc"
-      - "C:/Windows/System32/glslc.com"
-      - "C:/Windows/System32/glslc.exe"
-      - "C:/Windows/System32/glslc"
-      - "C:/Windows/glslc.com"
-      - "C:/Windows/glslc.exe"
-      - "C:/Windows/glslc"
-      - "C:/Windows/System32/wbem/glslc.com"
-      - "C:/Windows/System32/wbem/glslc.exe"
-      - "C:/Windows/System32/wbem/glslc"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc"
-      - "C:/Windows/System32/OpenSSH/glslc.com"
-      - "C:/Windows/System32/OpenSSH/glslc.exe"
-      - "C:/Windows/System32/OpenSSH/glslc"
-      - "C:/Program Files/dotnet/glslc.com"
-      - "C:/Program Files/dotnet/glslc.exe"
-      - "C:/Program Files/dotnet/glslc"
-      - "C:/Program Files/Git/cmd/glslc.com"
-      - "C:/Program Files/Git/cmd/glslc.exe"
-      - "C:/Program Files/Git/cmd/glslc"
-      - "C:/Program Files/Bandizip/glslc.com"
-      - "C:/Program Files/Bandizip/glslc.exe"
-      - "C:/Program Files/Bandizip/glslc"
-      - "C:/Program Files/gsudo/Current/glslc.com"
-      - "C:/Program Files/gsudo/Current/glslc.exe"
-      - "C:/Program Files/gsudo/Current/glslc"
-      - "C:/Program Files/Tailscale/glslc.com"
-      - "C:/Program Files/Tailscale/glslc.exe"
-      - "C:/Program Files/Tailscale/glslc"
-      - "C:/Program Files/CMake/bin/glslc.com"
-      - "C:/Program Files/CMake/bin/glslc.exe"
-      - "C:/Program Files/CMake/bin/glslc"
-      - "C:/Program Files/mingw64/bin/glslc.com"
-      - "C:/Program Files/mingw64/bin/glslc.exe"
-      - "C:/Program Files/mingw64/bin/glslc"
-      - "D:/Aria2/glslc.com"
-      - "D:/Aria2/glslc.exe"
-      - "D:/Aria2/glslc"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslc.com"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslc.exe"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslc"
-      - "C:/Program Files/bin/glslc.com"
-      - "C:/Program Files/bin/glslc.exe"
-      - "C:/Program Files/bin/glslc"
-      - "C:/Program Files/sbin/glslc.com"
-      - "C:/Program Files/sbin/glslc.exe"
-      - "C:/Program Files/sbin/glslc"
-      - "C:/Program Files/glslc.com"
-      - "C:/Program Files/glslc.exe"
-      - "C:/Program Files/glslc"
-      - "C:/Program Files (x86)/bin/glslc.com"
-      - "C:/Program Files (x86)/bin/glslc.exe"
-      - "C:/Program Files (x86)/bin/glslc"
-      - "C:/Program Files (x86)/sbin/glslc.com"
-      - "C:/Program Files (x86)/sbin/glslc.exe"
-      - "C:/Program Files (x86)/sbin/glslc"
-      - "C:/Program Files (x86)/glslc.com"
-      - "C:/Program Files (x86)/glslc.exe"
-      - "C:/Program Files (x86)/glslc"
-      - "C:/Program Files/CMake/bin/glslc.com"
-      - "C:/Program Files/CMake/bin/glslc.exe"
-      - "C:/Program Files/CMake/bin/glslc"
-      - "C:/Program Files/CMake/sbin/glslc.com"
-      - "C:/Program Files/CMake/sbin/glslc.exe"
-      - "C:/Program Files/CMake/sbin/glslc"
-      - "C:/Program Files/CMake/glslc.com"
-      - "C:/Program Files/CMake/glslc.exe"
-      - "C:/Program Files/CMake/glslc"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslc.com"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslc.exe"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslc"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc.com"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc.exe"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslc"
-      - "C:/Program Files (x86)/TranslucentSM/glslc.com"
-      - "C:/Program Files (x86)/TranslucentSM/glslc.exe"
-      - "C:/Program Files (x86)/TranslucentSM/glslc"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
-        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
-        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\Bandizip\\"
-        - "C:\\Program Files\\Bandizip"
-        - "C:\\Program Files\\gsudo\\Current"
-        - "C:\\Program Files\\Tailscale\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\mingw64\\bin"
-        - "D:\\Aria2"
-        - "C:/Qt/6.9.1/mingw_64/bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/TranslucentSM"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindVulkan.cmake:410 (find_program)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:43 (include)"
-      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
-      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
-    mode: "program"
-    variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "glslangValidator"
-    candidate_directories:
-      - "/bin/"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/"
-      - "D:/Program Files/VMware/VMware Workstation/bin/"
-      - "C:/Program Files/Zulu/zulu-8/bin/"
-      - "C:/Program Files/Zulu/zulu-21/bin/"
-      - "C:/Program Files/Zulu/zulu-11/bin/"
-      - "C:/Program Files/Zulu/zulu-17/bin/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/Bandizip/"
-      - "C:/Program Files/gsudo/Current/"
-      - "C:/Program Files/Tailscale/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/mingw64/bin/"
-      - "D:/Aria2/"
-      - "C:/Qt/6.9.1/mingw_64/bin/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/CMake/sbin/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/TranslucentSM/bin/"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/"
-      - "C:/Program Files (x86)/TranslucentSM/"
-    searched_directories:
-      - "/bin/glslangValidator.com"
-      - "/bin/glslangValidator.exe"
-      - "/bin/glslangValidator"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator.com"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator.exe"
-      - "C:/Users/1/.trae-cn/binaries/node/versions/22.17.1/glslangValidator"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator.com"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator.exe"
-      - "C:/Users/1/.trae-cn/sdks/workspaces/21626884/versions/node/current/glslangValidator"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator.com"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator.exe"
-      - "C:/Users/1/.trae-cn/sdks/versions/node/current/glslangValidator"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator.com"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator.exe"
-      - "C:/Users/1/.flutter/flutter/bin/cache/dart-sdk/bin/glslangValidator"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator.com"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator.exe"
-      - "C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler/glslangValidator"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator.com"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator.exe"
-      - "D:/Program Files/VMware/VMware Workstation/bin/glslangValidator"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator.com"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator.exe"
-      - "C:/Program Files/Zulu/zulu-8/bin/glslangValidator"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator.com"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator.exe"
-      - "C:/Program Files/Zulu/zulu-21/bin/glslangValidator"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator.com"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator.exe"
-      - "C:/Program Files/Zulu/zulu-11/bin/glslangValidator"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator.com"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator.exe"
-      - "C:/Program Files/Zulu/zulu-17/bin/glslangValidator"
-      - "C:/Windows/System32/glslangValidator.com"
-      - "C:/Windows/System32/glslangValidator.exe"
-      - "C:/Windows/System32/glslangValidator"
-      - "C:/Windows/glslangValidator.com"
-      - "C:/Windows/glslangValidator.exe"
-      - "C:/Windows/glslangValidator"
-      - "C:/Windows/System32/wbem/glslangValidator.com"
-      - "C:/Windows/System32/wbem/glslangValidator.exe"
-      - "C:/Windows/System32/wbem/glslangValidator"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator"
-      - "C:/Windows/System32/OpenSSH/glslangValidator.com"
-      - "C:/Windows/System32/OpenSSH/glslangValidator.exe"
-      - "C:/Windows/System32/OpenSSH/glslangValidator"
-      - "C:/Program Files/dotnet/glslangValidator.com"
-      - "C:/Program Files/dotnet/glslangValidator.exe"
-      - "C:/Program Files/dotnet/glslangValidator"
-      - "C:/Program Files/Git/cmd/glslangValidator.com"
-      - "C:/Program Files/Git/cmd/glslangValidator.exe"
-      - "C:/Program Files/Git/cmd/glslangValidator"
-      - "C:/Program Files/Bandizip/glslangValidator.com"
-      - "C:/Program Files/Bandizip/glslangValidator.exe"
-      - "C:/Program Files/Bandizip/glslangValidator"
-      - "C:/Program Files/gsudo/Current/glslangValidator.com"
-      - "C:/Program Files/gsudo/Current/glslangValidator.exe"
-      - "C:/Program Files/gsudo/Current/glslangValidator"
-      - "C:/Program Files/Tailscale/glslangValidator.com"
-      - "C:/Program Files/Tailscale/glslangValidator.exe"
-      - "C:/Program Files/Tailscale/glslangValidator"
-      - "C:/Program Files/CMake/bin/glslangValidator.com"
-      - "C:/Program Files/CMake/bin/glslangValidator.exe"
-      - "C:/Program Files/CMake/bin/glslangValidator"
-      - "C:/Program Files/mingw64/bin/glslangValidator.com"
-      - "C:/Program Files/mingw64/bin/glslangValidator.exe"
-      - "C:/Program Files/mingw64/bin/glslangValidator"
-      - "D:/Aria2/glslangValidator.com"
-      - "D:/Aria2/glslangValidator.exe"
-      - "D:/Aria2/glslangValidator"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator.com"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator.exe"
-      - "C:/Qt/6.9.1/mingw_64/bin/glslangValidator"
-      - "C:/Program Files/bin/glslangValidator.com"
-      - "C:/Program Files/bin/glslangValidator.exe"
-      - "C:/Program Files/bin/glslangValidator"
-      - "C:/Program Files/sbin/glslangValidator.com"
-      - "C:/Program Files/sbin/glslangValidator.exe"
-      - "C:/Program Files/sbin/glslangValidator"
-      - "C:/Program Files/glslangValidator.com"
-      - "C:/Program Files/glslangValidator.exe"
-      - "C:/Program Files/glslangValidator"
-      - "C:/Program Files (x86)/bin/glslangValidator.com"
-      - "C:/Program Files (x86)/bin/glslangValidator.exe"
-      - "C:/Program Files (x86)/bin/glslangValidator"
-      - "C:/Program Files (x86)/sbin/glslangValidator.com"
-      - "C:/Program Files (x86)/sbin/glslangValidator.exe"
-      - "C:/Program Files (x86)/sbin/glslangValidator"
-      - "C:/Program Files (x86)/glslangValidator.com"
-      - "C:/Program Files (x86)/glslangValidator.exe"
-      - "C:/Program Files (x86)/glslangValidator"
-      - "C:/Program Files/CMake/bin/glslangValidator.com"
-      - "C:/Program Files/CMake/bin/glslangValidator.exe"
-      - "C:/Program Files/CMake/bin/glslangValidator"
-      - "C:/Program Files/CMake/sbin/glslangValidator.com"
-      - "C:/Program Files/CMake/sbin/glslangValidator.exe"
-      - "C:/Program Files/CMake/sbin/glslangValidator"
-      - "C:/Program Files/CMake/glslangValidator.com"
-      - "C:/Program Files/CMake/glslangValidator.exe"
-      - "C:/Program Files/CMake/glslangValidator"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator.com"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator.exe"
-      - "C:/Program Files (x86)/TranslucentSM/bin/glslangValidator"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator.com"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator.exe"
-      - "C:/Program Files (x86)/TranslucentSM/sbin/glslangValidator"
-      - "C:/Program Files (x86)/TranslucentSM/glslangValidator.com"
-      - "C:/Program Files (x86)/TranslucentSM/glslangValidator.exe"
-      - "C:/Program Files (x86)/TranslucentSM/glslangValidator"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
-        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
-        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
-        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
-        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\Bandizip\\"
-        - "C:\\Program Files\\Bandizip"
-        - "C:\\Program Files\\gsudo\\Current"
-        - "C:\\Program Files\\Tailscale\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Program Files\\mingw64\\bin"
-        - "D:\\Aria2"
-        - "C:/Qt/6.9.1/mingw_64/bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/TranslucentSM"
-  -
     kind: "find_package-v1"
     backtrace:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:85 (find_package)"
@@ -5192,7 +5156,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6GuiPrivate"
     configs:
       -
@@ -5293,7 +5257,7 @@ events:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -5391,7 +5355,7 @@ events:
     backtrace:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:85 (find_package)"
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6WidgetsPrivate"
     configs:
       -
@@ -5488,7 +5452,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
-      - "CMakeLists.txt:5 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -5540,6 +5504,198 @@ events:
         reason: "no_exist"
     found:
       path: "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake"
+      mode: "config"
+      version: "6.9.1"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:85 (find_package)"
+      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
+    name: "Qt6NetworkPrivate"
+    configs:
+      -
+        filename: "Qt6NetworkPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6networkprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.1"
+      version_complete: "6.9.1"
+      exact: true
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6NetworkPrivate"
+      search_paths:
+        - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/.."
+        - "C:/Qt/6.9.1/mingw_64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/pkgRedirects/Qt6NetworkPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/pkgRedirects/qt6networkprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6NetworkPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.9.1/mingw_64/lib/cmake/qt6networkprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake"
+      mode: "config"
+      version: "6.9.1"
+    search_context:
+      ENV{PATH}:
+        - "C:\\\\Users\\\\1\\\\.trae-cn\\\\binaries\\\\node\\\\versions\\\\22.17.1"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\workspaces\\\\21626884\\\\versions\\\\node\\\\current"
+        - "c:\\\\Users\\\\1\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
+        - "C:\\Users\\1\\.flutter\\flutter\\bin\\cache\\dart-sdk\\bin\\"
+        - "C:\\Users\\1\\.trae-cn\\binaries\\node\\versions\\22.17.1"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\workspaces\\21626884\\versions\\node\\current"
+        - "c:\\Users\\1\\.trae-cn\\sdks\\versions\\node\\current"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "D:\\Program Files\\VMware\\VMware Workstation\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-8\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-21\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-11\\bin\\"
+        - "C:\\Program Files\\Zulu\\zulu-17\\bin\\"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Bandizip\\"
+        - "C:\\Program Files\\Bandizip"
+        - "C:\\Program Files\\gsudo\\Current"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\mingw64\\bin"
+        - "D:\\Aria2"
+        - "C:/Qt/6.9.1/mingw_64/bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/TranslucentSM"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/TranslucentSM"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:218 (find_package)"
+      - "CMakeLists.txt:18 (find_package)"
+    name: "Qt6Network"
+    configs:
+      -
+        filename: "Qt6NetworkConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6network-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Network"
+      search_paths:
+        - "C:/Qt/6.9.1/mingw_64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/pkgRedirects/Qt6NetworkConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/CMakeFiles/pkgRedirects/qt6network-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6NetworkConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.9.1/mingw_64/lib/cmake/qt6network-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake"
       mode: "config"
       version: "6.9.1"
     search_context:
