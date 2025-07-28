@@ -62,10 +62,6 @@ private:
     QString currentVersion;
     QNetworkReply* symbolReply;
 
-private:
-    void checkSymbolCache();
-    void onStartSymbolDownload();
-
 private slots:
     void onInstallClicked();
     void onUninstallClicked();

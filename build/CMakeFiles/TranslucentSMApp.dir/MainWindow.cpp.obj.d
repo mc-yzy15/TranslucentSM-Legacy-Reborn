@@ -814,6 +814,8 @@ CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
  C:/Qt/6.9.1/mingw_64/include/QtNetwork/QNetworkRequest \
  C:/Qt/6.9.1/mingw_64/include/QtCore/QUrl \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/QCryptographicHash \
+ C:/Qt/6.9.1/mingw_64/include/QtCore/qcryptographichash.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/QJsonDocument \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qjsondocument.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qjsonparseerror.h \

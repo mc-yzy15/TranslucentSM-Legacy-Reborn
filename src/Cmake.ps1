@@ -1,18 +1,18 @@
-# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½buildÄ¿Â¼
-# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½buildÄ¿Â¼
+# ¼ì²é²¢É¾³ýbuildÄ¿Â¼
 if (Test-Path -Path "build") {
-    echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½Ä¿Â¼..."
+    Write-Host "ÕýÔÚÉ¾³ýbuildÄ¿Â¼..."
     Remove-Item -Path "build" -Recurse -Force
 }
+# ´´½¨buildÄ¿Â¼²¢½øÈë
 New-Item -ItemType Directory -Name "build"
-Set-Location -Path build
+Set-Location -Path "build"
 
-# ï¿½ï¿½ï¿½ï¿½MinGWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# ÉèÖÃMinGWÂ·¾¶
 $env:PATH += ";C:/Qt/6.9.1/mingw_64/bin"
-echo "MinGWÂ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: $env:PATH"
+Write-Host "MinGWÂ·¾¶ÒÑÌí¼Óµ½ÏµÍ³Â·¾¶: $env:PATH"
 
-# ï¿½ï¿½ï¿½ï¿½CMakeï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CMakeï¿½ï¿½ï¿½ï¿½..."
+# ÔËÐÐCMakeÅäÖÃ£¬ÆôÓÃÏêÏ¸Êä³ö
+Write-Host "ÕýÔÚÔËÐÐCMakeÅäÖÃ..."
 cmake -G "MinGW Makefiles" `
   -DCMAKE_BUILD_TYPE=Release `
   -DCMAKE_C_COMPILER="C:/Qt/6.9.1/mingw_64/bin/gcc.exe" `
@@ -24,21 +24,19 @@ cmake -G "MinGW Makefiles" `
   ../src
 
 if ($LASTEXITCODE -ne 0) {
-  echo "CMakeï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: $LASTEXITCODE"
+  Write-Host "CMakeÅäÖÃÊ§°Ü£¬´íÎó´úÂë: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 
-# Ö´ï¿½Ð¹ï¿½ï¿½ï¿½
-# PowerShellï¿½Ð»ï¿½È¡ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# Ö´ÐÐ±àÒë
+# ÔÚPowerShellÖÐ»ñÈ¡Âß¼­´¦ÀíÆ÷ÊýÁ¿
 $processorCount = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
-echo "Ê¹ï¿½ï¿½ $processorCount ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½..."
+Write-Host "Ê¹ÓÃ $processorCount ¸öÏß³Ì½øÐÐ±àÒë..."
 & "C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe" -j $processorCount
 
 if ($LASTEXITCODE -ne 0) {
-  echo "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: $LASTEXITCODE"
+  Write-Host "±àÒëÊ§°Ü£¬´íÎó´úÂë: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 
-echo "Build completed successfully!"
-
-
+Write-Host "Build completed successfully!"
