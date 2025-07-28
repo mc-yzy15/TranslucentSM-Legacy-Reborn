@@ -399,3 +399,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .github/workflow.error
+build/CMakeFiles/CMakeConfigureLog.yaml
+build/CMakeFiles/4.1.0-rc3/CMakeDetermineCompilerABI_C.bin
+build/CMakeFiles/4.1.0-rc3/CMakeDetermineCompilerABI_CXX.bin
+build/CMakeFiles/4.1.0-rc3/CompilerIdC/a.exe
+build/CMakeFiles/4.1.0-rc3/CompilerIdCXX/a.exe
+build/CMakeFiles/TranslucentSM.dir/objects.a
+build/lib/libTranslucentSM.dll.a

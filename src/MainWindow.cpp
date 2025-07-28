@@ -23,7 +23,6 @@
 // 标题栏实现
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent), m_moving(false) {
     setMouseTracking(true);
-}
     setFixedHeight(30);
     setStyleSheet("background-color: #2d2d2d;");
 
