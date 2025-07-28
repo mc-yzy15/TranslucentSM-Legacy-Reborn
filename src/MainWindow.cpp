@@ -83,7 +83,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(ne
     // 设置窗口属性
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    setMinimumSize(600, 450);
+    setMinimumSize(800, 550);
 
     // 应用现代样式
     applyModernStyle();
@@ -213,11 +213,15 @@ void MainWindow::createInstallationTab() {
     QLabel *pathLabel = new QLabel("安装路径:");
     installPathEdit = new QLineEdit();
     installPathEdit->setText(QDir::toNativeSeparators(QDir::homePath() + "/AppData/Local/TranslucentSM"));
+installPathEdit->setToolTip(installPathEdit->text());
+installPathEdit->setStyleSheet("QLineEdit { padding: 8px; font-size: 14px; min-width: 300px; }");
+installPathEdit->setMinimumWidth(300);
     QPushButton *browseButton = new QPushButton("浏览...");
+browseButton->setStyleSheet("padding: 8px 16px; font-size: 14px;");
     connect(browseButton, &QPushButton::clicked, this, &MainWindow::onBrowseClicked);
 
     pathLayout->addWidget(pathLabel, 0);
-    pathLayout->addWidget(installPathEdit, 1);
+    pathLayout->addWidget(installPathEdit, 2);
     pathLayout->addWidget(browseButton, 0);
     layout->addLayout(pathLayout);
 
@@ -226,8 +230,16 @@ void MainWindow::createInstallationTab() {
         "TranslucentSM 为 Windows 11 开始菜单提供透明度效果。注意：该应用必须在\n"
         "Windows 11 22000 版本以上使用。");
     infoLabel->setWordWrap(true);
+infoLabel->setMinimumWidth(500);
+infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px; font-size: 14px;");
     infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px;");
     layout->addWidget(infoLabel);
+
+QFrame *line1 = new QFrame();
+line1->setFrameShape(QFrame::HLine);
+line1->setFrameShadow(QFrame::Sunken);
+line1->setStyleSheet("background-color: #555555; height: 2px; margin: 10px 0;");
+layout->addWidget(line1);
 
     // 按钮布局
     QHBoxLayout *buttonLayout = new QHBoxLayout();
@@ -235,16 +247,25 @@ void MainWindow::createInstallationTab() {
     buttonLayout->setAlignment(Qt::AlignCenter);
 
     installButton = new QPushButton("安装");
-    installButton->setFixedSize(120, 35);
+    installButton->setStyleSheet("background-color: #0078d7; padding: 12px 24px; font-size: 16px; font-weight: bold;");
+installButton->setFixedSize(140, 40);
     connect(installButton, &QPushButton::clicked, this, &MainWindow::onInstallClicked);
 
     uninstallButton = new QPushButton("卸载");
-    uninstallButton->setFixedSize(120, 35);
+    uninstallButton->setStyleSheet("background-color: #6c757d; padding: 12px 24px; font-size: 16px;");
+uninstallButton->setFixedSize(140, 40);
     connect(uninstallButton, &QPushButton::clicked, this, &MainWindow::onUninstallClicked);
 
     buttonLayout->addWidget(installButton);
     buttonLayout->addWidget(uninstallButton);
-    layout->addLayout(buttonLayout);
+    QFrame *line2 = new QFrame();
+line2->setFrameShape(QFrame::HLine);
+line2->setFrameShadow(QFrame::Sunken);
+line2->setStyleSheet("background-color: #555555; height: 2px; margin: 10px 0;");
+layout->addWidget(line2);
+
+layout->addLayout(buttonLayout);
+layout->setAlignment(buttonLayout, Qt::AlignHCenter);
 
     // 空白填充
     layout->addStretch(1);
