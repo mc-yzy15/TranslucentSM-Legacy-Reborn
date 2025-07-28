@@ -124,9 +124,9 @@ CMakeFiles/TranslucentSM.dir/clean:
 # Target rules for target CMakeFiles/TranslucentSMApp.dir
 
 # All Build rule for target.
+CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSM.dir/all
 CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSMApp_autogen.dir/all
-CMakeFiles/TranslucentSMApp.dir/all: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target TranslucentSMApp"
@@ -144,8 +144,8 @@ TranslucentSMApp: CMakeFiles/TranslucentSMApp.dir/rule
 .PHONY : TranslucentSMApp
 
 # codegen rule for target.
-CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSM.dir/all
 CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSMApp_autogen_timestamp_deps.dir/all
+CMakeFiles/TranslucentSMApp.dir/codegen: CMakeFiles/TranslucentSM.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TranslucentSMApp.dir\build.make CMakeFiles/TranslucentSMApp.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\build\CMakeFiles --progress-num=5,6,7,8,9,10,11 "Finished codegen for target TranslucentSMApp"
 .PHONY : CMakeFiles/TranslucentSMApp.dir/codegen
