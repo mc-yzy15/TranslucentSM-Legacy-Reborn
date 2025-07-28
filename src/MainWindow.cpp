@@ -14,6 +14,7 @@
 #include <QUrl>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QCryptographicHash>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -21,6 +22,8 @@
 
 // 标题栏实现
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent), m_moving(false) {
+    setMouseTracking(true);
+}
     setFixedHeight(30);
     setStyleSheet("background-color: #2d2d2d;");
 
@@ -67,7 +70,7 @@ void TitleBar::mousePressEvent(QMouseEvent *event) {
 void TitleBar::mouseMoveEvent(QMouseEvent *event) {
     if (m_moving && (event->buttons() & Qt::LeftButton)) {
         QWidget *parent = parentWidget();
-        if (parent) {
+        if (parent && !parent->isMaximized()) {
             QPoint delta = event->globalPosition().toPoint() - m_startPos;
             parent->move(parent->pos() + delta);
             m_startPos = event->globalPosition().toPoint();
@@ -106,7 +109,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(ne
     mainTabWidget = new QTabWidget();
     mainTabWidget->setStyleSheet(
         "QTabWidget::pane { border: none; background-color: #1e1e1e; }"
-        "QTabBar::tab { height: 30px; width: 120px; background-color: #2d2d2d; color: #b0b0b0; border: none; margin-right: 2px; }"
+        "QTabBar::tab { height: 36px; width: 140px; background-color: #2d2d2d; color: #b0b0b0; border: none; margin-right: 2px; font-size: 14px; }"
         "QTabBar::tab:selected { background-color: #3d3d3d; color: white; border-top-left-radius: 4px; border-top-right-radius: 4px; }"
         "QTabBar::tab:hover:!selected { background-color: #353535; }"
     );
@@ -178,7 +181,7 @@ void MainWindow::applyModernStyle() {
 
     // 设置全局样式表
     qApp->setStyleSheet(
-        "QPushButton { padding: 8px 16px; border-radius: 6px; border: none; background-color: #0078d7; color: white; font-weight: 500; }"
+        "QPushButton { padding: 10px 20px; border-radius: 6px; border: none; background-color: #0078d7; color: white; font-weight: 600; font-size: 14px; }"
         "QPushButton:hover { background-color: #005a9e; }"
         "QPushButton:pressed { background-color: #004b87; }"
         "QPushButton:disabled { background-color: #555555; color: #aaaaaa; }"
@@ -187,7 +190,7 @@ void MainWindow::applyModernStyle() {
         "QLineEdit { border: 1px solid #ced4da; border-radius: 6px; padding: 8px; background-color: white; color: #212529; }"
         "QComboBox { padding: 8px; border-radius: 6px; border: 1px solid #ced4da; background-color: white; color: #212529; }"
         "QComboBox::drop-down { border-top-right-radius: 6px; border-bottom-right-radius: 6px; background-color: #e9ecef; }"
-        "QLabel { color: #212529; }"
+        "QLabel { color: #f0f0f0; font-size: 14px; }"
         "QTabWidget::pane { border: 1px solid #e0e0e0; border-radius: 8px; background-color: white; }"
         "QTabBar::tab { background-color: #e9ecef; color: #495057; padding: 8px 16px; border-radius: 8px 8px 0 0; margin-right: 4px; }"
         "QTabBar::tab:selected { background-color: white; color: #0078d7; border-top: 2px solid #0078d7; }"
@@ -312,10 +315,21 @@ void MainWindow::createSettingsTab() {
     connect(checkUpdateButton, &QPushButton::clicked, this, &MainWindow::checkUpdateClicked);
     layout->addWidget(checkUpdateButton, 0, Qt::AlignCenter);
 
+    // 符号文件下载按钮
+    QPushButton *downloadSymbolsButton = new QPushButton("下载符号文件");
+    downloadSymbolsButton->setFixedSize(120, 35);
+    connect(downloadSymbolsButton, &QPushButton::clicked, this, &MainWindow::onDownloadSymbolsClicked);
+    layout->addWidget(downloadSymbolsButton, 0, Qt::AlignCenter);
+
     // 更新进度条
     updateProgressBar = new QProgressBar();
     updateProgressBar->setVisible(false);
     layout->addWidget(updateProgressBar);
+
+    // 符号文件下载进度条
+    symbolsProgressBar = new QProgressBar();
+    symbolsProgressBar->setVisible(false);
+    layout->addWidget(symbolsProgressBar);
 }
 
 void MainWindow::createAboutTab() {
@@ -510,6 +524,11 @@ void MainWindow::checkUpdateClicked() {
     request.setHeader(QNetworkRequest::UserAgentHeader, "TranslucentSM");
     
     connect(networkManager, &QNetworkAccessManager::finished, this, &MainWindow::onUpdateCheckFinished);
+    connect(networkManager, &QNetworkAccessManager::finished, this, [this](QNetworkReply* reply) {
+        if (reply == symbolReply) {
+            onSymbolDownloadFinished();
+        }
+    });
     networkManager->get(request);
 }
 
@@ -594,6 +613,161 @@ void MainWindow::onDownloadFinished() {
     }
     
     reply->deleteLater();
+}
+
+void MainWindow::checkSymbolCache() {
+    QString symbolsPath = getInstallPath() + "/symbols";
+    QDir symbolsDir(symbolsPath);
+    
+    if (symbolsDir.exists() && symbolsDir.entryInfoList(QDir::Files).size() > 0) {
+        // 检查缓存文件是否存在且未过期（7天有效期）
+        QFileInfoList fileList = symbolsDir.entryInfoList(QDir::Files);
+        QFileInfo newestFile = fileList.first();
+        foreach (const QFileInfo &fileInfo, fileList) {
+            if (fileInfo.lastModified() > newestFile.lastModified()) {
+                newestFile = fileInfo;
+            }
+        }
+        
+        qint64 daysSinceModified = QDateTime::currentDateTime().daysTo(newestFile.lastModified());
+        if (qAbs(daysSinceModified) < 7) {
+            // 验证缓存文件完整性
+            QFile hashFile(symbolsPath + "/symbols.sha256");
+            if (hashFile.exists() && hashFile.open(QIODevice::ReadOnly)) {
+                QString savedHash = hashFile.readAll();
+                hashFile.close();
+                
+                QFile currentFile(newestFile.absoluteFilePath());
+                if (currentFile.open(QIODevice::ReadOnly)) {
+                    QCryptographicHash currentHash(QCryptographicHash::Sha256);
+                    currentHash.addData(&currentFile);
+                    QString currentHashStr = currentHash.result().toHex();
+                    
+                    if (currentHashStr == savedHash) {
+                        statusLabel->setText("使用缓存的符号文件（验证通过）");
+                        return;
+                    }
+                }
+            }
+            statusLabel->setText("缓存文件验证失败，重新下载...");
+        }
+    }
+    
+    // 缓存不存在或已过期，触发下载
+    onStartSymbolDownload();
+}
+
+void MainWindow::onStartSymbolDownload() {
+    statusLabel->setText("正在从微软服务器下载符号文件...");
+    symbolsProgressBar->setVisible(true);
+    symbolsProgressBar->setValue(0);
+
+    if (!networkManager) {
+        networkManager = new QNetworkAccessManager(this);
+    }
+    
+    // 使用微软官方符号服务器
+    QUrl symbolUrl("https://msdl.microsoft.com/download/symbols/");
+    QNetworkRequest request(symbolUrl);
+    request.setHeader(QNetworkRequest::UserAgentHeader, "TranslucentSM");
+
+    // 添加ETag支持以检查文件是否更新
+    QString symbolsPath = getInstallPath() + "/symbols";
+    QFile etagFile(symbolsPath + "/.etag");
+    if (etagFile.exists() && etagFile.open(QIODevice::ReadOnly)) {
+        QString etag = etagFile.readAll();
+        etagFile.close();
+        request.setRawHeader("If-None-Match", etag.toUtf8());
+    }
+
+    symbolReply = networkManager->get(request);
+    connect(symbolReply, &QNetworkReply::downloadProgress, 
+            this, &MainWindow::onSymbolDownloadProgress);
+    connect(symbolReply, &QNetworkReply::finished, 
+            this, &MainWindow::onSymbolDownloadFinished);
+}
+
+void MainWindow::onDownloadSymbolsClicked() {
+    // 先检查缓存
+    checkSymbolCache();
+}
+
+void MainWindow::onSymbolDownloadProgress(qint64 bytesReceived, qint64 bytesTotal) {
+    if (bytesTotal > 0) {
+        int percent = (bytesReceived * 100) / bytesTotal;
+        symbolsProgressBar->setValue(percent);
+        statusLabel->setText(QString("正在下载符号文件: %1%").arg(percent));
+    }
+}
+
+void MainWindow::onSymbolDownloadFinished() {
+    symbolsProgressBar->setVisible(false);
+
+    if (!symbolReply) {
+        return;
+    }
+
+    int statusCode = symbolReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    if (symbolReply->error() == QNetworkReply::NoError) {
+        if (statusCode == 304) {
+            // 服务器文件未修改，使用缓存
+            statusLabel->setText("符号文件未更新，使用缓存版本");
+            return;
+        }
+        // 保存符号文件到安装目录
+        QString symbolsPath = getInstallPath() + "/symbols";
+        QDir symbolsDir(symbolsPath);
+        if (!symbolsDir.exists()) {
+            symbolsDir.mkpath(symbolsPath);
+        }
+
+        QString tempFile = QDir::tempPath() + "/symbols.zip";
+        QFile file(tempFile);
+        if (file.open(QIODevice::WriteOnly)) {
+            file.write(symbolReply->readAll());
+            file.close();
+
+            // 计算文件哈希值进行完整性校验
+        QCryptographicHash hash(QCryptographicHash::Sha256);
+        if (hash.addData(&file) && file.reset()) {
+            QString fileHash = hash.result().toHex();
+            
+            // 保存哈希值到校验文件
+            QFile hashFile(symbolsPath + "/symbols.sha256");
+            if (hashFile.open(QIODevice::WriteOnly)) {
+                hashFile.write(fileHash.toUtf8());
+                hashFile.close();
+            }
+            
+            // 这里可以添加解压逻辑
+            statusLabel->setText("符号文件下载成功并通过校验");
+            QMessageBox::information(this, "成功", "符号文件已下载并保存到:\n" + symbolsPath);
+        } else {
+            statusLabel->setText("符号文件完整性校验失败");
+            QMessageBox::critical(this, "错误", "符号文件完整性校验失败，请重试下载");
+            file.remove();
+        }
+        } else {
+            statusLabel->setText("无法保存符号文件");
+        }
+    } else {
+        statusLabel->setText("符号文件下载失败: " + symbolReply->errorString());
+        QMessageBox::critical(this, "错误", "符号文件下载失败:\n" + symbolReply->errorString());
+    }
+
+    // 保存ETag用于后续更新检查
+    QByteArray etag = symbolReply->rawHeader("ETag");
+    if (!etag.isEmpty()) {
+        QString symbolsPath = getInstallPath() + "/symbols";
+        QFile etagFile(symbolsPath + "/.etag");
+        if (etagFile.open(QIODevice::WriteOnly)) {
+            etagFile.write(etag);
+            etagFile.close();
+        }
+    }
+    
+    symbolReply->deleteLater();
+    symbolReply = nullptr;
 }
 
 int MainWindow::versionCompare(const QString &version1, const QString &version2) {

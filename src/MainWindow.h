@@ -56,9 +56,15 @@ private:
     void createSettingsTab();
     void createAboutTab();
     QProgressBar* updateProgressBar;
+    QProgressBar* symbolsProgressBar;
     QProcess* installProcess;
     QNetworkAccessManager* networkManager;
     QString currentVersion;
+    QNetworkReply* symbolReply;
+
+private:
+    void checkSymbolCache();
+    void onStartSymbolDownload();
 
 private slots:
     void onInstallClicked();
@@ -67,7 +73,14 @@ private slots:
     void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
     void onDownloadFinished();
     void onUpdateCheckFinished(QNetworkReply* reply);
-    void checkUpdateClicked();
+    void checkUpdateClicked();private:
+    void checkSymbolCache();
+    void onStartSymbolDownload();
+
+private slots:
+    void onDownloadSymbolsClicked();
+    void onSymbolDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void onSymbolDownloadFinished();
 private:
     int versionCompare(const QString& version1, const QString& version2);
     void onBrowseClicked();
