@@ -18,21 +18,28 @@ jobs:
     - name: Set up Qt
       uses: jurplel/install-qt-action@v3
       with:
-        version: '5.15.2'
-        arch: 'win64_msvc2019_64'
+        version: '6.9.1'
+        arch: 'win64_mingw'
+        tools: 'tools/mingw'
+        cache: true
 
-    - name: Configure CMake
-      run: cmake -S src -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=Release
+    - name: Run CMake script
+      run: |
+        .\src\Cmake.ps1
+      shell: pwsh
 
-    - name: Build
-      run: cmake --build build --config Release
+    - name: Set build output path
+      run: |
+        echo "BUILD_PATH=build/Release" >> $env:GITHUB_ENV
+      shell: pwsh
 
     - name: Package
       run: |
         New-Item -ItemType Directory -Force -Path TranslucentSM
-        Copy-Item -Path build/Release/TranslucentSM.exe -Destination TranslucentSM/
-        Copy-Item -Path build/Release/TranslucentSM.dll -Destination TranslucentSM/
+        Copy-Item -Path $env:BUILD_PATH/TranslucentSM.exe -Destination TranslucentSM/
+        Copy-Item -Path $env:BUILD_PATH/TranslucentSM.dll -Destination TranslucentSM/
         Compress-Archive -Path TranslucentSM/* -DestinationPath TranslucentSM.zip -Force
+      shell: pwsh
 
     - name: Get version
       id: get_version
