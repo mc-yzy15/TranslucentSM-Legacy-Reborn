@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_TranslucentSM_FILE O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/bin/TranslucentSM.dll)
-set(__QT_DEPLOY_TARGET_TranslucentSM_TYPE SHARED_LIBRARY)
-set(__QT_DEPLOY_TARGET_TranslucentSM_RUNTIME_DLLS )
-set(__QT_DEPLOY_TARGET_TranslucentSMApp_FILE O:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/build/bin/TranslucentSM.exe)
-set(__QT_DEPLOY_TARGET_TranslucentSMApp_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_TranslucentSMApp_RUNTIME_DLLS C:/Qt/6.9.1/mingw_64/bin/Qt6Widgets.dll;C:/Qt/6.9.1/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.9.1/mingw_64/bin/Qt6Network.dll;C:/Qt/6.9.1/mingw_64/bin/Qt6Core.dll)

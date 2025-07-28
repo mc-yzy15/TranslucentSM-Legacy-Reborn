@@ -2,7 +2,7 @@
 
 class TranslucentSM {
   public:
-    void applyTransparencySettings();
+    void applyTransparencySettings(const QString& processName, int transparencyValue);
     DWORD GetBuildNumber();
 
 private:

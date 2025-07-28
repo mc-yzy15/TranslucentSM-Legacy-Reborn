@@ -8,7 +8,7 @@
 #include <sddl.h>
 #include <versionhelpers.h>
 
-void TranslucentSM::applyTransparencySettings() {
+void TranslucentSM::applyTransparencySettings(const QString& processName, int transparencyValue) {
     // 增强版本检测逻辑
     // 使用Windows 11 24H2兼容的版本检测
     BOOL isWindows11OrGreater = FALSE;
@@ -26,13 +26,10 @@ void TranslucentSM::applyTransparencySettings() {
         isWindows11OrGreater = VerifyVersionInfo(&osvi, VER_MAJORVERSION | VER_MINORVERSION | VER_BUILDNUMBER, conditionMask);
     }
 
-    // Windows 11 24H2 (Build 26100+) 使用新的进程名
-    DWORD dwBuildNumber = GetBuildNumber();
-    const wchar_t* processName = (dwBuildNumber >= 26100) ? 
-        L"StartMenuExperienceHost.exe" : L"StartMenuExperienceHost.exe";
+    const wchar_t* targetProcessName = processName.toStdWString().c_str();
         
     // 获取进程ID
-    DWORD processId = GetProcessIdByName(processName);
+    DWORD processId = GetProcessIdByName(targetProcessName);
     if (processId == 0) {
         std::cerr << "Failed to find " << processName << " process." << std::endl;
         return;
