@@ -1,18 +1,18 @@
-# åˆ›å»ºå¹¶è¿›å…¥buildç›®å½•
-# æ¸…ç†å¹¶é‡å»ºbuildç›®å½•
+# ´´½¨²¢½øÈëbuildÄ¿Â¼
+# ÇåÀí²¢ÖØ½¨buildÄ¿Â¼
 if (Test-Path -Path "build") {
-    echo "æ­£åœ¨æ¸…ç†æ—§æ„å»ºç›®å½•..."
+    echo "ÕıÔÚÇåÀí¾É¹¹½¨Ä¿Â¼..."
     Remove-Item -Path "build" -Recurse -Force
 }
 New-Item -ItemType Directory -Name "build"
 Set-Location -Path build
 
-# è®¾ç½®MinGWç¯å¢ƒå˜é‡
+# ÉèÖÃMinGW»·¾³±äÁ¿
 $env:PATH += ";C:/Qt/6.9.1/mingw_64/bin"
-echo "MinGWè·¯å¾„å·²æ·»åŠ åˆ°ç¯å¢ƒå˜é‡: $env:PATH"
+echo "MinGWÂ·¾¶ÒÑÌí¼Óµ½»·¾³±äÁ¿: $env:PATH"
 
-# è¿è¡ŒCMakeé…ç½®ï¼ˆå¯ç”¨è¯¦ç»†è°ƒè¯•è¾“å‡ºï¼‰
-echo "æ­£åœ¨è¿è¡ŒCMakeé…ç½®..."
+# ÔËĞĞCMakeÅäÖÃ£¨ÆôÓÃÏêÏ¸µ÷ÊÔÊä³ö£©
+echo "ÕıÔÚÔËĞĞCMakeÅäÖÃ..."
 cmake -G "MinGW Makefiles" `
   -DCMAKE_BUILD_TYPE=Release `
   -DCMAKE_C_COMPILER="C:/Qt/6.9.1/mingw_64/bin/gcc.exe" `
@@ -24,18 +24,18 @@ cmake -G "MinGW Makefiles" `
   ../src
 
 if ($LASTEXITCODE -ne 0) {
-  echo "CMakeé…ç½®å¤±è´¥ï¼Œé”™è¯¯ä»£ç : $LASTEXITCODE"
+  echo "CMakeÅäÖÃÊ§°Ü£¬´íÎó´úÂë: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 
-# æ‰§è¡Œæ„å»º
-# PowerShellä¸­è·å–é€»è¾‘å¤„ç†å™¨æ•°é‡
+# Ö´ĞĞ¹¹½¨
+# PowerShellÖĞ»ñÈ¡Âß¼­´¦ÀíÆ÷ÊıÁ¿
 $processorCount = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
-echo "ä½¿ç”¨ $processorCount ä¸ªå¤„ç†å™¨è¿›è¡Œæ„å»º..."
+echo "Ê¹ÓÃ $processorCount ¸ö´¦ÀíÆ÷½øĞĞ¹¹½¨..."
 & "C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe" -j $processorCount
 
 if ($LASTEXITCODE -ne 0) {
-  echo "æ„å»ºå¤±è´¥ï¼Œé”™è¯¯ä»£ç : $LASTEXITCODE"
+  echo "¹¹½¨Ê§°Ü£¬´íÎó´úÂë: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 

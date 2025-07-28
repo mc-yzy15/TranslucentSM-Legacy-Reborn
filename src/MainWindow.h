@@ -76,6 +76,7 @@ private:
 
 
 
+    QString getInstallPath();
     // UI组件
     QWidget *centralWidget;
     QTabWidget *mainTabWidget;

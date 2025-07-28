@@ -31,7 +31,7 @@ void TranslucentSM::applyTransparencySettings(const QString& processName, int tr
     // 获取进程ID
     DWORD processId = GetProcessIdByName(targetProcessName);
     if (processId == 0) {
-        std::cerr << "Failed to find " << processName << " process." << std::endl;
+        std::cerr << "Failed to find " << processName.toStdString() << " process." << std::endl;
         return;
     }
 
@@ -42,7 +42,7 @@ void TranslucentSM::applyTransparencySettings(const QString& processName, int tr
     PathAppendW(dllPath, L"TranslucentSM.dll");
     
     if (!InjectDLL(processId, dllPath)) {
-        std::cerr << "Failed to inject DLL into " << processName << "." << std::endl;
+        std::cerr << "Failed to inject DLL into " << processName.toStdString() << "." << std::endl;
         return;
     }
 

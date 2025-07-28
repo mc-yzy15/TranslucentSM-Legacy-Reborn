@@ -77,7 +77,7 @@ set_target_properties(TranslucentSMApp PROPERTIES
 # 链接库
 if(WIN32)
     # 链接Qt5库和其他必要库
-    target_link_libraries(TranslucentSMApp PRIVATE ${QT_MODULES} ${EXTRA_LIBS})
+    target_link_libraries(TranslucentSMApp PRIVATE ${QT_MODULES} ${EXTRA_LIBS} shlwapi)
     if(MINGW)
         target_link_libraries(TranslucentSMApp PRIVATE -static-libgcc -static-libstdc++ -Wl,--subsystem,windows)
     endif()

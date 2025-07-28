@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <QString>
 
 class TranslucentSM {
   public:

@@ -769,8 +769,8 @@ CMakeFiles/TranslucentSMApp.dir/MainWindow.cpp.obj: \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/winsvc.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/mcx.h \
  C:/Qt/6.9.1/mingw_64/x86_64-w64-mingw32/include/imm.h \
- O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+ O:\Users\Yzy15\Documents\GitHub\TranslucentSM-Legacy-Reborn\src\installer.h \
  C:/Qt/6.9.1/mingw_64/include/QtGui/QMouseEvent \
  C:/Qt/6.9.1/mingw_64/include/QtGui/qevent.h \
  C:/Qt/6.9.1/mingw_64/include/QtCore/qcoreevent.h \
