@@ -1,0 +1,52 @@
+name: Alpha Release Build
+
+on:
+  push:
+    branches:
+      - dev
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+        
+      - name: Create build directory
+        run: mkdir -p build
+        
+      - name: Run CMake
+        run: |
+          cd build
+          cmake .. -G "Visual Studio 17 2022" -A Win32
+        
+      - name: Build with MSBuild
+        run: |
+          cd build
+          msbuild TranslucentSM.sln -p:Configuration=Release
+        
+      - name: Package artifacts
+        run: |
+          mkdir -p artifacts
+          cp build/bin/Release/TranslucentSM.exe artifacts/
+          cp build/bin/Release/TranslucentSM.dll artifacts/
+        
+      - name: Create Alpha Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Alpha Release ${{ github.ref_name }}
+          body: "Alpha release build"
+          draft: false
+          prerelease: true
+          files:
+            - artifacts/TranslucentSM.exe
+            - artifacts/TranslucentSM.dll
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

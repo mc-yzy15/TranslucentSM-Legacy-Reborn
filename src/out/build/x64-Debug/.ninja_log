@@ -11,3 +11,10 @@
 12	356	7896707764278142	CMakeFiles/TranslucentSMApp.dir/main.c.obj	2a2dcc86cc65a6be
 19	289	7896707764348614	CMakeFiles/TranslucentSMApp.dir/translucentsm.c.obj	cca3a879e014899e
 525	928	7896707769410969	TranslucentSM.exe	50cfef0aea85489b
+5	34	7896718185766594	clean	5345ca6175c2c29c
+4	790	7896718186349121	CMakeFiles/TranslucentSM.dir/translucentsmdll.c.obj	169b0445325174db
+18	803	7896718186495291	CMakeFiles/TranslucentSMApp.dir/translucentsm.c.obj	cca3a879e014899e
+12	807	7896718186424613	CMakeFiles/TranslucentSMApp.dir/main.c.obj	2a2dcc86cc65a6be
+791	1075	7896718196369263	TranslucentSM.dll	4df82c1642fa0227
+791	1075	7896718196369263	TranslucentSM.lib	4df82c1642fa0227
+1075	1425	7896718197056204	TranslucentSM.exe	50cfef0aea85489b
