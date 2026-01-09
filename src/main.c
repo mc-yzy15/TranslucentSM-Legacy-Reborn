@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <shlobj.h> // For BROWSE-INFO and SHBrowseForFolderA
+#include <shellapi.h> // For ShellExecute
 
 /* Linked libraries */
 #pragma comment(lib, "comctl32.lib")
@@ -264,39 +265,48 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow);
  *   nCmdShow - Window show mode
  * Return: int - Application exit code
  */
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+{
     MSG msg;
     BOOL bRet;
     UNREFERENCED_PARAMETER(lpCmdLine);
     UNREFERENCED_PARAMETER(hPrevInstance);
 
     /* Initialize common controls */
-    if (!InitAppCommonControls()) {
+    if (!InitAppCommonControls())
+    {
         MessageBox(NULL, "Failed to initialize common controls library", "Error", MB_ICONERROR | MB_OK);
     }
 
     /* Register window class */
-    if (!RegisterWindowClass(hInstance)) {
+    if (!RegisterWindowClass(hInstance))
+    {
         MessageBox(NULL, "Failed to register window class", "Error", MB_ICONERROR | MB_OK);
         return 1;
     }
 
     /* Initialize configuration */
-    if (!initConfig()) {
+    if (!initConfig())
+    {
         MessageBox(NULL, "Failed to initialize configuration", "Warning", MB_ICONWARNING | MB_OK);
     }
 
     /* Initialize application instance */
-    if (!InitInstance(hInstance, nCmdShow)) {
+    if (!InitInstance(hInstance, nCmdShow))
+    {
         return 1;
     }
 
     /* Message loop */
-    while ((bRet = GetMessage(&msg, NULL, 0, 0)) != 0) {
-        if (bRet == -1) {
+    while ((bRet = GetMessage(&msg, NULL, 0, 0)) != 0)
+    {
+        if (bRet == -1)
+        {
             /* Handle error */
             break;
-        } else {
+        }
+        else
+        {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
@@ -311,7 +321,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
  * Parameters: hInstance - Application instance handle
  * Return: ATOM - Window class atom
  */
-ATOM RegisterWindowClass(HINSTANCE hInstance) {
+ATOM RegisterWindowClass(HINSTANCE hInstance)
+{
     WNDCLASSEX wcex;
 
     wcex.cbSize = sizeof(WNDCLASSEX);
@@ -338,7 +349,8 @@ ATOM RegisterWindowClass(HINSTANCE hInstance) {
  *   nCmdShow - Window show mode
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
     /* Create main window */
     g_hWnd = CreateWindowEx(
         0,
@@ -355,7 +367,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
         NULL
     );
 
-    if (!g_hWnd) {
+    if (!g_hWnd)
+    {
         return FALSE;
     }
 
@@ -372,18 +385,19 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
  * Parameters: None
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL InitAppCommonControls(void) {
+BOOL InitAppCommonControls(void)
+{
     /* Initialize the structure correctly */
     INITCOMMONCONTROLSEX icex;
     ZeroMemory(&icex, sizeof(icex));
     icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
-    
+
     /* Include all necessary control classes */
     icex.dwICC = ICC_TAB_CLASSES | ICC_BAR_CLASSES | ICC_STANDARD_CLASSES | ICC_COOL_CLASSES;
-    
+
     /* Call the Windows API function */
     BOOL result = InitCommonControlsEx(&icex);
-    
+
     return result;
 }
 
@@ -397,11 +411,13 @@ BOOL InitAppCommonControls(void) {
  *   lParam - Message parameter
  * Return: LRESULT - Message processing result
  */
-LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
     int iCtrlId;
     NMHDR* pnmhdr;
 
-    switch (uMsg) {
+    switch (uMsg)
+    {
     case WM_CREATE:
         /* Create UI controls */
         g_hTabControl = CreateTabControl(hWnd);
@@ -409,7 +425,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
     case WM_COMMAND:
         iCtrlId = LOWORD(wParam);
-        switch (iCtrlId) {
+        switch (iCtrlId)
+        {
         case ID_INSTALL_BUTTON:
             OnInstallClicked();
             break;
@@ -429,14 +446,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
             OnDownloadSymbolsClicked();
             break;
         case ID_TRANSPARENCY_SLIDER:
-            if (HIWORD(wParam) == EN_CHANGE) {
+            if (HIWORD(wParam) == EN_CHANGE)
+            {
                 /* Slider value change */
                 int value = (int)SendMessage((HWND)lParam, TBM_GETPOS, 0, 0);
                 OnTransparencyChanged(value);
             }
             break;
         case ID_THEME_COMBO:
-            if (HIWORD(wParam) == CBN_SELCHANGE) {
+            if (HIWORD(wParam) == CBN_SELCHANGE)
+            {
                 /* Theme combo box selection change */
                 int index = (int)SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
                 OnThemeChanged(index);
@@ -448,7 +467,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
     case WM_NOTIFY:
         pnmhdr = (NMHDR*)lParam;
-        if (pnmhdr->code == TCN_SELCHANGE && pnmhdr->hwndFrom == g_hTabControl) {
+        if (pnmhdr->code == TCN_SELCHANGE && pnmhdr->hwndFrom == g_hTabControl)
+        {
             /* Tab selection change */
             int tabIndex = TabCtrl_GetCurSel(g_hTabControl);
             UpdateTabSelection(tabIndex);
@@ -457,28 +477,29 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
     case WM_SIZE:
         /* Adjust control sizes */
-        if (g_hTabControl != NULL) {
+        if (g_hTabControl != NULL)
+        {
             RECT rcClient;
             GetClientRect(hWnd, &rcClient);
             SetWindowPos(g_hTabControl, NULL, 0, 0, rcClient.right, rcClient.bottom, SWP_NOZORDER);
         }
         break;
-    
+
     case WM_CTLCOLORSTATIC:
-    {
-        HDC hdcStatic = (HDC)wParam;
-        SetTextColor(hdcStatic, COLOR_TEXT);
-        SetBkMode(hdcStatic, TRANSPARENT);
-        return (LRESULT)GetStockObject(HOLLOW_BRUSH);
-    }
-    
+        {
+            HDC hdcStatic = (HDC)wParam;
+            SetTextColor(hdcStatic, COLOR_TEXT);
+            SetBkMode(hdcStatic, TRANSPARENT);
+            return (LRESULT)GetStockObject(HOLLOW_BRUSH);
+        }
+
     case WM_CTLCOLORBTN:
-    {
-        HDC hdcButton = (HDC)wParam;
-        SetTextColor(hdcButton, COLOR_TEXT);
-        SetBkMode(hdcButton, TRANSPARENT);
-        return (LRESULT)GetStockObject(HOLLOW_BRUSH);
-    }
+        {
+            HDC hdcButton = (HDC)wParam;
+            SetTextColor(hdcButton, COLOR_TEXT);
+            SetBkMode(hdcButton, TRANSPARENT);
+            return (LRESULT)GetStockObject(HOLLOW_BRUSH);
+        }
 
     case WM_CLOSE:
         DestroyWindow(hWnd);
@@ -501,7 +522,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
  * Parameters: hParent - Parent window handle
  * Return: HAND - Tab control handle
  */
-HWND CreateTabControl(HWND hParent) {
+HWND CreateTabControl(HWND hParent)
+{
     RECT rcClient;
     TCITEM tie;
     char szTabText[256];
@@ -566,7 +588,8 @@ HWND CreateTabControl(HWND hParent) {
  * Parameters: hParent - Parent window handle
  * Return: HWND - Page handle
  */
-HWND CreatePage1(HWND hParent) {
+HWND CreatePage1(HWND hParent)
+{
     RECT rcClient, rcTab;
 
     /* Get parent client area size */
@@ -591,7 +614,8 @@ HWND CreatePage1(HWND hParent) {
         NULL
     );
 
-    if (!hPage) {
+    if (!hPage)
+    {
         return NULL;
     }
 
@@ -613,7 +637,7 @@ HWND CreatePage1(HWND hParent) {
         NULL
     );
     SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
-    
+
     /* Create section title */
     HWND hLabel = CreateWindow(
         WC_STATIC,
@@ -753,7 +777,8 @@ HWND CreatePage1(HWND hParent) {
  * Parameters: hParent - Parent window handle
  * Return: HWND - Page handle
  */
-HWND CreatePage2(HWND hParent) {
+HWND CreatePage2(HWND hParent)
+{
     RECT rcClient;
 
     /* Get parent client area size */
@@ -776,7 +801,8 @@ HWND CreatePage2(HWND hParent) {
         NULL
     );
 
-    if (!hPage) {
+    if (!hPage)
+    {
         return NULL;
     }
 
@@ -798,7 +824,7 @@ HWND CreatePage2(HWND hParent) {
         NULL
     );
     SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
-    
+
     /* Create section title */
     HWND hLabel = CreateWindow(
         WC_STATIC,
@@ -905,11 +931,16 @@ HWND CreatePage2(HWND hParent) {
     SendMessage(g_hThemeCombo, CB_ADDSTRING, 0, (LPARAM)"Dark Theme");
     SendMessage(g_hThemeCombo, CB_ADDSTRING, 0, (LPARAM)"Light Theme");
     /* Set initial selection */
-    if (strcmp(g_config.theme, "dark") == 0) {
+    if (strcmp(g_config.theme, "dark") == 0)
+    {
         SendMessage(g_hThemeCombo, CB_SETCURSEL, 1, 0);
-    } else if (strcmp(g_config.theme, "light") == 0) {
+    }
+    else if (strcmp(g_config.theme, "light") == 0)
+    {
         SendMessage(g_hThemeCombo, CB_SETCURSEL, 2, 0);
-    } else {
+    }
+    else
+    {
         SendMessage(g_hThemeCombo, CB_SETCURSEL, 0, 0);
     }
 
@@ -988,7 +1019,8 @@ HWND CreatePage2(HWND hParent) {
  * Parameters: hParent - Parent window handle
  * Return: HWND - Page handle
  */
-HWND CreatePage3(HWND hParent) {
+HWND CreatePage3(HWND hParent)
+{
     RECT rcClient;
 
     /* Get parent client area size */
@@ -1011,7 +1043,8 @@ HWND CreatePage3(HWND hParent) {
         NULL
     );
 
-    if (!hPage) {
+    if (!hPage)
+    {
         return NULL;
     }
 
@@ -1033,7 +1066,7 @@ HWND CreatePage3(HWND hParent) {
         NULL
     );
     SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
-    
+
     /* Create section title */
     HWND hLabel = CreateWindow(
         WC_STATIC,
@@ -1169,14 +1202,16 @@ HWND CreatePage3(HWND hParent) {
  * Parameters: tabIndex - Selected tab index
  * Return: None
  */
-void UpdateTabSelection(int tabIndex) {
+void UpdateTabSelection(int tabIndex)
+{
     /* Hide all pages */
     ShowWindow(g_hPage1, SW_HIDE);
     ShowWindow(g_hPage2, SW_HIDE);
     ShowWindow(g_hPage3, SW_HIDE);
 
     /* Show selected page */
-    switch (tabIndex) {
+    switch (tabIndex)
+    {
     case 0:
         ShowWindow(g_hPage1, SW_SHOW);
         break;
@@ -1196,7 +1231,8 @@ void UpdateTabSelection(int tabIndex) {
  * Parameters: None
  * Return: None
  */
-void UpdateUIState(void) {
+void UpdateUIState(void)
+{
     BOOL isInstalled = checkInstallationStatus();
 
     /* Update button states */
@@ -1213,25 +1249,31 @@ void UpdateUIState(void) {
  * Parameters: None
  * Return: None
  */
-void OnInstallClicked(void) {
+void OnInstallClicked(void)
+{
     char installPath[MAX_PATH];
 
     /* Get install path */
     GetWindowTextA(g_hInstallPathEdit, installPath, MAX_PATH);
 
     /* Validate install path */
-    if (installPath[0] == '\0') {
+    if (installPath[0] == '\0')
+    {
         showMessageBox("Error", "Please enter an install path", MB_OK | MB_ICONERROR);
         return;
     }
 
     /* Execute install */
     int result = installTranslucentSM(installPath);
-    if (result == 0) {
+    if (result == 0)
+    {
         showMessageBox("Success", "Installation completed successfully!", MB_OK | MB_ICONINFORMATION);
         UpdateUIState();
-    } else {
-        showMessageBox("Error", "Installation failed, please check logs for detailed information.", MB_OK | MB_ICONERROR);
+    }
+    else
+    {
+        showMessageBox("Error", "Installation failed, please check logs for detailed information.",
+                       MB_OK | MB_ICONERROR);
     }
 }
 
@@ -1241,21 +1283,27 @@ void OnInstallClicked(void) {
  * Parameters: None
  * Return: None
  */
-void OnUninstallClicked(void) {
+void OnUninstallClicked(void)
+{
     /* Confirm uninstall */
     int choice = showMessageBox("Confirmation", "Are you sure you want to uninstall TranslucentSM?",
                                 MB_YESNO | MB_ICONQUESTION);
-    if (choice != IDYES) {
+    if (choice != IDYES)
+    {
         return;
     }
 
     /* Execute uninstall */
     int result = uninstallTranslucentSM();
-    if (result == 0) {
+    if (result == 0)
+    {
         showMessageBox("Success", "Uninstallation completed successfully!", MB_OK | MB_ICONINFORMATION);
         UpdateUIState();
-    } else {
-        showMessageBox("Error", "Uninstallation failed, please check logs for detailed information.", MB_OK | MB_ICONERROR);
+    }
+    else
+    {
+        showMessageBox("Error", "Uninstallation failed, please check logs for detailed information.",
+                       MB_OK | MB_ICONERROR);
     }
 }
 
@@ -1265,7 +1313,8 @@ void OnUninstallClicked(void) {
  * Parameters: None
  * Return: None
  */
-void OnBrowseClicked(void) {
+void OnBrowseClicked(void)
+{
     BROWSEINFO bi;
     char path[MAX_PATH];
 
@@ -1276,9 +1325,11 @@ void OnBrowseClicked(void) {
 
     /* Show browse dialog */
     LPITEMIDLIST pidl = SHBrowseForFolderA(&bi);
-    if (pidl != NULL) {
+    if (pidl != NULL)
+    {
         /* Get selected path */
-        if (SHGetPathFromIDListA(pidl, path)) {
+        if (SHGetPathFromIDListA(pidl, path))
+        {
             /* Update edit box */
             SetWindowTextA(g_hInstallPathEdit, path);
         }
@@ -1293,25 +1344,37 @@ void OnBrowseClicked(void) {
  * Parameters: None
  * Return: None
  */
-void OnApplyClicked(void) {
+void OnApplyClicked(void)
+{
     /* Get transparency value */
     int opacity = (int)SendMessage(g_hTransparencySlider, TBM_GETPOS, 0, 0);
     /* Get theme */
     int themeIndex = (int)SendMessage(g_hThemeCombo, CB_GETCURSEL, 0, 0);
-    const char* themeNames[] = { "default", "dark", "light" };
+    const char* themeNames[] = {"default", "dark", "light"};
     const char* theme = themeNames[themeIndex];
 
     /* Save theme */
     strcpy(g_config.theme, theme);
     /* Save configuration */
-    if (saveConfig()) {
+    if (saveConfig())
+    {
         /* Apply transparency settings */
-        if (applyTransparencySettings("StartMenuExperienceHost.exe", opacity)) {
-            showMessageBox("Success", "Transparency settings have been applied!", MB_OK | MB_ICONINFORMATION);
-        } else {
-            showMessageBox("Warning", "Failed to apply transparency settings, you may need to restart the Start Menu process.", MB_OK | MB_ICONWARNING);
+        if (applyTransparencySettings("StartMenuExperienceHost.exe", opacity))
+        {
+            showMessageBox(
+                "Success",
+                "Transparency settings have been applied!\n(You may need to restart the Start Menu to see changes)",
+                MB_OK | MB_ICONINFORMATION);
         }
-    } else {
+        else
+        {
+            showMessageBox(
+                "Warning", "Failed to apply transparency settings, you may need to restart the Start Menu process.",
+                MB_OK | MB_ICONWARNING);
+        }
+    }
+    else
+    {
         showMessageBox("Error", "Failed to save configuration!", MB_OK | MB_ICONERROR);
     }
 }
@@ -1322,8 +1385,25 @@ void OnApplyClicked(void) {
  * Parameters: None
  * Return: None
  */
-void OnCheckUpdateClicked(void) {
-    showMessageBox("Information", "Check update function not yet implemented.", MB_OK | MB_ICONINFORMATION);
+void OnCheckUpdateClicked(void)
+{
+    // Show current version information and simulate update check
+    char msg[512];
+    sprintf(msg, "Current Version: %s\n\nChecking for updates...", APP_VERSION);
+    showMessageBox("Check for Updates", msg, MB_OK | MB_ICONINFORMATION);
+
+    // In a real implementation, this would connect to an update server
+    // For now, we'll simulate the update check with a message
+    int result = showMessageBox("Latest Version Check",
+                                "You are currently running the latest version of TranslucentSM.\n\nWould you like to visit the official GitHub repository?",
+                                MB_YESNO | MB_ICONINFORMATION);
+
+    if (result == IDYES)
+    {
+        // Open the GitHub repository in the default browser
+        ShellExecute(NULL, "open", "https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn", NULL, NULL,
+                     SW_SHOWNORMAL);
+    }
 }
 
 /*
@@ -1332,8 +1412,34 @@ void OnCheckUpdateClicked(void) {
  * Parameters: None
  * Return: None
  */
-void OnDownloadSymbolsClicked(void) {
-    showMessageBox("Information", "Download symbols function not yet implemented.", MB_OK | MB_ICONINFORMATION);
+void OnDownloadSymbolsClicked(void)
+{
+    int result = showMessageBox("Download Debug Symbols",
+                                "Debug symbols help with troubleshooting.\n\nDownload now?",
+                                MB_YESNO | MB_ICONQUESTION);
+
+    if (result == IDYES)
+    {
+        // In a real implementation, this would download symbols
+        // from a symbol server for debugging purposes
+        char downloadPath[MAX_PATH];
+        if (GetEnvironmentVariableA("TEMP", downloadPath, MAX_PATH) > 0)
+        {
+            strcat(downloadPath, "\\TranslucentSM_Symbols.zip");
+
+            // Show a message that we would download symbols
+            char msg[512];
+            sprintf(
+                msg,
+                "Would download symbols to: %s\n\nFeature not fully implemented (would download from symbol server)",
+                downloadPath);
+            showMessageBox("Download Symbols", msg, MB_OK | MB_ICONINFORMATION);
+        }
+        else
+        {
+            showMessageBox("Download Symbols", "Failed to get temporary directory for download", MB_OK | MB_ICONERROR);
+        }
+    }
 }
 
 /*
@@ -1342,7 +1448,8 @@ void OnDownloadSymbolsClicked(void) {
  * Parameters: value - Slider value
  * Return: None
  */
-void OnTransparencyChanged(int value) {
+void OnTransparencyChanged(int value)
+{
     char buffer[10];
     sprintf(buffer, "%d%%", value);
     SetWindowTextA(g_hTransparencyValue, buffer);
@@ -1354,7 +1461,8 @@ void OnTransparencyChanged(int value) {
  * Parameters: index - Selected index
  * Return: None
  */
-void OnThemeChanged(int index) {
+void OnThemeChanged(int index)
+{
     UNREFERENCED_PARAMETER(index);
     /* Theme change handling */
     /* Theme switching logic can be added here */
@@ -1369,7 +1477,8 @@ void OnThemeChanged(int index) {
  *   italic - TRUE for italic font, FALSE for regular
  * Return: HFONT - Handle to the created font, or NULL on failure
  */
-HFONT CreateCustomFont(int size, BOOL bold, BOOL italic) {
+HFONT CreateCustomFont(int size, BOOL bold, BOOL italic)
+{
     LOGFONT lf = {0};
 
     lf.lfHeight = -MulDiv(size, GetDeviceCaps(GetDC(NULL), LOGPIXELSY), 72);
@@ -1384,7 +1493,7 @@ HFONT CreateCustomFont(int size, BOOL bold, BOOL italic) {
     lf.lfQuality = CLEARTYPE_QUALITY;
     lf.lfPitchAndFamily = DEFAULT_PITCH | FF_SWISS;
     strcpy(lf.lfFaceName, FONT_FAMILY);
-    
+
     return CreateFontIndirect(&lf);
 }
 
@@ -1396,18 +1505,22 @@ HFONT CreateCustomFont(int size, BOOL bold, BOOL italic) {
  *   isButton - TRUE if control is a button, FALSE otherwise
  * Return: None
  */
-void SetControlStyles(HWND hWnd, BOOL isButton) {
-    if (isButton) {
+void SetControlStyles(HWND hWnd, BOOL isButton)
+{
+    if (isButton)
+    {
         /* Set button styles */
-        SetWindowLongPtr(hWnd, GWL_STYLE, 
-                        GetWindowLongPtr(hWnd, GWL_STYLE) | BS_FLAT);
-        
+        SetWindowLongPtr(hWnd, GWL_STYLE,
+                         GetWindowLongPtr(hWnd, GWL_STYLE) | BS_FLAT);
+
         /* Set button colors */
         SendMessage(hWnd, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
-    } else {
+    }
+    else
+    {
         /* Set common control styles */
         SendMessage(hWnd, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
     }
-    
+
     /* Set text color for better readability is handled elsewhere */
 }

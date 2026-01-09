@@ -23,11 +23,12 @@
 #define DLL_NAME "TranslucentSM.dll"
 
 /* Configuration parameters */
-typedef struct {
-    int tintLuminosityOpacity;  /* Tint luminosity opacity (0-100) */
-    int tintOpacity;            /* Main acrylic opacity (0-100) */
+typedef struct
+{
+    int tintLuminosityOpacity; /* Tint luminosity opacity (0-100) */
+    int tintOpacity; /* Main acrylic opacity (0-100) */
     char installPath[MAX_PATH]; /* Installation path */
-    char theme[32];             /* Theme name */
+    char theme[32]; /* Theme name */
 } Config;
 
 /* Global configuration instance */
@@ -82,6 +83,14 @@ BOOL applyTransparencySettings(const char* processName, int opacity);
  * Return: BOOL - TRUE if installed, FALSE if not installed
  */
 BOOL checkInstallationStatus(void);
+
+/*
+ * Function: restartStartMenuProcess
+ * Description: Restart the Start Menu process to apply changes
+ * Parameters: None
+ * Return: BOOL - TRUE for success, FALSE for failure
+ */
+BOOL restartStartMenuProcess(void);
 
 /*
  * Function: downloadFile

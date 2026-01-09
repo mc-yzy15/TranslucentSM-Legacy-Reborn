@@ -12,7 +12,7 @@
  */
 
 /* Disable warnings for unsafe functions */
-#define _CRT_SECURE_NO_WARNINGS
+#define CRT_SECURE_NO_WARNINGS
 
 #include "translucentsm.h"
 #include <stdio.h>
@@ -39,7 +39,8 @@ Config g_config;
  * Parameters: None
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL initConfig(void) {
+BOOL initConfig(void)
+{
     HKEY hKey;
     DWORD dwSize, dwType;
     LONG lResult;
@@ -51,9 +52,12 @@ BOOL initConfig(void) {
     g_config.tintOpacity = 50;
 
     /* Get default install path */
-    if (GetEnvironmentVariableA("LOCALAPPDATA", defaultPath, MAX_PATH) == 0) {
+    if (GetEnvironmentVariableA("LOCALAPPDATA", defaultPath, MAX_PATH) == 0)
+    {
         strcpy(defaultPath, "C:\\Program Files\\TranslucentSM");
-    } else {
+    }
+    else
+    {
         strcat(defaultPath, "\\TranslucentSM");
     }
     strcpy(g_config.installPath, defaultPath);
@@ -61,36 +65,41 @@ BOOL initConfig(void) {
 
     /* Try to read configuration from registry */
     lResult = RegOpenKeyExA(HKEY_CURRENT_USER, REGISTRY_PATH, 0, KEY_READ, &hKey);
-    if (lResult == ERROR_SUCCESS) {
+    if (lResult == ERROR_SUCCESS)
+    {
         /* Read tint luminosity opacity */
         dwSize = sizeof(DWORD);
-        lResult = RegQueryValueExA(hKey, "TintLuminosityOpacity", NULL, &dwType, 
-                                  (LPBYTE)&g_config.tintLuminosityOpacity, &dwSize);
-        if (lResult != ERROR_SUCCESS || dwType != REG_DWORD) {
+        lResult = RegQueryValueExA(hKey, "TintLuminosityOpacity", NULL, &dwType,
+                                   (LPBYTE)&g_config.tintLuminosityOpacity, &dwSize);
+        if (lResult != ERROR_SUCCESS || dwType != REG_DWORD)
+        {
             g_config.tintLuminosityOpacity = 50;
         }
 
         /* Read main acrylic opacity */
         dwSize = sizeof(DWORD);
-        lResult = RegQueryValueExA(hKey, "TintOpacity", NULL, &dwType, 
-                                  (LPBYTE)&g_config.tintOpacity, &dwSize);
-        if (lResult != ERROR_SUCCESS || dwType != REG_DWORD) {
+        lResult = RegQueryValueExA(hKey, "TintOpacity", NULL, &dwType,
+                                   (LPBYTE)&g_config.tintOpacity, &dwSize);
+        if (lResult != ERROR_SUCCESS || dwType != REG_DWORD)
+        {
             g_config.tintOpacity = 50;
         }
 
         /* Read install path */
         dwSize = MAX_PATH;
-        lResult = RegQueryValueExA(hKey, "InstallPath", NULL, &dwType, 
-                                  (LPBYTE)g_config.installPath, &dwSize);
-        if (lResult != ERROR_SUCCESS || dwType != REG_SZ) {
+        lResult = RegQueryValueExA(hKey, "InstallPath", NULL, &dwType,
+                                   (LPBYTE)g_config.installPath, &dwSize);
+        if (lResult != ERROR_SUCCESS || dwType != REG_SZ)
+        {
             strcpy(g_config.installPath, defaultPath);
         }
 
         /* Read theme */
         dwSize = 32;
-        lResult = RegQueryValueExA(hKey, "Theme", NULL, &dwType, 
-                                  (LPBYTE)g_config.theme, &dwSize);
-        if (lResult != ERROR_SUCCESS || dwType != REG_SZ) {
+        lResult = RegQueryValueExA(hKey, "Theme", NULL, &dwType,
+                                   (LPBYTE)g_config.theme, &dwSize);
+        if (lResult != ERROR_SUCCESS || dwType != REG_SZ)
+        {
             strcpy(g_config.theme, defaultTheme);
         }
 
@@ -98,10 +107,12 @@ BOOL initConfig(void) {
     }
 
     /* Ensure transparency values are within valid range (0-100) */
-    if (g_config.tintLuminosityOpacity < 0 || g_config.tintLuminosityOpacity > 100) {
+    if (g_config.tintLuminosityOpacity < 0 || g_config.tintLuminosityOpacity > 100)
+    {
         g_config.tintLuminosityOpacity = 50;
     }
-    if (g_config.tintOpacity < 0 || g_config.tintOpacity > 100) {
+    if (g_config.tintOpacity < 0 || g_config.tintOpacity > 100)
+    {
         g_config.tintOpacity = 50;
     }
 
@@ -114,47 +125,53 @@ BOOL initConfig(void) {
  * Parameters: None
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL saveConfig(void) {
+BOOL saveConfig(void)
+{
     HKEY hKey;
     LONG lResult;
 
     /* Create or open registry key */
-    lResult = RegCreateKeyExA(HKEY_CURRENT_USER, REGISTRY_PATH, 0, NULL, 
-                             REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKey, NULL);
-    if (lResult != ERROR_SUCCESS) {
+    lResult = RegCreateKeyExA(HKEY_CURRENT_USER, REGISTRY_PATH, 0, NULL,
+                              REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKey, NULL);
+    if (lResult != ERROR_SUCCESS)
+    {
         return FALSE;
     }
 
     /* Save tint luminosity opacity */
-    lResult = RegSetValueExA(hKey, "TintLuminosityOpacity", 0, REG_DWORD, 
-                           (LPBYTE)&g_config.tintLuminosityOpacity, sizeof(DWORD));
-    if (lResult != ERROR_SUCCESS) {
+    lResult = RegSetValueExA(hKey, "TintLuminosityOpacity", 0, REG_DWORD,
+                             (LPBYTE)&g_config.tintLuminosityOpacity, sizeof(DWORD));
+    if (lResult != ERROR_SUCCESS)
+    {
         RegCloseKey(hKey);
         return FALSE;
     }
 
     /* Save main acrylic opacity */
-    lResult = RegSetValueExA(hKey, "TintOpacity", 0, REG_DWORD, 
-                           (LPBYTE)&g_config.tintOpacity, sizeof(DWORD));
-    if (lResult != ERROR_SUCCESS) {
+    lResult = RegSetValueExA(hKey, "TintOpacity", 0, REG_DWORD,
+                             (LPBYTE)&g_config.tintOpacity, sizeof(DWORD));
+    if (lResult != ERROR_SUCCESS)
+    {
         RegCloseKey(hKey);
         return FALSE;
     }
 
     /* Save install path */
-    lResult = RegSetValueExA(hKey, "InstallPath", 0, REG_SZ, 
-                           (LPBYTE)g_config.installPath, 
-                           (DWORD)strlen(g_config.installPath) + 1);
-    if (lResult != ERROR_SUCCESS) {
+    lResult = RegSetValueExA(hKey, "InstallPath", 0, REG_SZ,
+                             (LPBYTE)g_config.installPath,
+                             (DWORD)strlen(g_config.installPath) + 1);
+    if (lResult != ERROR_SUCCESS)
+    {
         RegCloseKey(hKey);
         return FALSE;
     }
 
     /* Save theme */
-    lResult = RegSetValueExA(hKey, "Theme", 0, REG_SZ, 
-                           (LPBYTE)g_config.theme, 
-                           (DWORD)strlen(g_config.theme) + 1);
-    if (lResult != ERROR_SUCCESS) {
+    lResult = RegSetValueExA(hKey, "Theme", 0, REG_SZ,
+                             (LPBYTE)g_config.theme,
+                             (DWORD)strlen(g_config.theme) + 1);
+    if (lResult != ERROR_SUCCESS)
+    {
         RegCloseKey(hKey);
         return FALSE;
     }
@@ -169,7 +186,8 @@ BOOL saveConfig(void) {
  * Parameters: path - Directory path to create
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-static BOOL createDirectoryRecursive(const char* path) {
+static BOOL createDirectoryRecursive(const char* path)
+{
     char tempPath[MAX_PATH];
     char* p;
     BOOL bSuccess = TRUE;
@@ -178,16 +196,21 @@ static BOOL createDirectoryRecursive(const char* path) {
     strcpy(tempPath, path);
 
     /* Handle drive letter */
-    if (tempPath[1] == ':' && tempPath[2] == '\\') {
+    if (tempPath[1] == ':' && tempPath[2] == '\\')
+    {
         p = tempPath + 3;
-    } else {
+    }
+    else
+    {
         p = tempPath;
     }
 
     /* Create directories recursively */
-    while (*p) {
+    while (*p)
+    {
         /* Find path separator */
-        while (*p && *p != '\\') {
+        while (*p && *p != '\\')
+        {
             p++;
         }
 
@@ -196,21 +219,25 @@ static BOOL createDirectoryRecursive(const char* path) {
         *p = '\0';
 
         /* Create directory */
-        if (!CreateDirectoryA(tempPath, NULL) && GetLastError() != ERROR_ALREADY_EXISTS) {
+        if (!CreateDirectoryA(tempPath, NULL) && GetLastError() != ERROR_ALREADY_EXISTS)
+        {
             bSuccess = FALSE;
             break;
         }
 
         /* Restore original character */
         *p = temp;
-        if (*p) {
+        if (*p)
+        {
             p++;
         }
     }
 
-    if (bSuccess) {
+    if (bSuccess)
+    {
         /* Create final directory */
-        if (!CreateDirectoryA(path, NULL) && GetLastError() != ERROR_ALREADY_EXISTS) {
+        if (!CreateDirectoryA(path, NULL) && GetLastError() != ERROR_ALREADY_EXISTS)
+        {
             bSuccess = FALSE;
         }
     }
@@ -225,14 +252,17 @@ static BOOL createDirectoryRecursive(const char* path) {
  *             bufferSize - Buffer size
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-static BOOL getDllPath(char* buffer, DWORD bufferSize) {
-    if (GetModuleFileNameA(NULL, buffer, bufferSize) == 0) {
+static BOOL getDllPath(char* buffer, DWORD bufferSize)
+{
+    if (GetModuleFileNameA(NULL, buffer, bufferSize) == 0)
+    {
         return FALSE;
     }
 
     /* Get directory part */
     char* p = strrchr(buffer, '\\');
-    if (p == NULL) {
+    if (p == NULL)
+    {
         return FALSE;
     }
     *p = '\0';
@@ -250,25 +280,29 @@ static BOOL getDllPath(char* buffer, DWORD bufferSize) {
  * Parameters: installPath - Install path
  * Return: int - 0 for success, other values for error codes
  */
-int installTranslucentSM(const char* installPath) {
+int installTranslucentSM(const char* installPath)
+{
     char sourceDll[MAX_PATH];
     char destDll[MAX_PATH];
     char destDir[MAX_PATH];
     BOOL bResult;
 
     /* Validate parameters */
-    if (installPath == NULL || installPath[0] == '\0') {
+    if (installPath == NULL || installPath[0] == '\0')
+    {
         return 1; /* Invalid install path */
     }
 
     /* Get source DLL path */
-    if (!getDllPath(sourceDll, MAX_PATH)) {
+    if (!getDllPath(sourceDll, MAX_PATH))
+    {
         return 2; /* Failed to get DLL path */
     }
 
     /* Create target directory */
     strcpy(destDir, installPath);
-    if (!createDirectoryRecursive(destDir)) {
+    if (!createDirectoryRecursive(destDir))
+    {
         return 3; /* Failed to create install directory */
     }
 
@@ -278,13 +312,15 @@ int installTranslucentSM(const char* installPath) {
     strcat(destDll, DLL_NAME);
 
     bResult = CopyFileA(sourceDll, destDll, FALSE);
-    if (!bResult) {
+    if (!bResult)
+    {
         return 4; /* Failed to copy DLL file */
     }
 
     /* Update configuration */
     strcpy(g_config.installPath, installPath);
-    if (!saveConfig()) {
+    if (!saveConfig())
+    {
         return 5; /* Failed to save configuration */
     }
 
@@ -299,7 +335,8 @@ int installTranslucentSM(const char* installPath) {
  * Parameters: None
  * Return: int - 0 for success, other values for error codes
  */
-int uninstallTranslucentSM(void) {
+int uninstallTranslucentSM(void)
+{
     char dllPath[MAX_PATH];
     HKEY hKey;
     LONG lResult;
@@ -312,24 +349,29 @@ int uninstallTranslucentSM(void) {
     strcat(dllPath, "\\");
     strcat(dllPath, DLL_NAME);
 
-    if (!DeleteFileA(dllPath)) {
+    if (!DeleteFileA(dllPath))
+    {
         DWORD dwError = GetLastError();
-        if (dwError != ERROR_FILE_NOT_FOUND) {
+        if (dwError != ERROR_FILE_NOT_FOUND)
+        {
             return 1; /* Failed to delete DLL file */
         }
     }
 
     /* Delete install directory */
-    if (!RemoveDirectoryA(g_config.installPath)) {
+    if (!RemoveDirectoryA(g_config.installPath))
+    {
         DWORD dwError = GetLastError();
-        if (dwError != ERROR_FILE_NOT_FOUND && dwError != ERROR_DIR_NOT_EMPTY) {
+        if (dwError != ERROR_FILE_NOT_FOUND && dwError != ERROR_DIR_NOT_EMPTY)
+        {
             return 2; /* Failed to delete install directory */
         }
     }
 
     /* Delete registry key */
     lResult = RegDeleteKeyA(HKEY_CURRENT_USER, REGISTRY_PATH);
-    if (lResult != ERROR_SUCCESS && lResult != ERROR_FILE_NOT_FOUND) {
+    if (lResult != ERROR_SUCCESS && lResult != ERROR_FILE_NOT_FOUND)
+    {
         return 3; /* Failed to delete registry key */
     }
 
@@ -343,14 +385,16 @@ int uninstallTranslucentSM(void) {
  *             pProcessId - Output parameter, stores found process ID
  * Return: BOOL - TRUE if found, FALSE if not found
  */
-static BOOL findProcessByName(const char* processName, DWORD* pProcessId) {
+static BOOL findProcessByName(const char* processName, DWORD* pProcessId)
+{
     HANDLE hSnapshot;
     PROCESSENTRY32 pe32;
     BOOL bFound = FALSE;
 
     /* Create process snapshot */
     hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hSnapshot == INVALID_HANDLE_VALUE) {
+    if (hSnapshot == INVALID_HANDLE_VALUE)
+    {
         return FALSE;
     }
 
@@ -358,14 +402,18 @@ static BOOL findProcessByName(const char* processName, DWORD* pProcessId) {
     pe32.dwSize = sizeof(PROCESSENTRY32);
 
     /* Traverse process list */
-    if (Process32First(hSnapshot, &pe32)) {
-        do {
-            if (strcmp(pe32.szExeFile, processName) == 0) {
+    if (Process32First(hSnapshot, &pe32))
+    {
+        do
+        {
+            if (strcmp(pe32.szExeFile, processName) == 0)
+            {
                 *pProcessId = pe32.th32ProcessID;
                 bFound = TRUE;
                 break;
             }
-        } while (Process32Next(hSnapshot, &pe32));
+        }
+        while (Process32Next(hSnapshot, &pe32));
     }
 
     /* Close snapshot handle */
@@ -381,7 +429,8 @@ static BOOL findProcessByName(const char* processName, DWORD* pProcessId) {
  *             dllPath - Full path of DLL
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-static BOOL injectDll(DWORD processId, const char* dllPath) {
+static BOOL injectDll(DWORD processId, const char* dllPath)
+{
     HANDLE hProcess;
     LPVOID lpBaseAddress = NULL;
     LPVOID lpLoadLibrary;
@@ -391,30 +440,35 @@ static BOOL injectDll(DWORD processId, const char* dllPath) {
 
     /* Open target process */
     hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, processId);
-    if (hProcess == NULL) {
+    if (hProcess == NULL)
+    {
         return FALSE;
     }
 
     /* Get address of LoadLibraryA function */
     lpLoadLibrary = (LPVOID)GetProcAddress(GetModuleHandleA("kernel32.dll"), "LoadLibraryA");
-    if (lpLoadLibrary == NULL) {
+    if (lpLoadLibrary == NULL)
+    {
         goto cleanup;
     }
 
     /* Allocate memory */
     lpBaseAddress = VirtualAllocEx(hProcess, NULL, strlen(dllPath) + 1, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-    if (lpBaseAddress == NULL) {
+    if (lpBaseAddress == NULL)
+    {
         goto cleanup;
     }
 
     /* Write DLL path */
-    if (!WriteProcessMemory(hProcess, lpBaseAddress, dllPath, strlen(dllPath) + 1, &dwBytesWritten)) {
+    if (!WriteProcessMemory(hProcess, lpBaseAddress, dllPath, strlen(dllPath) + 1, &dwBytesWritten))
+    {
         goto cleanup;
     }
 
     /* Create remote thread */
     hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)lpLoadLibrary, lpBaseAddress, 0, NULL);
-    if (hThread == NULL) {
+    if (hThread == NULL)
+    {
         goto cleanup;
     }
 
@@ -426,7 +480,8 @@ static BOOL injectDll(DWORD processId, const char* dllPath) {
 
 cleanup:
     /* Clean up resources */
-    if (lpBaseAddress != NULL) {
+    if (lpBaseAddress != NULL)
+    {
         VirtualFreeEx(hProcess, lpBaseAddress, 0, MEM_RELEASE);
     }
     CloseHandle(hProcess);
@@ -441,35 +496,41 @@ cleanup:
  *             opacity - Opacity value (0-100)
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL applyTransparencySettings(const char* processName, int opacity) {
+BOOL applyTransparencySettings(const char* processName, int opacity)
+{
     DWORD processId;
     char dllPath[MAX_PATH];
     BOOL bResult;
 
     /* Validate parameters */
-    if (processName == NULL || opacity < 0 || opacity > 100) {
+    if (processName == NULL || opacity < 0 || opacity > 100)
+    {
         return FALSE;
     }
 
     /* Update configuration */
     g_config.tintOpacity = opacity;
-    if (!saveConfig()) {
+    if (!saveConfig())
+    {
         return FALSE;
     }
 
     /* Find target process */
-    if (!findProcessByName(processName, &processId)) {
+    if (!findProcessByName(processName, &processId))
+    {
         return FALSE;
     }
 
     /* Get DLL path */
-    if (!getDllPath(dllPath, MAX_PATH)) {
+    if (!getDllPath(dllPath, MAX_PATH))
+    {
         return FALSE;
     }
 
     /* Inject DLL */
     bResult = injectDll(processId, dllPath);
-    if (!bResult) {
+    if (!bResult)
+    {
         return FALSE;
     }
 
@@ -482,7 +543,8 @@ BOOL applyTransparencySettings(const char* processName, int opacity) {
  * Parameters: None
  * Return: BOOL - TRUE if installed, FALSE if not installed
  */
-BOOL checkInstallationStatus(void) {
+BOOL checkInstallationStatus(void)
+{
     char dllPath[MAX_PATH];
 
     /* Build DLL path */
@@ -502,7 +564,8 @@ BOOL checkInstallationStatus(void) {
  *             progressCallback - Progress callback function (optional)
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-BOOL downloadFile(const char* url, const char* destPath, void (*progressCallback)(int)) {
+BOOL downloadFile(const char* url, const char* destPath, void (*progressCallback)(int))
+{
     HINTERNET hInternet, hConnect;
     DWORD dwBytesRead, dwTotalSize = 0, dwCurrentSize = 0;
     char buffer[4096];
@@ -511,50 +574,60 @@ BOOL downloadFile(const char* url, const char* destPath, void (*progressCallback
 
     /* Initialize WinINet */
     hInternet = InternetOpenA(APP_NAME, INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
-    if (hInternet == NULL) {
+    if (hInternet == NULL)
+    {
         return FALSE;
     }
 
     /* Open connection */
     hConnect = InternetOpenUrlA(hInternet, url, NULL, 0, INTERNET_FLAG_RELOAD | INTERNET_FLAG_NO_CACHE_WRITE, 0);
-    if (hConnect == NULL) {
+    if (hConnect == NULL)
+    {
         InternetCloseHandle(hInternet);
         return FALSE;
     }
 
     /* Get file size */
     DWORD dwBufferLength = sizeof(dwTotalSize);
-    if (HttpQueryInfoA(hConnect, HTTP_QUERY_CONTENT_LENGTH | HTTP_QUERY_FLAG_NUMBER, &dwTotalSize, &dwBufferLength, NULL) == FALSE) {
+    if (HttpQueryInfoA(hConnect, HTTP_QUERY_CONTENT_LENGTH | HTTP_QUERY_FLAG_NUMBER, &dwTotalSize, &dwBufferLength,
+                       NULL) == FALSE)
+    {
         dwTotalSize = 0;
     }
 
     /* Create target file */
     hFile = CreateFileA(destPath, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-    if (hFile == INVALID_HANDLE_VALUE) {
+    if (hFile == INVALID_HANDLE_VALUE)
+    {
         InternetCloseHandle(hConnect);
         InternetCloseHandle(hInternet);
         return FALSE;
     }
 
     /* Download file */
-    while (TRUE) {
-        if (InternetReadFile(hConnect, buffer, sizeof(buffer), &dwBytesRead) == FALSE) {
+    while (TRUE)
+    {
+        if (InternetReadFile(hConnect, buffer, sizeof(buffer), &dwBytesRead) == FALSE)
+        {
             break;
         }
 
-        if (dwBytesRead == 0) {
+        if (dwBytesRead == 0)
+        {
             bResult = TRUE;
             break;
         }
 
         /* Write to file */
-        if (WriteFile(hFile, buffer, dwBytesRead, &dwBytesRead, NULL) == FALSE) {
+        if (WriteFile(hFile, buffer, dwBytesRead, &dwBytesRead, NULL) == FALSE)
+        {
             break;
         }
 
         /* Update progress */
         dwCurrentSize += dwBytesRead;
-        if (progressCallback != NULL && dwTotalSize > 0) {
+        if (progressCallback != NULL && dwTotalSize > 0)
+        {
             int progress = (int)((dwCurrentSize * 100) / dwTotalSize);
             progressCallback(progress);
         }
@@ -565,7 +638,8 @@ BOOL downloadFile(const char* url, const char* destPath, void (*progressCallback
     InternetCloseHandle(hConnect);
     InternetCloseHandle(hInternet);
 
-    if (!bResult) {
+    if (!bResult)
+    {
         /* Delete incomplete file */
         DeleteFileA(destPath);
     }
@@ -581,6 +655,105 @@ BOOL downloadFile(const char* url, const char* destPath, void (*progressCallback
  *             type - Message box type (MB_OK, MB_OKCANCEL, etc.)
  * Return: int - Button ID selected by user
  */
-int showMessageBox(const char* title, const char* message, int type) {
+int showMessageBox(const char* title, const char* message, int type)
+{
     return (int)MessageBoxA(NULL, message, title, type);
+}
+
+/*
+ * Function: restartStartMenuProcess
+ * Description: Restart the Start Menu process to apply changes
+ * Parameters: None
+ * Return: BOOL - TRUE for success, FALSE for failure
+ */
+BOOL restartStartMenuProcess(void)
+{
+    HANDLE hSnapshot;
+    PROCESSENTRY32 pe32;
+    DWORD processId = 0;
+    HANDLE hProcess;
+
+    // Take a snapshot of all processes
+    hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE)
+    {
+        return FALSE;
+    }
+
+    pe32.dwSize = sizeof(PROCESSENTRY32);
+
+    // Get the first process
+    if (!Process32First(hSnapshot, &pe32))
+    {
+        CloseHandle(hSnapshot);
+        return FALSE;
+    }
+
+    // Look for StartMenuExperienceHost.exe
+    do
+    {
+        if (strcmp(pe32.szExeFile, "StartMenuExperienceHost.exe") == 0)
+        {
+            processId = pe32.th32ProcessID;
+            break;
+        }
+    }
+    while (Process32Next(hSnapshot, &pe32));
+
+    CloseHandle(hSnapshot);
+
+    if (processId == 0)
+    {
+        // Process not found, try to start it
+        SHELLEXECUTEINFOA sei = {0};
+        sei.cbSize = sizeof(SHELLEXECUTEINFOA);
+        sei.fMask = SEE_MASK_NOCLOSEPROCESS;
+        sei.lpVerb = "open";
+        sei.lpFile = "explorer";
+        sei.lpParameters = "shell:::{4234d49b-0245-4df3-b780-389394344a44}"; // Start menu URI
+        sei.nShow = SW_SHOWNORMAL;
+
+        if (ShellExecuteExA(&sei))
+        {
+            CloseHandle(sei.hProcess);
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    // Open the process
+    hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, processId);
+    if (hProcess == NULL)
+    {
+        return FALSE;
+    }
+
+    // Terminate the process
+    if (!TerminateProcess(hProcess, 0))
+    {
+        CloseHandle(hProcess);
+        return FALSE;
+    }
+
+    CloseHandle(hProcess);
+
+    // Wait a bit for the process to terminate
+    Sleep(1000);
+
+    // Restart the process
+    SHELLEXECUTEINFOA sei = {0};
+    sei.cbSize = sizeof(SHELLEXECUTEINFOA);
+    sei.fMask = SEE_MASK_NOCLOSEPROCESS;
+    sei.lpVerb = "open";
+    sei.lpFile = "explorer";
+    sei.lpParameters = "shell:::{4234d49b-0245-4df3-b780-389394344a44}"; // Start menu URI
+    sei.nShow = SW_SHOWNORMAL;
+
+    if (ShellExecuteExA(&sei))
+    {
+        CloseHandle(sei.hProcess);
+        return TRUE;
+    }
+
+    return FALSE;
 }
