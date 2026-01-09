@@ -12,7 +12,7 @@
  */
 
 /* Disable warnings for unsafe functions */
-#define _CRT_SECURE_NO_WARNINGS
+#define CRT_SECURE_NO_WARNINGS
 
 #include "translucentsm.h"
 #include <windows.h>
@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <shlobj.h> // For BROWSEINFO and SHBrowseForFolderA
+#include <shlobj.h> // For BROWSE-INFO and SHBrowseForFolderA
 
 /* Linked libraries */
 #pragma comment(lib, "comctl32.lib")
@@ -34,6 +34,22 @@
 #define WINDOW_HEIGHT 600
 #define WINDOW_CLASS "TranslucentSMClass"
 #define WINDOW_TITLE "TranslucentSM - Windows Start Menu Transparency Tool"
+
+/* Color definitions for modern UI */
+#define COLOR_PRIMARY RGB(41, 128, 185) /* Blue */
+#define COLOR_SECONDARY RGB(52, 152, 219) /* Light Blue */
+#undef COLOR_BACKGROUND
+#define COLOR_BACKGROUND RGB(245, 247, 250) /* Light Gray */
+#define COLOR_PANEL_BACKGROUND RGB(255, 255, 255) /* White */
+#define COLOR_TEXT RGB(44, 62, 80) /* Dark Gray */
+#define COLOR_TEXT_LIGHT RGB(127, 140, 141) /* Light Gray */
+#define COLOR_BORDER RGB(221, 221, 221) /* Border Gray */
+
+/* Font definitions */
+#define FONT_FAMILY "Segoe UI"
+#define FONT_SIZE_NORMAL 10
+#define FONT_SIZE_LARGE 12
+#define FONT_SIZE_HEADER 14
 
 /* Control IDs */
 #define ID_INSTALL_BUTTON 1001
@@ -68,6 +84,27 @@ HWND g_hPage2 = NULL;
 HWND g_hPage3 = NULL;
 
 /*
+ * Function: CreateCustomFont
+ * Description: Create a custom font with specified size and style
+ * Parameters:
+ *   size - Font size
+ *   bold - TRUE for bold font, FALSE for regular
+ *   italic - TRUE for italic font, FALSE for regular
+ * Return: FONT - Handle to the created font, or NULL on failure
+ */
+HFONT CreateCustomFont(int size, BOOL bold, BOOL italic);
+
+/*
+ * Function: SetControlStyles
+ * Description: Set modern styles for a control
+ * Parameters:
+ *   hWnd - Control handle
+ *   isButton - TRUE if control is a button, FALSE otherwise
+ * Return: None
+ */
+void SetControlStyles(HWND hWnd, BOOL isButton);
+
+/*
  * Function: WndProc
  * Description: Window message processing function
  * Parameters:
@@ -75,7 +112,7 @@ HWND g_hPage3 = NULL;
  *   uMsg - Message type
  *   wParam - Message parameter
  *   lParam - Message parameter
- * Return: LRESULT - Message processing result
+ * Return: RESULT - Message processing result
  */
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -91,7 +128,7 @@ BOOL InitAppCommonControls(void);
  * Function: CreateTabControl
  * Description: Create tab control
  * Parameters: hParent - Parent window handle
- * Return: HWND - Tab control handle
+ * Return: HAND - Tab control handle
  */
 HWND CreateTabControl(HWND hParent);
 
@@ -99,7 +136,7 @@ HWND CreateTabControl(HWND hParent);
  * Function: CreatePage1
  * Description: Create install/uninstall page
  * Parameters: hParent - Parent window handle
- * Return: HWND - Page handle
+ * Return: HAND - Page handle
  */
 HWND CreatePage1(HWND hParent);
 
@@ -107,7 +144,7 @@ HWND CreatePage1(HWND hParent);
  * Function: CreatePage2
  * Description: Create settings page
  * Parameters: hParent - Parent window handle
- * Return: HWND - Page handle
+ * Return: HAND - Page handle
  */
 HWND CreatePage2(HWND hParent);
 
@@ -115,7 +152,7 @@ HWND CreatePage2(HWND hParent);
  * Function: CreatePage3
  * Description: Create about page
  * Parameters: hParent - Parent window handle
- * Return: HWND - Page handle
+ * Return: HAND - Page handle
  */
 HWND CreatePage3(HWND hParent);
 
@@ -236,7 +273,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     /* Initialize common controls */
     if (!InitAppCommonControls()) {
         MessageBox(NULL, "Failed to initialize common controls library", "Error", MB_ICONERROR | MB_OK);
-        return 1;
     }
 
     /* Register window class */
@@ -337,15 +373,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
  * Return: BOOL - TRUE for success, FALSE for failure
  */
 BOOL InitAppCommonControls(void) {
-    /* For compatibility reasons, we'll try both methods */
-    
-    /* First, try the traditional InitCommonControls */
-    InitCommonControls();
-    
-    /* Then try InitCommonControlsEx for more specific control initialization */
-    INITCOMMONCONTROLSEX icex;
-    
     /* Initialize the structure correctly */
+    INITCOMMONCONTROLSEX icex;
     ZeroMemory(&icex, sizeof(icex));
     icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
     
@@ -355,11 +384,7 @@ BOOL InitAppCommonControls(void) {
     /* Call the Windows API function */
     BOOL result = InitCommonControlsEx(&icex);
     
-    /* Even if InitCommonControlsEx fails, InitCommonControls might have succeeded */
-    /* So we'll return TRUE regardless, since most common controls will be initialized */
-    UNREFERENCED_PARAMETER(result);
-    
-    return TRUE;
+    return result;
 }
 
 /*
@@ -417,6 +442,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
                 OnThemeChanged(index);
             }
             break;
+        default: ;
         }
         break;
 
@@ -437,6 +463,22 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
             SetWindowPos(g_hTabControl, NULL, 0, 0, rcClient.right, rcClient.bottom, SWP_NOZORDER);
         }
         break;
+    
+    case WM_CTLCOLORSTATIC:
+    {
+        HDC hdcStatic = (HDC)wParam;
+        SetTextColor(hdcStatic, COLOR_TEXT);
+        SetBkMode(hdcStatic, TRANSPARENT);
+        return (LRESULT)GetStockObject(HOLLOW_BRUSH);
+    }
+    
+    case WM_CTLCOLORBTN:
+    {
+        HDC hdcButton = (HDC)wParam;
+        SetTextColor(hdcButton, COLOR_TEXT);
+        SetBkMode(hdcButton, TRANSPARENT);
+        return (LRESULT)GetStockObject(HOLLOW_BRUSH);
+    }
 
     case WM_CLOSE:
         DestroyWindow(hWnd);
@@ -457,11 +499,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
  * Function: CreateTabControl
  * Description: Create tab control
  * Parameters: hParent - Parent window handle
- * Return: HWND - Tab control handle
+ * Return: HAND - Tab control handle
  */
 HWND CreateTabControl(HWND hParent) {
     RECT rcClient;
-    HWND hTab;
     TCITEM tie;
     char szTabText[256];
 
@@ -469,10 +510,11 @@ HWND CreateTabControl(HWND hParent) {
     GetClientRect(hParent, &rcClient);
 
     /* Create tab control */
-    hTab = CreateWindow(
+    HWND hTab;
+    hTab = (
         WC_TABCONTROL,
         "",
-        WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN,
+        WS_CLIPCHILDREN | (WS_TABSTOP | (WS_CHILD | WS_VISIBLE) | WS_CLIPSIBLINGS),
         0,
         0,
         rcClient.right,
@@ -524,24 +566,20 @@ HWND CreateTabControl(HWND hParent) {
  * Return: HWND - Page handle
  */
 HWND CreatePage1(HWND hParent) {
-    HWND hPage;
     RECT rcClient, rcTab;
-    int tabHeight;
-    HWND hLabel;
-    HFONT hFont;
 
     /* Get parent client area size */
     GetClientRect(hParent, &rcClient);
     /* Get tab size */
     GetWindowRect(hParent, &rcTab);
     /* Calculate tab height */
-    tabHeight = 32;
+    int tabHeight = 32;
 
     /* Create page */
-    hPage = CreateWindow(
+    HWND hPage = (
         WC_STATIC,
         "",
-        WS_CHILD | WS_VISIBLE | WS_BORDER,
+        WS_CHILD | WS_VISIBLE,
         0,
         tabHeight,
         rcClient.right,
@@ -557,8 +595,39 @@ HWND CreatePage1(HWND hParent) {
     }
 
     /* Set background color */
-    SetWindowLongPtr(hPage, GWL_STYLE, GetWindowLongPtr(hPage, GWL_STYLE) & ~WS_BORDER);
-    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)GetStockObject(WHITE_BRUSH));
+    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_BACKGROUND));
+
+    /* Create container for install section */
+    HWND hContainer = CreateWindow(
+        WC_STATIC,
+        "",
+        WS_CHILD | WS_VISIBLE | WS_BORDER,
+        20,
+        20,
+        rcClient.right - 40,
+        rcClient.bottom - tabHeight - 40,
+        hPage,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
+    
+    /* Create section title */
+    HWND hLabel = (
+        WC_STATIC,
+        "Installation",
+        WS_CHILD | WS_VISIBLE,
+        20,
+        20,
+        200,
+        25,
+        hContainer,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_HEADER, TRUE, FALSE), TRUE);
 
     /* Create install path label */
     hLabel = CreateWindow(
@@ -566,44 +635,47 @@ HWND CreatePage1(HWND hParent) {
         "Install Path:",
         WS_CHILD | WS_VISIBLE,
         20,
-        20,
-        80,
+        60,
+        100,
         25,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create install path edit box */
     g_hInstallPathEdit = CreateWindow(
         WC_EDIT,
         g_config.installPath,
         WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOHSCROLL,
-        110,
-        20,
-        400,
-        25,
-        hPage,
+        130,
+        60,
+        450,
+        30,
+        hContainer,
         (HMENU)ID_INSTALL_PATH_EDIT,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hInstallPathEdit, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create browse button */
     g_hBrowseButton = CreateWindow(
         WC_BUTTON,
         "Browse...",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-        520,
-        20,
-        80,
-        25,
-        hPage,
+        590,
+        60,
+        100,
+        30,
+        hContainer,
         (HMENU)ID_BROWSE_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hBrowseButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Create install description label */
     hLabel = CreateWindow(
@@ -611,25 +683,26 @@ HWND CreatePage1(HWND hParent) {
         "TranslucentSM provides transparency effects for Windows 11 Start Menu. Note: This application must be used on Windows 11 22000 or above.",
         WS_CHILD | WS_VISIBLE | SS_LEFT,
         20,
-        60,
-        800,
-        50,
-        hPage,
+        110,
+        rcClient.right - 100,
+        40,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create separator */
     CreateWindow(
         WC_STATIC,
         "",
-        WS_CHILD | WS_VISIBLE | WS_BORDER | SS_ETCHEDHORZ,
+        WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
         20,
-        120,
-        800,
+        160,
+        rcClient.right - 100,
         2,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
@@ -641,14 +714,15 @@ HWND CreatePage1(HWND hParent) {
         "Install",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         300,
-        150,
+        190,
         120,
         40,
-        hPage,
+        hContainer,
         (HMENU)ID_INSTALL_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hInstallButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Create uninstall button */
     g_hUninstallButton = CreateWindow(
@@ -656,14 +730,15 @@ HWND CreatePage1(HWND hParent) {
         "Uninstall",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         430,
-        150,
+        190,
         120,
         40,
-        hPage,
+        hContainer,
         (HMENU)ID_UNINSTALL_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hUninstallButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Update UI state */
     UpdateUIState();
@@ -678,18 +753,15 @@ HWND CreatePage1(HWND hParent) {
  * Return: HWND - Page handle
  */
 HWND CreatePage2(HWND hParent) {
-    HWND hPage;
     RECT rcClient;
-    HWND hLabel;
-    int tabHeight;
 
     /* Get parent client area size */
     GetClientRect(hParent, &rcClient);
     /* Calculate tab height */
-    tabHeight = 32;
+    int tabHeight = 32;
 
     /* Create page */
-    hPage = CreateWindow(
+    HWND hPage = CreateWindow(
         WC_STATIC,
         "",
         WS_CHILD | WS_VISIBLE,
@@ -708,7 +780,39 @@ HWND CreatePage2(HWND hParent) {
     }
 
     /* Set background color */
-    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)GetStockObject(WHITE_BRUSH));
+    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_BACKGROUND));
+
+    /* Create container for settings */
+    HWND hContainer = CreateWindow(
+        WC_STATIC,
+        "",
+        WS_CHILD | WS_VISIBLE | WS_BORDER,
+        20,
+        20,
+        rcClient.right - 40,
+        rcClient.bottom - tabHeight - 40,
+        hPage,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
+    
+    /* Create section title */
+    HWND hLabel = CreateWindow(
+        WC_STATIC,
+        "Settings",
+        WS_CHILD | WS_VISIBLE,
+        20,
+        20,
+        200,
+        25,
+        hContainer,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_HEADER, TRUE, FALSE), TRUE);
 
     /* Create transparency setting label */
     hLabel = CreateWindow(
@@ -716,25 +820,26 @@ HWND CreatePage2(HWND hParent) {
         "Transparency Setting:",
         WS_CHILD | WS_VISIBLE,
         20,
-        20,
-        100,
+        60,
+        120,
         25,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create transparency slider */
     g_hTransparencySlider = CreateWindow(
         TRACKBAR_CLASS,
         "",
         WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,
-        130,
-        20,
+        150,
+        60,
         400,
-        25,
-        hPage,
+        30,
+        hContainer,
         (HMENU)ID_TRANSPARENCY_SLIDER,
         GetModuleHandle(NULL),
         NULL
@@ -743,21 +848,24 @@ HWND CreatePage2(HWND hParent) {
     SendMessage(g_hTransparencySlider, TBM_SETRANGE, TRUE, MAKELONG(0, 100));
     /* Set initial value */
     SendMessage(g_hTransparencySlider, TBM_SETPOS, TRUE, g_config.tintOpacity);
+    /* Set slider font */
+    SendMessage(g_hTransparencySlider, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create transparency value display */
     g_hTransparencyValue = CreateWindow(
         WC_EDIT,
         "50%",
         WS_CHILD | WS_VISIBLE | WS_BORDER | ES_READONLY | ES_CENTER,
-        540,
-        20,
+        560,
         60,
-        25,
-        hPage,
+        80,
+        30,
+        hContainer,
         (HMENU)ID_TRANSPARENCY_VALUE,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hTransparencyValue, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Create theme selection label */
     hLabel = CreateWindow(
@@ -765,29 +873,32 @@ HWND CreatePage2(HWND hParent) {
         "Theme Selection:",
         WS_CHILD | WS_VISIBLE,
         20,
-        60,
-        100,
+        110,
+        120,
         25,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create theme combo box */
     g_hThemeCombo = CreateWindow(
         WC_COMBOBOX,
         "",
         WS_CHILD | WS_VISIBLE | CBS_DROPDOWNLIST | WS_TABSTOP,
-        130,
-        60,
+        150,
+        110,
+        220,
         200,
-        200,
-        hPage,
+        hContainer,
         (HMENU)ID_THEME_COMBO,
         GetModuleHandle(NULL),
         NULL
     );
+    /* Set combo box font */
+    SendMessage(g_hThemeCombo, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
     /* Add theme options */
     SendMessage(g_hThemeCombo, CB_ADDSTRING, 0, (LPARAM)"Default Theme");
     SendMessage(g_hThemeCombo, CB_ADDSTRING, 0, (LPARAM)"Dark Theme");
@@ -801,20 +912,36 @@ HWND CreatePage2(HWND hParent) {
         SendMessage(g_hThemeCombo, CB_SETCURSEL, 0, 0);
     }
 
+    /* Create separator */
+    CreateWindow(
+        WC_STATIC,
+        "",
+        WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
+        20,
+        160,
+        rcClient.right - 100,
+        2,
+        hContainer,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+
     /* Create apply button */
     g_hApplyButton = CreateWindow(
         WC_BUTTON,
         "Apply Settings",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         300,
-        120,
+        190,
         120,
         40,
-        hPage,
+        hContainer,
         (HMENU)ID_APPLY_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hApplyButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Create check update button */
     g_hCheckUpdateButton = CreateWindow(
@@ -822,14 +949,15 @@ HWND CreatePage2(HWND hParent) {
         "Check Update",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         430,
-        120,
+        190,
         120,
         40,
-        hPage,
+        hContainer,
         (HMENU)ID_CHECK_UPDATE_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hCheckUpdateButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Create download symbols button */
     g_hDownloadSymbolsButton = CreateWindow(
@@ -837,14 +965,15 @@ HWND CreatePage2(HWND hParent) {
         "Download Symbols",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         300,
-        170,
+        240,
         250,
         40,
-        hPage,
+        hContainer,
         (HMENU)ID_DOWNLOAD_SYMBOLS_BUTTON,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(g_hDownloadSymbolsButton, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
 
     /* Update UI state */
     UpdateUIState();
@@ -859,19 +988,15 @@ HWND CreatePage2(HWND hParent) {
  * Return: HWND - Page handle
  */
 HWND CreatePage3(HWND hParent) {
-    HWND hPage;
     RECT rcClient;
-    int tabHeight;
-    HWND hLabel;
-    LOGFONT lf;
 
     /* Get parent client area size */
     GetClientRect(hParent, &rcClient);
     /* Calculate tab height */
-    tabHeight = 32;
+    int tabHeight = 32;
 
     /* Create page */
-    hPage = CreateWindow(
+    HWND hPage = (
         WC_STATIC,
         "",
         WS_CHILD | WS_VISIBLE,
@@ -890,18 +1015,50 @@ HWND CreatePage3(HWND hParent) {
     }
 
     /* Set background color */
-    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)GetStockObject(WHITE_BRUSH));
+    SetClassLongPtr(hPage, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_BACKGROUND));
+
+    /* Create container for about section */
+    HWND hContainer = CreateWindow(
+        WC_STATIC,
+        "",
+        WS_CHILD | WS_VISIBLE | WS_BORDER,
+        20,
+        20,
+        rcClient.right - 40,
+        rcClient.bottom - tabHeight - 40,
+        hPage,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
+    
+    /* Create section title */
+    HWND hLabel = (
+        WC_STATIC,
+        "About",
+        WS_CHILD | WS_VISIBLE,
+        20,
+        20,
+        200,
+        25,
+        hContainer,
+        NULL,
+        GetModuleHandle(NULL),
+        NULL
+    );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_HEADER, TRUE, FALSE), TRUE);
 
     /* Create application icon */
     CreateWindow(
         WC_STATIC,
         "",
         WS_CHILD | WS_VISIBLE | SS_ICON | SS_CENTER,
-        400,
-        50,
+        (rcClient.right - 40) / 2 - 32,
+        60,
         64,
         64,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
@@ -913,22 +1070,15 @@ HWND CreatePage3(HWND hParent) {
         "TranslucentSM",
         WS_CHILD | WS_VISIBLE | SS_CENTER,
         0,
-        120,
-        850,
-        30,
-        hPage,
+        130,
+        rcClient.right - 40,
+        35,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
-    /* Set font */
-    memset(&lf, 0, sizeof(lf));
-    lf.lfHeight = 20;
-    lf.lfWeight = FW_BOLD;
-    strcpy(lf.lfFaceName, "Arial");
-    HFONT hFont = CreateFontIndirect(&lf);
-    SendMessage(hLabel, WM_SETFONT, (WPARAM)hFont, TRUE);
-    DeleteObject(hFont); /* Release the font resource */
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(24, TRUE, FALSE), TRUE);
 
     /* Create version information */
     hLabel = CreateWindow(
@@ -936,25 +1086,26 @@ HWND CreatePage3(HWND hParent) {
         "Version 1.0.0",
         WS_CHILD | WS_VISIBLE | SS_CENTER,
         0,
-        150,
-        850,
-        20,
-        hPage,
+        170,
+        rcClient.right - 40,
+        25,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_LARGE, FALSE, FALSE), TRUE);
 
     /* Create separator */
     CreateWindow(
         WC_STATIC,
         "",
         WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
-        20,
-        190,
-        800,
+        40,
+        200,
+        rcClient.right - 120,
         2,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
@@ -966,14 +1117,15 @@ HWND CreatePage3(HWND hParent) {
         "Author: mc-yzy15",
         WS_CHILD | WS_VISIBLE | SS_CENTER,
         0,
-        210,
-        850,
+        220,
+        rcClient.right - 40,
         20,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create email information */
     hLabel = CreateWindow(
@@ -981,14 +1133,15 @@ HWND CreatePage3(HWND hParent) {
         "Email: yingmoliuguang@yeah.net",
         WS_CHILD | WS_VISIBLE | SS_CENTER,
         0,
-        230,
-        850,
+        245,
+        rcClient.right - 40,
         20,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     /* Create GitHub information */
     hLabel = CreateWindow(
@@ -996,14 +1149,15 @@ HWND CreatePage3(HWND hParent) {
         "GitHub: https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn",
         WS_CHILD | WS_VISIBLE | SS_CENTER,
         0,
-        250,
-        850,
+        270,
+        rcClient.right - 40,
         20,
-        hPage,
+        hContainer,
         NULL,
         GetModuleHandle(NULL),
         NULL
     );
+    SendMessage(hLabel, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
 
     return hPage;
 }
@@ -1031,6 +1185,7 @@ void UpdateTabSelection(int tabIndex) {
     case 2:
         ShowWindow(g_hPage3, SW_SHOW);
         break;
+    default: ;
     }
 }
 
@@ -1059,7 +1214,6 @@ void UpdateUIState(void) {
  */
 void OnInstallClicked(void) {
     char installPath[MAX_PATH];
-    int result;
 
     /* Get install path */
     GetWindowTextA(g_hInstallPathEdit, installPath, MAX_PATH);
@@ -1071,7 +1225,7 @@ void OnInstallClicked(void) {
     }
 
     /* Execute install */
-    result = installTranslucentSM(installPath);
+    int result = installTranslucentSM(installPath);
     if (result == 0) {
         showMessageBox("Success", "Installation completed successfully!", MB_OK | MB_ICONINFORMATION);
         UpdateUIState();
@@ -1087,17 +1241,15 @@ void OnInstallClicked(void) {
  * Return: None
  */
 void OnUninstallClicked(void) {
-    int result;
-    int choice;
-
     /* Confirm uninstall */
-    choice = showMessageBox("Confirmation", "Are you sure you want to uninstall TranslucentSM?", MB_YESNO | MB_ICONQUESTION);
+    int choice = showMessageBox("Confirmation", "Are you sure you want to uninstall TranslucentSM?",
+                                MB_YESNO | MB_ICONQUESTION);
     if (choice != IDYES) {
         return;
     }
 
     /* Execute uninstall */
-    result = uninstallTranslucentSM();
+    int result = uninstallTranslucentSM();
     if (result == 0) {
         showMessageBox("Success", "Uninstallation completed successfully!", MB_OK | MB_ICONINFORMATION);
         UpdateUIState();
@@ -1114,7 +1266,6 @@ void OnUninstallClicked(void) {
  */
 void OnBrowseClicked(void) {
     BROWSEINFO bi;
-    LPITEMIDLIST pidl;
     char path[MAX_PATH];
 
     /* Initialize BROWSEINFO */
@@ -1123,7 +1274,7 @@ void OnBrowseClicked(void) {
     bi.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
 
     /* Show browse dialog */
-    pidl = SHBrowseForFolderA(&bi);
+    LPITEMIDLIST pidl = SHBrowseForFolderA(&bi);
     if (pidl != NULL) {
         /* Get selected path */
         if (SHGetPathFromIDListA(pidl, path)) {
@@ -1206,4 +1357,56 @@ void OnThemeChanged(int index) {
     UNREFERENCED_PARAMETER(index);
     /* Theme change handling */
     /* Theme switching logic can be added here */
+}
+
+/*
+ * Function: CreateCustomFont
+ * Description: Create a custom font with specified size and style
+ * Parameters:
+ *   size - Font size
+ *   bold - TRUE for bold font, FALSE for regular
+ *   italic - TRUE for italic font, FALSE for regular
+ * Return: HFONT - Handle to the created font, or NULL on failure
+ */
+HFONT CreateCustomFont(int size, BOOL bold, BOOL italic) {
+    LOGFONT lf = {0};
+
+    lf.lfHeight = -MulDiv(size, GetDeviceCaps(GetDC(NULL), LOGPIXELSY), 72);
+    lf.lfWidth = 0;
+    lf.lfWeight = bold ? FW_BOLD : FW_NORMAL;
+    lf.lfItalic = (BYTE)italic;
+    lf.lfUnderline = 0;
+    lf.lfStrikeOut = 0;
+    lf.lfCharSet = DEFAULT_CHARSET;
+    lf.lfOutPrecision = OUT_DEFAULT_PRECIS;
+    lf.lfClipPrecision = CLIP_DEFAULT_PRECIS;
+    lf.lfQuality = CLEARTYPE_QUALITY;
+    lf.lfPitchAndFamily = DEFAULT_PITCH | FF_SWISS;
+    strcpy(lf.lfFaceName, FONT_FAMILY);
+    
+    return CreateFontIndirect(&lf);
+}
+
+/*
+ * Function: SetControlStyles
+ * Description: Set modern styles for a control
+ * Parameters:
+ *   hWnd - Control handle
+ *   isButton - TRUE if control is a button, FALSE otherwise
+ * Return: None
+ */
+void SetControlStyles(HWND hWnd, BOOL isButton) {
+    if (isButton) {
+        /* Set button styles */
+        SetWindowLongPtr(hWnd, GWL_STYLE, 
+                        GetWindowLongPtr(hWnd, GWL_STYLE) | BS_FLAT);
+        
+        /* Set button colors */
+        SendMessage(hWnd, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, TRUE, FALSE), TRUE);
+    } else {
+        /* Set common control styles */
+        SendMessage(hWnd, WM_SETFONT, (WPARAM)CreateCustomFont(FONT_SIZE_NORMAL, FALSE, FALSE), TRUE);
+    }
+    
+    /* Set text color for better readability is handled elsewhere */
 }
