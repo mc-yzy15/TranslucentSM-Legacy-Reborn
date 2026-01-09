@@ -511,7 +511,7 @@ HWND CreateTabControl(HWND hParent) {
 
     /* Create tab control */
     HWND hTab;
-    hTab = (
+    hTab = CreateWindow(
         WC_TABCONTROL,
         "",
         WS_CLIPCHILDREN | (WS_TABSTOP | (WS_CHILD | WS_VISIBLE) | WS_CLIPSIBLINGS),
@@ -577,7 +577,7 @@ HWND CreatePage1(HWND hParent) {
     int tabHeight = 32;
 
     /* Create page */
-    HWND hPage = (
+    HWND hPage = CreateWindow(
         WC_STATIC,
         "",
         WS_CHILD | WS_VISIBLE,
@@ -615,7 +615,7 @@ HWND CreatePage1(HWND hParent) {
     SetClassLongPtr(hContainer, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(COLOR_PANEL_BACKGROUND));
     
     /* Create section title */
-    HWND hLabel = (
+    HWND hLabel = CreateWindow(
         WC_STATIC,
         "Installation",
         WS_CHILD | WS_VISIBLE,
