@@ -397,13 +397,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Trae
+# IDES
 .trae
-/.idea/.gitignore
-/.idea/.name
-/.idea/editor.xml
-/.idea/encodings.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/TranslucentSM-Legacy-Reborn.iml
-/.idea/vcs.xml
+/.idea
