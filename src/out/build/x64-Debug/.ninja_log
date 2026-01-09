@@ -1,0 +1,13 @@
+# ninja log v6
+18	250	7896661901365169	F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/TranslucentSM_autogen/mocs_compilation.cpp	2bfedc71a8f0b968
+4	33	7896707763583859	clean	5345ca6175c2c29c
+275	525	7896707768772687	TranslucentSM.lib	4df82c1642fa0227
+18	250	7896661901365169	TranslucentSM_autogen/timestamp	2bfedc71a8f0b968
+18	250	7896661901365169	TranslucentSM_autogen/mocs_compilation.cpp	2bfedc71a8f0b968
+18	250	7896661901365169	F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/TranslucentSM_autogen/timestamp	2bfedc71a8f0b968
+275	525	7896707768772687	TranslucentSM.dll	4df82c1642fa0227
+252	1015	7896661902616302	CMakeFiles/TranslucentSM.dir/TranslucentSM_autogen/mocs_compilation.cpp.obj	afebce1fcd3e71ad
+4	274	7896707764198317	CMakeFiles/TranslucentSM.dir/translucentsmdll.c.obj	169b0445325174db
+12	356	7896707764278142	CMakeFiles/TranslucentSMApp.dir/main.c.obj	2a2dcc86cc65a6be
+19	289	7896707764348614	CMakeFiles/TranslucentSMApp.dir/translucentsm.c.obj	cca3a879e014899e
+525	928	7896707769410969	TranslucentSM.exe	50cfef0aea85489b
