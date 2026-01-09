@@ -184,21 +184,25 @@ void MainWindow::applyModernStyle() {
         "QPushButton:hover { background-color: #005a9e; }"
         "QPushButton:pressed { background-color: #004b87; }"
         "QPushButton:disabled { background-color: #555555; color: #aaaaaa; }"
-        "QSlider::groove:horizontal { background-color: #e0e0e0; height: 6px; border-radius: 3px; }"
+        "QSlider::groove:horizontal { background-color: #444444; height: 6px; border-radius: 3px; }"
         "QSlider::handle:horizontal { background-color: #0078d7; width: 18px; height: 18px; border-radius: 9px; margin: -6px 0; border: none; }"
-        "QLineEdit { border: 1px solid #ced4da; border-radius: 6px; padding: 8px; background-color: white; color: #212529; }"
-        "QComboBox { padding: 8px; border-radius: 6px; border: 1px solid #ced4da; background-color: white; color: #212529; }"
-        "QComboBox::drop-down { border-top-right-radius: 6px; border-bottom-right-radius: 6px; background-color: #e9ecef; }"
+        "QLineEdit { border: 1px solid #444444; border-radius: 6px; padding: 8px; background-color: #2d2d2d; color: #f0f0f0; }"
+        "QLineEdit:focus { border: 1px solid #0078d7; }"
+        "QComboBox { padding: 8px; border-radius: 6px; border: 1px solid #444444; background-color: #2d2d2d; color: #f0f0f0; }"
+        "QComboBox::drop-down { border-top-right-radius: 6px; border-bottom-right-radius: 6px; background-color: #3d3d3d; }"
         "QLabel { color: #f0f0f0; font-size: 14px; }"
-        "QTabWidget::pane { border: 1px solid #e0e0e0; border-radius: 8px; background-color: white; }"
-        "QTabBar::tab { background-color: #e9ecef; color: #495057; padding: 8px 16px; border-radius: 8px 8px 0 0; margin-right: 4px; }"
-        "QTabBar::tab:selected { background-color: white; color: #0078d7; border-top: 2px solid #0078d7; }"
-        "QProgressBar { border-radius: 6px; text-align: center; background-color: #e9ecef; height: 8px; }"
+        "QTabWidget::pane { border: none; background-color: #1e1e1e; }"
+        "QTabBar::tab { height: 36px; width: 140px; background-color: #2d2d2d; color: #b0b0b0; border: none; margin-right: 2px; font-size: 14px; }"
+        "QTabBar::tab:selected { background-color: #1e1e1e; color: white; border-top-left-radius: 4px; border-top-right-radius: 4px; }"
+        "QTabBar::tab:hover:!selected { background-color: #353535; }"
+        "QProgressBar { border-radius: 6px; text-align: center; background-color: #3d3d3d; height: 8px; }"
         "QProgressBar::chunk { background-color: #0078d7; border-radius: 4px; }"
-        "QCheckBox { spacing: 8px; color: #495057; }"
-        "QCheckBox::indicator { width: 18px; height: 18px; border-radius: 4px; border: 2px solid #adb5bd; }"
-        "QCheckBox::indicator:checked { background-color: #0078d7; border-color: #0078d7; image: url(:/icons/check.svg); }"
-        "QMessageBox { background-color: white; border-radius: 8px; }"
+        "QCheckBox { spacing: 8px; color: #f0f0f0; }"
+        "QCheckBox::indicator { width: 18px; height: 18px; border-radius: 4px; border: 2px solid #444444; background-color: #2d2d2d; }"
+        "QCheckBox::indicator:checked { background-color: #0078d7; border-color: #0078d7; }"
+        "QMessageBox { background-color: #1e1e1e; border-radius: 8px; }"
+        "QMessageBox QLabel { color: #f0f0f0; }"
+        "QMessageBox QPushButton { padding: 8px 16px; }"
     );
 }
 
@@ -210,19 +214,27 @@ void MainWindow::createInstallationTab() {
 
     // 安装路径选择
     QHBoxLayout *pathLayout = new QHBoxLayout();
+    pathLayout->setSpacing(10);
+    pathLayout->setAlignment(Qt::AlignVCenter);
+    
     QLabel *pathLabel = new QLabel("安装路径:");
+    pathLabel->setFixedWidth(80);
+    pathLabel->setStyleSheet("font-size: 14px;");
+    
     installPathEdit = new QLineEdit();
     installPathEdit->setText(QDir::toNativeSeparators(QDir::homePath() + "/AppData/Local/TranslucentSM"));
-installPathEdit->setToolTip(installPathEdit->text());
-installPathEdit->setStyleSheet("QLineEdit { padding: 8px; font-size: 14px; min-width: 300px; }");
-installPathEdit->setMinimumWidth(300);
+    installPathEdit->setToolTip(installPathEdit->text());
+    installPathEdit->setStyleSheet("QLineEdit { padding: 8px; font-size: 14px; }");
+    installPathEdit->setMinimumWidth(300);
+    
     QPushButton *browseButton = new QPushButton("浏览...");
-browseButton->setStyleSheet("padding: 8px 16px; font-size: 14px;");
+    browseButton->setStyleSheet("padding: 8px 16px; font-size: 14px;");
+    browseButton->setFixedHeight(32);
     connect(browseButton, &QPushButton::clicked, this, &MainWindow::onBrowseClicked);
 
-    pathLayout->addWidget(pathLabel, 0);
-    pathLayout->addWidget(installPathEdit, 2);
-    pathLayout->addWidget(browseButton, 0);
+    pathLayout->addWidget(pathLabel, 0, Qt::AlignVCenter);
+    pathLayout->addWidget(installPathEdit, 1, Qt::AlignVCenter);
+    pathLayout->addWidget(browseButton, 0, Qt::AlignVCenter);
     layout->addLayout(pathLayout);
 
     // 安装说明
@@ -230,9 +242,8 @@ browseButton->setStyleSheet("padding: 8px 16px; font-size: 14px;");
         "TranslucentSM 为 Windows 11 开始菜单提供透明度效果。注意：该应用必须在\n"
         "Windows 11 22000 版本以上使用。");
     infoLabel->setWordWrap(true);
-infoLabel->setMinimumWidth(500);
-infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px; font-size: 14px;");
-    infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px;");
+    infoLabel->setMinimumWidth(500);
+    infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px; font-size: 14px;");
     layout->addWidget(infoLabel);
 
 QFrame *line1 = new QFrame();
@@ -243,29 +254,38 @@ layout->addWidget(line1);
 
     // 按钮布局
     QHBoxLayout *buttonLayout = new QHBoxLayout();
-    buttonLayout->setSpacing(15);
+    buttonLayout->setSpacing(20);
     buttonLayout->setAlignment(Qt::AlignCenter);
 
     installButton = new QPushButton("安装");
-    installButton->setStyleSheet("background-color: #0078d7; padding: 12px 24px; font-size: 16px; font-weight: bold;");
-installButton->setFixedSize(140, 40);
+    installButton->setStyleSheet(
+        "background-color: #0078d7; "
+        "padding: 12px 24px; "
+        "font-size: 16px; "
+        "font-weight: bold;"
+    );
+    installButton->setFixedSize(140, 40);
     connect(installButton, &QPushButton::clicked, this, &MainWindow::onInstallClicked);
 
     uninstallButton = new QPushButton("卸载");
-    uninstallButton->setStyleSheet("background-color: #6c757d; padding: 12px 24px; font-size: 16px;");
-uninstallButton->setFixedSize(140, 40);
+    uninstallButton->setStyleSheet(
+        "background-color: #6c757d; "
+        "padding: 12px 24px; "
+        "font-size: 16px; "
+        "font-weight: bold;"
+    );
+    uninstallButton->setFixedSize(140, 40);
     connect(uninstallButton, &QPushButton::clicked, this, &MainWindow::onUninstallClicked);
 
     buttonLayout->addWidget(installButton);
     buttonLayout->addWidget(uninstallButton);
     QFrame *line2 = new QFrame();
-line2->setFrameShape(QFrame::HLine);
-line2->setFrameShadow(QFrame::Sunken);
-line2->setStyleSheet("background-color: #555555; height: 2px; margin: 10px 0;");
-layout->addWidget(line2);
+    line2->setFrameShape(QFrame::HLine);
+    line2->setFrameShadow(QFrame::Sunken);
+    line2->setStyleSheet("background-color: #555555; height: 2px; margin: 10px 0;");
+    layout->addWidget(line2);
 
-layout->addLayout(buttonLayout);
-layout->setAlignment(buttonLayout, Qt::AlignHCenter);
+    layout->addLayout(buttonLayout);
 
     // 空白填充
     layout->addStretch(1);

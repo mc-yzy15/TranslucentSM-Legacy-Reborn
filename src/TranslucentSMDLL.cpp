@@ -76,9 +76,8 @@ void ApplyTransparency(HWND hWnd) {
     #ifndef DWMWA_MICA_EFFECT
     #define DWMWA_MICA_EFFECT 1029
     #endif
-    DWORD attribute = DWMWA_MICA_EFFECT;
-    DWORD value = DWMSBT_MAINWINDOW;
-    DwmSetWindowAttribute(hWnd, attribute, &value, sizeof(value));
+    BOOL attributeValue = TRUE; // 启用Mica效果
+    DwmSetWindowAttribute(hWnd, DWMWA_MICA_EFFECT, &attributeValue, sizeof(attributeValue));
 }
 
 // 查找开始菜单窗口

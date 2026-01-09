@@ -3,7 +3,6 @@ cmake_policy(SET CMP0091 NEW)
 cmake_policy(SET CMP0126 NEW)
 cmake_policy(SET CMP0112 NEW)
 cmake_policy(SET CMP0156 NEW)
-cmake_policy(SET CMP0181 NEW)
 project(TranslucentSM)
 
 # 允许手动指定Qt路径

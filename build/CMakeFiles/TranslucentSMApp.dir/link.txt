@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\TranslucentSMApp.dir/objects.a
-C:\Qt\6.9.1\mingw_64\bin\ar.exe qc CMakeFiles\TranslucentSMApp.dir/objects.a @CMakeFiles\TranslucentSMApp.dir\objects1.rsp
-C:\Qt\6.9.1\mingw_64\bin\g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\TranslucentSMApp.dir/objects.a -Wl,--no-whole-archive -o bin\TranslucentSM.exe -Wl,--out-implib,lib\libTranslucentSM.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TranslucentSMApp.dir\linkLibs.rsp
