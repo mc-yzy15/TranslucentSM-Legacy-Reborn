@@ -94,8 +94,17 @@ add_dependencies(TranslucentSMApp TranslucentSM)
 add_custom_command(TARGET TranslucentSMApp POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:TranslucentSM> $<TARGET_FILE_DIR:TranslucentSMApp>)
 
+# Add StartTAP subdirectory for the new DLL implementation
+add_subdirectory(StartTAP)
+
 # Install rules
 install(TARGETS TranslucentSM TranslucentSMApp
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION bin
+)
+
+# Also install StartTAP DLL
+install(TARGETS StartTAP
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION bin
 )

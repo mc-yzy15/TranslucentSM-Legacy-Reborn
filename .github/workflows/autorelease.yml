@@ -15,6 +15,38 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         
+      - name: 🔍 iFlow Code Analysis (Pre-Build)
+        uses: iflow-ai/iflow-cli-action@v2.0.0
+        id: iflow_code_analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+        with:
+          api_key: ${{ secrets.IFLOW_API_KEY }}
+          timeout: "1800"
+          debug: "true"
+          prompt: |
+            ## Role
+            You are a code quality analyst specializing in Windows C/C++ applications. Perform a comprehensive analysis before release.
+            
+            ## Steps
+            1. Analyze the codebase structure and architecture
+            2. Run static code analysis to identify potential issues
+            3. Check for security vulnerabilities, especially in Windows API usage and DLL injection code
+            4. Verify adherence to C99/C11 standards
+            5. Check for proper error handling and memory management
+            6. Evaluate code readability and maintainability
+            7. Verify release readiness and version compatibility
+            
+            ## Output
+            Generate a concise code analysis report highlighting:
+            - Architecture overview
+            - Potential security issues
+            - Code quality concerns
+            - Release readiness assessment
+            - Suggestions for improvement
+        continue-on-error: true
+        
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
         

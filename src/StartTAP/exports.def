@@ -1,0 +1,4 @@
+LIBRARY "StartTAP"
+EXPORTS
+    DllGetClassObject
+    DllCanUnloadNow

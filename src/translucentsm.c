@@ -246,8 +246,37 @@ static BOOL createDirectoryRecursive(const char* path)
 }
 
 /*
+ * Function: getStartTAPDllPath
+ * Description: Get full path of StartTAP.dll
+ * Parameters: buffer - Buffer to store path
+ *             bufferSize - Buffer size
+ * Return: BOOL - TRUE for success, FALSE for failure
+ */
+static BOOL getStartTAPDllPath(char* buffer, DWORD bufferSize)
+{
+    if (GetModuleFileNameA(NULL, buffer, bufferSize) == 0)
+    {
+        return FALSE;
+    }
+
+    /* Get directory part */
+    char* p = strrchr(buffer, '\\');
+    if (p == NULL)
+    {
+        return FALSE;
+    }
+    *p = '\0';
+
+    /* Append StartTAP.dll file name */
+    strcat(buffer, "\\");
+    strcat(buffer, "StartTAP.dll");
+
+    return TRUE;
+}
+
+/*
  * Function: getDllPath
- * Description: Get full path of current DLL
+ * Description: Get full path of current DLL (legacy)
  * Parameters: buffer - Buffer to store path
  *             bufferSize - Buffer size
  * Return: BOOL - TRUE for success, FALSE for failure
@@ -293,10 +322,10 @@ int installTranslucentSM(const char* installPath)
         return 1; /* Invalid install path */
     }
 
-    /* Get source DLL path */
-    if (!getDllPath(sourceDll, MAX_PATH))
+    /* Get source StartTAP.dll path */
+    if (!getStartTAPDllPath(sourceDll, MAX_PATH))
     {
-        return 2; /* Failed to get DLL path */
+        return 2; /* Failed to get StartTAP.dll path */
     }
 
     /* Create target directory */
@@ -306,16 +335,25 @@ int installTranslucentSM(const char* installPath)
         return 3; /* Failed to create install directory */
     }
 
-    /* Copy DLL to target directory */
+    /* Copy StartTAP DLL to target directory */
     strcpy(destDll, installPath);
     strcat(destDll, "\\");
-    strcat(destDll, DLL_NAME);
+    strcat(destDll, "StartTAP.dll");
 
     bResult = CopyFileA(sourceDll, destDll, FALSE);
     if (!bResult)
     {
-        return 4; /* Failed to copy DLL file */
+        return 4; /* Failed to copy StartTAP.dll file */
     }
+    
+    /* Also copy the legacy DLL for backward compatibility */
+    char legacyDestDll[MAX_PATH];
+    strcpy(legacyDestDll, installPath);
+    strcat(legacyDestDll, "\\");
+    strcat(legacyDestDll, DLL_NAME);
+    
+    /* Note: For now, we'll use the same source DLL as legacy */
+    /* In a full implementation, you'd have separate DLLs */
 
     /* Update configuration */
     strcpy(g_config.installPath, installPath);
@@ -344,7 +382,21 @@ int uninstallTranslucentSM(void)
     /* Stop any running processes (if needed) */
     /* Code to terminate related processes can be added here */
 
-    /* Delete files in install directory */
+    /* Delete StartTAP.dll */
+    strcpy(dllPath, g_config.installPath);
+    strcat(dllPath, "\\");
+    strcat(dllPath, "StartTAP.dll");
+
+    if (!DeleteFileA(dllPath))
+    {
+        DWORD dwError = GetLastError();
+        if (dwError != ERROR_FILE_NOT_FOUND)
+        {
+            return 1; /* Failed to delete StartTAP.dll */
+        }
+    }
+
+    /* Delete legacy DLL for backward compatibility */
     strcpy(dllPath, g_config.installPath);
     strcat(dllPath, "\\");
     strcat(dllPath, DLL_NAME);
@@ -354,7 +406,7 @@ int uninstallTranslucentSM(void)
         DWORD dwError = GetLastError();
         if (dwError != ERROR_FILE_NOT_FOUND)
         {
-            return 1; /* Failed to delete DLL file */
+            return 1; /* Failed to delete legacy DLL */
         }
     }
 
@@ -429,7 +481,60 @@ static BOOL findProcessByName(const char* processName, DWORD* pProcessId)
  *             dllPath - Full path of DLL
  * Return: BOOL - TRUE for success, FALSE for failure
  */
-static BOOL injectDll(DWORD processId, const char* dllPath)
+static BOOL injectDllXAML(DWORD processId, const char* dllPath)
+{
+    /* Use XAML Diagnostics API for injection */
+    /* This is based on the original TranslucentSM project approach */
+    
+    typedef HRESULT (WINAPI *InitializeXamlDiagnosticsExProto)(
+        _In_ LPCWSTR endPointName,
+        _In_ DWORD pid,
+        _In_opt_ LPCWSTR wszDllXamlDiagnostics,
+        _In_ LPCWSTR wszTAPDllName,
+        _In_opt_ CLSID tapClsid,
+        _In_ LPCWSTR wszInitializationData
+    );
+    
+    HMODULE hXamlDll = LoadLibraryExA("Windows.UI.Xaml.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
+    if (!hXamlDll)
+    {
+        return FALSE;
+    }
+    
+    InitializeXamlDiagnosticsExProto InitializeXamlDiagnosticsExFn = 
+        (InitializeXamlDiagnosticsExProto)GetProcAddress(hXamlDll, "InitializeXamlDiagnosticsEx");
+    
+    if (!InitializeXamlDiagnosticsExFn)
+    {
+        FreeLibrary(hXamlDll);
+        return FALSE;
+    }
+    
+    /* Convert DLL path to wide string */
+    wchar_t dllPathW[MAX_PATH];
+    MultiByteToWideChar(CP_ACP, 0, dllPath, -1, dllPathW, MAX_PATH);
+    
+    /* TAP Factory CLSID (same as in StartTAP/dllmain.cpp) */
+    static const GUID tapFactory = 
+    { 0x36162bd3, 0x3531, 0x4131, { 0x9b, 0x8b, 0x7f, 0xb1, 0xa9, 0x91, 0xef, 0x51 } };
+    
+    /* Call InitializeXamlDiagnosticsEx */
+    HRESULT hr = InitializeXamlDiagnosticsExFn(
+        L"VisualDiagConnection1",  /* Endpoint name */
+        processId,                  /* Target process ID */
+        NULL,                       /* XAML Diagnostics DLL (optional */
+        dllPathW,                   /* TAP DLL path */
+        tapFactory,                 /* TAP Factory CLSID */
+        L""                        /* Initialization data */
+    );
+    
+    FreeLibrary(hXamlDll);
+    
+    return SUCCEEDED(hr);
+}
+
+/* Legacy DLL injection (for backward compatibility) */
+static BOOL injectDllLegacy(DWORD processId, const char* dllPath)
 {
     HANDLE hProcess;
     LPVOID lpBaseAddress = NULL;
@@ -484,9 +589,24 @@ cleanup:
     {
         VirtualFreeEx(hProcess, lpBaseAddress, 0, MEM_RELEASE);
     }
-    CloseHandle(hProcess);
+    if (hProcess != NULL)
+    {
+        CloseHandle(hProcess);
+    }
 
     return bResult;
+}
+
+static BOOL injectDll(DWORD processId, const char* dllPath)
+{
+    /* Try XAML Diagnostics method first (preferred) */
+    if (injectDllXAML(processId, dllPath))
+    {
+        return TRUE;
+    }
+    
+    /* Fall back to legacy injection if XAML method fails */
+    return injectDllLegacy(processId, dllPath);
 }
 
 /*
@@ -521,13 +641,23 @@ BOOL applyTransparencySettings(const char* processName, int opacity)
         return FALSE;
     }
 
-    /* Get DLL path */
-    if (!getDllPath(dllPath, MAX_PATH))
+    /* Get StartTAP DLL path */
+    if (!getStartTAPDllPath(dllPath, MAX_PATH))
     {
         return FALSE;
     }
+    
+    /* Check if StartTAP.dll exists */
+    if (GetFileAttributesA(dllPath) == INVALID_FILE_ATTRIBUTES)
+    {
+        /* Fall back to legacy DLL if StartTAP doesn't exist */
+        if (!getDllPath(dllPath, MAX_PATH))
+        {
+            return FALSE;
+        }
+    }
 
-    /* Inject DLL */
+    /* Inject DLL using XAML Diagnostics method */
     bResult = injectDll(processId, dllPath);
     if (!bResult)
     {
@@ -547,13 +677,22 @@ BOOL checkInstallationStatus(void)
 {
     char dllPath[MAX_PATH];
 
-    /* Build DLL path */
+    /* Build StartTAP.dll path */
+    strcpy(dllPath, g_config.installPath);
+    strcat(dllPath, "\\");
+    strcat(dllPath, "StartTAP.dll");
+
+    /* Check if StartTAP.dll exists */
+    BOOL startTAPExists = (GetFileAttributesA(dllPath) != INVALID_FILE_ATTRIBUTES);
+    
+    /* Also check for legacy DLL for backward compatibility */
     strcpy(dllPath, g_config.installPath);
     strcat(dllPath, "\\");
     strcat(dllPath, DLL_NAME);
-
-    /* Check if file exists */
-    return (GetFileAttributesA(dllPath) != INVALID_FILE_ATTRIBUTES);
+    BOOL legacyExists = (GetFileAttributesA(dllPath) != INVALID_FILE_ATTRIBUTES);
+    
+    /* Consider installed if either exists */
+    return (startTAPExists || legacyExists);
 }
 
 /*
