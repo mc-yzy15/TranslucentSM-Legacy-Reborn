@@ -1,0 +1,101 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - master
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🔍 iFlow Code Analysis (Pre-Build)
+        uses: iflow-ai/iflow-cli-action@v2.0.0
+        id: iflow_code_analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+        with:
+          api_key: ${{ secrets.IFLOW_API_KEY }}
+          timeout: "1800"
+          debug: "true"
+          prompt: |
+            ## Role
+            You are a code quality analyst specializing in Windows C/C++ applications. Perform a comprehensive analysis before release.
+            
+            ## Steps
+            1. Analyze the codebase structure and architecture
+            2. Run static code analysis to identify potential issues
+            3. Check for security vulnerabilities, especially in Windows API usage and DLL injection code
+            4. Verify adherence to C99/C11 standards
+            5. Check for proper error handling and memory management
+            6. Evaluate code readability and maintainability
+            7. Verify release readiness and version compatibility
+            
+            ## Output
+            Generate a concise code analysis report highlighting:
+            - Architecture overview
+            - Potential security issues
+            - Code quality concerns
+            - Release readiness assessment
+            - Suggestions for improvement
+        continue-on-error: true
+        
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+        
+      - name: Create build directory
+        run: mkdir -p build
+        
+      - name: Run CMake
+        run: |
+          cd build
+          cmake .. -G "Visual Studio 17 2022" -A Win32
+        
+      - name: Build with MSBuild
+        run: |
+          cd build
+          msbuild TranslucentSM.sln -p:Configuration=Release
+        
+      - name: Package artifacts
+        run: |
+          mkdir -p artifacts
+          cp build/bin/Release/TranslucentSM.exe artifacts/
+          cp build/bin/Release/TranslucentSM.dll artifacts/
+        
+      - name: Generate Release Notes
+        id: generate_release_notes
+        run: |
+          # Generate release notes based on commits
+          $lastRelease = git describe --tags --abbrev=0 2>$null
+          if ($lastRelease) {
+            $changes = git log $lastRelease..HEAD --oneline
+          } else {
+            $changes = git log --oneline
+          }
+          $releaseNotes = "## Release Notes
+
+### Changes
+
+$changes"
+          Write-Output "release_notes=$releaseNotes" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+        
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_id }}
+          name: Release v${{ github.run_id }}
+          body: ${{ steps.generate_release_notes.outputs.release_notes }}
+          draft: false
+          prerelease: false
+          files:
+            - artifacts/TranslucentSM.exe
+            - artifacts/TranslucentSM.dll
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

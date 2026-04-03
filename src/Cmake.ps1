@@ -1,18 +1,18 @@
-# 创建并进入build目录
-# 清理并重建build目录
+# 检查并删除build目录
 if (Test-Path -Path "build") {
-    echo "正在清理旧构建目录..."
+    Write-Host "正在删除build目录..."
     Remove-Item -Path "build" -Recurse -Force
 }
+# 创建build目录并进入
 New-Item -ItemType Directory -Name "build"
-Set-Location -Path build
+Set-Location -Path "build"
 
-# 设置MinGW环境变量
+# 设置MinGW路径
 $env:PATH += ";C:/Qt/6.9.1/mingw_64/bin"
-echo "MinGW路径已添加到环境变量: $env:PATH"
+Write-Host "MinGW路径已添加到系统路径: $env:PATH"
 
-# 运行CMake配置（启用详细调试输出）
-echo "正在运行CMake配置..."
+# 运行CMake配置，启用详细输出
+Write-Host "正在运行CMake配置..."
 cmake -G "MinGW Makefiles" `
   -DCMAKE_BUILD_TYPE=Release `
   -DCMAKE_C_COMPILER="C:/Qt/6.9.1/mingw_64/bin/gcc.exe" `
@@ -24,21 +24,19 @@ cmake -G "MinGW Makefiles" `
   ../src
 
 if ($LASTEXITCODE -ne 0) {
-  echo "CMake配置失败，错误代码: $LASTEXITCODE"
+  Write-Host "CMake配置失败，错误代码: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 
-# 执行构建
-# PowerShell中获取逻辑处理器数量
+# 执行编译
+# 在PowerShell中获取逻辑处理器数量
 $processorCount = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
-echo "使用 $processorCount 个处理器进行构建..."
+Write-Host "使用 $processorCount 个线程进行编译..."
 & "C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe" -j $processorCount
 
 if ($LASTEXITCODE -ne 0) {
-  echo "构建失败，错误代码: $LASTEXITCODE"
+  Write-Host "编译失败，错误代码: $LASTEXITCODE"
   exit $LASTEXITCODE
 }
 
-echo "Build completed successfully!"
-
-
+Write-Host "Build completed successfully!"
