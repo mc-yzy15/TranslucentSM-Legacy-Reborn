@@ -1,4 +1,4 @@
-LIBRARY "StartTAP"
-EXPORTS
-    DllGetClassObject
-    DllCanUnloadNow
+LIBRARY
+EXPORTS             
+DllCanUnloadNow           PRIVATE
+DllGetClassObject         PRIVATE

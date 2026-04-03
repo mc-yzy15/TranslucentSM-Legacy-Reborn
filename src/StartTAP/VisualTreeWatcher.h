@@ -1,44 +1,41 @@
 #pragma once
 #include "framework.h"
 
-class VisualTreeWatcher : public winrt::implements<VisualTreeWatcher, IVisualTreeServiceCallback2>
+// export variables
+extern int64_t token, token_vis;
+static double pad = 15;
+
+extern double oldSrchHeight;
+extern Thickness oldSrchMar;
+static bool rechide = false, srchhide = false;
+
+extern DWORD dwSize, dwOpacity, dwLuminosity, dwHide, dwBorder, dwRec;
+
+struct VisualTreeWatcher : winrt::implements<VisualTreeWatcher, IVisualTreeServiceCallback2, winrt::non_agile>
 {
 public:
     VisualTreeWatcher(winrt::com_ptr<IUnknown> site);
-    ~VisualTreeWatcher();
+    VisualTreeWatcher(const VisualTreeWatcher&) = delete;
+    VisualTreeWatcher& operator=(const VisualTreeWatcher&) = delete;
 
-    // IVisualTreeServiceCallback2 methods
-    HRESULT STDMETHODCALLTYPE OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) override;
-    HRESULT STDMETHODCALLTYPE OnElementStateChanged(InstanceHandle handle, VisualElementState state, LPCWSTR context) override;
+    VisualTreeWatcher(VisualTreeWatcher&&) = delete;
+    VisualTreeWatcher& operator=(VisualTreeWatcher&&) = delete;
+
+    void AdviseVisualTreeChange();
 
 private:
-    void AdviseVisualTreeChange();
-    
-    // Helper methods
-    void ApplyTransparencySettings(const VisualElement& element);
-    void ApplySearchBoxSettings(const VisualElement& element);
-    void ApplyRecommendedSettings(const VisualElement& element);
-    void ApplyBorderSettings(const VisualElement& element);
-    void AddSettingsPanel(const VisualElement& element);
-    
+    HRESULT STDMETHODCALLTYPE OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) override;
+    HRESULT STDMETHODCALLTYPE OnElementStateChanged(InstanceHandle element, VisualElementState elementState, LPCWSTR context) noexcept override;
 
+    template<typename T>
+    T FromHandle(InstanceHandle handle)
+    {
+        IInspectable obj;
+        winrt::check_hresult(m_XamlDiagnostics->GetIInspectableFromHandle(handle, reinterpret_cast<::IInspectable**>(winrt::put_abi(obj))));
+
+        return obj.as<T>();
+    }
     
-    // Member variables
-    winrt::com_ptr<IUnknown> m_site;
-    winrt::com_ptr<IXamlDiagnostics> m_xamlDiagnostics;
-    
-    // State tracking
-    double m_oldSearchHeight;
-    Thickness m_oldSearchMargin;
-    int64_t m_heightToken;
-    int64_t m_visibilityToken;
-    double m_pad;
-    
-    // Configuration cache
-    DWORD m_tintOpacity;
-    DWORD m_tintLuminosityOpacity;
-    DWORD m_hideSearch;
-    DWORD m_hideBorder;
-    DWORD m_hideRecommended;
-    DWORD m_editButton;
+    winrt::com_ptr<IXamlDiagnostics> m_XamlDiagnostics;
+    winrt::com_ptr<VisualTreeWatcher> m_selfPtr;
 };

@@ -1,8 +1,10 @@
+// dllmain.cpp : Defines the entry point for the DLL application.
 #include "framework.h"
 #include "VisualTreeWatcher.h"
 #include "helpers.h"
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)
 {
     switch (ul_reason_for_call)
     {
@@ -15,90 +17,88 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     return TRUE;
 }
 
-// StartTAP implements IObjectWithSite to receive the IXamlDiagnostics site
 struct StartTAP : winrt::implements<StartTAP, IObjectWithSite>
 {
     HRESULT STDMETHODCALLTYPE SetSite(IUnknown* pUnkSite) noexcept override
     {
-        if (!pUnkSite) return E_INVALIDARG;
-        
-        try
-        {
-            m_site.copy_from(pUnkSite);
-            
-            // Create VisualTreeWatcher
-            auto treeWatcher = winrt::make_self<VisualTreeWatcher>(m_site);
-            
-            return S_OK;
-        }
-        catch (...)
-        {
-            return winrt::to_hresult();
-        }
+        site.copy_from(pUnkSite);
+        com_ptr<IXamlDiagnostics> diag = site.as<IXamlDiagnostics>();
+        com_ptr<VisualTreeWatcher> treeWatcher = winrt::make_self<VisualTreeWatcher>(site);
+        return S_OK;
     }
-    
+
     HRESULT STDMETHODCALLTYPE GetSite(REFIID riid, void** ppvSite) noexcept override
     {
-        if (!ppvSite) return E_POINTER;
-        
-        if (!m_site)
-        {
-            *ppvSite = nullptr;
-            return E_FAIL;
-        }
-        
-        return m_site.as(riid, ppvSite);
+        return site.as(riid, ppvSite);
     }
 
 private:
-    winrt::com_ptr<IUnknown> m_site;
+    winrt::com_ptr<IUnknown> site;
 };
 
-// TAPFactory implements IClassFactory to create StartTAP instances
 struct TAPFactory : winrt::implements<TAPFactory, IClassFactory>
 {
-    HRESULT STDMETHODCALLTYPE CreateInstance(IUnknown* pUnkOuter, REFIID riid, void** ppvObject) override
+    HRESULT STDMETHODCALLTYPE CreateInstance(IUnknown* pUnkOuter, REFIID riid, void** ppvObject) override try
     {
-        try
+        *ppvObject = nullptr;
+
+        if (pUnkOuter)
         {
-            *ppvObject = nullptr;
-            
-            if (pUnkOuter)
-            {
-                return CLASS_E_NOAGGREGATION;
-            }
-            
-            return winrt::make<StartTAP>().as(riid, ppvObject);
+            return CLASS_E_NOAGGREGATION;
         }
-        catch (...)
-        {
-            return winrt::to_hresult();
-        }
+
+        return winrt::make<StartTAP>().as(riid, ppvObject);
     }
-    
+    catch (...)
+    {
+        return winrt::to_hresult();
+    }
+
     HRESULT STDMETHODCALLTYPE LockServer(BOOL) noexcept override
     {
         return S_OK;
     }
 };
 
-// {36162BD3-3531-4131-9B8B-7FB1A991EF51}
-static constexpr GUID tapFactory = 
-{ 0x36162bd3, 0x3531, 0x4131, { 0x9b, 0x8b, 0x7f, 0xb1, 0xa9, 0x91, 0xef, 0x51 } };
-
-_Use_decl_annotations_ STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID* ppv)
+_Use_decl_annotations_ STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID* ppv) try
 {
     *ppv = nullptr;
-    
+
+    // TapFactory
+    // {36162BD3-3531-4131-9B8B-7FB1A991EF51}
+    static constexpr GUID tapFactory =
+    { 0x36162bd3, 0x3531, 0x4131, { 0x9b, 0x8b, 0x7f, 0xb1, 0xa9, 0x91, 0xef, 0x51 } };
+
+    // {F3454DD1-B68F-4196-8571-2260F107A47B}
+    static const GUID shellExt =
+    { 0xf3454dd1, 0xb68f, 0x4196, { 0x85, 0x71, 0x22, 0x60, 0xf1, 0x7, 0xa4, 0x7b } };
+
     if (rclsid == tapFactory)
     {
         return winrt::make<TAPFactory>().as(riid, ppv);
     }
-    
-    return CLASS_E_CLASSNOTAVAILABLE;
+    else if (rclsid == shellExt)
+    {
+        // Shell extension not implemented
+    }
+    else
+    {
+        return CLASS_E_CLASSNOTAVAILABLE;
+    }
+}
+catch (...)
+{
+    return winrt::to_hresult();
 }
 
 _Use_decl_annotations_ STDAPI DllCanUnloadNow(void)
 {
-    return winrt::get_module_lock() ? S_FALSE : S_OK;
+    if (winrt::get_module_lock())
+    {
+        return S_FALSE;
+    }
+    else
+    {
+        return S_OK;
+    }
 }
