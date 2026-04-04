@@ -3,68 +3,48 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ dev ]
+  pull_request:
   schedule:
-    - cron: '0 0 * * 0'  # 每周日午夜运行
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - configuration: Debug
+            solution_platform: x64
+            output_platform: x64
+          - configuration: Release
+            solution_platform: x64
+            output_platform: x64
+          - configuration: Debug
+            solution_platform: x86
+            output_platform: Win32
+          - configuration: Release
+            solution_platform: x86
+            output_platform: Win32
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v4
 
-    - name: Set up Qt
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.9.1'
-        arch: 'win64_mingw'
-        tools: 'tools/mingw'
-        cache: true
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
 
-    - name: Run CMake script
-      run: |
-        .\src\Cmake.ps1
-      shell: pwsh
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-    - name: Set build output path
-      run: |
-        echo "BUILD_PATH=build/Release" >> $env:GITHUB_ENV
-      shell: pwsh
+      - name: Restore NuGet packages
+        run: nuget restore start.sln
 
-    - name: Package
-      run: |
-        New-Item -ItemType Directory -Force -Path TranslucentSM
-        Copy-Item -Path $env:BUILD_PATH/TranslucentSM.exe -Destination TranslucentSM/
-        Copy-Item -Path $env:BUILD_PATH/TranslucentSM.dll -Destination TranslucentSM/
-        Compress-Archive -Path TranslucentSM/* -DestinationPath TranslucentSM.zip -Force
-      shell: pwsh
+      - name: Build StartTAP
+        run: msbuild start.sln /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.solution_platform }}
 
-    - name: Get version
-      id: get_version
-      run: echo "VERSION=1.0.$(git rev-list --count HEAD)" >> $GITHUB_ENV
-
-    - name: Create Pre-Release
-      if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
-      uses: softprops/action-gh-release@v1
-      with:
-        name: Pre-Release ${{ env.VERSION }}
-        tag_name: pre-${{ env.VERSION }}
-        draft: false
-        prerelease: true
-        files: TranslucentSM.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Create Weekly Release
-      if: github.event_name == 'schedule'
-      uses: softprops/action-gh-release@v1
-      with:
-        name: Weekly Build ${{ env.VERSION }}
-        tag_name: weekly-${{ env.VERSION }}
-        draft: false
-        prerelease: true
-        files: TranslucentSM.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: StartTAP-${{ matrix.solution_platform }}-${{ matrix.configuration }}
+          path: build/msbuild/${{ matrix.output_platform }}/${{ matrix.configuration }}/StartTAP.dll

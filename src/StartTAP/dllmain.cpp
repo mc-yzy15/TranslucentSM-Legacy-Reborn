@@ -19,21 +19,54 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 
 struct StartTAP : winrt::implements<StartTAP, IObjectWithSite>
 {
-    HRESULT STDMETHODCALLTYPE SetSite(IUnknown* pUnkSite) noexcept override
+    HRESULT STDMETHODCALLTYPE SetSite(IUnknown* pUnkSite) noexcept override try
     {
+        m_treeWatcher = nullptr;
+        site = nullptr;
+
+        if (pUnkSite == nullptr)
+        {
+            return S_OK;
+        }
+
         site.copy_from(pUnkSite);
-        com_ptr<IXamlDiagnostics> diag = site.as<IXamlDiagnostics>();
-        com_ptr<VisualTreeWatcher> treeWatcher = winrt::make_self<VisualTreeWatcher>(site);
-        return S_OK;
+        m_treeWatcher = winrt::make_self<VisualTreeWatcher>(site);
+
+        const auto hr = m_treeWatcher->AdviseVisualTreeChange();
+        if (FAILED(hr))
+        {
+            m_treeWatcher = nullptr;
+            site = nullptr;
+        }
+
+        return hr;
+    }
+    catch (...)
+    {
+        m_treeWatcher = nullptr;
+        site = nullptr;
+        return winrt::to_hresult();
     }
 
     HRESULT STDMETHODCALLTYPE GetSite(REFIID riid, void** ppvSite) noexcept override
     {
+        if (ppvSite == nullptr)
+        {
+            return E_POINTER;
+        }
+
+        *ppvSite = nullptr;
+        if (!site)
+        {
+            return E_FAIL;
+        }
+
         return site.as(riid, ppvSite);
     }
 
 private:
     winrt::com_ptr<IUnknown> site;
+    winrt::com_ptr<VisualTreeWatcher> m_treeWatcher;
 };
 
 struct TAPFactory : winrt::implements<TAPFactory, IClassFactory>
@@ -80,11 +113,10 @@ _Use_decl_annotations_ STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LP
     else if (rclsid == shellExt)
     {
         // Shell extension not implemented
-    }
-    else
-    {
         return CLASS_E_CLASSNOTAVAILABLE;
     }
+
+    return CLASS_E_CLASSNOTAVAILABLE;
 }
 catch (...)
 {
@@ -102,3 +134,5 @@ _Use_decl_annotations_ STDAPI DllCanUnloadNow(void)
         return S_OK;
     }
 }
+
+

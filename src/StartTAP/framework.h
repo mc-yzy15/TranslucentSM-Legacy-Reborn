@@ -2,13 +2,13 @@
 
 // Windows Header Files
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <combaseapi.h>
 #include <unknwn.h>
 #include <xamlOM.h>
 #include <ocidl.h>
-#include <thread>
-#include <atomic>
+#include <string_view>
 
 
 // winrt header files
@@ -36,3 +36,4 @@ using namespace winrt::Windows::UI::Xaml;
 using namespace winrt::Windows::UI::Xaml::Controls;
 using namespace winrt::Windows::UI::Xaml::Media;
 using namespace winrt::Windows::UI::Xaml::Controls::Primitives;
+

@@ -1,30 +1,21 @@
 #pragma once
 #include "framework.h"
 
-template <typename T>
-T convert_from_abi(com_ptr<::IInspectable> from)
-{
-    T to{ nullptr }; // `T` is a projected type.
-
-    winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
-        winrt::put_abi(to)));
-
-    return to;
-}
-
-static DependencyObject FindDescendantByName(DependencyObject root, hstring name)
+static DependencyObject FindDescendantByName(DependencyObject const& root, hstring const& name)
 {
     if (root == nullptr) return nullptr;
 
-    int count = VisualTreeHelper::GetChildrenCount(root);
+    const int count = VisualTreeHelper::GetChildrenCount(root);
     for (int i = 0; i < count; i++)
     {
         DependencyObject child = VisualTreeHelper::GetChild(root, i);
         if (child == nullptr) continue;
 
-        hstring childName = child.GetValue(FrameworkElement::NameProperty()).as<hstring>();
-        if (childName == name)
-            return child;
+        if (auto element = child.try_as<FrameworkElement>())
+        {
+            if (element.Name() == name)
+                return child;
+        }
 
         DependencyObject result = FindDescendantByName(child, name);
         if (result != nullptr)
@@ -36,12 +27,31 @@ static DependencyObject FindDescendantByName(DependencyObject root, hstring name
 
 static DWORD GetVal(LPCWSTR val)
 {
-    DWORD dw, dwSize = sizeof(DWORD);
-    RegGetValue(HKEY_CURRENT_USER, L"Software\\TranslucentSM", val, RRF_RT_DWORD, NULL, &dw, &dwSize);
-    return dw;
+    DWORD dw = 0;
+    DWORD dwSize = sizeof(dw);
+    const auto status = RegGetValueW(HKEY_CURRENT_USER, L"Software\\TranslucentSM", val, RRF_RT_DWORD, nullptr, &dw, &dwSize);
+    return status == ERROR_SUCCESS ? dw : 0;
 }
 
-static HRESULT SetVal(HKEY subkey, LPCWSTR key, DWORD val)
+static HRESULT SetVal(LPCWSTR key, DWORD val)
 {
-    return RegSetValueEx(subkey, key, 0, REG_DWORD, (const BYTE*)&val, sizeof(val));
+    HKEY subkey = nullptr;
+    const auto createStatus = RegCreateKeyExW(
+        HKEY_CURRENT_USER,
+        L"SOFTWARE\\TranslucentSM",
+        0,
+        nullptr,
+        REG_OPTION_NON_VOLATILE,
+        KEY_SET_VALUE,
+        nullptr,
+        &subkey,
+        nullptr);
+    if (createStatus != ERROR_SUCCESS)
+    {
+        return HRESULT_FROM_WIN32(createStatus);
+    }
+
+    const auto setStatus = RegSetValueExW(subkey, key, 0, REG_DWORD, reinterpret_cast<const BYTE*>(&val), sizeof(val));
+    RegCloseKey(subkey);
+    return HRESULT_FROM_WIN32(setStatus);
 }
