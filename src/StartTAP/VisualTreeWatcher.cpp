@@ -1,37 +1,96 @@
 #include "VisualTreeWatcher.h"
-#include "Helpers.h"
+#include "helpers.h"
 #include "misc.h"
+#include <algorithm>
 
-
-DWORD dwSize = sizeof(DWORD), dwOpacity = 0, dwLuminosity = 0, dwHide = 0, dwBorder = 0, dwRec = 0;
-
-double oldSrchHeight;
-Thickness oldSrchMar;
-int64_t token = NULL, token_vis = NULL;
-
-
-VisualTreeWatcher::VisualTreeWatcher(winrt::com_ptr<IUnknown> site)
-    : m_selfPtr(this, winrt::take_ownership_from_abi_t{}),
-    m_XamlDiagnostics(site.as<IXamlDiagnostics>())
+namespace
 {
-    this->AddRef();
+std::wstring_view ToView(BSTR value) noexcept
+{
+    if (value == nullptr)
+    {
+        return {};
+    }
 
-    HANDLE thread = CreateThread(
-        nullptr, 0,
-        [](LPVOID lpParam) -> DWORD {
-            auto watcher = reinterpret_cast<VisualTreeWatcher*>(lpParam);
-            watcher->AdviseVisualTreeChange();
-            return 0;
-        },
-        this, 0, nullptr);
-    if (thread) {
-        CloseHandle(thread);
+    return { value, static_cast<size_t>(SysStringLen(value)) };
+}
+
+double CalculateSearchPad(Control const& searchControl) noexcept
+{
+    const auto baseHeight = searchControl.ActualHeight() > 0 ? searchControl.ActualHeight() : std::max(searchControl.Height(), 0.0);
+    return baseHeight + searchControl.Padding().Bottom + searchControl.Padding().Top + 55.0;
+}
+
+AcrylicBrush TryGetAcrylicBrush(Border const& border) noexcept
+{
+    if (!border)
+    {
+        return nullptr;
+    }
+
+    return border.Background().try_as<AcrylicBrush>();
+}
+
+SolidColorBrush TryGetSolidColorBrush(Border const& border) noexcept
+{
+    if (!border)
+    {
+        return nullptr;
+    }
+
+    return border.Background().try_as<SolidColorBrush>();
+}
+
+void CollapseElement(FrameworkElement const& element) noexcept
+{
+    if (element)
+    {
+        element.Visibility(Visibility::Collapsed);
+    }
+}
+}
+
+DWORD dwOpacity = 0, dwLuminosity = 0, dwHide = 0, dwBorder = 0, dwRec = 0;
+
+double oldSrchHeight = 0;
+Thickness oldSrchMar{};
+int64_t token = 0, token_vis = 0;
+
+
+VisualTreeWatcher::VisualTreeWatcher(winrt::com_ptr<IUnknown> const& site)
+    : m_XamlDiagnostics(site ? site.as<IXamlDiagnostics>() : nullptr),
+    m_visualTreeService(m_XamlDiagnostics ? m_XamlDiagnostics.as<IVisualTreeService3>() : nullptr)
+{
+}
+
+VisualTreeWatcher::~VisualTreeWatcher() noexcept
+{
+    if (m_visualTreeService && m_isAdvised)
+    {
+        const auto hr = m_visualTreeService->UnadviseVisualTreeChange(this);
+        (void)hr;
     }
 }
 
-void VisualTreeWatcher::AdviseVisualTreeChange() {
-    const auto treeService = m_XamlDiagnostics.as<IVisualTreeService3>();
-    winrt::check_hresult(treeService->AdviseVisualTreeChange(this));
+HRESULT VisualTreeWatcher::AdviseVisualTreeChange() noexcept
+{
+    if (!m_visualTreeService)
+    {
+        return E_NOINTERFACE;
+    }
+
+    if (m_isAdvised)
+    {
+        return S_FALSE;
+    }
+
+    const auto hr = m_visualTreeService->AdviseVisualTreeChange(this);
+    if (SUCCEEDED(hr))
+    {
+        m_isAdvised = true;
+    }
+
+    return hr;
 }
 
 HRESULT VisualTreeWatcher::OnElementStateChanged(InstanceHandle, VisualElementState, LPCWSTR) noexcept
@@ -39,52 +98,61 @@ HRESULT VisualTreeWatcher::OnElementStateChanged(InstanceHandle, VisualElementSt
     return S_OK;
 }
 
-HRESULT VisualTreeWatcher::OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)
+HRESULT VisualTreeWatcher::OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) noexcept
 {
-    if (mutationType == Add)
+    try
     {
-        const std::wstring_view type{ element.Type, SysStringLen(element.Type) };
-        const std::wstring_view name{ element.Name, SysStringLen(element.Name) };
+        if (mutationType != Add)
+        {
+            return S_OK;
+        }
+
+        const auto type = ToView(element.Type);
+        const auto name = ToView(element.Name);
         if (name == L"AcrylicBorder")
         {
-            dwOpacity = GetVal(L"TintOpacity");
-            dwLuminosity = GetVal(L"TintLuminosityOpacity");
+            auto acrylicBorder = TryFromHandle<Border>(element.Handle);
+            auto acrylicBrush = TryGetAcrylicBrush(acrylicBorder);
+            if (!acrylicBrush)
+            {
+                return S_OK;
+            }
 
-            // apply the things
-            if (dwOpacity > 100) dwOpacity = 100;
-            if (dwLuminosity > 100) dwLuminosity = 100;
-            Border acrylicBorder = FromHandle<Border>(element.Handle);
-            acrylicBorder.Background().as<AcrylicBrush>().TintOpacity(double(dwOpacity) / 100);
-            acrylicBorder.Background().as<AcrylicBrush>().TintLuminosityOpacity(double(dwLuminosity) / 100);
-            //acrylicBorder.Background().as<AcrylicBrush>().Opacity(0);
-            //Microsoft::UI::Xaml::Controls::BackdropMaterial::SetApplyToRootOrPageBackground(acrylicBorder.as<Control>(), true);
+            dwOpacity = std::min(GetVal(L"TintOpacity"), 100UL);
+            dwLuminosity = std::min(GetVal(L"TintLuminosityOpacity"), 100UL);
+            acrylicBrush.TintOpacity(static_cast<double>(dwOpacity) / 100.0);
+            acrylicBrush.TintLuminosityOpacity(static_cast<double>(dwLuminosity) / 100.0);
         }
         else if (name == L"BackgroundElement" && type == L"Windows.UI.Xaml.Controls.Border")
         {
-            // w10 hamburger menu fix
-            auto backElement = FromHandle<Border>(element.Handle);
-            backElement.Background().as<AcrylicBrush>().TintOpacity(0);
+            auto backElement = TryFromHandle<Border>(element.Handle);
+            if (auto brush = TryGetAcrylicBrush(backElement))
+            {
+                brush.TintOpacity(0);
+            }
         }
         else if (type == L"StartDocked.SearchBoxToggleButton")
         {
             dwHide = GetVal(L"HideSearch");
-            Control srch = FromHandle<Control>(element.Handle);
+            auto srch = TryFromHandle<Control>(element.Handle);
+            if (!srch)
+            {
+                return S_OK;
+            }
+
             oldSrchMar = srch.Margin();
             oldSrchHeight = srch.Height();
             if (dwHide == 1)
             {
                 srch.Height(0);
-                srch.Margin({0});
+                srch.Margin({ 0 });
+                pad = CalculateSearchPad(srch);
             }
-
-            // recommended fix
-            if (dwHide == 1) pad = srch.ActualHeight() + srch.Padding().Bottom + srch.Padding().Top + 55;
-
         }
         else if (name == L"RootGrid")
         {
-            Grid rootContent = FromHandle<Grid>(element.Handle);
-            if (GetVal(L"EditButton")==1)
+            auto rootContent = TryFromHandle<Grid>(element.Handle);
+            if (rootContent && GetVal(L"EditButton") == 1)
             {
                 AddSettingsPanel(rootContent);
             }
@@ -92,29 +160,54 @@ HRESULT VisualTreeWatcher::OnVisualTreeChange(ParentChildRelation relation, Visu
         else if (name == L"AcrylicOverlay")
         {
             dwBorder = GetVal(L"HideBorder");
-            auto acrylicOverlay = FromHandle<Border>(element.Handle);
-            if (dwBorder == 1) acrylicOverlay.Background().as<SolidColorBrush>().Opacity(0);
+            auto acrylicOverlay = TryFromHandle<Border>(element.Handle);
+            if (dwBorder == 1)
+            {
+                if (auto brush = TryGetSolidColorBrush(acrylicOverlay))
+                {
+                    brush.Opacity(0);
+                }
+            }
         }
         else if (name == L"SuggestionsParentContainer" || name == L"ShowMoreSuggestions")
         {
             dwRec = GetVal(L"HideRecommended");
-            auto elmnt = FromHandle<FrameworkElement>(element.Handle);
-            if (dwRec == 1) elmnt.Visibility(Visibility::Collapsed);
+            auto elementRef = TryFromHandle<FrameworkElement>(element.Handle);
+            if (dwRec == 1)
+            {
+                CollapseElement(elementRef);
+            }
         }
         else if (name == L"TopLevelSuggestionsListHeader")
         {
             dwRec = GetVal(L"HideRecommended");
-            auto elmnt = FromHandle<FrameworkElement>(element.Handle);
+            auto elementRef = TryFromHandle<FrameworkElement>(element.Handle);
+            if (!elementRef)
+            {
+                return S_OK;
+            }
+
             if (dwRec == 1)
             {
-                elmnt.Visibility(Visibility::Collapsed);
-                if (token_vis == NULL)
+                CollapseElement(elementRef);
+                if (registeredSuggestionsHeader != elementRef && registeredSuggestionsHeader && token_vis != 0)
                 {
-                    token_vis = elmnt.RegisterPropertyChangedCallback(UIElement::VisibilityProperty(),
+                    registeredSuggestionsHeader.UnregisterPropertyChangedCallback(UIElement::VisibilityProperty(), token_vis);
+                    token_vis = 0;
+                }
+
+                registeredSuggestionsHeader = elementRef;
+                if (token_vis == 0)
+                {
+                    token_vis = elementRef.RegisterPropertyChangedCallback(
+                        UIElement::VisibilityProperty(),
                         [](DependencyObject sender, DependencyProperty property)
                         {
-                            auto element = sender.try_as<FrameworkElement>();
-                            element.Visibility(Visibility::Collapsed);
+                            auto current = sender.try_as<FrameworkElement>();
+                            if (current)
+                            {
+                                current.Visibility(Visibility::Collapsed);
+                            }
                         });
                 }
             }
@@ -124,30 +217,53 @@ HRESULT VisualTreeWatcher::OnVisualTreeChange(ParentChildRelation relation, Visu
             dwRec = GetVal(L"HideRecommended");
             if (dwRec == 1)
             {
-                auto topLevelRoot = FromHandle<FrameworkElement>(relation.Parent);
-                static auto suggHeader = FindDescendantByName(topLevelRoot, L"TopLevelSuggestionsListHeader").as<FrameworkElement>();
-                static auto suggContainer = FindDescendantByName(topLevelRoot, L"SuggestionsParentContainer").as<FrameworkElement>();
-                static auto suggBtn = FindDescendantByName(topLevelRoot, L"ShowMoreSuggestions").as<FrameworkElement>();
-                auto pinList = FromHandle<FrameworkElement>(element.Handle);
-
-                static double height = pinList.Height() + suggContainer.ActualHeight() + suggBtn.ActualHeight();
-                if (token == NULL)
+                auto topLevelRoot = TryFromHandle<FrameworkElement>(relation.Parent);
+                auto pinList = TryFromHandle<FrameworkElement>(element.Handle);
+                if (!topLevelRoot || !pinList)
                 {
-                    token = pinList.RegisterPropertyChangedCallback(FrameworkElement::HeightProperty(),
-                        [](DependencyObject sender, DependencyProperty property)
+                    return S_OK;
+                }
+
+                auto suggHeader = FindDescendantByName(topLevelRoot, L"TopLevelSuggestionsListHeader").try_as<FrameworkElement>();
+                auto suggContainer = FindDescendantByName(topLevelRoot, L"SuggestionsParentContainer").try_as<FrameworkElement>();
+                auto suggBtn = FindDescendantByName(topLevelRoot, L"ShowMoreSuggestions").try_as<FrameworkElement>();
+
+                const double height = pinList.Height()
+                    + (suggContainer ? suggContainer.ActualHeight() : 0.0)
+                    + (suggBtn ? suggBtn.ActualHeight() : 0.0);
+
+                if (registeredPinnedList != pinList && registeredPinnedList && token != 0)
+                {
+                    registeredPinnedList.UnregisterPropertyChangedCallback(FrameworkElement::HeightProperty(), token);
+                    token = 0;
+                }
+
+                registeredPinnedList = pinList;
+                if (token == 0)
+                {
+                    token = pinList.RegisterPropertyChangedCallback(
+                        FrameworkElement::HeightProperty(),
+                        [height](DependencyObject sender, DependencyProperty property)
                         {
-                            auto element = sender.try_as<FrameworkElement>();
-                            element.Height(height + pad);
+                            auto current = sender.try_as<FrameworkElement>();
+                            if (current)
+                            {
+                                current.Height(height + pad);
+                            }
                         });
                 }
 
                 pinList.Height(height + pad);
-                suggHeader.Visibility(Visibility::Collapsed);
-                suggContainer.Visibility(Visibility::Collapsed);
-                suggBtn.Visibility(Visibility::Collapsed);
+                CollapseElement(suggHeader);
+                CollapseElement(suggContainer);
+                CollapseElement(suggBtn);
             }
         }
-        //ChangeLayout(name, type, element);
+
+        return S_OK;
     }
-    return S_OK;
+    catch (...)
+    {
+        return S_OK;
+    }
 }

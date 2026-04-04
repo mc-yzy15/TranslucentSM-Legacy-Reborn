@@ -1,160 +1,146 @@
 # TranslucentSM-Legacy-Reborn
 
-A lightweight utility that makes the Windows Start Menu translucent/transparent.
-This application utilizes XAML diagnostics to inject a dll into the process and modify XAML.
+An independent continuation of [rounk-ctrl/TranslucentSM](https://github.com/rounk-ctrl/TranslucentSM). This fork keeps the original idea alive, but the primary implementation is now `StartTAP` and the primary shipped binary is `StartTAP.dll`.
 
-[简体中文](#cn)
+## Project Status
 
----
+- Primary implementation: `StartTAP`
+- Primary build baseline: `NuGet restore` + `MSBuild`
+- Supported target matrix for this branch: Windows 10/11, x64 and x86
+- Legacy C/CMake implementation: kept only as a fallback path during transition
 
-## Installation Guide
+## Releases
 
-1. **Download and Install:**
-   - Download the latest release from the [Releases](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) page.
-   - Run the installer and follow the on-screen instructions to complete the installation.
+Download the latest release from the [Releases](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) page.
 
-2. **Dependencies:**
-   - No additional dependencies are required for this application.
+Release assets now ship `StartTAP.dll` as the default binary, packaged separately for x64 and x86.
 
----
+## Build From Source
+
+1. Restore NuGet packages:
+
+```powershell
+nuget restore start.sln
+```
+
+2. Build the supported solution entrypoint:
+
+```powershell
+msbuild start.sln /m /p:Configuration=Release /p:Platform=x64
+msbuild start.sln /m /p:Configuration=Release /p:Platform=x86
+```
+
+3. The default outputs are written to:
+
+```text
+build/msbuild/x64/Release/StartTAP.dll
+build/msbuild/Win32/Release/StartTAP.dll
+```
+
+You can also build the project directly:
+
+```powershell
+msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=x64
+msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=Win32
+```
 
 ## Settings
 
-You can adjust transparency settings through the application's graphical interface without manually modifying the registry. All values must be between 1 and 9.
-It currently uses the registry to store values (as a fallback option). You can find them at ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM```.
-**After changing the settings, you must terminate StartMenuExperienceHost.exe and restart the application.**
+The runtime settings continue to use the existing registry contract under `HKEY_CURRENT_USER\SOFTWARE\TranslucentSM`.
 
-### `TintLuminosityOpacity` 
+Supported keys in this stabilization line:
 
-Controls the brightness brush (some minor layers).
+- `TintOpacity`
+- `TintLuminosityOpacity`
+- `HideSearch`
+- `HideBorder`
+- `HideRecommended`
+- `EditButton`
 
-### `TintOpacity`
+After changing settings, terminate `StartMenuExperienceHost.exe` and relaunch the app if the shell does not refresh automatically.
 
-Main acrylic brush.
+## Legacy Fallback
 
----
+The CMake files under `src/` are now explicitly for the legacy C fallback only. `StartTAP` is not supported through CMake.
 
-## Future Features
+If you need the fallback build path:
 
-- We are planning to add more customization options in future releases.
-- Consider adding support for additional Windows versions.
+```powershell
+.\src\Cmake.ps1
+```
 
----
+This builds only the legacy targets and does not produce `StartTAP.dll`.
 
 ## Contributing
 
-We welcome contributions from the community! Here are some ways to get involved:
+Bug reports and pull requests are welcome:
 
-- **Report Issues:** If you encounter any bugs or have suggestions, please open an issue on the [Issues](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) page.
-- **Submit Pull Requests:** If you have code improvements or new features, feel free to submit a pull request.
-
----
-
-## Support and Feedback
-
-- **Contact:** For any questions or support, you can reach out to the developer via [Email](mailto:pubic@yzit7.wecom.work).
-- **Bug Reports:** Please report bugs using the [Issues](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) page.
-- **Feature Requests:** You can request new features by opening an issue on the [Issues](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) page.
-
----
-
-## Screenshots
-
-![image](https://github.com/rounk-ctrl/TranslucentSM/assets/70931017/4a569f8c-f66a-45d3-9881-7d4a39a5063)
-
-![image](https://github.com/rounk-ctrl/TranslucentSM/assets/70931017/2987e096-7334-4172-a25b-0ddf9ee2665f)
-
----
-
-## Developer Information
-
-- **Main Developer:** [mc-yzy15](https://github.com/mc-yzy15)
-  - Email: [yingmoliuguang@yeah.net](mailto:yingmoliuguang@yeah.net)
-  - Bilibili: [https://space.bilibili.com/1338637552](https://space.bilibili.com/1338637552)
-  - CSDN: [https://blog.csdn.net/m0_68339835](https://blog.csdn.net/m0_68339835)
-  - 个人博客: [https://home159263.wordpress.com/](https://home159263.wordpress.com/)
-
----
+- [Issues](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues)
+- [Pull Requests](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/pulls)
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPL V3 License) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
 
-# CN
+# 中文
 
-**[Switch to EN_US](#translucentsm-legacy-reborn)**
+这是 [rounk-ctrl/TranslucentSM](https://github.com/rounk-ctrl/TranslucentSM) 的非官方延续分支。当前主实现已经切换到 `StartTAP`，默认发布产物为 `StartTAP.dll`。
 
----
+## 当前状态
 
-## 安装指南
+- 主实现：`StartTAP`
+- 官方构建链：`NuGet restore` + `MSBuild`
+- 当前支持范围：Windows 10/11，x64 和 x86
+- 旧版 C/CMake 实现：仅作为过渡期 fallback 保留
 
-1. **下载和安装：**
-   - 从 [发布页面](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) 下载最新版本。
-   - 运行安装程序并按照屏幕上的指示完成安装。
+## 从源码构建
 
-2. **依赖项：**
-   - 该应用程序不需要额外的依赖项。
+1. 先恢复 NuGet 包：
 
----
+```powershell
+nuget restore start.sln
+```
 
-## 设置
+2. 再使用 MSBuild 构建：
 
-您可以通过应用程序的图形界面调整透明度设置，无需手动修改注册表。所有值必须在1到9之间。
-当前使用注册表存储值（作为备用选项），您可以在 ```HKEY_CURRENT_USER\SOFTWARE\TranslucentSM``` 找到它们。
-**更改设置后，您必须终止 StartMenuExperienceHost.exe 并重新启动应用程序。**
+```powershell
+msbuild start.sln /m /p:Configuration=Release /p:Platform=x64
+msbuild start.sln /m /p:Configuration=Release /p:Platform=x86
+```
 
-### `TintLuminosityOpacity` 
+3. 默认输出目录：
 
-控制亮度画笔（一些次要图层）。
+```text
+build/msbuild/x64/Release/StartTAP.dll
+build/msbuild/Win32/Release/StartTAP.dll
+```
 
-### `TintOpacity`
+也可以直接构建工程文件：
 
-主要亚克力画笔。
+```powershell
+msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=x64
+msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=Win32
+```
 
----
+## 设置项
 
-## 未来功能
+运行时设置继续沿用 `HKEY_CURRENT_USER\SOFTWARE\TranslucentSM` 下的既有键名：
 
-- 我们计划在未来的版本中添加更多的自定义选项。
-- 考虑增加对更多 Windows 版本的支持。
+- `TintOpacity`
+- `TintLuminosityOpacity`
+- `HideSearch`
+- `HideBorder`
+- `HideRecommended`
+- `EditButton`
 
----
+如果修改设置后 shell 没有自动刷新，请结束 `StartMenuExperienceHost.exe` 后重新启动应用。
 
-## 参与贡献
+## Legacy Fallback
 
-我们欢迎社区的贡献！以下是参与的方式：
+`src/` 下的 CMake 现在只负责旧版 C 实现的 fallback 构建，不再承诺构建 `StartTAP`。
 
-- **报告问题：** 如果您遇到任何错误或有建议，请在 [问题页面](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) 上提交问题。
-- **提交拉取请求：** 如果您有代码改进或新功能，可以提交拉取请求。
+```powershell
+.\src\Cmake.ps1
+```
 
----
-
-## 技术支持与反馈
-
-- **联系：** 如果有任何问题或需要支持，可以通过 [电子邮件](mailto:pubic@yzit7.wecom.work) 联系开发者。
-- **错误报告：** 请使用 [问题页面](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) 报告错误。
-- **功能请求：** 您可以通过在 [问题页面](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues) 上提交问题来请求新功能。
-
----
-
-## 截图
-
-![截图](https://github.com/rounk-ctrl/TranslucentSM/assets/70931017/4a569f8c-f66a-45d3-9881-7d4a39a5063)
-
-![截图](https://github.com/rounk-ctrl/TranslucentSM/assets/70931017/2987e096-7334-4172-a25b-0ddf9ee2665f)
-
----
-
-## 开发者信息
-
-- **主要开发者：** [mc-yzy15](https://github.com/mc-yzy15)
-  - 电子邮件: [yingmoliuguang@yeah.net](mailto:yingmoliuguang@yeah.net)
-  - Bilibili: [https://space.bilibili.com/1338637552](https://space.bilibili.com/1338637552)
-  - CSDN: [https://blog.csdn.net/m0_68339835](https://blog.csdn.net/m0_68339835)
-  - 个人博客: [https://home159263.wordpress.com/](https://home159263.wordpress.com/)
-
----
-
-## 许可证
-
-本项目采用 GNU General Public License v3.0 (GPL V3 许可证) - 详情请参阅 [LICENSE](LICENSE) 文件。
+这条路径只会生成旧版 fallback 产物，不会生成 `StartTAP.dll`。

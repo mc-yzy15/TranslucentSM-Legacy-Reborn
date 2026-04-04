@@ -1,6 +1,6 @@
 #pragma once
 #include "framework.h"
-#include "Helpers.h"
+#include "helpers.h"
 #include "VisualTreeWatcher.h"
 
 HRESULT AddSettingsPanel(Grid rootGrid);

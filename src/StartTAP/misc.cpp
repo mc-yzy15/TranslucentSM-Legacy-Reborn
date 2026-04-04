@@ -1,16 +1,57 @@
 #include "misc.h"
+#include <algorithm>
+
+namespace
+{
+double CalculateSearchPad(Control const& searchControl) noexcept
+{
+    const auto baseHeight = searchControl.ActualHeight() > 0 ? searchControl.ActualHeight() : std::max(searchControl.Height(), 0.0);
+    return baseHeight + searchControl.Padding().Bottom + searchControl.Padding().Top + 55.0;
+}
+
+AcrylicBrush TryGetAcrylicBrush(Border const& border) noexcept
+{
+    if (!border)
+    {
+        return nullptr;
+    }
+
+    return border.Background().try_as<AcrylicBrush>();
+}
+
+SolidColorBrush TryGetSolidColorBrush(Border const& border) noexcept
+{
+    if (!border)
+    {
+        return nullptr;
+    }
+
+    return border.Background().try_as<SolidColorBrush>();
+}
+}
 
 HRESULT AddSettingsPanel(Grid rootGrid)
 {
+    if (!rootGrid)
+    {
+        return E_INVALIDARG;
+    }
+
+    if (FindDescendantByName(rootGrid, L"TranslucentSMSettingsButton") != nullptr)
+    {
+        return S_FALSE;
+    }
+
     dwOpacity = GetVal(L"TintOpacity");
     dwLuminosity = GetVal(L"TintLuminosityOpacity");
     dwHide = GetVal(L"HideSearch");
     dwBorder = GetVal(L"HideBorder");
     dwRec = GetVal(L"HideRecommended");
 
-    static Border acrylicBorder = FindDescendantByName(rootGrid, L"AcrylicBorder").as<Border>();
+    auto acrylicBorder = FindDescendantByName(rootGrid, L"AcrylicBorder").try_as<Border>();
 
     Button bt;
+    bt.Name(L"TranslucentSMSettingsButton");
     auto f = FontIcon();
     f.FontSize(16);
     bt.BorderThickness(Thickness{ 0 });
@@ -20,8 +61,7 @@ HRESULT AddSettingsPanel(Grid rootGrid)
     TextBlock tbx;
     tbx.FontFamily(Windows::UI::Xaml::Media::FontFamily(L"Segoe UI Variable"));
     tbx.FontSize(13.0);
-    winrt::hstring hs = L"TintOpacity";
-    tbx.Text(hs);
+    tbx.Text(L"TintOpacity");
     stackPanel.Children().Append(tbx);
 
     Slider slider;
@@ -32,8 +72,7 @@ HRESULT AddSettingsPanel(Grid rootGrid)
     TextBlock tbx1;
     tbx1.FontFamily(Windows::UI::Xaml::Media::FontFamily(L"Segoe UI Variable"));
     tbx1.FontSize(13.0);
-    winrt::hstring hs1 = L"TintLuminosityOpacity";
-    tbx1.Text(hs1);
+    tbx1.Text(L"TintLuminosityOpacity");
     stackPanel.Children().Append(tbx1);
 
     Slider slider2;
@@ -41,69 +80,73 @@ HRESULT AddSettingsPanel(Grid rootGrid)
     slider2.Value(dwLuminosity);
     stackPanel.Children().Append(slider2);
 
-    static HKEY subKey = nullptr;
-    DWORD dwSize = sizeof(DWORD), dwInstalled = 0;
-    RegCreateKeyEx(HKEY_CURRENT_USER, L"SOFTWARE\\TranslucentSM", 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &subKey, NULL);
+    slider.ValueChanged([acrylicBorder](Windows::Foundation::IInspectable const& sender, RangeBaseValueChangedEventArgs const&)
+        {
+            double sliderValue = sender.as<Slider>().Value();
+            if (auto brush = TryGetAcrylicBrush(acrylicBorder))
+            {
+                brush.TintOpacity(sliderValue / 100.0);
+            }
 
-    slider.ValueChanged([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-        double sliderValue = sender.as<Slider>().Value();
-        acrylicBorder.Background().as<AcrylicBrush>().TintOpacity(double(sliderValue) / 100);
-
-        SetVal(subKey, L"TintOpacity", sliderValue);
+            SetVal(L"TintOpacity", static_cast<DWORD>(sliderValue));
         });
 
-    slider2.ValueChanged([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-        double sliderValue = sender.as<Slider>().Value();
-        acrylicBorder.Background().as<AcrylicBrush>().TintLuminosityOpacity(double(sliderValue) / 100);
+    slider2.ValueChanged([acrylicBorder](Windows::Foundation::IInspectable const& sender, RangeBaseValueChangedEventArgs const&)
+        {
+            double sliderValue = sender.as<Slider>().Value();
+            if (auto brush = TryGetAcrylicBrush(acrylicBorder))
+            {
+                brush.TintLuminosityOpacity(sliderValue / 100.0);
+            }
 
-        SetVal(subKey, L"TintLuminosityOpacity", sliderValue);
+            SetVal(L"TintLuminosityOpacity", static_cast<DWORD>(sliderValue));
         });
-
-
-    if (dwRec == 1) rechide = true;
-    if (dwHide == 1) srchhide = true;
-
 
     auto srchBoxElm = FindDescendantByName(rootGrid, L"StartMenuSearchBox");
     if (srchBoxElm != nullptr)
     {
-        static auto srchBox = srchBoxElm.as<Control>();
-
-        auto root = VisualTreeHelper::GetParent(srchBox).as<FrameworkElement>();
+        auto srchBox = srchBoxElm.try_as<Control>();
 
         auto checkBox = CheckBox();
         checkBox.Content(box_value(L"Hide search box"));
         stackPanel.Children().Append(checkBox);
-        if (dwHide == 1)
+        if (dwHide == 1 && srchBox)
         {
             checkBox.IsChecked(true);
-            srchhide = true;
-            pad = srchBox.ActualHeight() + srchBox.Padding().Bottom + srchBox.Padding().Top + 55;
+            pad = CalculateSearchPad(srchBox);
         }
-        // events
-        checkBox.Checked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-            SetVal(subKey, L"HideSearch", 1);
-            srchhide = true;
 
-            srchBox.Height(0);
-            srchBox.Margin({ 0 });
-            pad = srchBox.ActualHeight() + srchBox.Padding().Bottom + srchBox.Padding().Top + 55;
+        checkBox.Checked([srchBox](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+            {
+                SetVal(L"HideSearch", 1);
+                if (!srchBox)
+                {
+                    return;
+                }
+
+                srchBox.Height(0);
+                srchBox.Margin({ 0 });
+                pad = CalculateSearchPad(srchBox);
             });
 
-        checkBox.Unchecked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-            SetVal(subKey, L"HideSearch", 0);
-            srchhide = false;
+        checkBox.Unchecked([srchBox](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+            {
+                SetVal(L"HideSearch", 0);
+                if (!srchBox)
+                {
+                    return;
+                }
 
-            srchBox.Height(oldSrchHeight);
-            srchBox.Margin(oldSrchMar);
-            pad = 15;
+                srchBox.Height(oldSrchHeight);
+                srchBox.Margin(oldSrchMar);
+                pad = 15.0;
             });
     }
 
     auto acrylicOverlayElm = FindDescendantByName(rootGrid, L"AcrylicOverlay");
     if (acrylicOverlayElm != nullptr)
     {
-        static auto acrylicOverlay = acrylicOverlayElm.as<Border>();
+        auto acrylicOverlay = acrylicOverlayElm.try_as<Border>();
 
         auto checkBox = CheckBox();
         checkBox.Content(box_value(L"Hide white border"));
@@ -111,22 +154,28 @@ HRESULT AddSettingsPanel(Grid rootGrid)
         if (dwBorder == 1)
             checkBox.IsChecked(true);
 
-        checkBox.Checked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-            SetVal(subKey, L"HideBorder", 1);
-            acrylicOverlay.Background().as<SolidColorBrush>().Opacity(0);
+        checkBox.Checked([acrylicOverlay](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+            {
+                SetVal(L"HideBorder", 1);
+                if (auto brush = TryGetSolidColorBrush(acrylicOverlay))
+                {
+                    brush.Opacity(0);
+                }
             });
 
-        checkBox.Unchecked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&) {
-            SetVal(subKey, L"HideBorder", 0);
-            acrylicOverlay.Background().as<SolidColorBrush>().Opacity(1);
+        checkBox.Unchecked([acrylicOverlay](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+            {
+                SetVal(L"HideBorder", 0);
+                if (auto brush = TryGetSolidColorBrush(acrylicOverlay))
+                {
+                    brush.Opacity(1);
+                }
             });
     }
 
     auto topRootElm = FindDescendantByName(rootGrid, L"TopLevelRoot");
-    if (topRootElm != nullptr)
+    if (auto topRoot = topRootElm.try_as<Grid>())
     {
-        auto topRoot = topRootElm.as<Grid>();
-
         auto checkBox = CheckBox();
         checkBox.Content(box_value(L"Hide recommended"));
         stackPanel.Children().Append(checkBox);
@@ -135,67 +184,114 @@ HRESULT AddSettingsPanel(Grid rootGrid)
             checkBox.IsChecked(true);
         }
 
-        static auto suggContainer = FindDescendantByName(topRoot, L"SuggestionsParentContainer").as<FrameworkElement>();
-        static auto suggBtn = FindDescendantByName(topRoot, L"ShowMoreSuggestions").as<FrameworkElement>();
-        static auto suggHeader = FindDescendantByName(topRoot, L"TopLevelSuggestionsListHeader").as<FrameworkElement>();
+        auto suggContainer = FindDescendantByName(topRoot, L"SuggestionsParentContainer").try_as<FrameworkElement>();
+        auto suggBtn = FindDescendantByName(topRoot, L"ShowMoreSuggestions").try_as<FrameworkElement>();
+        auto suggHeader = FindDescendantByName(topRoot, L"TopLevelSuggestionsListHeader").try_as<FrameworkElement>();
+        auto pinList = FindDescendantByName(topRoot, L"StartMenuPinnedList").try_as<FrameworkElement>();
 
-        static auto pinList = FindDescendantByName(topRoot, L"StartMenuPinnedList").as<FrameworkElement>();
+        const double pinHeight = pinList ? pinList.Height() : 0.0;
+        const double hiddenHeight = pinHeight
+            + (suggContainer ? suggContainer.ActualHeight() : 0.0)
+            + (suggBtn ? suggBtn.ActualHeight() : 0.0);
 
-        static auto pinH = pinList.Height();
-        static auto x = pinH + suggContainer.ActualHeight() + suggBtn.ActualHeight();
-
-
-        checkBox.Checked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+        checkBox.Checked([pinList, suggHeader, suggContainer, suggBtn, hiddenHeight](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
             {
-                SetVal(subKey, L"HideRecommended", 1);
-                rechide = true;
+                SetVal(L"HideRecommended", 1);
 
-                if (token == NULL)
+                if (registeredPinnedList != pinList && registeredPinnedList && token != 0)
                 {
-                    token = pinList.RegisterPropertyChangedCallback(FrameworkElement::HeightProperty(),
-                        [](DependencyObject sender, DependencyProperty property)
+                    registeredPinnedList.UnregisterPropertyChangedCallback(FrameworkElement::HeightProperty(), token);
+                    token = 0;
+                }
+
+                registeredPinnedList = pinList;
+                if (pinList && token == 0)
+                {
+                    token = pinList.RegisterPropertyChangedCallback(
+                        FrameworkElement::HeightProperty(),
+                        [hiddenHeight](DependencyObject sender, DependencyProperty property)
                         {
-                            auto element = sender.try_as<FrameworkElement>();
-                            element.Height(x + pad);
+                            auto current = sender.try_as<FrameworkElement>();
+                            if (current)
+                            {
+                                current.Height(hiddenHeight + pad);
+                            }
                         });
                 }
-                if (token_vis == NULL)
+
+                if (registeredSuggestionsHeader != suggHeader && registeredSuggestionsHeader && token_vis != 0)
                 {
-                    token_vis = suggHeader.RegisterPropertyChangedCallback(UIElement::VisibilityProperty(),
+                    registeredSuggestionsHeader.UnregisterPropertyChangedCallback(UIElement::VisibilityProperty(), token_vis);
+                    token_vis = 0;
+                }
+
+                registeredSuggestionsHeader = suggHeader;
+                if (suggHeader && token_vis == 0)
+                {
+                    token_vis = suggHeader.RegisterPropertyChangedCallback(
+                        UIElement::VisibilityProperty(),
                         [](DependencyObject sender, DependencyProperty property)
                         {
-                            auto element = sender.try_as<FrameworkElement>();
-                            element.Visibility(Visibility::Collapsed);
+                            auto current = sender.try_as<FrameworkElement>();
+                            if (current)
+                            {
+                                current.Visibility(Visibility::Collapsed);
+                            }
                         });
                 }
-                pinList.Height(x + pad);
-                suggHeader.Visibility(Visibility::Collapsed);
-                suggContainer.Visibility(Visibility::Collapsed);
-                suggBtn.Visibility(Visibility::Collapsed);
+
+                if (pinList)
+                {
+                    pinList.Height(hiddenHeight + pad);
+                }
+                if (suggHeader)
+                {
+                    suggHeader.Visibility(Visibility::Collapsed);
+                }
+                if (suggContainer)
+                {
+                    suggContainer.Visibility(Visibility::Collapsed);
+                }
+                if (suggBtn)
+                {
+                    suggBtn.Visibility(Visibility::Collapsed);
+                }
             });
 
-        checkBox.Unchecked([](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
+        checkBox.Unchecked([pinList, suggHeader, suggContainer, suggBtn, pinHeight](Windows::Foundation::IInspectable const& sender, RoutedEventArgs const&)
             {
-                SetVal(subKey, L"HideRecommended", 0);
-                rechide = false;
+                SetVal(L"HideRecommended", 0);
 
-                suggContainer.Visibility(Visibility::Visible);
-                suggBtn.Visibility(Visibility::Visible);
+                if (suggContainer)
+                {
+                    suggContainer.Visibility(Visibility::Visible);
+                }
+                if (suggBtn)
+                {
+                    suggBtn.Visibility(Visibility::Visible);
+                }
 
-                if (token != NULL)
+                if (registeredPinnedList == pinList && pinList && token != 0)
                 {
                     pinList.UnregisterPropertyChangedCallback(FrameworkElement::HeightProperty(), token);
-                    token = NULL;
+                    token = 0;
+                    registeredPinnedList = nullptr;
                 }
-                if (token_vis != NULL)
+                if (registeredSuggestionsHeader == suggHeader && suggHeader && token_vis != 0)
                 {
                     suggHeader.UnregisterPropertyChangedCallback(UIElement::VisibilityProperty(), token_vis);
-                    token_vis = NULL;
+                    token_vis = 0;
+                    registeredSuggestionsHeader = nullptr;
                 }
-                int height = pinH;
-                pinList.Height(height);
-                suggHeader.Visibility(Visibility::Visible);
 
+                if (pinList)
+                {
+                    pinList.Height(pinHeight);
+                }
+                if (suggHeader)
+                {
+                    suggHeader.Visibility(Visibility::Visible);
+                }
             });
     }
 
@@ -205,7 +301,12 @@ HRESULT AddSettingsPanel(Grid rootGrid)
     // windows 11
     if (rootpanel != nullptr)
     {
-        auto grid = VisualTreeHelper::GetChild(rootpanel, 0).as<Grid>();
+        Grid grid{ nullptr };
+        if (VisualTreeHelper::GetChildrenCount(rootpanel) > 0)
+        {
+            grid = VisualTreeHelper::GetChild(rootpanel, 0).try_as<Grid>();
+        }
+
         if (grid != nullptr)
         {
             ToolTipService::SetToolTip(bt, box_value(L"TranslucentSM settings"));
@@ -220,18 +321,14 @@ HRESULT AddSettingsPanel(Grid rootGrid)
             bt.BorderBrush(SolidColorBrush(Colors::Transparent()));
             grid.Children().Append(bt);
 
-
             Flyout flyout;
             flyout.Content(stackPanel);
             bt.Flyout(flyout);
         }
     }
     // windows 10
-    else if (nvds != nullptr)
+    else if (auto nvGrid = nvds.try_as<Grid>())
     {
-        auto nvGrid = nvds.as<Grid>();
-
-        // w10 start menu
         f.Glyph(L"\uE70F");
         f.FontFamily(Media::FontFamily(L"Segoe MDL2 Assets"));
 
@@ -243,7 +340,6 @@ HRESULT AddSettingsPanel(Grid rootGrid)
         rvb.Color(ColorHelper::FromArgb(128, 255, 255, 255));
         rvb.Opacity(0.4);
 
-        // doesnt seem to work on windows 11
         bt.Resources().Insert(winrt::box_value(L"ButtonBackgroundPointerOver"), rvb);
         bt.Resources().Insert(winrt::box_value(L"ButtonBackgroundPressed"), rvb);
 
@@ -281,12 +377,12 @@ HRESULT AddSettingsPanel(Grid rootGrid)
         slider.Width(230);
         slider2.Width(230);
 
-        // flyout
         Flyout flyout;
         flyout.Content(stackPanel);
         bt.Flyout(flyout);
 
         nvGrid.Children().InsertAt(0, mainpanel);
     }
-    return ERROR_SUCCESS;
+
+    return S_OK;
 }
