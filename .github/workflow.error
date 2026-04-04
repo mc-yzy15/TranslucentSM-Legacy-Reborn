@@ -1,0 +1,449 @@
+Current runner version: '2.326.0'
+Runner Image Provisioner
+Operating System
+Runner Image
+GITHUB_TOKEN Permissions
+Secret source: Actions
+Prepare workflow directory
+Prepare all required actions
+Getting action download info
+Download immutable action package 'actions/checkout@v4'
+Download action repository 'jurplel/install-qt-action@v3' (SHA:b7840a6733f49e2a39c4355260d2375063d39b61)
+Download action repository 'softprops/action-gh-release@v1' (SHA:de2c0eb89ae2a093876385947365aca7b0e5f844)
+Getting action download info
+Download immutable action package 'actions/setup-python@v5'
+Complete job name: build
+4s
+Run actions/checkout@v4
+Syncing repository: mc-yzy15/TranslucentSM-Legacy-Reborn
+Getting Git version info
+Temporarily overriding HOME='D:\a\_temp\1447d026-f34b-4745-93c5-b09b5a6fe378' before making global git config changes
+Adding repository directory to the temporary git global config as a safe directory
+"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn
+Deleting the contents of 'D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn'
+Initializing the repository
+Disabling automatic garbage collection
+Setting up auth
+Fetching the repository
+Determining the checkout info
+"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+Checking out the ref
+"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+94c6ebddaaf047f93af5562d553ebc456379b474
+30s
+Run jurplel/install-qt-action@v3
+Run actions/setup-python@v5
+Installed versions
+Run jurplel/install-qt-action/action@v3
+C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe -m pip install setuptools wheel py7zr==0.20.*
+Requirement already satisfied: setuptools in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (65.5.0)
+Collecting wheel
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Collecting py7zr==0.20.*
+  Downloading py7zr-0.20.8-py3-none-any.whl.metadata (16 kB)
+Collecting texttable (from py7zr==0.20.*)
+  Downloading texttable-1.7.0-py2.py3-none-any.whl.metadata (9.8 kB)
+Collecting pycryptodomex>=3.16.0 (from py7zr==0.20.*)
+  Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl.metadata (3.5 kB)
+Collecting pyzstd>=0.15.9 (from py7zr==0.20.*)
+  Downloading pyzstd-0.17.0-cp311-cp311-win_amd64.whl.metadata (2.6 kB)
+Collecting pyppmd<1.2.0,>=1.1.0 (from py7zr==0.20.*)
+  Downloading pyppmd-1.1.1-cp311-cp311-win_amd64.whl.metadata (5.6 kB)
+Collecting pybcj<1.1.0,>=1.0.0 (from py7zr==0.20.*)
+  Downloading pybcj-1.0.6-cp311-cp311-win_amd64.whl.metadata (3.8 kB)
+Collecting multivolumefile>=0.2.3 (from py7zr==0.20.*)
+  Downloading multivolumefile-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Collecting inflate64<1.1.0,>=1.0.0 (from py7zr==0.20.*)
+  Downloading inflate64-1.0.3-cp311-cp311-win_amd64.whl.metadata (4.5 kB)
+Collecting brotli>=1.1.0 (from py7zr==0.20.*)
+  Downloading Brotli-1.1.0-cp311-cp311-win_amd64.whl.metadata (5.6 kB)
+Collecting psutil (from py7zr==0.20.*)
+  Downloading psutil-7.0.0-cp37-abi3-win_amd64.whl.metadata (23 kB)
+Collecting typing-extensions>=4.13.2 (from pyzstd>=0.15.9->py7zr==0.20.*)
+  Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Downloading py7zr-0.20.8-py3-none-any.whl (67 kB)
+Downloading inflate64-1.0.3-cp311-cp311-win_amd64.whl (35 kB)
+Downloading pybcj-1.0.6-cp311-cp311-win_amd64.whl (24 kB)
+Downloading pyppmd-1.1.1-cp311-cp311-win_amd64.whl (46 kB)
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+Downloading Brotli-1.1.0-cp311-cp311-win_amd64.whl (357 kB)
+Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)
+Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+   ---------------------------------------- 1.8/1.8 MB 32.8 MB/s eta 0:00:00
+Downloading pyzstd-0.17.0-cp311-cp311-win_amd64.whl (246 kB)
+Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Downloading psutil-7.0.0-cp37-abi3-win_amd64.whl (244 kB)
+Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+Installing collected packages: texttable, brotli, wheel, typing-extensions, pyppmd, pycryptodomex, pybcj, psutil, multivolumefile, inflate64, pyzstd, py7zr
+
+Successfully installed brotli-1.1.0 inflate64-1.0.3 multivolumefile-0.2.3 psutil-7.0.0 py7zr-0.20.8 pybcj-1.0.6 pycryptodomex-3.23.0 pyppmd-1.1.1 pyzstd-0.17.0 texttable-1.7.0 typing-extensions-4.14.1 wheel-0.45.1
+C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe -m pip install aqtinstall==3.1.*
+Collecting aqtinstall==3.1.*
+  Downloading aqtinstall-3.1.21-py3-none-any.whl.metadata (11 kB)
+Collecting bs4 (from aqtinstall==3.1.*)
+  Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+Collecting defusedxml (from aqtinstall==3.1.*)
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting humanize (from aqtinstall==3.1.*)
+  Downloading humanize-4.12.3-py3-none-any.whl.metadata (7.8 kB)
+Collecting patch>=1.16 (from aqtinstall==3.1.*)
+  Downloading patch-1.16.zip (12 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting py7zr>=0.22.0 (from aqtinstall==3.1.*)
+  Downloading py7zr-1.0.0-py3-none-any.whl.metadata (17 kB)
+Collecting requests>=2.31.0 (from aqtinstall==3.1.*)
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting semantic-version (from aqtinstall==3.1.*)
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+Requirement already satisfied: texttable in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from aqtinstall==3.1.*) (1.7.0)
+Requirement already satisfied: pycryptodomex>=3.20.0 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (3.23.0)
+Requirement already satisfied: brotli>=1.1.0 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (1.1.0)
+Requirement already satisfied: psutil in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (7.0.0)
+Requirement already satisfied: pyzstd>=0.16.1 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (0.17.0)
+Requirement already satisfied: pyppmd<1.3.0,>=1.1.0 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (1.1.1)
+Requirement already satisfied: pybcj<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (1.0.6)
+Requirement already satisfied: multivolumefile>=0.2.3 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (0.2.3)
+Requirement already satisfied: inflate64<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.1.*) (1.0.3)
+Requirement already satisfied: typing-extensions>=4.13.2 in c:\hostedtoolcache\windows\python\3.11.9\x64\lib\site-packages (from pyzstd>=0.16.1->py7zr>=0.22.0->aqtinstall==3.1.*) (4.14.1)
+Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->aqtinstall==3.1.*)
+  Downloading charset_normalizer-3.4.2-cp311-cp311-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests>=2.31.0->aqtinstall==3.1.*)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.31.0->aqtinstall==3.1.*)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.31.0->aqtinstall==3.1.*)
+  Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+Collecting beautifulsoup4 (from bs4->aqtinstall==3.1.*)
+  Downloading beautifulsoup4-4.13.4-py3-none-any.whl.metadata (3.8 kB)
+Collecting soupsieve>1.2 (from beautifulsoup4->bs4->aqtinstall==3.1.*)
+  Downloading soupsieve-2.7-py3-none-any.whl.metadata (4.6 kB)
+Downloading aqtinstall-3.1.21-py3-none-any.whl (59 kB)
+Downloading py7zr-1.0.0-py3-none-any.whl (69 kB)
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.2-cp311-cp311-win_amd64.whl (105 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+Downloading beautifulsoup4-4.13.4-py3-none-any.whl (187 kB)
+Downloading soupsieve-2.7-py3-none-any.whl (36 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading humanize-4.12.3-py3-none-any.whl (128 kB)
+Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Building wheels for collected packages: patch
+  DEPRECATION: Building 'patch' using the legacy setup.py bdist_wheel mechanism, which will be removed in a future version. pip 25.3 will enforce this behaviour change. A possible replacement is to use the standardized build interface by setting the `--use-pep517` option, (possibly combined with `--no-build-isolation`), or adding a `pyproject.toml` file to the source tree of 'patch'. Discussion can be found at https://github.com/pypa/pip/issues/6334
+  Building wheel for patch (setup.py): started
+  Building wheel for patch (setup.py): finished with status 'done'
+  Created wheel for patch: filename=patch-1.16-py3-none-any.whl size=12393 sha256=783b056e360444f9d205ddf76cc3310829bc3417125f5db05fdd86e7b389743d
+  Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\cb\ee\c0\8b7da5d06750d049187f4672e1fd70fade43ec0d2ee5b5fcda
+Successfully built patch
+Installing collected packages: patch, urllib3, soupsieve, semantic-version, idna, humanize, defusedxml, charset_normalizer, certifi, requests, py7zr, beautifulsoup4, bs4, aqtinstall
+  Attempting uninstall: py7zr
+    Found existing installation: py7zr 0.20.8
+    Uninstalling py7zr-0.20.8:
+      Successfully uninstalled py7zr-0.20.8
+
+Successfully installed aqtinstall-3.1.21 beautifulsoup4-4.13.4 bs4-0.0.2 certifi-2025.7.14 charset_normalizer-3.4.2 defusedxml-0.7.1 humanize-4.12.3 idna-3.10 patch-1.16 py7zr-1.0.0 requests-2.32.4 semantic-version-2.10.0 soupsieve-2.7 urllib3-2.5.0
+C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe -m aqt install-qt windows desktop 5.15.2 win64_msvc2019_64 --outputdir D:\a\TranslucentSM-Legacy-Reborn/Qt
+INFO    : aqtinstall(aqt) v3.1.21 on Python 3.11.9 [CPython MSC v.1938 64 bit (AMD64)]
+INFO    : Downloading qtbase...
+INFO    : Downloading qtactiveqt...
+INFO    : Downloading qttranslations...
+INFO    : Downloading qtsvg...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtsvg-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.20078120
+INFO    : Finished installation of qtactiveqt-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.46425760
+INFO    : Finished installation of qttranslations-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.47407580
+INFO    : Downloading qtdeclarative...
+INFO    : Downloading qtmultimedia...
+INFO    : Downloading qtgraphicaleffects...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtgraphicaleffects-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.15913130
+INFO    : Finished installation of qtmultimedia-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.47719840
+INFO    : Downloading qtwinextras...
+INFO    : Downloading qttools...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtwinextras-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.20172720
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtdeclarative-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 2.65304410
+INFO    : Downloading qtimageformats...
+INFO    : Downloading qtsensors...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtimageformats-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.27776420
+INFO    : Finished installation of qtsensors-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.26777470
+INFO    : Finished installation of qtbase-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 5.59856890
+INFO    : Downloading qtwebchannel...
+INFO    : Downloading qtwebsockets...
+INFO    : Downloading qtconnectivity...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qttools-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 3.28214920
+INFO    : Finished installation of qtwebchannel-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.15260030
+INFO    : Finished installation of qtwebsockets-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.17321660
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Downloading qtxmlpatterns...
+INFO    : Downloading qtlocation...
+INFO    : Downloading qtserialport...
+INFO    : Finished installation of qtconnectivity-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.42496210
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtserialport-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.11009980
+INFO    : Downloading qtquickcontrols2...
+INFO    : Finished installation of qtxmlpatterns-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.53851790
+INFO    : Finished installation of qtlocation-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.59515200
+INFO    : Downloading qtquickcontrols...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Downloading qtwebview...
+INFO    : Downloading qtscxml...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtquickcontrols2-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.65044060
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtquickcontrols-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.44711800
+INFO    : Finished installation of qtwebview-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.15779700
+INFO    : Downloading qt3d...
+INFO    : Finished installation of qtscxml-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.25276660
+INFO    : Downloading qtspeech...
+INFO    : Downloading qtserialbus...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Downloading qtgamepad...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtspeech-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.12959550
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtserialbus-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.23176390
+INFO    : Finished installation of qtgamepad-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.14614240
+INFO    : Downloading qtremoteobjects...
+INFO    : Downloading d3dcompiler_47...
+INFO    : Finished installation of qt3d-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 2.24830400
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of qtremoteobjects-Windows-Windows_10-MSVC2019-Windows-Windows_10-X86_64.7z in 1.27321100
+INFO    : Finished installation of d3dcompiler_47-x64.7z in 1.33865880
+INFO    : Downloading opengl32sw...
+INFO    : Redirected: qt.mirror.constant.com
+INFO    : Finished installation of opengl32sw-64-mesa_12_0_rc2.7z in 1.67801730
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\bin\qmake.exe
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\libEGL.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\libEGLd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\libGLESv2.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\libGLESv2d.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DAnimation.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DAnimationd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DCore.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DCored.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DExtras.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DExtrasd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DInput.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DInputd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DLogic.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DLogicd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuick.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickAnimation.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickAnimationd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickExtras.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickExtrasd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickInput.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickInputd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickRender.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickRenderd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickScene2D.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DQuickScene2Dd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DRender.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt53DRenderd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AccessibilitySupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AccessibilitySupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxBase.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxBased.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxContainer.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxContainerd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxServer.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5AxServerd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Bluetooth.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Bluetoothd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Bootstrap.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Concurrent.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Concurrentd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Core.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Cored.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DBus.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DBusd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Designer.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DesignerComponents.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DesignerComponentsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Designerd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DeviceDiscoverySupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5DeviceDiscoverySupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EdidSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EdidSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EglSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EglSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EventDispatcherSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5EventDispatcherSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5FbSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5FbSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5FontDatabaseSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5FontDatabaseSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Gamepad.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Gamepadd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Gui.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Guid.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Help.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Helpd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Location.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Locationd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Multimedia.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Multimediad.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5MultimediaQuick.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5MultimediaQuickd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5MultimediaWidgets.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5MultimediaWidgetsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Network.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Networkd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Nfc.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Nfcd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5OpenGL.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5OpenGLd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5OpenGLExtensions.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5OpenGLExtensionsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PacketProtocol.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PacketProtocold.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PlatformCompositorSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PlatformCompositorSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Positioning.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Positioningd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PositioningQuick.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PositioningQuickd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PrintSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5PrintSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Qml.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Qmld.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlDebug.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlDebugd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlDevTools.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlModels.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlWorkerScript.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QmlWorkerScriptd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Quick.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickControls2.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickControls2d.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Quickd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickParticles.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickParticlesd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickShapes.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickShapesd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickTemplates2.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickTemplates2d.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickTest.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickTestd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickWidgets.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5QuickWidgetsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5RemoteObjects.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5RemoteObjectsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Scxml.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Scxmld.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Sensors.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Sensorsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5SerialBus.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5SerialBusd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5SerialPort.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5SerialPortd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Sql.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Sqld.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Svg.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Svgd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Test.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Testd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5TextToSpeech.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5TextToSpeechd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5ThemeSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5ThemeSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5UiTools.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5UiToolsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5VulkanSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5VulkanSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebChannel.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebChanneld.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebSockets.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebSocketsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebView.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WebViewd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Widgets.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Widgetsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WindowsUIAutomationSupport.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WindowsUIAutomationSupportd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WinExtras.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5WinExtrasd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Xml.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5Xmld.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5XmlPatterns.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\Qt5XmlPatternsd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtfreetype.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtfreetyped.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtlibpng.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtlibpngd.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtmain.prl
+INFO    : Patching D:\a\TranslucentSM-Legacy-Reborn\Qt\5.15.2\msvc2019_64\lib\qtmaind.prl
+INFO    : Finished installation
+INFO    : Time elapsed: 15.45206180 second
+19s
+Run cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+-- Building for: Visual Studio 17 2022
+-- The C compiler identification is MSVC 19.44.35213.0
+-- The CXX compiler identification is MSVC 19.44.35213.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (12.9s)
+-- Generating done (0.2s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_BUILD_TYPE
+
+
+-- Build files have been written to: D:/a/TranslucentSM-Legacy-Reborn/TranslucentSM-Legacy-Reborn/build
+4s
+Run cmake --build build --config Release
+MSBuild version 17.14.14+a129329f1 for .NET Framework
+
+  1>Checking Build System
+  Automatic MOC and UIC for target TranslucentSM
+  Building Custom Rule D:/a/TranslucentSM-Legacy-Reborn/TranslucentSM-Legacy-Reborn/src/CMakeLists.txt
+  TranslucentSMDLL.cpp
+  mocs_compilation_Release.cpp
+  Generating Code...
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(36,9): error C2360: initialization of 'hStartMenuWnd' is skipped by 'case' label [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+      D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(31,18):
+      see declaration of 'hStartMenuWnd'
+  
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(42,9): error C2360: initialization of 'hStartMenuWnd' is skipped by 'case' label [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+      D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(31,18):
+      see declaration of 'hStartMenuWnd'
+  
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(43,9): error C2360: initialization of 'hStartMenuWnd' is skipped by 'case' label [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+      D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(31,18):
+      see declaration of 'hStartMenuWnd'
+  
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(78,23): error C2065: 'DWMWA_MICA_EFFECT': undeclared identifier [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(79,19): error C2065: 'DWMSBT_MAINWINDOW': undeclared identifier [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\src\TranslucentSMDLL.cpp(80,33): error C2065: 'DWMWA_MICA_EFFECT': undeclared identifier [D:\a\TranslucentSM-Legacy-Reborn\TranslucentSM-Legacy-Reborn\build\TranslucentSM.vcxproj]
+Error: Process completed with exit code 1.

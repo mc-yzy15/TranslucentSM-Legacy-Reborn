@@ -1,0 +1,192 @@
+name: '🏷️ iFlow Issue Management'
+
+on:
+  issues:
+    types:
+      - 'opened'
+      - 'reopened'
+      - 'edited'
+  issue_comment:
+    types:
+      - 'created'
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process'
+        required: true
+        type: 'number'
+
+permissions:
+  contents: 'read'
+  issues: 'write'
+  pull-requests: 'write'
+  checks: 'write'
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.event.issue.number || inputs.issue_number }}'
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: 'bash'
+
+jobs:
+  issue-management:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: '🏷️ Run iFlow Issue Management'
+        uses: iflow-ai/iflow-cli-action@v2.0.0
+        id: 'iflow_issue_management'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          ISSUE_NUMBER: '${{ github.event.issue.number || inputs.issue_number }}'
+          REPOSITORY: '${{ github.repository }}'
+          ISSUE_TITLE: '${{ github.event.issue.title }}'
+          ISSUE_BODY: '${{ github.event.issue.body }}'
+          ISSUE_COMMENT: '${{ github.event.comment.body }}'
+          EVENT_TYPE: '${{ github.event_name }}'
+        with:
+          api_key: '${{ secrets.IFLOW_API_KEY }}'
+          timeout: '1800'
+          debug: 'true'
+          prompt: |
+            ## Role
+            You are an Issue management specialist for TranslucentSM, a Windows C/C++ application for making Start Menu translucent.
+            
+            ## Steps
+            1. **Issue Classification**: Analyze the Issue and classify it into one of these categories:
+               - bug
+               - enhancement
+               - documentation
+               - question
+               - security
+            
+            2. **Priority Assessment**: Assign a priority:
+               - p0: Critical (crashes, security issues)
+               - p1: High (major functionality broken)
+               - p2: Medium (minor functionality issues)
+               - p3: Low (cosmetic issues, small enhancements)
+            
+            3. **Label Application**: Apply appropriate labels from the repository's existing labels
+            
+            4. **Initial Analysis**: Provide a preliminary analysis of the issue
+            
+            5. **Solution Recommendations**: Suggest potential solutions or next steps
+            
+            6. **Related Resources**: Link to related issues, documentation, or code files
+            
+            ## Requirements
+            - **Be Specific**: Reference exact file paths and code locations if possible
+            - **Be Concise**: Focus on key information
+            - **Use Markdown**: Format your response using GitHub-flavored Markdown
+            - **Follow Existing Conventions**: Use the project's existing label system
+            - **Provide Value**: Give actionable insights, not just generic comments
+            
+            ## Commands to Use
+            - `gh issue list --labels bug` - List existing bug issues
+            - `gh label list` - Get all available labels
+            - `find src -name "*.c" -o -name "*.h" | xargs grep -l "StartMenu"` - Find relevant files
+            - `git log --grep="start menu" --oneline` - Find related commits
+            
+            ## Output Format
+            Create a structured response with these sections:
+            - **Issue Type**: [classification]
+            - **Priority**: [priority]
+            - **Labels**: [list of recommended labels]
+            - **Analysis**: [detailed analysis]
+            - **Recommendations**: [actionable suggestions]
+            - **Related Resources**: [links to related content]
+
+      - name: '🏷️ Apply Labels to Issue'
+        if: ${{ steps.iflow_issue_management.outputs.result }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const issueNumber = parseInt(process.env.ISSUE_NUMBER);
+            const result = `${{ steps.iflow_issue_management.outputs.result }}`;
+            
+            // Extract labels from the result
+            const labelsMatch = result.match(/Labels: (.+)/);
+            if (labelsMatch && labelsMatch[1]) {
+              const labels = labelsMatch[1]
+                .split(',')
+                .map(label => label.trim())
+                .filter(label => label.length > 0);
+              
+              if (labels.length > 0) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  labels: labels
+                });
+              }
+            }
+
+      - name: '📝 Add Analysis Comment'
+        if: ${{ steps.iflow_issue_management.outputs.result }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const issueNumber = parseInt(process.env.ISSUE_NUMBER);
+            const result = `${{ steps.iflow_issue_management.outputs.result }}`;
+            
+            // Create a comment with the analysis
+            const commentBody = `## 🔍 iFlow Issue Analysis
+            
+            ${result}
+            
+            This analysis was automatically generated by iFlow. Please review and provide feedback if needed.
+            `;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: commentBody
+            });
+
+      - name: '❌ Handle Issue Management Failure'
+        if: ${{ failure() && steps.iflow_issue_management.outcome == 'failure' }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const issueNumber = parseInt(process.env.ISSUE_NUMBER);
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: '🚨 iFlow Issue Management failed. Please check the workflow logs for details.'
+            });
+
+      - name: '📊 Update Issue Status'
+        if: ${{ steps.iflow_issue_management.outputs.result }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const issueNumber = parseInt(process.env.ISSUE_NUMBER);
+            
+            // Create a status check
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'iFlow Issue Analysis',
+              head_sha: context.payload.pull_request?.head.sha || context.sha,
+              status: 'completed',
+              conclusion: 'success',
+              output: {
+                title: 'iFlow Issue Analysis',
+                summary: `${{ steps.iflow_issue_management.outputs.result }}`,
+                text: 'Automatic issue analysis by iFlow'
+              }
+            });

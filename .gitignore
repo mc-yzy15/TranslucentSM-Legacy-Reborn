@@ -396,4 +396,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-.github/workflow.error
+
+# IDES
+.trae
+/.idea

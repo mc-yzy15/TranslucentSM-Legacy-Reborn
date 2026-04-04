@@ -1,0 +1,142 @@
+name: '🔍 iFlow PR Code Audit'
+
+on:
+  pull_request:
+    types:
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
+  workflow_dispatch:
+    inputs:
+      pull_request_number:
+        description: 'Pull Request number to audit'
+        required: false
+        type: 'number'
+
+permissions:
+  contents: 'read'
+  pull-requests: 'write'
+  checks: 'write'
+  issues: 'write'
+  statuses: 'write'
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.event.pull_request.number || inputs.pull_request_number }}'
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: 'bash'
+
+jobs:
+  pr-audit:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: '📥 Checkout Repository'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: '🔍 Run iFlow PR Code Audit'
+        uses: iflow-ai/iflow-cli-action@v2.0.0
+        id: 'iflow_pr_audit'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          PR_NUMBER: '${{ github.event.pull_request.number || inputs.pull_request_number }}'
+          REPOSITORY: '${{ github.repository }}'
+          PR_TITLE: '${{ github.event.pull_request.title }}'
+          PR_BODY: '${{ github.event.pull_request.body }}'
+        with:
+          api_key: ${{ secrets.IFLOW_API_KEY }}
+          timeout: '3600'
+          debug: 'true'
+          prompt: |
+            ## Role
+
+            You are an experienced code reviewer and security auditor. Analyze the current PR using the available tools.
+
+            ## Steps
+
+            1. **Analyze PR Changes**: Run `git diff --name-only origin/${{ github.base_ref }} HEAD` to see all changed files.
+            2. **Code Quality Check**: For each changed file, analyze code quality, readability, and maintainability.
+            3. **Security Scan**: Identify potential security vulnerabilities, especially in Windows API usage and DLL injection code.
+            4. **Architecture Analysis**: Evaluate how changes fit into the overall system architecture.
+            5. **Performance Impact**: Assess potential performance implications of changes.
+            6. **Best Practices**: Check if changes follow C99/C11 standards and Windows API best practices.
+            7. **Test Coverage**: Verify if changes include appropriate test coverage.
+            8. **Dependency Management**: Check for proper dependency management.
+
+            ## Guidelines
+
+            - **Be Specific**: Reference exact file paths and line numbers in your comments.
+            - **Prioritize Issues**: Focus on critical issues first (security > functionality > style).
+            - **Provide Solutions**: Suggest concrete fixes for identified issues.
+            - **Positive Feedback**: Acknowledge good practices and well-written code.
+            - **Keep It Concise**: Avoid overly verbose comments, focus on key points.
+            - **Use Markdown**: Format your review using GitHub-flavored Markdown.
+
+            ## Output
+
+            Generate a comprehensive PR review report with the following sections:
+            - Summary of changes
+            - Code quality assessment
+            - Security findings
+            - Architecture considerations
+            - Performance analysis
+            - Recommendations
+
+      - name: '📝 Create PR Review Comment'
+        if: ${{ steps.iflow_pr_audit.outputs.result }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            const result = `${{ steps.iflow_pr_audit.outputs.result }}`;
+            
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: parseInt(prNumber),
+              body: result,
+              event: 'COMMENT'
+            });
+
+      - name: '❌ Handle Audit Failure'
+        if: ${{ failure() && steps.iflow_pr_audit.outcome == 'failure' }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parseInt(prNumber),
+              body: '🚨 iFlow PR Audit failed. Please check the workflow logs for details.'
+            });
+
+      - name: '📊 Update PR Status'
+        if: ${{ steps.iflow_pr_audit.outputs.result }}
+        uses: 'actions/github-script@v7'
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            const result = `${{ steps.iflow_pr_audit.outputs.result }}`;
+            
+            // Create a status check
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'iFlow PR Audit',
+              head_sha: context.payload.pull_request.head.sha,
+              status: 'completed',
+              conclusion: 'success',
+              output: {
+                title: 'iFlow PR Audit Report',
+                summary: result,
+                text: 'Detailed code audit report generated by iFlow'
+              }
+            });

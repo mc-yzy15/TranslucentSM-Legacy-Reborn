@@ -1,0 +1,73 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore start.sln
+
+      - name: Build StartTAP x64 Release
+        run: msbuild start.sln /m /p:Configuration=Release /p:Platform=x64
+
+      - name: Build StartTAP x86 Release
+        run: msbuild start.sln /m /p:Configuration=Release /p:Platform=x86
+
+      - name: Package release assets
+        run: |
+          New-Item -ItemType Directory -Force -Path artifacts/StartTAP-x64 | Out-Null
+          New-Item -ItemType Directory -Force -Path artifacts/StartTAP-x86 | Out-Null
+          Copy-Item build/msbuild/x64/Release/StartTAP.dll artifacts/StartTAP-x64/StartTAP.dll
+          Copy-Item build/msbuild/Win32/Release/StartTAP.dll artifacts/StartTAP-x86/StartTAP.dll
+          Compress-Archive -Path artifacts/StartTAP-x64/* -DestinationPath artifacts/StartTAP-x64.zip -Force
+          Compress-Archive -Path artifacts/StartTAP-x86/* -DestinationPath artifacts/StartTAP-x86.zip -Force
+
+      - name: Generate release notes
+        id: generate_release_notes
+        run: |
+          $lastRelease = git describe --tags --abbrev=0 2>$null
+          if ($lastRelease) {
+            $changes = git log $lastRelease..HEAD --oneline
+          } else {
+            $changes = git log --oneline
+          }
+          $releaseNotes = @"
+## Release Notes
+
+### Changes
+
+$changes
+"@
+          "release_notes<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          $releaseNotes | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
+          body: ${{ steps.generate_release_notes.outputs.release_notes }}
+          draft: false
+          prerelease: false
+          files: |
+            artifacts/StartTAP-x64.zip
+            artifacts/StartTAP-x86.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
