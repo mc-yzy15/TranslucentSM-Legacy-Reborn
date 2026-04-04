@@ -1,44 +1,52 @@
-# 创建并进入build目录
-# 清理并重建build目录
-if (Test-Path -Path "build") {
-    echo "正在清理旧构建目录..."
-    Remove-Item -Path "build" -Recurse -Force
+$ErrorActionPreference = 'Stop'
+
+$repoRoot = Split-Path -Parent $PSScriptRoot
+$buildDir = Join-Path $repoRoot 'build'
+$srcDir = Join-Path $repoRoot 'src'
+$qtRoot = 'C:\Qt\6.9.1\mingw_64'
+
+$vsCmake = 'C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe'
+$qtCmake = 'C:\Qt\Tools\CMake_64\bin\cmake.exe'
+
+if (Test-Path $vsCmake) {
+    $cmakeExe = $vsCmake
+} elseif (Test-Path $qtCmake) {
+    $cmakeExe = $qtCmake
+} else {
+    throw 'cmake.exe not found. Please install Visual Studio CMake tools or Qt CMake tools.'
 }
-New-Item -ItemType Directory -Name "build"
-Set-Location -Path build
 
-# 设置MinGW环境变量
-$env:PATH += ";C:/Qt/6.9.1/mingw_64/bin"
-echo "MinGW路径已添加到环境变量: $env:PATH"
+if (!(Test-Path "$qtRoot\bin\mingw32-make.exe")) {
+    throw "MinGW not found: $qtRoot"
+}
 
-# 运行CMake配置（启用详细调试输出）
-echo "正在运行CMake配置..."
-cmake -G "MinGW Makefiles" `
+if (Test-Path $buildDir) {
+    Write-Host "Removing existing build directory: $buildDir"
+    Remove-Item -Path $buildDir -Recurse -Force
+}
+New-Item -ItemType Directory -Path $buildDir | Out-Null
+
+$env:PATH = "$qtRoot\bin;$env:PATH"
+Write-Host "Using CMake: $cmakeExe"
+Write-Host "Using Qt/MinGW: $qtRoot"
+
+& $cmakeExe -S $srcDir -B $buildDir -G 'MinGW Makefiles' `
   -DCMAKE_BUILD_TYPE=Release `
-  -DCMAKE_C_COMPILER="C:/Qt/6.9.1/mingw_64/bin/gcc.exe" `
-  -DCMAKE_CXX_COMPILER="C:/Qt/6.9.1/mingw_64/bin/g++.exe" `
-  -DCMAKE_VERBOSE_MAKEFILE=ON `
-  -DCMAKE_MAKE_PROGRAM="C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe" `
-  -DQt6_DIR="C:/Qt/6.9.1/mingw_64/lib/cmake/Qt6" `
-  --debug-output `
-  ../src
+  -DCMAKE_C_COMPILER="$qtRoot\bin\gcc.exe" `
+  -DCMAKE_CXX_COMPILER="$qtRoot\bin\g++.exe" `
+  -DCMAKE_MAKE_PROGRAM="$qtRoot\bin\mingw32-make.exe" `
+  -DQt6_DIR="$qtRoot\lib\cmake\Qt6"
 
 if ($LASTEXITCODE -ne 0) {
-  echo "CMake配置失败，错误代码: $LASTEXITCODE"
-  exit $LASTEXITCODE
+    throw "CMake configure failed with exit code $LASTEXITCODE"
 }
 
-# 执行构建
-# PowerShell中获取逻辑处理器数量
-$processorCount = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
-echo "使用 $processorCount 个处理器进行构建..."
-& "C:/Qt/6.9.1/mingw_64/bin/mingw32-make.exe" -j $processorCount
+$threads = [Environment]::ProcessorCount
+Write-Host "Building with $threads threads..."
+& $cmakeExe --build $buildDir --parallel $threads
 
 if ($LASTEXITCODE -ne 0) {
-  echo "构建失败，错误代码: $LASTEXITCODE"
-  exit $LASTEXITCODE
+    throw "Build failed with exit code $LASTEXITCODE"
 }
 
-echo "Build completed successfully!"
-
-
+Write-Host 'Build completed successfully.'
