@@ -30,8 +30,12 @@ A lightweight utility that makes the Windows 11 Start Menu translucent/transpare
   - `HKEY_CURRENT_USER\Software\TranslucentSM`
 
 ### Build
-- CMake + Qt6 (`Widgets/Core/Gui/Network/LinguistTools`)
-- Translations are built from:
+- Visual Studio 2022 (or VS Build Tools) + MSBuild
+- Restore/build with PowerShell:
+  - `pwsh .\src\Cmake.ps1 -Configuration Release -Platform x64`
+- Build output (default):
+  - `build\msbuild\x64\Release\StartTAP.dll`
+- Translations source files:
   - `src/translations/translucentsm_zh_CN.ts`
   - `src/translations/translucentsm_en_US.ts`
 
@@ -66,7 +70,11 @@ GNU GPL v3.0. See [LICENSE](LICENSE).
   - `HKEY_CURRENT_USER\Software\TranslucentSM`
 
 ### 构建
-- CMake + Qt6（`Widgets/Core/Gui/Network/LinguistTools`）
+- 使用 Visual Studio 2022（或 VS Build Tools）+ MSBuild
+- PowerShell 一键恢复并编译：
+  - `pwsh .\src\Cmake.ps1 -Configuration Release -Platform x64`
+- 默认输出目录：
+  - `build\msbuild\x64\Release\StartTAP.dll`
 - 翻译源文件：
   - `src/translations/translucentsm_zh_CN.ts`
   - `src/translations/translucentsm_en_US.ts`
