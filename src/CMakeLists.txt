@@ -1,81 +1,121 @@
-# CMakeLists.txt for the legacy TranslucentSM fallback
 cmake_minimum_required(VERSION 3.15)
-project(TranslucentSM C)
+cmake_policy(SET CMP0091 NEW)
+cmake_policy(SET CMP0126 NEW)
+cmake_policy(SET CMP0112 NEW)
+cmake_policy(SET CMP0156 NEW)
+cmake_policy(SET CMP0181 NEW)
+project(TranslucentSM)
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-
-option(TRANSLUCENTSM_ENABLE_STARTTAP_CMAKE "Attempt to build StartTAP from CMake (unsupported)" OFF)
-
-if(MSVC)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W4 /MP")
-    foreach(CONFIG ${CMAKE_CONFIGURATION_TYPES})
-        string(TOUPPER ${CONFIG} CONFIG_UPPER)
-        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${CONFIG_UPPER} ${CMAKE_BINARY_DIR}/bin)
-        set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${CONFIG_UPPER} ${CMAKE_BINARY_DIR}/bin)
-        set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${CONFIG_UPPER} ${CMAKE_BINARY_DIR}/lib)
-    endforeach()
+# Find Vulkan headers
+find_package(Vulkan QUIET)
+if(Vulkan_FOUND)
+    include_directories(${Vulkan_INCLUDE_DIRS})
+else()
+    message(WARNING "Vulkan headers not found - some features may be disabled")
 endif()
 
+# 添加Qt依赖
+find_package(Qt6 COMPONENTS Widgets Core Gui Network LinguistTools REQUIRED)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+# 设置Qt模块
+set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui Qt6::Network)
+
+# 设置C++标准
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Windows特定配置
 if(WIN32)
-    add_definitions(-D_WIN32_WINNT=0x0A00)
+    # 设置输出目录
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+    # 添加Windows SDK和必要的库
+    add_definitions(-D_WIN32_WINNT=0x0A00) # Windows 10及以上
     add_definitions(-DWINVER=0x0A00)
-    remove_definitions(-DUNICODE -D_UNICODE)
+    add_definitions(-DUNICODE -D_UNICODE)
 
-    set(EXTRA_LIBS
-        psapi
-        kernel32
-        user32
-        gdi32
-        advapi32
-        shell32
-        shlwapi
-        wininet
-        dwmapi
-        comctl32
-    )
+    # 链接必要的系统库
+    set(EXTRA_LIBS psapi kernel32 user32 gdi32 advapi32 shell32 dwmapi)
 endif()
 
-if(TRANSLUCENTSM_ENABLE_STARTTAP_CMAKE)
-    message(FATAL_ERROR "StartTAP is built through MSBuild only. Use start.sln or src/StartTAP/StartTAP.vcxproj after restoring NuGet packages.")
-endif()
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-
-set(MAIN_SOURCES
-    main.c
-    translucentsm.c
+# 添加源文件
+set(SOURCES
+    TranslucentSM.cpp
+    main.cpp
+    installer.cpp
+    MainWindow.cpp
 )
 
-set(MAIN_HEADERS
-    translucentsm.h
+# 添加头文件
+set(HEADERS
+    TranslucentSM.h
+    MainWindow.h
+    installer.h
 )
 
-set(DLL_SOURCES
-    translucentsmdll.c
+# 多语言翻译源文件
+set(TS_FILES
+    translations/translucentsm_zh_CN.ts
+    translations/translucentsm_en_US.ts
 )
 
-add_library(TranslucentSM SHARED ${DLL_SOURCES})
+qt_add_lrelease(TRANSLATION_QM_FILES ${TS_FILES})
+add_custom_target(translations ALL DEPENDS ${TRANSLATION_QM_FILES})
+
+# 创建DLL项目
+add_library(TranslucentSM SHARED TranslucentSMDLL.cpp)
 set_target_properties(TranslucentSM PROPERTIES
     OUTPUT_NAME "TranslucentSM"
     SUFFIX ".dll"
     PREFIX ""
 )
 
-target_link_libraries(TranslucentSM PRIVATE ${EXTRA_LIBS})
+target_link_libraries(TranslucentSM PRIVATE dwmapi user32 gdi32 shell32 shlwapi)
 
-add_executable(TranslucentSMApp WIN32 ${MAIN_SOURCES} ${MAIN_HEADERS})
+# 创建可执行文件
+add_executable(TranslucentSMApp ${SOURCES} ${HEADERS})
 set_target_properties(TranslucentSMApp PROPERTIES
     OUTPUT_NAME "TranslucentSM"
 )
 
-target_link_libraries(TranslucentSMApp PRIVATE ${EXTRA_LIBS})
-add_dependencies(TranslucentSMApp TranslucentSM)
+# 链接库
+if(WIN32)
+    # 链接Qt5库和其他必要库
+    target_link_libraries(TranslucentSMApp PRIVATE ${QT_MODULES} ${EXTRA_LIBS} shlwapi)
+    if(MINGW)
+        target_link_libraries(TranslucentSMApp PRIVATE -static-libgcc -static-libstdc++ -Wl,--subsystem,windows)
+    endif()
+endif()
 
+# 添加依赖关系
+add_dependencies(TranslucentSMApp TranslucentSM translations)
+
+# 复制DLL到可执行文件目录
 add_custom_command(TARGET TranslucentSMApp POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:TranslucentSM> $<TARGET_FILE_DIR:TranslucentSMApp>)
 
+# 复制翻译文件到可执行文件目录
+add_custom_command(TARGET TranslucentSMApp POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:TranslucentSMApp>/translations)
+foreach(QM_FILE IN LISTS TRANSLATION_QM_FILES)
+    add_custom_command(TARGET TranslucentSMApp POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${QM_FILE}
+        $<TARGET_FILE_DIR:TranslucentSMApp>/translations)
+endforeach()
+
+# 安装规则
 install(TARGETS TranslucentSM TranslucentSMApp
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION bin
 )
+install(FILES ${TRANSLATION_QM_FILES} DESTINATION bin/translations)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    install(FILES $<TARGET_PDB_FILE:TranslucentSM> DESTINATION bin OPTIONAL)
+    install(FILES $<TARGET_PDB_FILE:TranslucentSMApp> DESTINATION bin OPTIONAL)
+endif()

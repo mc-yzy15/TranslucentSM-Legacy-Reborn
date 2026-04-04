@@ -1,7 +1,0 @@
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/TranslucentSM.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/TranslucentSMApp.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/list_install_components.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/install.dir
-F:/Users/Yzy15/Documents/GitHub/TranslucentSM-Legacy-Reborn/src/out/build/x64-Debug/CMakeFiles/install/local.dir

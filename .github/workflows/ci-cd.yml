@@ -3,48 +3,103 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ dev ]
-  pull_request:
   schedule:
     - cron: '0 0 * * 0'
-  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-2022
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - configuration: Debug
-            solution_platform: x64
-            output_platform: x64
-          - configuration: Release
-            solution_platform: x64
-            output_platform: x64
-          - configuration: Debug
-            solution_platform: x86
-            output_platform: Win32
-          - configuration: Release
-            solution_platform: x86
-            output_platform: Win32
+    runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      - name: Setup NuGet
-        uses: nuget/setup-nuget@v2
+    - name: Set up Qt6
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '6.6.3'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_msvc2019_64'
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
+    - name: Configure CMake
+      shell: pwsh
+      run: cmake -S src -B build -G "Visual Studio 17 2022" -A x64
 
-      - name: Restore NuGet packages
-        run: nuget restore start.sln
+    - name: Build Release
+      shell: pwsh
+      run: cmake --build build --config Release
 
-      - name: Build StartTAP
-        run: msbuild start.sln /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.solution_platform }}
+    - name: Prepare package
+      shell: pwsh
+      run: |
+        New-Item -ItemType Directory -Force -Path package | Out-Null
+        $releaseBin = "build/bin/Release"
+        if (!(Test-Path $releaseBin)) { $releaseBin = "build/bin" }
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: StartTAP-${{ matrix.solution_platform }}-${{ matrix.configuration }}
-          path: build/msbuild/${{ matrix.output_platform }}/${{ matrix.configuration }}/StartTAP.dll
+        Copy-Item -Path "$releaseBin/TranslucentSM.exe" -Destination "package/TranslucentSM.exe" -Force
+        Copy-Item -Path "$releaseBin/TranslucentSM.dll" -Destination "package/TranslucentSM.dll" -Force
+
+        windeployqt --release package/TranslucentSM.exe
+
+        if (Test-Path "$releaseBin/translations") {
+          Copy-Item -Path "$releaseBin/translations" -Destination "package/translations" -Recurse -Force
+        }
+
+        Compress-Archive -Path package/* -DestinationPath TranslucentSM.zip -Force
+
+    - name: Install Inno Setup
+      shell: pwsh
+      run: choco install innosetup --yes --no-progress
+
+    - name: Get version
+      shell: pwsh
+      run: |
+        $count = git rev-list --count HEAD
+        "VERSION=1.0.$count" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Build Setup EXE
+      shell: pwsh
+      run: |
+        $env:APP_VERSION = "${{ env.VERSION }}"
+        & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "installer\TranslucentSM.iss"
+
+        $setupExe = Get-ChildItem -Path "installer/output" -Filter "*.exe" | Select-Object -First 1
+        if (-not $setupExe) {
+          throw "Setup EXE not found in installer/output"
+        }
+
+        Copy-Item -Path $setupExe.FullName -Destination "TranslucentSM-Setup.exe" -Force
+        $hash = (Get-FileHash -Path "TranslucentSM-Setup.exe" -Algorithm SHA256).Hash
+        "$hash  TranslucentSM-Setup.exe" | Out-File -FilePath "TranslucentSM-Setup.exe.sha256" -Encoding ascii
+
+    - name: Create Pre-Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+      uses: softprops/action-gh-release@v2
+      with:
+        name: Pre-Release ${{ env.VERSION }}
+        tag_name: pre-${{ env.VERSION }}
+        draft: false
+        prerelease: true
+        files: |
+          TranslucentSM-Setup.exe
+          TranslucentSM-Setup.exe.sha256
+          TranslucentSM.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create Weekly Release
+      if: github.event_name == 'schedule'
+      uses: softprops/action-gh-release@v2
+      with:
+        name: Weekly Build ${{ env.VERSION }}
+        tag_name: weekly-${{ env.VERSION }}
+        draft: false
+        prerelease: true
+        files: |
+          TranslucentSM-Setup.exe
+          TranslucentSM-Setup.exe.sha256
+          TranslucentSM.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

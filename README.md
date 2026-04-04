@@ -1,146 +1,75 @@
 # TranslucentSM-Legacy-Reborn
 
-An independent continuation of [rounk-ctrl/TranslucentSM](https://github.com/rounk-ctrl/TranslucentSM). This fork keeps the original idea alive, but the primary implementation is now `StartTAP` and the primary shipped binary is `StartTAP.dll`.
+A lightweight utility that makes the Windows 11 Start Menu translucent/transparent.
 
-## Project Status
+[简体中文](#简体中文) | [English](#english)
 
-- Primary implementation: `StartTAP`
-- Primary build baseline: `NuGet restore` + `MSBuild`
-- Supported target matrix for this branch: Windows 10/11, x64 and x86
-- Legacy C/CMake implementation: kept only as a fallback path during transition
+## English
 
-## Releases
+### Features
+- Start Menu transparency adjustment UI.
+- Runtime language switch (`zh-CN` / `en-US`) with persistent config.
+- Built-in update check (prefers installer asset `Setup.exe`).
+- CLI install/uninstall entrypoints.
 
-Download the latest release from the [Releases](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) page.
+### Installation (One-Click Setup)
+1. Download `TranslucentSM-Setup-*.exe` from [Releases](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases).
+2. Double-click and follow the installer.
+3. Optional: silent install for automation:
+   - `TranslucentSM-Setup-*.exe /VERYSILENT`
 
-Release assets now ship `StartTAP.dll` as the default binary, packaged separately for x64 and x86.
+### CLI
+- `--help` Show help.
+- `--install <path>` Install app to target path.
+- `--uninstall` Uninstall app.
+- `--lang <zh-CN|en-US>` Force UI/CLI language for this run.
 
-## Build From Source
+### Settings & Registry
+- Settings are persisted in `QSettings`.
+- Runtime install info / fallback settings:
+  - `HKEY_CURRENT_USER\Software\TranslucentSM`
 
-1. Restore NuGet packages:
+### Build
+- CMake + Qt6 (`Widgets/Core/Gui/Network/LinguistTools`)
+- Translations are built from:
+  - `src/translations/translucentsm_zh_CN.ts`
+  - `src/translations/translucentsm_en_US.ts`
 
-```powershell
-nuget restore start.sln
-```
+### License
+GNU GPL v3.0. See [LICENSE](LICENSE).
 
-2. Build the supported solution entrypoint:
+---
 
-```powershell
-msbuild start.sln /m /p:Configuration=Release /p:Platform=x64
-msbuild start.sln /m /p:Configuration=Release /p:Platform=x86
-```
+## 简体中文
 
-3. The default outputs are written to:
+### 功能
+- 开始菜单透明度图形化调节。
+- 运行时语言切换（`zh-CN` / `en-US`）并持久化保存。
+- 内置更新检查（优先下载 `Setup.exe` 安装器资源）。
+- 提供命令行安装/卸载入口。
 
-```text
-build/msbuild/x64/Release/StartTAP.dll
-build/msbuild/Win32/Release/StartTAP.dll
-```
+### 安装（一步安装）
+1. 在 [Releases](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/releases) 下载 `TranslucentSM-Setup-*.exe`。
+2. 双击运行并按向导完成安装。
+3. 自动化场景可使用静默安装：
+   - `TranslucentSM-Setup-*.exe /VERYSILENT`
 
-You can also build the project directly:
+### 命令行
+- `--help` 显示帮助。
+- `--install <path>` 安装到指定目录。
+- `--uninstall` 卸载应用。
+- `--lang <zh-CN|en-US>` 本次运行强制指定语言。
 
-```powershell
-msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=x64
-msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=Win32
-```
+### 设置与注册表
+- 设置通过 `QSettings` 持久化。
+- 安装信息/回退配置位于：
+  - `HKEY_CURRENT_USER\Software\TranslucentSM`
 
-## Settings
+### 构建
+- CMake + Qt6（`Widgets/Core/Gui/Network/LinguistTools`）
+- 翻译源文件：
+  - `src/translations/translucentsm_zh_CN.ts`
+  - `src/translations/translucentsm_en_US.ts`
 
-The runtime settings continue to use the existing registry contract under `HKEY_CURRENT_USER\SOFTWARE\TranslucentSM`.
-
-Supported keys in this stabilization line:
-
-- `TintOpacity`
-- `TintLuminosityOpacity`
-- `HideSearch`
-- `HideBorder`
-- `HideRecommended`
-- `EditButton`
-
-After changing settings, terminate `StartMenuExperienceHost.exe` and relaunch the app if the shell does not refresh automatically.
-
-## Legacy Fallback
-
-The CMake files under `src/` are now explicitly for the legacy C fallback only. `StartTAP` is not supported through CMake.
-
-If you need the fallback build path:
-
-```powershell
-.\src\Cmake.ps1
-```
-
-This builds only the legacy targets and does not produce `StartTAP.dll`.
-
-## Contributing
-
-Bug reports and pull requests are welcome:
-
-- [Issues](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/issues)
-- [Pull Requests](https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn/pulls)
-
-## License
-
-This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
-
-# 中文
-
-这是 [rounk-ctrl/TranslucentSM](https://github.com/rounk-ctrl/TranslucentSM) 的非官方延续分支。当前主实现已经切换到 `StartTAP`，默认发布产物为 `StartTAP.dll`。
-
-## 当前状态
-
-- 主实现：`StartTAP`
-- 官方构建链：`NuGet restore` + `MSBuild`
-- 当前支持范围：Windows 10/11，x64 和 x86
-- 旧版 C/CMake 实现：仅作为过渡期 fallback 保留
-
-## 从源码构建
-
-1. 先恢复 NuGet 包：
-
-```powershell
-nuget restore start.sln
-```
-
-2. 再使用 MSBuild 构建：
-
-```powershell
-msbuild start.sln /m /p:Configuration=Release /p:Platform=x64
-msbuild start.sln /m /p:Configuration=Release /p:Platform=x86
-```
-
-3. 默认输出目录：
-
-```text
-build/msbuild/x64/Release/StartTAP.dll
-build/msbuild/Win32/Release/StartTAP.dll
-```
-
-也可以直接构建工程文件：
-
-```powershell
-msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=x64
-msbuild src\StartTAP\StartTAP.vcxproj /m /p:Configuration=Release /p:Platform=Win32
-```
-
-## 设置项
-
-运行时设置继续沿用 `HKEY_CURRENT_USER\SOFTWARE\TranslucentSM` 下的既有键名：
-
-- `TintOpacity`
-- `TintLuminosityOpacity`
-- `HideSearch`
-- `HideBorder`
-- `HideRecommended`
-- `EditButton`
-
-如果修改设置后 shell 没有自动刷新，请结束 `StartMenuExperienceHost.exe` 后重新启动应用。
-
-## Legacy Fallback
-
-`src/` 下的 CMake 现在只负责旧版 C 实现的 fallback 构建，不再承诺构建 `StartTAP`。
-
-```powershell
-.\src\Cmake.ps1
-```
-
-这条路径只会生成旧版 fallback 产物，不会生成 `StartTAP.dll`。
+### 许可证
+GNU GPL v3.0，详见 [LICENSE](LICENSE)。
