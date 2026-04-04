@@ -1,142 +1,148 @@
 #include "installer.h"
+
+#include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
+#include <QObject>
 #include <QSettings>
-#include <QDebug>
-#include <QCoreApplication>
-#include <windows.h>
-#include <shlobj.h>
+#include <QStandardPaths>
+
 #include <objbase.h>
+#include <shlobj.h>
+#include <windows.h>
 
-// 安装TranslucentSM到指定路径
-int installTranslucentSM(const QString &installPath) {
-    QDir installDir(installPath);
-    if (!installDir.exists() && !installDir.mkpath(installPath)) {
-        qCritical() << "无法创建安装目录: " << installPath;
-        return 1;
-    }
+namespace {
+constexpr const char* kRegistryRoot = "HKEY_CURRENT_USER\\Software\\TranslucentSM";
+constexpr const char* kRunRegistry = "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run";
 
-    // 获取源文件路径
-    QString exeSource = QCoreApplication::applicationDirPath() + "/TranslucentSM.exe";
-    QString dllSource = QCoreApplication::applicationDirPath() + "/TranslucentSM.dll";
-    
-    // 目标文件路径
-    QString exeDest = installPath + "/TranslucentSM.exe";
-    QString dllDest = installPath + "/TranslucentSM.dll";
-
-    // 复制文件
-    QFile exeFile(exeSource);
-    if (!exeFile.copy(exeDest)) {
-        qCritical() << "无法复制主程序文件: " << exeFile.errorString();
-        return 1;
-    }
-
-    QFile dllFile(dllSource);
-    if (!dllFile.copy(dllDest)) {
-        qCritical() << "无法复制DLL文件: " << dllFile.errorString();
-        QFile::remove(exeDest); // 回滚
-        return 1;
-    }
-
-    // 保存安装路径到注册表
-    QSettings settings("HKEY_CURRENT_USER\\Software\\TranslucentSM", QSettings::NativeFormat);
-    settings.setValue("InstallPath", installPath);
-
-    // 创建启动项
-    QSettings runSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
-    runSettings.setValue("TranslucentSM", QDir::toNativeSeparators(exeDest));
-
-    // 创建桌面快捷方式
-    QString desktopPath = QDir::homePath() + "/Desktop/TranslucentSM.lnk";
-    if (!createShortcut(exeDest, desktopPath)) {
-        qWarning() << "创建快捷方式失败";
-    }
-
-    // 输出安装进度
-    qDebug() << "Progress: 100";
-    return 0;
-}
-
-// 卸载TranslucentSM
-int uninstallTranslucentSM() {
-    // 从注册表获取安装路径
-    QSettings settings("HKEY_CURRENT_USER\\Software\\TranslucentSM", QSettings::NativeFormat);
-    QString installPath = settings.value("InstallPath").toString();
-
-    if (installPath.isEmpty() || !QDir(installPath).exists()) {
-        qCritical() << "未找到安装路径";
-        return 1;
-    }
-
-    // 删除文件
-    QString exePath = installPath + "/TranslucentSM.exe";
-    QString dllPath = installPath + "/TranslucentSM.dll";
-
-    QFile::remove(exePath);
-    QFile::remove(dllPath);
-
-    // 删除注册表项
-    QSettings runSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
-    runSettings.remove("TranslucentSM");
-
-    QSettings appSettings("HKEY_CURRENT_USER\\Software\\TranslucentSM", QSettings::NativeFormat);
-    appSettings.clear();
-
-    // 删除快捷方式
-    QString desktopShortcut = QDir::homePath() + "/Desktop/TranslucentSM.lnk";
-    QFile::remove(desktopShortcut);
-
-    // 删除安装目录
-    QDir(installPath).rmdir(installPath);
-
-    // 输出卸载进度
-    qDebug() << "Progress: 100";
-    return 0;
-}
-
-// 创建Windows快捷方式
-bool createShortcut(const QString &targetPath, const QString &shortcutPath) {
-    HRESULT hres;
-    IShellLink* psl;
-
-    // 初始化COM库
-    hres = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-    if (FAILED(hres)) {
+bool copyWithOverwrite(const QString& sourcePath, const QString& destinationPath, QString* errorMessage) {
+    if (!QFileInfo::exists(sourcePath)) {
+        if (errorMessage) {
+            *errorMessage = QObject::tr("Source file does not exist: %1").arg(sourcePath);
+        }
         return false;
     }
 
-    // 创建IShellLink实例
-    hres = CoCreateInstance(CLSID_ShellLink, NULL, CLSCTX_INPROC_SERVER, IID_IShellLink, (LPVOID*)&psl);
-    if (SUCCEEDED(hres)) {
-        IPersistFile* ppf;
-
-        // 设置快捷方式目标路径
-        psl->SetPath(QDir::toNativeSeparators(targetPath).toStdWString().c_str());
-
-        // 设置快捷方式工作目录
-        QString workingDir = QFileInfo(targetPath).absolutePath();
-        psl->SetWorkingDirectory(QDir::toNativeSeparators(workingDir).toStdWString().c_str());
-
-        // 设置快捷方式描述
-        psl->SetDescription(L"TranslucentSM 透明度设置工具");
-
-        // 查询IPersistFile接口
-        hres = psl->QueryInterface(IID_IPersistFile, (LPVOID*)&ppf);
-
-        if (SUCCEEDED(hres)) {
-            WCHAR wsz[MAX_PATH];
-
-            // 将QString转换为宽字符串
-            QDir::toNativeSeparators(shortcutPath).toWCharArray(wsz);
-            wsz[QDir::toNativeSeparators(shortcutPath).length()] = L'\0';
-
-            // 保存快捷方式
-            hres = ppf->Save(wsz, TRUE);
-            ppf->Release();
+    if (QFileInfo::exists(destinationPath) && !QFile::remove(destinationPath)) {
+        if (errorMessage) {
+            *errorMessage = QObject::tr("Failed to remove existing file: %1").arg(destinationPath);
         }
-        psl->Release();
+        return false;
     }
 
+    if (!QFile::copy(sourcePath, destinationPath)) {
+        if (errorMessage) {
+            *errorMessage = QObject::tr("Failed to copy %1 to %2").arg(sourcePath, destinationPath);
+        }
+        return false;
+    }
+    return true;
+}
+}
+
+int installTranslucentSM(const QString& installPath) {
+    QDir installDir(installPath);
+    if (!installDir.exists() && !installDir.mkpath(installPath)) {
+        qCritical().noquote() << QObject::tr("Cannot create install directory: %1").arg(installPath);
+        return 1;
+    }
+
+    const QString appDir = QCoreApplication::applicationDirPath();
+    const QString exeSource = QDir(appDir).filePath("TranslucentSM.exe");
+    const QString dllSource = QDir(appDir).filePath("TranslucentSM.dll");
+    const QString exeDest = QDir(installPath).filePath("TranslucentSM.exe");
+    const QString dllDest = QDir(installPath).filePath("TranslucentSM.dll");
+
+    QString errorMessage;
+    if (!copyWithOverwrite(exeSource, exeDest, &errorMessage)) {
+        qCritical().noquote() << errorMessage;
+        return 1;
+    }
+    if (!copyWithOverwrite(dllSource, dllDest, &errorMessage)) {
+        qCritical().noquote() << errorMessage;
+        QFile::remove(exeDest);
+        return 1;
+    }
+
+    QSettings settings(kRegistryRoot, QSettings::NativeFormat);
+    settings.setValue("InstallPath", QDir::toNativeSeparators(installPath));
+
+    QSettings runSettings(kRunRegistry, QSettings::NativeFormat);
+    runSettings.setValue("TranslucentSM", QDir::toNativeSeparators(exeDest));
+
+    const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    const QString shortcutPath = QDir(desktopPath).filePath("TranslucentSM.lnk");
+    if (!createShortcut(exeDest, shortcutPath)) {
+        qWarning().noquote() << QObject::tr("Failed to create desktop shortcut");
+    }
+
+    qDebug() << "Progress: 100";
+    return 0;
+}
+
+int uninstallTranslucentSM() {
+    QSettings settings(kRegistryRoot, QSettings::NativeFormat);
+    const QString installPath = settings.value("InstallPath").toString();
+    if (installPath.isEmpty()) {
+        qCritical().noquote() << QObject::tr("Install path not found");
+        return 1;
+    }
+
+    const QString exePath = QDir(installPath).filePath("TranslucentSM.exe");
+    const QString dllPath = QDir(installPath).filePath("TranslucentSM.dll");
+    QFile::remove(exePath);
+    QFile::remove(dllPath);
+
+    QSettings runSettings(kRunRegistry, QSettings::NativeFormat);
+    runSettings.remove("TranslucentSM");
+
+    const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    const QString desktopShortcut = QDir(desktopPath).filePath("TranslucentSM.lnk");
+    QFile::remove(desktopShortcut);
+
+    QDir installDir(installPath);
+    if (installDir.exists()) {
+        installDir.removeRecursively();
+    }
+
+    settings.clear();
+    qDebug() << "Progress: 100";
+    return 0;
+}
+
+bool createShortcut(const QString& targetPath, const QString& shortcutPath) {
+    HRESULT result = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    if (FAILED(result)) {
+        return false;
+    }
+
+    IShellLink* shellLink = nullptr;
+    result = CoCreateInstance(CLSID_ShellLink, nullptr, CLSCTX_INPROC_SERVER, IID_IShellLink,
+                              reinterpret_cast<void**>(&shellLink));
+    if (FAILED(result) || shellLink == nullptr) {
+        CoUninitialize();
+        return false;
+    }
+
+    shellLink->SetPath(QDir::toNativeSeparators(targetPath).toStdWString().c_str());
+    shellLink->SetWorkingDirectory(QFileInfo(targetPath).absolutePath().toStdWString().c_str());
+    shellLink->SetDescription(QObject::tr("TranslucentSM Configuration Tool").toStdWString().c_str());
+
+    IPersistFile* persistFile = nullptr;
+    result = shellLink->QueryInterface(IID_IPersistFile, reinterpret_cast<void**>(&persistFile));
+    bool success = false;
+    if (SUCCEEDED(result) && persistFile != nullptr) {
+        WCHAR wsz[MAX_PATH];
+        const QString nativeShortcutPath = QDir::toNativeSeparators(shortcutPath);
+        nativeShortcutPath.toWCharArray(wsz);
+        wsz[nativeShortcutPath.length()] = L'\0';
+        success = SUCCEEDED(persistFile->Save(wsz, TRUE));
+        persistFile->Release();
+    }
+
+    shellLink->Release();
     CoUninitialize();
-    return SUCCEEDED(hres);
+    return success;
 }

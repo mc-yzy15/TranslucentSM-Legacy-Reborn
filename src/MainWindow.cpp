@@ -1,62 +1,72 @@
 #include "MainWindow.h"
 #include "TranslucentSM.h"
 #include "installer.h"
-#include "MainWindow.h"
-#include <QMouseEvent>
+
 #include <QApplication>
-#include <QScreen>
-#include <QGuiApplication>
+#include <QDesktopServices>
 #include <QDir>
 #include <QFile>
-#include <QTextStream>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QUrl>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QFileInfo>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonArray>
-#include <QFileDialog>
+#include <QLocale>
+#include <QMouseEvent>
+#include <QNetworkRequest>
+#include <QPixmap>
+#include <QSignalBlocker>
+#include <QUrl>
 
-// 标题栏实现
-TitleBar::TitleBar(QWidget *parent) : QWidget(parent), m_moving(false) {
+namespace {
+constexpr const char* kConfigOrg = "TranslucentSM";
+constexpr const char* kConfigApp = "ConfigTool";
+constexpr const char* kRegistryRoot = "HKEY_CURRENT_USER\\Software\\TranslucentSM";
+}
+
+TitleBar::TitleBar(QWidget* parent)
+    : QWidget(parent),
+      titleLabel(nullptr),
+      minimizeBtn(nullptr),
+      closeBtn(nullptr),
+      m_moving(false) {
     setFixedHeight(30);
     setStyleSheet("background-color: #2d2d2d;");
 
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(10, 0, 5, 0);
     layout->setSpacing(0);
 
-    // 标题标签
-    QLabel *titleLabel = new QLabel("TranslucentSM 配置工具");
+    titleLabel = new QLabel(this);
     titleLabel->setStyleSheet("color: #ffffff; font-weight: bold;");
     layout->addWidget(titleLabel, 1);
 
-    // 最小化按钮
-    QPushButton *minimizeBtn = new QPushButton("-");
+    minimizeBtn = new QPushButton(this);
     minimizeBtn->setFixedSize(25, 25);
     minimizeBtn->setStyleSheet(
         "QPushButton { background-color: transparent; color: white; border: none; }"
-        "QPushButton:hover { background-color: #4a4a4a; border-radius: 3px; }"
-    );
+        "QPushButton:hover { background-color: #4a4a4a; border-radius: 3px; }");
     connect(minimizeBtn, &QPushButton::clicked, this, &TitleBar::minimizeWindow);
     layout->addWidget(minimizeBtn);
 
-    // 关闭按钮
-    QPushButton *closeBtn = new QPushButton("×");
+    closeBtn = new QPushButton(this);
     closeBtn->setFixedSize(25, 25);
     closeBtn->setStyleSheet(
         "QPushButton { background-color: transparent; color: white; border: none; }"
-        "QPushButton:hover { background-color: #e81123; border-radius: 3px; }"
-    );
+        "QPushButton:hover { background-color: #e81123; border-radius: 3px; }");
     connect(closeBtn, &QPushButton::clicked, this, &TitleBar::closeWindow);
     layout->addWidget(closeBtn);
 
     setLayout(layout);
+    retranslateUi();
 }
 
-void TitleBar::mousePressEvent(QMouseEvent *event) {
+void TitleBar::retranslateUi() {
+    titleLabel->setText(tr("TranslucentSM Configuration Tool"));
+    minimizeBtn->setText("-");
+    closeBtn->setText(QString::fromUtf8("×"));
+}
+
+void TitleBar::mousePressEvent(QMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
         m_startPos = event->globalPosition().toPoint();
         m_moving = true;
@@ -64,335 +74,411 @@ void TitleBar::mousePressEvent(QMouseEvent *event) {
     QWidget::mousePressEvent(event);
 }
 
-void TitleBar::mouseMoveEvent(QMouseEvent *event) {
+void TitleBar::mouseMoveEvent(QMouseEvent* event) {
     if (m_moving && (event->buttons() & Qt::LeftButton)) {
-        QWidget *parent = parentWidget();
+        QWidget* parent = parentWidget();
         if (parent) {
-            QPoint delta = event->globalPosition().toPoint() - m_startPos;
+            const QPoint delta = event->globalPosition().toPoint() - m_startPos;
             parent->move(parent->pos() + delta);
             m_startPos = event->globalPosition().toPoint();
         }
+    } else {
+        m_moving = false;
     }
     QWidget::mouseMoveEvent(event);
 }
 
-// 主窗口实现
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), installProcess(new QProcess(this)) {
-    // 设置窗口属性
+MainWindow::MainWindow(QWidget* parent)
+    : QMainWindow(parent),
+      updateProgressBar(nullptr),
+      installProcess(new QProcess(this)),
+      networkManager(new QNetworkAccessManager(this)),
+      currentVersion(QCoreApplication::applicationVersion().isEmpty()
+                         ? QStringLiteral("1.0.0")
+                         : QCoreApplication::applicationVersion()),
+      currentLanguageCode("en-US"),
+      selectedUpdateAssetName(),
+      mainCentralWidget(nullptr),
+      titleBar(nullptr),
+      mainTabWidget(nullptr),
+      progressBar(nullptr),
+      statusLabel(nullptr),
+      installButton(nullptr),
+      uninstallButton(nullptr),
+      applyButton(nullptr),
+      browseButton(nullptr),
+      checkUpdateButton(nullptr),
+      installPathEdit(nullptr),
+      transparencySlider(nullptr),
+      transparencyValueLabel(nullptr),
+      themeComboBox(nullptr),
+      languageComboBox(nullptr),
+      installTabWidget(nullptr),
+      settingsTabWidget(nullptr),
+      aboutTabWidget(nullptr),
+      pathLabel(nullptr),
+      infoLabel(nullptr),
+      transparencyLabel(nullptr),
+      themeLabel(nullptr),
+      languageLabel(nullptr),
+      aboutNameLabel(nullptr),
+      aboutVersionLabel(nullptr),
+      aboutAuthorLabel(nullptr),
+      aboutGithubLabel(nullptr),
+      aboutCopyrightLabel(nullptr) {
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setMinimumSize(600, 450);
 
-    // 应用现代样式
     applyModernStyle();
-
-    // 创建中心部件
-    QWidget *mainCentralWidget = new QWidget(this);
-    mainCentralWidget->setStyleSheet("background-color: #1e1e1e; border-radius: 8px;");
-    setCentralWidget(mainCentralWidget);
-
-    // 主布局
-    QVBoxLayout *layout = new QVBoxLayout(mainCentralWidget);
-    layout->setContentsMargins(0, 0, 0, 0);
-    layout->setSpacing(0);
-
-    // 添加自定义标题栏
-    TitleBar *titleBar = new TitleBar(this);
-    connect(titleBar, &TitleBar::minimizeWindow, this, &QWidget::showMinimized);
-    connect(titleBar, &TitleBar::closeWindow, this, &QWidget::close);
-    layout->addWidget(titleBar);
-
-    // 创建标签页部件
-    mainTabWidget = new QTabWidget();
-    mainTabWidget->setStyleSheet(
-        "QTabWidget::pane { border: none; background-color: #1e1e1e; }"
-        "QTabBar::tab { height: 30px; width: 120px; background-color: #2d2d2d; color: #b0b0b0; border: none; margin-right: 2px; }"
-        "QTabBar::tab:selected { background-color: #3d3d3d; color: white; border-top-left-radius: 4px; border-top-right-radius: 4px; }"
-        "QTabBar::tab:hover:!selected { background-color: #353535; }"
-    );
-    layout->addWidget(mainTabWidget);
-
-    // 创建各个标签页
-    createInstallationTab();
-    createSettingsTab();
-    createAboutTab();
-
-    // 状态栏
-    QWidget *statusBar = new QWidget();
-    statusBar->setFixedHeight(25);
-    statusBar->setStyleSheet("background-color: #252526; color: #b0b0b0;");
-    QHBoxLayout *statusLayout = new QHBoxLayout(statusBar);
-    statusLayout->setContentsMargins(10, 0, 10, 0);
-
-    statusLabel = new QLabel("就绪");
-    statusLabel->setStyleSheet("color: #b0b0b0;");
-    statusLayout->addWidget(statusLabel, 1);
-
-    progressBar = new QProgressBar();
-    progressBar->setFixedHeight(15);
-    progressBar->setStyleSheet(
-        "QProgressBar { border: none; background-color: #3d3d3d; border-radius: 7px; }"
-        "QProgressBar::chunk { background-color: #007acc; border-radius: 7px; }"
-    );
-    progressBar->setValue(0);
-    progressBar->setVisible(false);
-    statusLayout->addWidget(progressBar, 2);
-
-    layout->addWidget(statusBar);
-
-    // 检查安装状态并更新UI
+    setupUI();
+    loadPersistedSettings();
+    retranslateUi();
     updateUIState();
 
-    // 连接进程信号
     connect(installProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
             this, &MainWindow::onInstallationFinished);
 }
 
-MainWindow::~MainWindow() {
-    delete installProcess;
-}
+MainWindow::~MainWindow() = default;
 
 void MainWindow::setupUI() {
-    // 已在构造函数中实现UI设置
+    mainCentralWidget = new QWidget(this);
+    mainCentralWidget->setStyleSheet("background-color: #1e1e1e; border-radius: 8px;");
+    setCentralWidget(mainCentralWidget);
+
+    QVBoxLayout* layout = new QVBoxLayout(mainCentralWidget);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
+
+    titleBar = new TitleBar(this);
+    connect(titleBar, &TitleBar::minimizeWindow, this, &QWidget::showMinimized);
+    connect(titleBar, &TitleBar::closeWindow, this, &QWidget::close);
+    layout->addWidget(titleBar);
+
+    mainTabWidget = new QTabWidget();
+    layout->addWidget(mainTabWidget);
+
+    createInstallationTab();
+    createSettingsTab();
+    createAboutTab();
+
+    QWidget* statusBarWidget = new QWidget();
+    statusBarWidget->setFixedHeight(25);
+    statusBarWidget->setStyleSheet("background-color: #252526; color: #b0b0b0;");
+    QHBoxLayout* statusLayout = new QHBoxLayout(statusBarWidget);
+    statusLayout->setContentsMargins(10, 0, 10, 0);
+
+    statusLabel = new QLabel();
+    statusLayout->addWidget(statusLabel, 1);
+
+    progressBar = new QProgressBar();
+    progressBar->setFixedHeight(15);
+    progressBar->setValue(0);
+    progressBar->setVisible(false);
+    statusLayout->addWidget(progressBar, 2);
+    layout->addWidget(statusBarWidget);
 }
 
 void MainWindow::applyModernStyle() {
-    // 设置全局样式
     qApp->setStyle(QStyleFactory::create("Fusion"));
-
-    QPalette palette;
-    palette.setColor(QPalette::Window, QColor(30, 30, 30));
-    palette.setColor(QPalette::WindowText, Qt::white);
-    palette.setColor(QPalette::Base, QColor(45, 45, 45));
-    palette.setColor(QPalette::AlternateBase, QColor(55, 55, 55));
-    palette.setColor(QPalette::ToolTipBase, Qt::white);
-    palette.setColor(QPalette::ToolTipText, Qt::white);
-    palette.setColor(QPalette::Text, Qt::white);
-    palette.setColor(QPalette::Button, QColor(55, 55, 55));
-    palette.setColor(QPalette::ButtonText, Qt::white);
-    palette.setColor(QPalette::BrightText, Qt::red);
-    palette.setColor(QPalette::Link, QColor(42, 130, 218));
-    palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
-    palette.setColor(QPalette::HighlightedText, Qt::black);
-    qApp->setPalette(palette);
-
-    // 设置全局样式表
     qApp->setStyleSheet(
-        "QPushButton { padding: 8px 16px; border-radius: 6px; border: none; background-color: #0078d7; color: white; font-weight: 500; }"
+        "QPushButton { padding: 8px 16px; border-radius: 6px; border: none; background-color: #0078d7; color: white; }"
         "QPushButton:hover { background-color: #005a9e; }"
-        "QPushButton:pressed { background-color: #004b87; }"
-        "QPushButton:disabled { background-color: #555555; color: #aaaaaa; }"
-        "QSlider::groove:horizontal { background-color: #e0e0e0; height: 6px; border-radius: 3px; }"
-        "QSlider::handle:horizontal { background-color: #0078d7; width: 18px; height: 18px; border-radius: 9px; margin: -6px 0; border: none; }"
-        "QLineEdit { border: 1px solid #ced4da; border-radius: 6px; padding: 8px; background-color: white; color: #212529; }"
-        "QComboBox { padding: 8px; border-radius: 6px; border: 1px solid #ced4da; background-color: white; color: #212529; }"
-        "QComboBox::drop-down { border-top-right-radius: 6px; border-bottom-right-radius: 6px; background-color: #e9ecef; }"
-        "QLabel { color: #212529; }"
-        "QTabWidget::pane { border: 1px solid #e0e0e0; border-radius: 8px; background-color: white; }"
-        "QTabBar::tab { background-color: #e9ecef; color: #495057; padding: 8px 16px; border-radius: 8px 8px 0 0; margin-right: 4px; }"
-        "QTabBar::tab:selected { background-color: white; color: #0078d7; border-top: 2px solid #0078d7; }"
-        "QProgressBar { border-radius: 6px; text-align: center; background-color: #e9ecef; height: 8px; }"
-        "QProgressBar::chunk { background-color: #0078d7; border-radius: 4px; }"
-        "QCheckBox { spacing: 8px; color: #495057; }"
-        "QCheckBox::indicator { width: 18px; height: 18px; border-radius: 4px; border: 2px solid #adb5bd; }"
-        "QCheckBox::indicator:checked { background-color: #0078d7; border-color: #0078d7; image: url(:/icons/check.svg); }"
-        "QMessageBox { background-color: white; border-radius: 8px; }"
-    );
+        "QLineEdit, QComboBox { border: 1px solid #ced4da; border-radius: 6px; padding: 6px; background-color: white; color: #212529; }"
+        "QTabWidget::pane { border: none; background-color: #1e1e1e; }"
+        "QTabBar::tab { height: 30px; width: 130px; background-color: #2d2d2d; color: #b0b0b0; }"
+        "QTabBar::tab:selected { background-color: #3d3d3d; color: white; }");
 }
 
 void MainWindow::createInstallationTab() {
-    QWidget *installWidget = new QWidget();
-    QVBoxLayout *layout = new QVBoxLayout(installWidget);
+    installTabWidget = new QWidget();
+    QVBoxLayout* layout = new QVBoxLayout(installTabWidget);
     layout->setContentsMargins(20, 20, 20, 20);
     layout->setSpacing(15);
 
-    // 安装路径选择
-    QHBoxLayout *pathLayout = new QHBoxLayout();
-    QLabel *pathLabel = new QLabel("安装路径:");
-    installPathEdit = new QLineEdit();
+    QHBoxLayout* pathLayout = new QHBoxLayout();
+    pathLabel = new QLabel(installTabWidget);
+    installPathEdit = new QLineEdit(installTabWidget);
     installPathEdit->setText(QDir::toNativeSeparators(QDir::homePath() + "/AppData/Local/TranslucentSM"));
-    QPushButton *browseButton = new QPushButton("浏览...");
+    browseButton = new QPushButton(installTabWidget);
     connect(browseButton, &QPushButton::clicked, this, &MainWindow::onBrowseClicked);
-
     pathLayout->addWidget(pathLabel, 0);
     pathLayout->addWidget(installPathEdit, 1);
     pathLayout->addWidget(browseButton, 0);
     layout->addLayout(pathLayout);
 
-    // 安装说明
-    QLabel *infoLabel = new QLabel(
-        "TranslucentSM 为 Windows 11 开始菜单提供透明度效果。注意：该应用必须在\n"
-        "Windows 11 22000 版本以上使用。");
+    infoLabel = new QLabel(installTabWidget);
     infoLabel->setWordWrap(true);
-    infoLabel->setStyleSheet("color: #b0b0b0; margin-top: 10px;");
+    infoLabel->setStyleSheet("color: #b0b0b0;");
     layout->addWidget(infoLabel);
 
-    // 按钮布局
-    QHBoxLayout *buttonLayout = new QHBoxLayout();
+    QHBoxLayout* buttonLayout = new QHBoxLayout();
     buttonLayout->setSpacing(15);
     buttonLayout->setAlignment(Qt::AlignCenter);
 
-    installButton = new QPushButton("安装");
+    installButton = new QPushButton(installTabWidget);
     installButton->setFixedSize(120, 35);
     connect(installButton, &QPushButton::clicked, this, &MainWindow::onInstallClicked);
 
-    uninstallButton = new QPushButton("卸载");
+    uninstallButton = new QPushButton(installTabWidget);
     uninstallButton->setFixedSize(120, 35);
     connect(uninstallButton, &QPushButton::clicked, this, &MainWindow::onUninstallClicked);
 
     buttonLayout->addWidget(installButton);
     buttonLayout->addWidget(uninstallButton);
     layout->addLayout(buttonLayout);
-
-    // 空白填充
     layout->addStretch(1);
 
-    mainTabWidget->addTab(installWidget, "安装/卸载");
+    mainTabWidget->addTab(installTabWidget, QString());
 }
 
 void MainWindow::createSettingsTab() {
-    QWidget *settingsWidget = new QWidget();
-    QVBoxLayout *layout = new QVBoxLayout(settingsWidget);
+    settingsTabWidget = new QWidget();
+    QVBoxLayout* layout = new QVBoxLayout(settingsTabWidget);
     layout->setContentsMargins(20, 20, 20, 20);
     layout->setSpacing(20);
 
-    // 透明度设置
-    QWidget *transparencyWidget = new QWidget();
-    QVBoxLayout *transparencyLayout = new QVBoxLayout(transparencyWidget);
-    transparencyLayout->setSpacing(10);
-
-    QLabel *transparencyLabel = new QLabel("透明度设置:");
+    QWidget* transparencyWidget = new QWidget(settingsTabWidget);
+    QVBoxLayout* transparencyLayout = new QVBoxLayout(transparencyWidget);
+    transparencyLabel = new QLabel(transparencyWidget);
     transparencyLabel->setStyleSheet("font-weight: bold;");
     transparencyLayout->addWidget(transparencyLabel);
 
-    QHBoxLayout *sliderLayout = new QHBoxLayout();
-    transparencySlider = new QSlider(Qt::Horizontal);
+    QHBoxLayout* sliderLayout = new QHBoxLayout();
+    transparencySlider = new QSlider(Qt::Horizontal, transparencyWidget);
     transparencySlider->setRange(0, 100);
-    transparencySlider->setValue(50);
-    QLabel *valueLabel = new QLabel("50%");
-    connect(transparencySlider, &QSlider::valueChanged, [valueLabel](int value) {
-        valueLabel->setText(QString("%1%").arg(value));
+    transparencyValueLabel = new QLabel("50%", transparencyWidget);
+    connect(transparencySlider, &QSlider::valueChanged, this, [this](int value) {
+        transparencyValueLabel->setText(QString("%1%").arg(value));
     });
-
     sliderLayout->addWidget(transparencySlider);
-    sliderLayout->addWidget(valueLabel);
+    sliderLayout->addWidget(transparencyValueLabel);
     transparencyLayout->addLayout(sliderLayout);
-
     layout->addWidget(transparencyWidget);
 
-    // 主题选择
-    QWidget *themeWidget = new QWidget();
-    QVBoxLayout *themeLayout = new QVBoxLayout(themeWidget);
-    themeLayout->setSpacing(10);
-
-    QLabel *themeLabel = new QLabel("主题选择:");
+    QWidget* themeWidget = new QWidget(settingsTabWidget);
+    QVBoxLayout* themeLayout = new QVBoxLayout(themeWidget);
+    themeLabel = new QLabel(themeWidget);
     themeLabel->setStyleSheet("font-weight: bold;");
     themeLayout->addWidget(themeLabel);
-
-    themeComboBox = new QComboBox();
-    themeComboBox->addItem("默认主题");
-    themeComboBox->addItem("深色主题");
-    themeComboBox->addItem("浅色主题");
+    themeComboBox = new QComboBox(themeWidget);
     themeLayout->addWidget(themeComboBox);
-
     layout->addWidget(themeWidget);
 
-    // 空白填充
+    QWidget* languageWidget = new QWidget(settingsTabWidget);
+    QVBoxLayout* languageLayout = new QVBoxLayout(languageWidget);
+    languageLabel = new QLabel(languageWidget);
+    languageLabel->setStyleSheet("font-weight: bold;");
+    languageLayout->addWidget(languageLabel);
+    languageComboBox = new QComboBox(languageWidget);
+    languageLayout->addWidget(languageComboBox);
+    layout->addWidget(languageWidget);
+    connect(languageComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onLanguageChanged);
+
     layout->addStretch(1);
 
-    // 应用按钮
-    applyButton = new QPushButton("应用设置");
-    applyButton->setFixedSize(120, 35);
+    applyButton = new QPushButton(settingsTabWidget);
+    applyButton->setFixedSize(140, 35);
     connect(applyButton, &QPushButton::clicked, this, &MainWindow::onApplySettingsClicked);
     layout->addWidget(applyButton, 0, Qt::AlignCenter);
 
-    // 更新检查按钮
-    QPushButton *checkUpdateButton = new QPushButton("检查更新");
-    checkUpdateButton->setFixedSize(120, 35);
+    checkUpdateButton = new QPushButton(settingsTabWidget);
+    checkUpdateButton->setFixedSize(140, 35);
     connect(checkUpdateButton, &QPushButton::clicked, this, &MainWindow::checkUpdateClicked);
     layout->addWidget(checkUpdateButton, 0, Qt::AlignCenter);
 
-    // 更新进度条
-    updateProgressBar = new QProgressBar();
+    updateProgressBar = new QProgressBar(settingsTabWidget);
     updateProgressBar->setVisible(false);
     layout->addWidget(updateProgressBar);
+
+    mainTabWidget->addTab(settingsTabWidget, QString());
 }
 
 void MainWindow::createAboutTab() {
-    QWidget *aboutWidget = new QWidget();
-    QVBoxLayout *layout = new QVBoxLayout(aboutWidget);
+    aboutTabWidget = new QWidget();
+    QVBoxLayout* layout = new QVBoxLayout(aboutTabWidget);
     layout->setContentsMargins(20, 20, 20, 20);
     layout->setSpacing(15);
     layout->setAlignment(Qt::AlignCenter);
 
-    // 应用图标
-    QLabel *iconLabel = new QLabel();
-    iconLabel->setPixmap(QPixmap(32, 32)); // 实际应用中应替换为真实图标
+    QLabel* iconLabel = new QLabel(aboutTabWidget);
+    iconLabel->setPixmap(QPixmap(32, 32));
     iconLabel->setFixedSize(64, 64);
     iconLabel->setStyleSheet("background-color: #007acc; border-radius: 8px;");
     layout->addWidget(iconLabel, 0, Qt::AlignCenter);
 
-    // 应用名称和版本
-    QLabel *nameLabel = new QLabel("TranslucentSM");
-    nameLabel->setStyleSheet("font-size: 20px; font-weight: bold;");
-    layout->addWidget(nameLabel, 0, Qt::AlignCenter);
+    aboutNameLabel = new QLabel(aboutTabWidget);
+    aboutNameLabel->setStyleSheet("font-size: 20px; font-weight: bold;");
+    layout->addWidget(aboutNameLabel, 0, Qt::AlignCenter);
 
-    QLabel *versionLabel = new QLabel("版本 1.0.0");
-    versionLabel->setStyleSheet("color: #b0b0b0;");
-    layout->addWidget(versionLabel, 0, Qt::AlignCenter);
+    aboutVersionLabel = new QLabel(aboutTabWidget);
+    aboutVersionLabel->setStyleSheet("color: #b0b0b0;");
+    layout->addWidget(aboutVersionLabel, 0, Qt::AlignCenter);
 
-    // 空白分隔
-    QFrame *line = new QFrame();
+    QFrame* line = new QFrame(aboutTabWidget);
     line->setFrameShape(QFrame::HLine);
     line->setFrameShadow(QFrame::Sunken);
     line->setStyleSheet("color: #555555;");
     layout->addWidget(line);
 
-    // 作者信息
-    QLabel *authorLabel = new QLabel("作者: Yzy15");
-    layout->addWidget(authorLabel, 0, Qt::AlignCenter);
+    aboutAuthorLabel = new QLabel(aboutTabWidget);
+    layout->addWidget(aboutAuthorLabel, 0, Qt::AlignCenter);
 
-    QLabel *githubLabel = new QLabel(
-        "<a href='https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn'>GitHub 仓库</a>");
-    githubLabel->setOpenExternalLinks(true);
-    layout->addWidget(githubLabel, 0, Qt::AlignCenter);
+    aboutGithubLabel = new QLabel(aboutTabWidget);
+    aboutGithubLabel->setOpenExternalLinks(true);
+    layout->addWidget(aboutGithubLabel, 0, Qt::AlignCenter);
 
-    // 版权信息
-    QLabel *copyrightLabel = new QLabel("© 2023 All Rights Reserved");
-    copyrightLabel->setStyleSheet("color: #b0b0b0; font-size: 10px;");
-    layout->addWidget(copyrightLabel, 0, Qt::AlignCenter);
+    aboutCopyrightLabel = new QLabel(aboutTabWidget);
+    aboutCopyrightLabel->setStyleSheet("color: #b0b0b0; font-size: 10px;");
+    layout->addWidget(aboutCopyrightLabel, 0, Qt::AlignCenter);
 
-    mainTabWidget->addTab(aboutWidget, "关于");
+    mainTabWidget->addTab(aboutTabWidget, QString());
+}
+
+void MainWindow::loadPersistedSettings() {
+    QSettings settings(kConfigOrg, kConfigApp);
+    const int transparencyValue = settings.value("transparency", 50).toInt();
+    transparencySlider->setValue(qBound(0, transparencyValue, 100));
+
+    const int themeIndex = settings.value("theme", 0).toInt();
+    themeComboBox->setCurrentIndex(qBound(0, themeIndex, 2));
+
+    currentLanguageCode = normalizedLanguageCode(
+        settings.value("UI/Language", detectDefaultLanguage()).toString());
+    setupLanguageSelector();
+
+    const QString savedInstallPath = settings.value("InstallPath").toString();
+    if (!savedInstallPath.trimmed().isEmpty()) {
+        installPathEdit->setText(QDir::toNativeSeparators(savedInstallPath));
+    }
+}
+
+QString MainWindow::detectDefaultLanguage() const {
+    const QString localeName = QLocale::system().name();
+    return localeName.startsWith("zh", Qt::CaseInsensitive) ? "zh-CN" : "en-US";
+}
+
+QString MainWindow::normalizedLanguageCode(const QString& languageCode) const {
+    const QString normalized = languageCode.trimmed().replace('_', '-').toLower();
+    if (normalized.startsWith("zh")) {
+        return "zh-CN";
+    }
+    if (normalized.startsWith("en")) {
+        return "en-US";
+    }
+    return "en-US";
+}
+
+void MainWindow::setupLanguageSelector() {
+    if (!languageComboBox) {
+        return;
+    }
+
+    const QString normalizedCode = normalizedLanguageCode(
+        currentLanguageCode.isEmpty() ? detectDefaultLanguage() : currentLanguageCode);
+    QSignalBlocker blocker(languageComboBox);
+
+    languageComboBox->clear();
+    languageComboBox->addItem(tr("简体中文 (zh-CN)"), "zh-CN");
+    languageComboBox->addItem(tr("English (en-US)"), "en-US");
+
+    int index = languageComboBox->findData(normalizedCode);
+    if (index < 0) {
+        index = languageComboBox->findData("en-US");
+    }
+    languageComboBox->setCurrentIndex(index);
+}
+
+void MainWindow::retranslateUi() {
+    setWindowTitle(tr("TranslucentSM Configuration Tool"));
+    titleBar->retranslateUi();
+
+    mainTabWidget->setTabText(mainTabWidget->indexOf(installTabWidget), tr("Install/Uninstall"));
+    mainTabWidget->setTabText(mainTabWidget->indexOf(settingsTabWidget), tr("Settings"));
+    mainTabWidget->setTabText(mainTabWidget->indexOf(aboutTabWidget), tr("About"));
+
+    pathLabel->setText(tr("Install Path:"));
+    browseButton->setText(tr("Browse..."));
+    infoLabel->setText(
+        tr("TranslucentSM adds transparency effects to the Windows 11 Start Menu.\n"
+           "Requires Windows 11 build 22000 or later."));
+    installButton->setText(tr("Install"));
+    uninstallButton->setText(tr("Uninstall"));
+
+    transparencyLabel->setText(tr("Transparency:"));
+    themeLabel->setText(tr("Theme:"));
+    const int themeIndex = themeComboBox->currentIndex();
+    themeComboBox->clear();
+    themeComboBox->addItem(tr("Default"));
+    themeComboBox->addItem(tr("Dark"));
+    themeComboBox->addItem(tr("Light"));
+    themeComboBox->setCurrentIndex(qBound(0, themeIndex, 2));
+
+    languageLabel->setText(tr("Language:"));
+    setupLanguageSelector();
+    applyButton->setText(tr("Apply Settings"));
+    checkUpdateButton->setText(tr("Check for Updates"));
+
+    aboutNameLabel->setText("TranslucentSM");
+    aboutVersionLabel->setText(tr("Version %1").arg(currentVersion));
+    aboutAuthorLabel->setText(tr("Author: Yzy15"));
+    aboutGithubLabel->setText(
+        tr("<a href='https://github.com/mc-yzy15/TranslucentSM-Legacy-Reborn'>GitHub Repository</a>"));
+    aboutCopyrightLabel->setText(tr("© 2026 All Rights Reserved"));
+
+    updateUIState();
+}
+
+void MainWindow::applyLanguage(const QString& languageCode) {
+    currentLanguageCode = normalizedLanguageCode(languageCode);
+    retranslateUi();
+}
+
+void MainWindow::onLanguageChanged(int index) {
+    if (index < 0) {
+        return;
+    }
+
+    const QString selectedLanguage = normalizedLanguageCode(languageComboBox->itemData(index).toString());
+    if (selectedLanguage == currentLanguageCode) {
+        return;
+    }
+
+    currentLanguageCode = selectedLanguage;
+    QSettings settings(kConfigOrg, kConfigApp);
+    settings.setValue("UI/Language", currentLanguageCode);
+    emit languageChangeRequested(currentLanguageCode);
 }
 
 void MainWindow::onInstallClicked() {
-    QString installPath = getInstallPath();
+    const QString installPath = getInstallPath();
     QDir installDir(installPath);
 
-    if (!installDir.exists()) {
-        if (!installDir.mkpath(installPath)) {
-            QMessageBox::critical(this, "错误", "无法创建安装目录！");
-            return;
-        }
+    if (!installDir.exists() && !installDir.mkpath(installPath)) {
+        QMessageBox::critical(this, tr("Error"), tr("Failed to create install directory."));
+        return;
     }
 
-    statusLabel->setText("正在安装...");
+    statusLabel->setText(tr("Installing..."));
     progressBar->setVisible(true);
     progressBar->setValue(0);
     installButton->setEnabled(false);
     uninstallButton->setEnabled(false);
 
-    // 直接调用安装函数
-    int result = installTranslucentSM(installPath);
-
+    const int result = installTranslucentSM(installPath);
     if (result == 0) {
+        QSettings settings(kConfigOrg, kConfigApp);
+        settings.setValue("InstallPath", installPath);
+
         progressBar->setValue(100);
-        statusLabel->setText("安装成功");
-        QMessageBox::information(this, "成功", "安装已成功完成！");
+        statusLabel->setText(tr("Install completed"));
+        QMessageBox::information(this, tr("Success"), tr("Installation finished successfully."));
         updateUIState();
     } else {
-        statusLabel->setText("安装失败");
-        QMessageBox::critical(this, "错误", "安装失败，请检查日志获取详细信息。");
+        statusLabel->setText(tr("Install failed"));
+        QMessageBox::critical(this, tr("Error"), tr("Installation failed. Please check logs for details."));
     }
 
     progressBar->setVisible(false);
@@ -401,31 +487,30 @@ void MainWindow::onInstallClicked() {
 }
 
 void MainWindow::onUninstallClicked() {
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "确认", "确定要卸载 TranslucentSM 吗？",
-                                  QMessageBox::Yes|QMessageBox::No);
-
-    if (reply != QMessageBox::Yes) {
+    const QMessageBox::StandardButton confirm = QMessageBox::question(
+        this,
+        tr("Confirm"),
+        tr("Are you sure you want to uninstall TranslucentSM?"),
+        QMessageBox::Yes | QMessageBox::No);
+    if (confirm != QMessageBox::Yes) {
         return;
     }
 
-    statusLabel->setText("正在卸载...");
+    statusLabel->setText(tr("Uninstalling..."));
     progressBar->setVisible(true);
     progressBar->setValue(0);
     installButton->setEnabled(false);
     uninstallButton->setEnabled(false);
 
-    // 直接调用卸载函数
-    int result = uninstallTranslucentSM();
-
+    const int result = uninstallTranslucentSM();
     if (result == 0) {
         progressBar->setValue(100);
-        statusLabel->setText("卸载成功");
-        QMessageBox::information(this, "成功", "卸载已成功完成！");
+        statusLabel->setText(tr("Uninstall completed"));
+        QMessageBox::information(this, tr("Success"), tr("Uninstallation finished successfully."));
         updateUIState();
     } else {
-        statusLabel->setText("卸载失败");
-        QMessageBox::critical(this, "错误", "卸载失败，请检查日志获取详细信息。");
+        statusLabel->setText(tr("Uninstall failed"));
+        QMessageBox::critical(this, tr("Error"), tr("Uninstallation failed. Please check logs for details."));
     }
 
     progressBar->setVisible(false);
@@ -434,23 +519,24 @@ void MainWindow::onUninstallClicked() {
 }
 
 void MainWindow::onApplySettingsClicked() {
-    // 保存设置
-    QSettings settings("TranslucentSM", "ConfigTool");
-    int transparencyValue = transparencySlider->value();
+    QSettings settings(kConfigOrg, kConfigApp);
+    const int transparencyValue = transparencySlider->value();
     settings.setValue("transparency", transparencyValue);
     settings.setValue("theme", themeComboBox->currentIndex());
+    settings.setValue("UI/Language", currentLanguageCode);
 
-    // 应用透明度设置到开始菜单进程
-    TranslucentSM installTranslucentSM;
-    installTranslucentSM.applyTransparencySettings("StartMenuExperienceHost.exe", transparencyValue);
+    TranslucentSM translucentSM;
+    translucentSM.applyTransparencySettings("StartMenuExperienceHost.exe", transparencyValue);
 
-    statusLabel->setText("设置已应用");
-    QMessageBox::information(this, "成功", "透明度设置已应用！");
+    statusLabel->setText(tr("Settings applied"));
+    QMessageBox::information(this, tr("Success"), tr("Transparency settings have been applied."));
 }
 
 void MainWindow::onBrowseClicked() {
-    QString path = QFileDialog::getExistingDirectory(this, "选择安装目录",
-                                                     installPathEdit->text());
+    const QString path = QFileDialog::getExistingDirectory(
+        this,
+        tr("Select Install Directory"),
+        installPathEdit->text());
     if (!path.isEmpty()) {
         installPathEdit->setText(QDir::toNativeSeparators(path));
     }
@@ -458,17 +544,17 @@ void MainWindow::onBrowseClicked() {
 
 void MainWindow::updateProgress(int value) {
     progressBar->setValue(value);
-    statusLabel->setText(QString("正在处理... %1%").arg(value));
+    statusLabel->setText(tr("Processing... %1%").arg(value));
 }
 
 void MainWindow::onInstallationFinished(int exitCode, QProcess::ExitStatus exitStatus) {
     if (exitStatus == QProcess::NormalExit && exitCode == 0) {
-        statusLabel->setText("操作完成");
-        QMessageBox::information(this, "成功", "操作已成功完成！");
+        statusLabel->setText(tr("Operation completed"));
+        QMessageBox::information(this, tr("Success"), tr("Operation finished successfully."));
         updateUIState();
     } else {
-        statusLabel->setText("操作失败");
-        QMessageBox::critical(this, "错误", "操作失败，请检查日志获取详细信息。");
+        statusLabel->setText(tr("Operation failed"));
+        QMessageBox::critical(this, tr("Error"), tr("Operation failed. Please check logs for details."));
     }
     progressBar->setVisible(false);
     installButton->setEnabled(true);
@@ -476,94 +562,152 @@ void MainWindow::onInstallationFinished(int exitCode, QProcess::ExitStatus exitS
 }
 
 bool MainWindow::checkInstallationStatus() {
-    // 在实际应用中，这里应该检查软件是否已安装
-    // 这里简单返回false模拟未安装状态
-    return false;
+    QSettings registrySettings(kRegistryRoot, QSettings::NativeFormat);
+    const QString installPath = registrySettings.value("InstallPath").toString();
+    if (installPath.trimmed().isEmpty()) {
+        return false;
+    }
+
+    const QString exePath = QDir(installPath).filePath("TranslucentSM.exe");
+    const QString dllPath = QDir(installPath).filePath("TranslucentSM.dll");
+    const bool installed = QFileInfo::exists(exePath) && QFileInfo::exists(dllPath);
+    if (installed) {
+        installPathEdit->setText(QDir::toNativeSeparators(installPath));
+    }
+    return installed;
 }
 
 void MainWindow::updateUIState() {
-    bool isInstalled = checkInstallationStatus();
+    const bool isInstalled = checkInstallationStatus();
     installButton->setEnabled(!isInstalled);
     uninstallButton->setEnabled(isInstalled);
     applyButton->setEnabled(isInstalled);
 
     if (isInstalled) {
-        statusLabel->setText("已安装：TranslucentSM");
+        statusLabel->setText(tr("Installed: TranslucentSM"));
     } else {
-        statusLabel->setText("未安装");
+        statusLabel->setText(tr("Not installed"));
     }
 }
 
 QString MainWindow::getInstallPath() {
-    return installPathEdit->text();
+    return installPathEdit->text().trimmed();
 }
 
 void MainWindow::checkUpdateClicked() {
-    statusLabel->setText("正在检查更新...");
-    
-    if (!networkManager) {
-        networkManager = new QNetworkAccessManager(this);
-    }
-    
-    QUrl url("https://api.github.com/repos/mc-yzy15/TranslucentSM-Legacy-Reborn/releases");
-    QNetworkRequest request(url);
+    statusLabel->setText(tr("Checking for updates..."));
+    selectedUpdateAssetName.clear();
+
+    QNetworkRequest request(QUrl("https://api.github.com/repos/mc-yzy15/TranslucentSM-Legacy-Reborn/releases/latest"));
     request.setHeader(QNetworkRequest::UserAgentHeader, "TranslucentSM");
-    
-    connect(networkManager, &QNetworkAccessManager::finished, this, &MainWindow::onUpdateCheckFinished);
-    networkManager->get(request);
+
+    QNetworkReply* reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        onUpdateCheckFinished(reply);
+    });
 }
 
-void MainWindow::onUpdateCheckFinished(QNetworkReply *reply) {
+void MainWindow::onUpdateCheckFinished(QNetworkReply* reply) {
+    if (!reply) {
+        statusLabel->setText(tr("Update check failed"));
+        return;
+    }
+
     if (reply->error() != QNetworkReply::NoError) {
-        statusLabel->setText("检查更新失败: " + reply->errorString());
+        statusLabel->setText(tr("Update check failed: %1").arg(reply->errorString()));
         reply->deleteLater();
         return;
     }
-    
-    QByteArray data = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(data);
-    QJsonArray releases = doc.array();
-    
-    if (!releases.isEmpty()) {
-        QJsonObject latestRelease = releases.first().toObject();
-        QString latestVersion = latestRelease["tag_name"].toString().remove("v");
-        QString downloadUrl = latestRelease["assets"].toArray().first().toObject()["browser_download_url"].toString();
-        
-        // 版本比较
-        if (versionCompare(latestVersion, currentVersion) > 0) {
-            QMessageBox::StandardButton replyBtn;
-            replyBtn = QMessageBox::question(this, "发现更新", 
-                                         QString("有新版本可用: %1\n是否下载并安装?").arg(latestVersion),
-                                         QMessageBox::Yes|QMessageBox::No);
-            
-            if (replyBtn == QMessageBox::Yes) {
-                statusLabel->setText("正在下载更新...");
-                updateProgressBar->setVisible(true);
-                updateProgressBar->setValue(0);
-                
-                QUrl downloadQUrl(downloadUrl);
-            QNetworkRequest downloadRequest(downloadQUrl);
-            QNetworkReply* reply = networkManager->get(downloadRequest);
-            connect(reply, &QNetworkReply::downloadProgress, 
-                    this, &MainWindow::onDownloadProgress);
-            connect(reply, &QNetworkReply::finished, 
-                    this, &MainWindow::onDownloadFinished);
+
+    const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+    QJsonObject releaseObject;
+    if (doc.isObject()) {
+        releaseObject = doc.object();
+    } else if (doc.isArray() && !doc.array().isEmpty()) {
+        releaseObject = doc.array().first().toObject();
+    }
+
+    if (releaseObject.isEmpty()) {
+        statusLabel->setText(tr("No release information found"));
+        reply->deleteLater();
+        return;
+    }
+
+    const QString latestVersion = releaseObject.value("tag_name").toString().remove("v", Qt::CaseInsensitive);
+    const QJsonArray assets = releaseObject.value("assets").toArray();
+
+    QString downloadUrl;
+    for (const QJsonValue& assetValue : assets) {
+        const QJsonObject asset = assetValue.toObject();
+        const QString name = asset.value("name").toString();
+        const QString lower = name.toLower();
+        if (lower.contains("setup") && lower.endsWith(".exe")) {
+            selectedUpdateAssetName = name;
+            downloadUrl = asset.value("browser_download_url").toString();
+            break;
+        }
+    }
+
+    if (downloadUrl.isEmpty()) {
+        for (const QJsonValue& assetValue : assets) {
+            const QJsonObject asset = assetValue.toObject();
+            const QString name = asset.value("name").toString();
+            if (name.toLower().endsWith(".exe")) {
+                selectedUpdateAssetName = name;
+                downloadUrl = asset.value("browser_download_url").toString();
+                break;
             }
+        }
+    }
+
+    if (downloadUrl.isEmpty()) {
+        for (const QJsonValue& assetValue : assets) {
+            const QJsonObject asset = assetValue.toObject();
+            const QString name = asset.value("name").toString();
+            if (name.toLower().endsWith(".zip")) {
+                selectedUpdateAssetName = name;
+                downloadUrl = asset.value("browser_download_url").toString();
+                break;
+            }
+        }
+    }
+
+    if (downloadUrl.isEmpty()) {
+        statusLabel->setText(tr("No downloadable asset found"));
+        reply->deleteLater();
+        return;
+    }
+
+    if (versionCompare(latestVersion, currentVersion) > 0) {
+        const QMessageBox::StandardButton confirm = QMessageBox::question(
+            this,
+            tr("Update Available"),
+            tr("A new version is available: %1\nDo you want to download and install it?").arg(latestVersion),
+            QMessageBox::Yes | QMessageBox::No);
+
+        if (confirm == QMessageBox::Yes) {
+            statusLabel->setText(tr("Downloading update..."));
+            updateProgressBar->setVisible(true);
+            updateProgressBar->setValue(0);
+
+            QNetworkReply* downloadReply = networkManager->get(QNetworkRequest(QUrl(downloadUrl)));
+            connect(downloadReply, &QNetworkReply::downloadProgress, this, &MainWindow::onDownloadProgress);
+            connect(downloadReply, &QNetworkReply::finished, this, &MainWindow::onDownloadFinished);
         } else {
-            statusLabel->setText("当前已是最新版本");
+            statusLabel->setText(tr("Update cancelled"));
         }
     } else {
-        statusLabel->setText("未找到发布版本");
+        statusLabel->setText(tr("You are using the latest version"));
     }
-    
+
     reply->deleteLater();
 }
 
 void MainWindow::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal) {
     if (bytesTotal > 0) {
-        int percent = (bytesReceived * 100) / bytesTotal;
+        const int percent = static_cast<int>((bytesReceived * 100) / bytesTotal);
         updateProgressBar->setValue(percent);
-        statusLabel->setText(QString("正在下载更新: %1%").arg(percent));
+        statusLabel->setText(tr("Downloading update: %1%").arg(percent));
     }
 }
 
@@ -572,43 +716,67 @@ void MainWindow::onDownloadFinished() {
 
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) {
+        statusLabel->setText(tr("Update download failed"));
         return;
     }
 
-    if (reply->error() == QNetworkReply::NoError) {
-        QString tempPath = QDir::tempPath() + "/TranslucentSM_Update.zip";
-        QFile file(tempPath);
-        
-        if (file.open(QIODevice::WriteOnly)) {
-            file.write(reply->readAll());
-            file.close();
-            
-            // 启动安装程序
-            QProcess::startDetached("explorer.exe", QStringList() << tempPath);
-            qApp->quit();
-        } else {
-            statusLabel->setText("无法保存更新文件");
-        }
-    } else {
-        statusLabel->setText("更新下载失败: " + reply->errorString());
+    if (reply->error() != QNetworkReply::NoError) {
+        statusLabel->setText(tr("Update download failed: %1").arg(reply->errorString()));
+        reply->deleteLater();
+        return;
     }
-    
+
+    QString assetName = selectedUpdateAssetName.trimmed();
+    if (assetName.isEmpty()) {
+        assetName = "TranslucentSM-Update-Setup.exe";
+    }
+    assetName = QFileInfo(assetName).fileName();
+
+    const QString tempPath = QDir::temp().filePath(assetName);
+    QFile file(tempPath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        statusLabel->setText(tr("Cannot save update package"));
+        reply->deleteLater();
+        return;
+    }
+    file.write(reply->readAll());
+    file.close();
+
+    const bool isInstaller = assetName.toLower().endsWith(".exe");
+    bool started = false;
+    if (isInstaller) {
+        started = QProcess::startDetached(tempPath, QStringList());
+    } else {
+        started = QDesktopServices::openUrl(QUrl::fromLocalFile(tempPath));
+    }
+
+    if (!started) {
+        statusLabel->setText(tr("Failed to launch update package"));
+    } else if (isInstaller) {
+        statusLabel->setText(tr("Installer launched. The app will exit now."));
+        qApp->quit();
+    } else {
+        statusLabel->setText(tr("Update package downloaded"));
+    }
+
     reply->deleteLater();
 }
 
-int MainWindow::versionCompare(const QString &version1, const QString &version2) {
-    QStringList v1 = version1.split(".");
-    QStringList v2 = version2.split(".");
-    
-    int maxLen = qMax(v1.size(), v2.size());
-    
+int MainWindow::versionCompare(const QString& version1, const QString& version2) {
+    const QStringList v1 = version1.split(".");
+    const QStringList v2 = version2.split(".");
+    const int maxLen = qMax(v1.size(), v2.size());
+
     for (int i = 0; i < maxLen; ++i) {
-        int num1 = i < v1.size() ? v1[i].toInt() : 0;
-        int num2 = i < v2.size() ? v2[i].toInt() : 0;
-        
-        if (num1 > num2) return 1;
-        if (num1 < num2) return -1;
+        const int num1 = i < v1.size() ? v1[i].toInt() : 0;
+        const int num2 = i < v2.size() ? v2[i].toInt() : 0;
+        if (num1 > num2) {
+            return 1;
+        }
+        if (num1 < num2) {
+            return -1;
+        }
     }
-    
+
     return 0;
 }

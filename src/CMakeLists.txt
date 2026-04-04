@@ -14,13 +14,13 @@ else()
     message(WARNING "Vulkan headers not found - some features may be disabled")
 endif()
 
-# 添加Qt5依赖
-find_package(Qt6 COMPONENTS Widgets Core Gui Network REQUIRED)
+# 添加Qt依赖
+find_package(Qt6 COMPONENTS Widgets Core Gui Network LinguistTools REQUIRED)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-# 设置Qt5模块
+# 设置Qt模块
 set(QT_MODULES Qt6::Widgets Qt6::Core Qt6::Gui Qt6::Network)
 
 # 设置C++标准
@@ -58,6 +58,15 @@ set(HEADERS
     installer.h
 )
 
+# 多语言翻译源文件
+set(TS_FILES
+    translations/translucentsm_zh_CN.ts
+    translations/translucentsm_en_US.ts
+)
+
+qt_add_lrelease(TRANSLATION_QM_FILES ${TS_FILES})
+add_custom_target(translations ALL DEPENDS ${TRANSLATION_QM_FILES})
+
 # 创建DLL项目
 add_library(TranslucentSM SHARED TranslucentSMDLL.cpp)
 set_target_properties(TranslucentSM PROPERTIES
@@ -84,17 +93,28 @@ if(WIN32)
 endif()
 
 # 添加依赖关系
-add_dependencies(TranslucentSMApp TranslucentSM)
+add_dependencies(TranslucentSMApp TranslucentSM translations)
 
 # 复制DLL到可执行文件目录
 add_custom_command(TARGET TranslucentSMApp POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:TranslucentSM> $<TARGET_FILE_DIR:TranslucentSMApp>)
+
+# 复制翻译文件到可执行文件目录
+add_custom_command(TARGET TranslucentSMApp POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:TranslucentSMApp>/translations)
+foreach(QM_FILE IN LISTS TRANSLATION_QM_FILES)
+    add_custom_command(TARGET TranslucentSMApp POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${QM_FILE}
+        $<TARGET_FILE_DIR:TranslucentSMApp>/translations)
+endforeach()
 
 # 安装规则
 install(TARGETS TranslucentSM TranslucentSMApp
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION bin
 )
+install(FILES ${TRANSLATION_QM_FILES} DESTINATION bin/translations)
 if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     install(FILES $<TARGET_PDB_FILE:TranslucentSM> DESTINATION bin OPTIONAL)
     install(FILES $<TARGET_PDB_FILE:TranslucentSMApp> DESTINATION bin OPTIONAL)
